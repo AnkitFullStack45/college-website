@@ -1,0 +1,613 @@
+/* =========================================
+   INFRASTRUCTURE PAGE
+========================================= */
+
+.infrastructure-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #454b55;
+}
+
+.infra-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* =========================================
+   FULL WIDTH BANNER
+========================================= */
+
+.infra-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.infra-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.infra-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.infra-label,
+.infra-small-label {
+    display: inline-block;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.infra-heading h2 {
+    color: #173B73;
+    font-size: 35px;
+    font-weight: 750;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.infra-heading h2 span {
+    color: #E87516;
+}
+
+.infra-heading-line {
+    width: 70px;
+    height: 4px;
+    background: #E87516;
+    border-radius: 10px;
+    margin: 19px auto 0;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.infra-intro {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.infra-intro-content {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.infra-intro-content h3 {
+    color: #173B73;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+.infra-intro-content p,
+.infra-nature p,
+.infra-section-description,
+.infra-solar-content p,
+.infra-closing p {
+    color: #5b6370;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+    margin: 0 0 17px;
+}
+
+
+/* =========================================
+   SOLAR CAMPUS
+========================================= */
+
+.infra-solar {
+    padding: 70px 0;
+    background: #f6f8fb;
+}
+
+.infra-solar-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #e9edf3;
+    border-left: 5px solid #E87516;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(23, 59, 115, 0.07);
+}
+
+.infra-solar-icon {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    color: #ffffff;
+    background: #E87516;
+    border-radius: 14px;
+    font-size: 40px;
+}
+
+.infra-solar-content {
+    flex: 1;
+}
+
+.infra-solar-content .infra-small-label {
+    margin-bottom: 10px;
+}
+
+.infra-solar-content h2 {
+    color: #173B73;
+    font-size: 27px;
+    font-weight: 750;
+    line-height: 1.45;
+    margin: 0 0 18px;
+}
+
+.infra-solar-content h2 span {
+    color: #E87516;
+}
+
+.infra-solar-content p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   NATURE SECTION
+========================================= */
+
+.infra-nature {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.infra-nature-subtitle {
+    text-align: center;
+    color: #173B73;
+    font-size: 21px;
+    font-weight: 700;
+    margin: -15px 0 30px;
+}
+
+.infra-nature p {
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   MODERN INFRASTRUCTURE
+========================================= */
+
+.infra-facilities {
+    padding: 80px 0;
+    background: #f6f8fb;
+}
+
+.infra-section-description {
+    max-width: 900px;
+    text-align: center;
+    margin: -10px auto 42px;
+}
+
+.infra-facility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* =========================================
+   FACILITY CARDS
+========================================= */
+
+.infra-facility-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    min-height: 165px;
+    padding: 24px 20px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-left: 4px solid #E87516;
+    border-radius: 9px;
+    box-shadow: 0 5px 20px rgba(23, 59, 115, 0.045);
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.infra-facility-card:hover {
+    transform: translateY(-6px);
+    border-left-color: #173B73;
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.12);
+}
+
+.infra-card-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.infra-facility-card:hover .infra-card-number {
+    background: #E87516;
+}
+
+.infra-card-content {
+    flex: 1;
+}
+
+.infra-card-content h3 {
+    color: #173B73;
+    font-size: 16px;
+    font-weight: 750;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.infra-card-content p {
+    color: #69717e;
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 0;
+}
+
+
+/* =========================================
+   RECREATIONAL FACILITIES
+========================================= */
+
+.infra-recreation {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.infra-recreation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* =========================================
+   PLACEMENT CELL
+========================================= */
+
+.infra-placement {
+    padding: 80px 0;
+    background: #f6f8fb;
+}
+
+.infra-placement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* =========================================
+   WHY CHOOSE TEMPL
+========================================= */
+
+.infra-why {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.infra-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.infra-why-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 75px;
+    padding: 18px;
+    background: #f7f9fc;
+    border: 1px solid #e9edf3;
+    border-radius: 9px;
+    color: #173B73;
+    font-size: 14px;
+    font-weight: 650;
+    transition: all 0.3s ease;
+}
+
+.infra-why-item:hover {
+    background: #ffffff;
+    border-color: #E87516;
+    transform: translateX(4px);
+    box-shadow: 0 5px 18px rgba(23, 59, 115, 0.07);
+}
+
+.infra-check {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    background: #173B73;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CLOSING SECTION
+========================================= */
+
+.infra-closing {
+    padding: 75px 0;
+    background: #173B73;
+    text-align: center;
+}
+
+.infra-closing .infra-small-label {
+    color: #ffb16e;
+}
+
+.infra-closing h2 {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 750;
+    margin: 0 0 28px;
+}
+
+.infra-closing h2 span {
+    color: #ff9b45;
+}
+
+.infra-closing p {
+    max-width: 1050px;
+    margin: 0 auto 17px;
+    color: #e3eaf5;
+    text-align: justify;
+}
+
+.infra-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: #E87516;
+    color: #ffffff;
+    border: 2px solid #E87516;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.infra-cta-button:hover {
+    background: #ffffff;
+    color: #173B73;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.infra-cta-button span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.infra-cta-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .infra-container {
+        max-width: 850px;
+    }
+
+    .infra-facility-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .infra-why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .infra-intro,
+    .infra-nature,
+    .infra-facilities,
+    .infra-recreation,
+    .infra-placement,
+    .infra-why {
+        padding: 60px 0;
+    }
+
+    .infra-heading h2 {
+        font-size: 31px;
+    }
+
+    .infra-solar-content h2 {
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .infra-container {
+        padding: 0 18px;
+    }
+
+    .infra-intro,
+    .infra-nature,
+    .infra-facilities,
+    .infra-recreation,
+    .infra-placement,
+    .infra-why,
+    .infra-solar,
+    .infra-closing {
+        padding: 45px 0;
+    }
+
+    .infra-heading {
+        margin-bottom: 28px;
+    }
+
+    .infra-heading h2 {
+        font-size: 26px;
+    }
+
+    .infra-label,
+    .infra-small-label {
+        font-size: 10px;
+        letter-spacing: 1.4px;
+    }
+
+    .infra-heading-line {
+        margin-top: 15px;
+    }
+
+    .infra-intro-content h3 {
+        font-size: 19px;
+    }
+
+    .infra-intro-content p,
+    .infra-nature p,
+    .infra-section-description,
+    .infra-solar-content p,
+    .infra-closing p {
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .infra-solar-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    .infra-solar-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 30px;
+    }
+
+    .infra-solar-content h2 {
+        font-size: 22px;
+    }
+
+    .infra-nature-subtitle {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: -10px 0 25px;
+    }
+
+    .infra-facility-grid,
+    .infra-recreation-grid,
+    .infra-placement-grid,
+    .infra-why-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .infra-facility-card {
+        min-height: auto;
+        padding: 20px 16px;
+        gap: 13px;
+    }
+
+    .infra-card-number {
+        width: 37px;
+        height: 37px;
+        font-size: 12px;
+    }
+
+    .infra-card-content h3 {
+        font-size: 15px;
+    }
+
+    .infra-card-content p {
+        font-size: 13px;
+    }
+
+    .infra-why-item {
+        min-height: 65px;
+        font-size: 13px;
+    }
+
+    .infra-closing h2 {
+        font-size: 27px;
+        line-height: 1.4;
+    }
+
+    .infra-cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 375px) {
+
+    .infra-heading h2 {
+        font-size: 23px;
+    }
+
+    .infra-solar-content h2 {
+        font-size: 20px;
+    }
+
+    .infra-facility-card {
+        padding: 17px 13px;
+    }
+
+    .infra-card-content h3 {
+        font-size: 14px;
+    }
+}

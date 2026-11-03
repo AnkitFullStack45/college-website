@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:aliceblue;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Main Content */
+main {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+/* Logo */
+.logo {
+  margin-left: 20px;
+}
+
+/* Footer */
+.footer {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,765 @@
+/* =========================================
+   CAMPUS LIFE - MAIN
+========================================= */
+
+.campus-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #525e6d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.campus-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* =========================================
+   FULL WIDTH BANNER
+========================================= */
+
+.campus-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.campus-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================
+   COMMON HEADINGS
+========================================= */
+
+.campus-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.campus-label {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.campus-heading h2 {
+    margin: 0;
+    color: #173B73;
+    font-size: 35px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.campus-heading h2 span {
+    color: #E87516;
+}
+
+.campus-heading-line {
+    width: 72px;
+    height: 4px;
+    margin: 18px auto 0;
+    background: #E87516;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.campus-intro {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.campus-intro p {
+    max-width: 1050px;
+    margin: 0 auto 17px;
+    color: #5b6573;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+
+/* =========================================
+   COMMON DESCRIPTION
+========================================= */
+
+.campus-section-description {
+    max-width: 850px;
+    margin: -10px auto 40px;
+    color: #687383;
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+/* =========================================
+   LOCATION ADVANTAGE
+========================================= */
+
+.campus-location {
+    padding: 80px 0;
+    background: #f6f8fb;
+}
+
+.campus-location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.campus-location-card {
+    position: relative;
+    min-height: 205px;
+    padding: 30px 28px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e7edf4;
+    border-top: 4px solid #E87516;
+    border-radius: 10px;
+    box-shadow: 0 6px 22px rgba(23, 59, 115, 0.045);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campus-location-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 13px 30px rgba(23, 59, 115, 0.12);
+}
+
+.campus-card-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 18px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 750;
+    transition: background 0.3s ease;
+}
+
+.campus-location-card:hover .campus-card-number {
+    background: #E87516;
+}
+
+.campus-location-card h3 {
+    margin: 0 0 12px;
+    color: #173B73;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+.campus-location-card p {
+    margin: 0;
+    color: #697382;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   VIBRANT CAMPUS LIFE
+========================================= */
+
+.campus-vibrant {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.campus-vibrant-content {
+    max-width: 1050px;
+    margin: 0 auto 45px;
+}
+
+.campus-vibrant-content p {
+    margin: 0 auto 16px;
+    color: #5b6573;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.campus-subheading {
+    margin: 0 0 28px;
+    color: #173B73;
+    font-size: 24px;
+    font-weight: 750;
+    text-align: center;
+}
+
+.campus-activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.campus-activity-card {
+    position: relative;
+    min-height: 220px;
+    padding: 25px;
+    overflow: hidden;
+    background: #f7f9fc;
+    border: 1px solid #e7edf4;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.campus-activity-card:hover {
+    transform: translateY(-6px);
+    background: #ffffff;
+    border-color: #E87516;
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.10);
+}
+
+.campus-activity-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.campus-activity-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 12px;
+    font-size: 23px;
+    font-weight: 750;
+    transition: background 0.3s ease;
+}
+
+.campus-activity-card:hover .campus-activity-icon {
+    background: #E87516;
+}
+
+.campus-activity-number {
+    color: #dce3ec;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.campus-activity-card h3 {
+    margin: 0 0 12px;
+    color: #173B73;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.campus-activity-card p {
+    margin: 0;
+    color: #697382;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.campus-activity-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #E87516;
+    transition: width 0.35s ease;
+}
+
+.campus-activity-card:hover .campus-activity-bottom {
+    width: 100%;
+}
+
+
+/* =========================================
+   SAFE ENVIRONMENT
+========================================= */
+
+.campus-environment {
+    padding: 80px 0;
+    background: #f6f8fb;
+}
+
+.campus-environment-box {
+    padding: 45px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-left: 5px solid #E87516;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(23, 59, 115, 0.055);
+}
+
+.campus-environment-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.campus-environment-heading h2 {
+    margin: 0;
+    color: #173B73;
+    font-size: 32px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.campus-environment-heading h2 span {
+    color: #E87516;
+}
+
+.campus-environment-box > p {
+    margin: 0 auto 18px;
+    color: #5c6675;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.campus-environment-highlight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 20px;
+    color: #173B73;
+    background: #fff5ec;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.campus-environment-highlight span {
+    color: #E87516;
+    font-size: 25px;
+}
+
+
+/* =========================================
+   MODERN CAMPUS FACILITIES
+========================================= */
+
+.campus-facilities {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.campus-facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.campus-facility-card {
+    position: relative;
+    min-height: 230px;
+    padding: 28px 24px;
+    background: #ffffff;
+    border: 1px solid #e7edf4;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(23, 59, 115, 0.045);
+    transition: all 0.3s ease;
+}
+
+.campus-facility-card:hover {
+    transform: translateY(-6px);
+    border-color: #E87516;
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.11);
+}
+
+.campus-facility-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: 750;
+    transition: all 0.3s ease;
+}
+
+.campus-facility-card:hover .campus-facility-icon {
+    background: #E87516;
+    transform: rotate(-5deg);
+}
+
+.campus-facility-number {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    color: #e2e8f0;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.campus-facility-card h3 {
+    margin: 0 0 12px;
+    color: #173B73;
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+.campus-facility-card p {
+    margin: 0;
+    color: #697382;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CONNECTIVITY SECTION
+========================================= */
+
+.campus-connectivity {
+    padding: 75px 0;
+    background: #f6f8fb;
+}
+
+.campus-connectivity-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    border-left: 5px solid #E87516;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(23, 59, 115, 0.05);
+}
+
+.campus-connectivity-content h2 {
+    margin: 0 0 24px;
+    color: #173B73;
+    font-size: 31px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.campus-connectivity-content h2 span {
+    color: #E87516;
+}
+
+.campus-connectivity-content p {
+    margin: 0 auto 17px;
+    color: #5c6675;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.campus-connectivity-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   ADMISSION CTA
+========================================= */
+
+.campus-cta {
+    padding: 85px 0;
+    background: #173B73;
+    text-align: center;
+}
+
+.campus-cta-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #ffb16e;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 2px;
+}
+
+.campus-cta h2 {
+    max-width: 850px;
+    margin: 0 auto 25px;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.campus-cta h2 span {
+    color: #ff9b45;
+}
+
+.campus-cta p {
+    max-width: 850px;
+    margin: 0 auto 15px;
+    color: #e3eaf5;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.campus-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.campus-primary-button,
+.campus-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 155px;
+    padding: 14px 25px;
+    border: 2px solid #E87516;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.campus-primary-button {
+    color: #ffffff;
+    background: #E87516;
+}
+
+.campus-primary-button:hover {
+    color: #173B73;
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.campus-primary-button span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.campus-primary-button:hover span {
+    transform: translateX(5px);
+}
+
+.campus-secondary-button {
+    color: #ffffff;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.campus-secondary-button:hover {
+    color: #173B73;
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .campus-container {
+        max-width: 850px;
+    }
+
+    .campus-activities-grid,
+    .campus-facilities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .campus-heading h2 {
+        font-size: 31px;
+    }
+
+    .campus-intro,
+    .campus-location,
+    .campus-vibrant,
+    .campus-environment,
+    .campus-facilities,
+    .campus-connectivity,
+    .campus-cta {
+        padding: 60px 0;
+    }
+
+    .campus-environment-heading h2,
+    .campus-connectivity-content h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .campus-container {
+        padding: 0 18px;
+    }
+
+    .campus-intro,
+    .campus-location,
+    .campus-vibrant,
+    .campus-environment,
+    .campus-facilities,
+    .campus-connectivity,
+    .campus-cta {
+        padding: 45px 0;
+    }
+
+    .campus-heading {
+        margin-bottom: 28px;
+    }
+
+    .campus-heading h2 {
+        font-size: 25px;
+    }
+
+    .campus-label,
+    .campus-cta-label {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+    }
+
+    .campus-intro p,
+    .campus-vibrant-content p,
+    .campus-environment-box > p,
+    .campus-connectivity-content p,
+    .campus-cta p {
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .campus-location-grid,
+    .campus-activities-grid,
+    .campus-facilities-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .campus-location-card {
+        min-height: auto;
+        padding: 23px 20px;
+    }
+
+    .campus-location-card h3 {
+        font-size: 17px;
+    }
+
+    .campus-location-card p {
+        font-size: 13px;
+    }
+
+    .campus-subheading {
+        font-size: 21px;
+        line-height: 1.5;
+    }
+
+    .campus-activity-card {
+        min-height: auto;
+        padding: 22px;
+    }
+
+    .campus-activity-card h3 {
+        font-size: 17px;
+    }
+
+    .campus-activity-card p {
+        font-size: 13px;
+    }
+
+    .campus-environment-box {
+        padding: 27px 19px;
+    }
+
+    .campus-environment-heading h2,
+    .campus-connectivity-content h2 {
+        font-size: 24px;
+    }
+
+    .campus-environment-highlight {
+        align-items: flex-start;
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .campus-facility-card {
+        min-height: auto;
+        padding: 23px 20px;
+    }
+
+    .campus-facility-card h3 {
+        font-size: 16px;
+    }
+
+    .campus-facility-card p {
+        font-size: 13px;
+    }
+
+    .campus-connectivity-content {
+        padding: 27px 19px;
+    }
+
+    .campus-cta h2 {
+        font-size: 26px;
+    }
+
+    .campus-cta-actions {
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .campus-primary-button,
+    .campus-secondary-button {
+        width: 100%;
+        max-width: 230px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 375px) {
+
+    .campus-heading h2 {
+        font-size: 22px;
+    }
+
+    .campus-environment-heading h2,
+    .campus-connectivity-content h2 {
+        font-size: 22px;
+    }
+
+    .campus-cta h2 {
+        font-size: 23px;
+    }
+}

@@ -1,0 +1,646 @@
+/* =====================================
+   MAIN PAGE
+===================================== */
+
+.vice-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #173B73;
+}
+
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.vice-hero {
+    position: relative;
+    min-height: 340px;
+    padding: 70px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        120deg,
+        #102b53,
+        #173B73
+    );
+}
+
+.vice-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at 80% 20%,
+        rgba(232, 117, 22, 0.22),
+        transparent 40%
+    );
+}
+
+.vice-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 30, 60, 0.15);
+}
+
+.vice-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+}
+
+.vice-hero-label {
+    display: inline-block;
+    margin-bottom: 15px;
+
+    color: #ffb36f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.vice-hero-content h1 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 55px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.vice-hero-content h1 span {
+    color: #E87516;
+}
+
+.vice-hero-content > p {
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.vice-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.vice-breadcrumb a {
+    color: #ffb36f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.vice-breadcrumb a:hover {
+    color: #ffffff;
+}
+
+
+/* =====================================
+   INTRODUCTION
+===================================== */
+
+.vice-intro {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 75px 20px 45px;
+    text-align: center;
+}
+
+.vice-section-label {
+    display: inline-block;
+    color: #E87516;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.vice-intro h2 {
+    color: #173B73;
+    font-size: clamp(27px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.vice-intro h2 span {
+    color: #E87516;
+}
+
+.vice-intro > p {
+    max-width: 850px;
+    margin: 0 auto;
+
+    color: #515c6c;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* =====================================
+   MESSAGE SECTION
+===================================== */
+
+.vice-message-section {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+    padding: 55px 25px 90px;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    align-items: start;
+    gap: 55px;
+}
+
+
+/* =====================================
+   PROFILE CARD
+===================================== */
+
+.vice-profile {
+    position: sticky;
+    top: 100px;
+
+    padding: 35px 25px;
+
+    background: #f5f7fa;
+    border: 1px solid #e5e9ef;
+    border-top: 5px solid #E87516;
+
+    border-radius: 10px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(23, 59, 115, 0.09);
+}
+
+
+/* =====================================
+   PROFILE IMAGE
+===================================== */
+
+.vice-profile-image {
+    width: 220px;
+    height: 260px;
+
+    margin: 0 auto 25px;
+    padding: 6px;
+
+    background: #ffffff;
+     border: 3px solid rgba(128, 128, 128, 0.18);
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 22px rgba(23, 59, 115, 0.15);
+}
+
+.vice-profile-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 5px;
+
+    transition: transform 0.4s ease;
+}
+
+.vice-profile-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =====================================
+   PROFILE LABEL
+===================================== */
+
+.vice-profile-label {
+    display: block;
+    color: #E87516;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   PROFILE NAME
+===================================== */
+
+.vice-profile h3 {
+    color: #173B73;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   DESIGNATION
+===================================== */
+
+.vice-profile > p {
+    color: #515c6c;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =====================================
+   DIVIDER
+===================================== */
+
+.vice-profile-divider {
+    width: 55px;
+    height: 3px;
+
+    background: #E87516;
+    border-radius: 5px;
+
+    margin: 25px auto;
+}
+
+
+/* =====================================
+   PROFILE QUOTE
+===================================== */
+
+.vice-profile-quote i {
+    color: #E87516;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.vice-profile-quote p {
+    color: #173B73;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 576px) {
+
+    .vice-profile {
+        padding: 30px 20px;
+    }
+
+    .vice-profile-image {
+        width: 190px;
+        height: 230px;
+    }
+
+    .vice-profile h3 {
+        font-size: 21px;
+    }
+
+}
+
+/* =====================================
+   MESSAGE CONTENT
+===================================== */
+
+.vice-message-content {
+    width: 100%;
+}
+
+.vice-message-content h2 {
+    color: #173B73;
+
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 800;
+    line-height: 1.4;
+
+    margin-bottom: 25px;
+}
+
+.vice-message-content > p {
+    color: #515c6c;
+
+    font-size: 16px;
+    line-height: 1.95;
+
+    text-align: justify;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================
+   HIGHLIGHT QUOTE
+===================================== */
+
+.vice-highlight {
+    position: relative;
+
+    padding: 28px 30px 28px 65px;
+    margin: 32px 0;
+
+    background: #fff7f0;
+    border-left: 5px solid #E87516;
+    border-radius: 5px;
+}
+
+.vice-quote-mark {
+    position: absolute;
+    top: 5px;
+    left: 18px;
+
+    color: #E87516;
+    font-family: Georgia, serif;
+    font-size: 65px;
+    line-height: 1;
+}
+
+.vice-highlight p {
+    color: #173B73;
+
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =====================================
+   SIGNATURE
+===================================== */
+
+.vice-signature {
+    margin-top: 40px;
+    padding-top: 25px;
+}
+
+.vice-signature-line {
+    width: 65px;
+    height: 4px;
+
+    background: #E87516;
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+}
+
+.vice-signature-greeting {
+    display: block;
+
+    color: #515c6c;
+    font-size: 15px;
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.vice-signature h3 {
+    color: #173B73;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+
+.vice-signature p {
+    color: #E87516;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+/* =====================================
+   CLOSING SECTION
+===================================== */
+
+.vice-closing {
+    padding: 75px 20px;
+
+    background: linear-gradient(
+        120deg,
+        #173B73,
+        #102b53
+    );
+
+    text-align: center;
+}
+
+.vice-closing-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vice-closing-content > span {
+    display: inline-block;
+
+    color: #ffb36f;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.vice-closing-content h2 {
+    color: #ffffff;
+
+    font-size: clamp(27px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.4;
+
+    margin-bottom: 20px;
+}
+
+.vice-closing-content > p {
+    color: #ffffff;
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.vice-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 30px;
+
+    color: #ffffff;
+    background: #E87516;
+
+    border: 2px solid #E87516;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.vice-button:hover {
+    color: #173B73;
+    background: #ffffff;
+    border-color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+}
+
+.vice-button span {
+    display: inline-block;
+    font-size: 21px;
+    transition: transform 0.3s ease;
+}
+
+.vice-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 991px) {
+
+    .vice-message-section {
+        max-width: 800px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .vice-profile {
+        position: relative;
+        top: auto;
+
+        width: 100%;
+        max-width: 450px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 576px) {
+
+    .vice-hero {
+        min-height: 290px;
+        padding: 55px 18px;
+    }
+
+    .vice-hero-content > p {
+        font-size: 15px;
+    }
+
+    .vice-breadcrumb {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .vice-intro {
+        padding: 55px 20px 30px;
+    }
+
+    .vice-intro > p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .vice-message-section {
+        padding: 35px 18px 60px;
+        gap: 35px;
+    }
+
+    .vice-profile {
+        padding: 30px 20px;
+    }
+
+    .vice-message-content h2 {
+        font-size: 26px;
+    }
+
+    .vice-message-content > p {
+        font-size: 15px;
+        line-height: 1.85;
+        text-align: left;
+    }
+
+    .vice-highlight {
+        padding: 25px 18px 25px 48px;
+    }
+
+    .vice-quote-mark {
+        left: 10px;
+        font-size: 55px;
+    }
+
+    .vice-highlight p {
+        font-size: 17px;
+    }
+
+    .vice-closing {
+        padding: 55px 20px;
+    }
+
+    .vice-closing-content > p {
+        font-size: 15px;
+    }
+
+    .vice-button {
+        padding: 12px 24px;
+    }
+
+}

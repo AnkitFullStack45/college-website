@@ -1,0 +1,594 @@
+/* =========================================
+   PLACEMENT PAGE - GLOBAL
+========================================= */
+
+.placement-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #4b5563;
+}
+
+.placement-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* =========================================
+   FULL WIDTH BANNER
+========================================= */
+
+.placement-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.placement-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================
+   COMMON HEADINGS
+========================================= */
+
+.placement-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.placement-label {
+    display: inline-block;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.placement-heading h2 {
+    color: #173B73;
+    font-size: 35px;
+    font-weight: 750;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.placement-heading h2 span {
+    color: #E87516;
+}
+
+.placement-heading-line {
+    width: 72px;
+    height: 4px;
+    background: #E87516;
+    border-radius: 10px;
+    margin: 18px auto 0;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.placement-intro {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.placement-subheading {
+    text-align: center;
+    color: #173B73;
+    font-size: 22px;
+    font-weight: 700;
+    margin: -15px 0 30px;
+}
+
+.placement-intro p,
+.placement-grooming-intro p,
+.placement-industry-content p,
+.placement-future-content p,
+.placement-section-description,
+.placement-closing p {
+    max-width: 1050px;
+    margin: 0 auto 18px;
+    color: #5b6370;
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+
+/* =========================================
+   GROOMING SECTION
+========================================= */
+
+.placement-grooming {
+    padding: 80px 0;
+    background: #f6f8fb;
+}
+
+.placement-grooming-intro {
+    max-width: 1050px;
+    margin: 0 auto 35px;
+}
+
+.placement-grooming-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* =========================================
+   COMMON PLACEMENT CARDS
+========================================= */
+
+.placement-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    min-height: 155px;
+    padding: 25px 22px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-left: 4px solid #E87516;
+    border-radius: 9px;
+    box-shadow: 0 5px 20px rgba(23, 59, 115, 0.045);
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.placement-card:hover {
+    transform: translateY(-6px);
+    border-left-color: #173B73;
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.12);
+}
+
+.placement-card-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 750;
+    transition: background 0.3s ease;
+}
+
+.placement-card:hover .placement-card-number {
+    background: #E87516;
+}
+
+.placement-card-content {
+    flex: 1;
+}
+
+.placement-card-content h3 {
+    color: #173B73;
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.placement-card-content p {
+    color: #69717e;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =========================================
+   INDUSTRY CONNECT
+========================================= */
+
+.placement-industry {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.placement-industry-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #f7f9fc;
+    border: 1px solid #e9edf3;
+    border-left: 5px solid #E87516;
+    border-radius: 10px;
+}
+
+.placement-industry-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 12px;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.placement-industry-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   PLACEMENT FEATURES
+========================================= */
+
+.placement-features {
+    padding: 80px 0;
+    background: #f6f8fb;
+}
+
+.placement-section-description {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 40px;
+}
+
+.placement-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* =========================================
+   PATH FORWARD
+========================================= */
+
+.placement-future {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.placement-future-content {
+    padding: 40px;
+    background: #f7f9fc;
+    border: 1px solid #e9edf3;
+    border-left: 5px solid #E87516;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(23, 59, 115, 0.05);
+}
+
+.placement-future-content h2 {
+    color: #173B73;
+    font-size: 30px;
+    font-weight: 750;
+    line-height: 1.45;
+    margin: 0 0 23px;
+}
+
+.placement-future-content h2 span {
+    color: #E87516;
+}
+
+.placement-future-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   WHY CHOOSE TEMPL
+========================================= */
+
+.placement-why {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.placement-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.placement-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 78px;
+    padding: 18px;
+    background: #f7f9fc;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+    color: #173B73;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.placement-benefit:hover {
+    background: #ffffff;
+    border-color: #E87516;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(23, 59, 115, 0.08);
+}
+
+.placement-benefit-check {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+
+/* =========================================
+   CLOSING SECTION
+========================================= */
+
+.placement-closing {
+    padding: 80px 0;
+    background: #173B73;
+    text-align: center;
+}
+
+.placement-closing-label {
+    display: inline-block;
+    color: #ffb16e;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.placement-closing h2 {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 750;
+    line-height: 1.4;
+    margin: 0 0 28px;
+}
+
+.placement-closing h2 span {
+    color: #ff9b45;
+}
+
+.placement-closing p {
+    color: #e2eaf5;
+    text-align: justify;
+}
+
+.placement-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 14px 30px;
+    color: #ffffff;
+    background: #E87516;
+    border: 2px solid #E87516;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 750;
+    transition: all 0.3s ease;
+}
+
+.placement-cta-button:hover {
+    color: #173B73;
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.placement-cta-button span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.placement-cta-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .placement-container {
+        max-width: 850px;
+    }
+
+    .placement-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .placement-heading h2 {
+        font-size: 31px;
+    }
+
+    .placement-intro,
+    .placement-grooming,
+    .placement-industry,
+    .placement-features,
+    .placement-future,
+    .placement-why,
+    .placement-closing {
+        padding: 60px 0;
+    }
+
+    .placement-future-content h2 {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+@media (max-width: 576px) {
+   .placement-container {
+        padding: 0 18px;
+    }
+
+    .placement-intro,
+    .placement-grooming,
+    .placement-industry,
+    .placement-features,
+    .placement-future,
+    .placement-why,
+    .placement-closing {
+        padding: 45px 0;
+    }
+
+    .placement-heading {
+        margin-bottom: 28px;
+    }
+
+    .placement-heading h2 {
+        font-size: 25px;
+    }
+
+    .placement-label,
+    .placement-closing-label {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+    }
+
+    .placement-heading-line {
+        margin-top: 15px;
+    }
+
+    .placement-subheading {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: -10px 0 25px;
+    }
+
+    .placement-intro p,
+    .placement-grooming-intro p,
+    .placement-industry-content p,
+    .placement-future-content p,
+    .placement-section-description,
+    .placement-closing p {
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .placement-grooming-grid,
+    .placement-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .placement-card {
+        min-height: auto;
+        padding: 20px 16px;
+        gap: 13px;
+    }
+
+    .placement-card-number {
+        width: 37px;
+        height: 37px;
+        font-size: 12px;
+    }
+
+    .placement-card-content h3 {
+        font-size: 15px;
+    }
+
+    .placement-card-content p {
+        font-size: 13px;
+    }
+
+    .placement-industry-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 23px 18px;
+    }
+
+    .placement-industry-icon {
+        width: 53px;
+        height: 53px;
+        font-size: 27px;
+    }
+
+    .placement-future-content {
+        padding: 25px 19px;
+    }
+
+    .placement-future-content h2 {
+        font-size: 23px;
+    }
+
+    .placement-benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .placement-benefit {
+        min-height: 65px;
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .placement-closing h2 {
+        font-size: 26px;
+    }
+
+    .placement-cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 375px) {
+
+    .placement-heading h2 {
+        font-size: 22px;
+    }
+
+    .placement-card {
+        padding: 17px 13px;
+    }
+
+    .placement-card-content h3 {
+        font-size: 14px;
+    }
+
+    .placement-future-content h2 {
+        font-size: 21px;
+    }
+}

@@ -1,0 +1,1127 @@
+/* =========================================
+   ABOUT TEMPL - COMMON STYLES
+========================================= */
+
+.about-page {
+    --about-blue: #173B73;
+    --about-orange: #E87516;
+    --about-light: #f5f7fb;
+    --about-text: #555e6d;
+
+    color: #252d3a;
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+.about-section {
+    padding: 85px 0;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page h4,
+.about-page p {
+    margin-top: 0;
+}
+
+.about-label {
+    display: inline-block;
+    color: var(--about-orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.about-page h2 {
+    color: var(--about-blue);
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-page h2 span {
+    color: var(--about-orange);
+}
+
+.about-page p {
+    color: var(--about-text);
+    font-size: 15px;
+    line-height: 1.85;
+}
+/* =========================================
+   HERO SECTION
+========================================= */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #102b50;
+}
+/* Image container */
+
+.templ-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.templ-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Overlay */
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 30, 66, 0.85),
+        rgba(15, 48, 88, 0.45)
+    );
+}
+
+/* Content */
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 992px) {
+
+    .about-hero {
+        height: 480px;
+    }
+
+    .templ-image img {
+        object-position: center center;
+    }
+}
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        height: 430px;
+    }
+
+    .templ-image {
+        height: 100%;
+    }
+
+    .templ-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 65% center;
+    }
+
+    .about-hero-overlay {
+        background: rgba(8, 30, 66, 0.72);
+    }
+
+    .about-hero-content {
+        padding: 60px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-hero {
+        height: 400px;
+    }
+
+    .templ-image img {
+        object-position: 65% center;
+    }
+
+    .about-hero-content {
+        padding: 50px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 30px;
+    }
+
+    .about-hero .about-eyebrow {
+        font-size: 11px;
+    }
+
+    .about-hero p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+/* Dark overlay */
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 30, 66, 0.88) 0%,
+        rgba(12, 38, 76, 0.72) 50%,
+        rgba(15, 48, 88, 0.40) 100%
+    );
+    pointer-events: none;
+}
+
+/* Hero content */
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.about-hero .about-eyebrow {
+    display: inline-block;
+    color: #ffb36f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.about-hero h1 {
+    color: #fff;
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 750;
+    line-height: 1.2;
+    max-width: 800px;
+    margin-bottom: 22px;
+}
+
+.about-hero h1 span {
+    color: #ffad64;
+}
+
+.about-hero p {
+    color: #e7edf7;
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.about-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 28px;
+}
+
+.about-breadcrumb a {
+    color: #ffb36f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-breadcrumb a:hover {
+    color: #fff;
+}
+
+.about-breadcrumb i {
+    font-size: 11px;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.about-intro {
+    background: #fff;
+}
+
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.about-intro-content p {
+    margin-bottom: 16px;
+}
+
+.about-intro-visual {
+    min-height: 390px;
+    border-radius: 18px;
+    background: linear-gradient(
+        145deg,
+        rgba(23, 59, 115, 0.92),
+        rgba(12, 36, 75, 0.97)
+    );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.14);
+}
+
+.about-year-card {
+    text-align: center;
+    color: #fff;
+}
+
+.about-year-card span {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #ffbd82;
+    font-weight: 700;
+}
+
+.about-year-card strong {
+    display: block;
+    font-size: clamp(65px, 9vw, 105px);
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.about-year-card p {
+    color: #fff;
+    font-size: 16px;
+}
+
+.about-visual-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    color: #fff;
+}
+
+.about-visual-caption > i {
+    color: #ffad64;
+    font-size: 26px;
+}
+
+.about-visual-caption strong,
+.about-visual-caption span {
+    display: block;
+}
+
+.about-visual-caption span {
+    color: #dce6f5;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.about-primary-btn,
+.about-light-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 22px;
+    border-radius: 5px;
+    background: var(--about-blue);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.about-primary-btn:hover {
+    background: var(--about-orange);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(232, 117, 22, 0.22);
+}
+
+.about-light-btn {
+    background: #fff;
+    color: var(--about-blue);
+}
+
+.about-light-btn:hover {
+    background: var(--about-orange);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.about-primary-btn i,
+.about-light-btn i {
+    transition: transform 0.3s ease;
+}
+
+.about-primary-btn:hover i,
+.about-light-btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   INSTITUTIONS
+========================================= */
+
+.about-institutions {
+    background: var(--about-light);
+}
+
+.about-section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 48px;
+}
+
+.about-section-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.about-institution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.about-institution-card {
+    background: #fff;
+    padding: 38px;
+    border-radius: 12px;
+    border-top: 4px solid var(--about-orange);
+    box-shadow: 0 8px 30px rgba(23, 59, 115, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-institution-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(23, 59, 115, 0.12);
+}
+
+.institution-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1e5;
+    color: var(--about-orange);
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.institution-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: var(--about-orange);
+}
+
+.about-institution-card h3 {
+    color: var(--about-blue);
+    font-size: 23px;
+    line-height: 1.4;
+    margin: 12px 0 5px;
+}
+
+.about-institution-card h4 {
+    color: var(--about-orange);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.about-institution-card ul {
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.about-institution-card li {
+    color: #505b6b;
+    font-size: 14px;
+    line-height: 1.9;
+    padding-left: 5px;
+}
+
+.institution-affiliation {
+    padding: 15px;
+    background: #f5f7fb;
+    border-left: 3px solid var(--about-orange);
+    border-radius: 4px;
+    font-size: 13px !important;
+}
+
+.about-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--about-blue);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.about-text-link:hover {
+    color: var(--about-orange);
+    gap: 15px;
+}
+
+
+/* =========================================
+   ACADEMIC JOURNEY
+========================================= */
+
+.about-journey {
+    background: #fff;
+}
+
+.about-timeline {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-timeline::before {
+    content: "";
+    position: absolute;
+    left: 65px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background: #e8edf4;
+}
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.timeline-number {
+    width: 95px;
+    height: 48px;
+    border-radius: 25px;
+    background: var(--about-blue);
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 1px #dce3ee;
+}
+
+.timeline-content {
+    background: #f7f8fb;
+    padding: 22px 25px;
+    border-radius: 9px;
+    border-left: 3px solid var(--about-orange);
+}
+
+.timeline-content > span {
+    color: var(--about-orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+    color: var(--about-blue);
+    font-size: 19px;
+    margin: 7px 0;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   WHY CHOOSE TEMPL
+========================================= */
+
+.about-why {
+    background: var(--about-light);
+}
+
+.about-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.about-highlight-card {
+    padding: 30px 22px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(23, 59, 115, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-highlight-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.11);
+}
+
+.highlight-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0e2;
+    color: var(--about-orange);
+    font-size: 23px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-highlight-card h3 {
+    color: var(--about-blue);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.about-highlight-card p {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.about-infrastructure-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: var(--about-blue);
+    padding: 28px 35px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.about-infrastructure-link h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.about-infrastructure-link p {
+    color: #dce6f5;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.about-infrastructure-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-radius: 5px;
+    background: var(--about-orange);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.about-infrastructure-link a:hover {
+    background: #fff;
+    color: var(--about-blue);
+}
+
+
+/* =========================================
+   SCHOLARSHIPS
+========================================= */
+
+.about-scholarship {
+    background: #fff;
+}
+
+.about-scholarship-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.scholarship-visual {
+    min-height: 320px;
+    border-radius: 15px;
+    background: linear-gradient(140deg, #173B73, #0d2852);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(23, 59, 115, 0.15);
+}
+
+.scholarship-visual > i {
+    font-size: 65px;
+    color: #ffae69;
+    margin-bottom: 20px;
+}
+
+.scholarship-visual h3 {
+    color: #fff;
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.scholarship-visual p {
+    color: #dce6f5;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   CAMPUS LIFE
+========================================= */
+
+.about-campus {
+    background: var(--about-light);
+}
+
+.about-campus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.campus-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 32px 25px;
+    border-bottom: 3px solid transparent;
+    box-shadow: 0 5px 20px rgba(23, 59, 115, 0.05);
+    transition: all 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: translateY(-6px);
+    border-bottom-color: var(--about-orange);
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.1);
+}
+
+.campus-card-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff0e2;
+    color: var(--about-orange);
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.campus-card h3 {
+    color: var(--about-blue);
+    font-size: 20px;
+    margin-bottom: 13px;
+}
+
+.campus-card p {
+    font-size: 14px;
+}
+
+.campus-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.campus-card li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #505b6b;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.campus-card li i {
+    color: var(--about-orange);
+}
+
+
+/* =========================================
+   FUTURE VISION
+========================================= */
+
+.about-future {
+    background: linear-gradient(
+        110deg,
+        rgba(12, 35, 72, 0.97),
+        rgba(23, 59, 115, 0.93)
+    );
+}
+
+.about-future-content {
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about-future h2 {
+    color: #fff;
+}
+
+.about-future h2 span {
+    color: #ffad64;
+}
+
+.about-future p {
+    color: #e1e9f5;
+    max-width: 820px;
+    margin: 0 auto 15px;
+}
+
+.about-future .about-label {
+    color: #ffb36f;
+}
+
+
+/* =========================================
+   FINAL TAGLINE
+========================================= */
+
+.about-tagline {
+    padding: 45px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.about-tagline > div > i {
+    font-size: 32px;
+    color: var(--about-orange);
+    margin-bottom: 12px;
+}
+
+.about-tagline h2 {
+    color: var(--about-blue);
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.about-tagline p {
+    color: var(--about-orange);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .about-section {
+        padding: 65px 0;
+    }
+
+    .about-intro-grid,
+    .about-scholarship-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-intro-visual {
+        min-height: 320px;
+    }
+
+    .about-highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-institution-grid {
+        gap: 20px;
+    }
+
+    .about-campus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-scholarship-grid {
+        gap: 35px;
+    }
+
+    .about-hero-content {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-container {
+        padding: 0 20px;
+    }
+
+    .about-section {
+        padding: 55px 0;
+    }
+
+    /* Hero */
+
+    .about-hero {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .about-hero-content {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(32px, 7vw, 42px);
+    }
+
+    .about-hero p {
+        font-size: 14px;
+    }
+
+    .about-hero-overlay {
+        background: rgba(8, 30, 66, 0.72);
+    }
+
+    .about-section-heading {
+        margin-bottom: 32px;
+    }
+
+    /* Institution cards */
+
+    .about-institution-grid,
+    .about-campus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-institution-card {
+        padding: 28px 23px;
+    }
+
+    /* Infrastructure */
+
+    .about-infrastructure-link {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .about-infrastructure-link a {
+        white-space: normal;
+    }
+
+    /* Timeline */
+
+    .about-timeline::before {
+        left: 42px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 85px 1fr;
+        gap: 12px;
+    }
+
+    .timeline-number {
+        width: 75px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .timeline-content {
+        padding: 18px 15px;
+    }
+
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+    /* Highlights */
+
+    .about-highlights-grid {
+        gap: 15px;
+    }
+
+    .about-highlight-card {
+        padding: 23px 17px;
+    }
+
+    .about-highlight-card h3 {
+        font-size: 16px;
+    }
+
+    .about-highlight-card p {
+        font-size: 12px;
+    }
+
+    /* Scholarship */
+
+    .scholarship-visual {
+        min-height: 270px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .about-hero-content {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .about-hero .about-eyebrow {
+        font-size: 11px;
+    }
+
+    .about-highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-year-card strong {
+        font-size: 75px;
+    }
+
+    .about-intro-visual {
+        min-height: 280px;
+    }
+
+    .about-page h2 {
+        font-size: 29px;
+    }
+
+    .about-primary-btn,
+    .about-light-btn {
+        font-size: 13px;
+        padding: 12px 16px;
+    }
+
+    /* Timeline */
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .about-timeline::before {
+        left: 20px;
+    }
+
+    .timeline-number {
+        width: 75px;
+    }
+
+    .timeline-content {
+        margin-left: 10px;
+    }
+
+    .about-tagline h2 {
+        font-size: 21px;
+    }
+
+    .about-tagline p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

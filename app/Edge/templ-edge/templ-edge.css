@@ -1,0 +1,377 @@
+/* =========================================
+   TEMPL EDGE - MAIN PAGE
+========================================= */
+.templ-edge-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #444444;
+ 
+}
+/* =========================================
+   FULL WIDTH BANNER
+========================================= */
+.templ-edge-banner {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.templ-edge-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.templ-edge-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* =========================================
+   COMMON SECTION HEADING
+========================================= */
+
+.templ-edge-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.templ-edge-label {
+    display: inline-block;
+    color: #E87516;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.templ-edge-heading h1,
+.templ-edge-heading h2 {
+    color: #173B73;
+    font-size: 36px;
+    font-weight: 750;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.templ-edge-heading h1 span,
+.templ-edge-heading h2 span {
+    color: #E87516;
+}
+
+.templ-edge-heading h2 {
+    margin-top: 8px;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.templ-edge-line {
+    width: 75px;
+    height: 4px;
+    background: #E87516;
+    border-radius: 10px;
+    margin: 20px auto 0;
+}
+
+
+/* =========================================
+   INTRODUCTION SECTION
+========================================= */
+
+.templ-edge-intro {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.templ-edge-intro p,
+.templ-edge-experience p,
+.templ-edge-closing p {
+    max-width: 1050px;
+    margin: 0 auto 18px;
+    color: #555b65;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+
+/* =========================================
+   COMPREHENSIVE EXPERIENCE SECTION
+========================================= */
+
+.templ-edge-experience {
+    padding: 75px 0;
+    background: #f7f9fc;
+    border-top: 1px solid #edf0f5;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.templ-edge-experience .templ-edge-container {
+    text-align: center;
+}
+
+.templ-edge-experience p {
+    text-align: center;
+}
+
+
+/* =========================================
+   HIGHLIGHTS SECTION
+========================================= */
+
+.templ-edge-highlights {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.templ-edge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 45px;
+}
+
+
+/* =========================================
+   HIGHLIGHT CARDS
+========================================= */
+
+.templ-edge-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    min-height: 145px;
+    padding: 25px 22px;
+    background: #ffffff;
+    border: 1px solid #e9edf3;
+    border-left: 4px solid #E87516;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(23, 59, 115, 0.06);
+    transition: all 0.3s ease;
+}
+
+.templ-edge-card:hover {
+    transform: translateY(-7px);
+    border-left-color: #173B73;
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.13);
+}
+
+.templ-edge-card-number {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    color: #ffffff;
+    background: #173B73;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.templ-edge-card:hover .templ-edge-card-number {
+    background: #E87516;
+    transform: scale(1.08);
+}
+
+.templ-edge-card h3 {
+    color: #173B73;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0 0 9px;
+}
+
+.templ-edge-card p {
+    color: #687080;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================
+   CLOSING SECTION
+========================================= */
+
+.templ-edge-closing {
+    position: relative;
+    padding: 75px 0;
+    background: #f7f9fc;
+    border-top: 1px solid #edf0f5;
+}
+
+.templ-edge-closing h2 {
+    color: #173B73;
+    font-size: 34px;
+    font-weight: 750;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.templ-edge-closing h2 span {
+    color: #E87516;
+}
+
+.templ-edge-closing p {
+    text-align: justify;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .templ-edge-container {
+        max-width: 850px;
+    }
+
+    .templ-edge-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .templ-edge-intro,
+    .templ-edge-experience,
+    .templ-edge-highlights,
+    .templ-edge-closing {
+        padding: 60px 0;
+    }
+
+    .templ-edge-heading h1 {
+        font-size: 32px;
+    }
+
+    .templ-edge-heading h2 {
+        font-size: 21px;
+    }
+
+    .templ-edge-closing h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .templ-edge-container {
+        padding: 0 18px;
+    }
+
+    .templ-edge-intro,
+    .templ-edge-experience,
+    .templ-edge-highlights,
+    .templ-edge-closing {
+        padding: 45px 0;
+    }
+
+    .templ-edge-heading {
+        margin-bottom: 27px;
+    }
+
+    .templ-edge-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .templ-edge-heading h1 {
+        font-size: 29px;
+    }
+
+    .templ-edge-heading h2 {
+        font-size: 19px;
+    }
+
+    .templ-edge-line {
+        margin-top: 15px;
+    }
+
+    .templ-edge-intro p,
+    .templ-edge-experience p,
+    .templ-edge-closing p {
+        font-size: 14px;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .templ-edge-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 30px;
+    }
+
+    .templ-edge-card {
+        min-height: auto;
+        padding: 20px 17px;
+        gap: 14px;
+    }
+
+    .templ-edge-card-number {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+    }
+
+    .templ-edge-card h3 {
+        font-size: 16px;
+    }
+
+    .templ-edge-card p {
+        font-size: 13px;
+    }
+
+    .templ-edge-closing h2 {
+        font-size: 26px;
+        margin-bottom: 22px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 375px) {
+
+    .templ-edge-heading h1 {
+        font-size: 26px;
+    }
+
+    .templ-edge-heading h2 {
+        font-size: 17px;
+    }
+
+    .templ-edge-card {
+        padding: 17px 13px;
+    }
+
+    .templ-edge-card h3 {
+        font-size: 15px;
+    }
+}

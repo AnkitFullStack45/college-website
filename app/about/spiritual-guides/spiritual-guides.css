@@ -1,0 +1,633 @@
+/* =========================================
+   SPIRITUAL GUIDES - COMMON
+========================================= */
+
+.spiritual-page {
+    --spiritual-blue: #173B73;
+    --spiritual-orange: #E87516;
+    --spiritual-light: #f5f7fb;
+    --spiritual-text: #555e6d;
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    color: #252d3a;
+    box-sizing: border-box;
+}
+
+.spiritual-page *,
+.spiritual-page *::before,
+.spiritual-page *::after {
+    box-sizing: border-box;
+}
+
+.spiritual-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+.spiritual-section {
+    padding: 85px 0;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.spiritual-hero {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #102b50;
+}
+
+/* Background Image */
+
+.spiritual-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.spiritual-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Overlay */
+
+.spiritual-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        rgba(8, 30, 66, 0.90),
+        rgba(15, 48, 88, 0.65),
+        rgba(15, 48, 88, 0.25)
+    );
+}
+
+/* Hero Content */
+
+.spiritual-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 100px 25px;
+}
+
+.spiritual-eyebrow {
+    display: inline-block;
+    color: #ffb36f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* Main Heading */
+
+.spiritual-hero h1 {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 0 20px;
+
+    color: #fff;
+    font-size: clamp(38px, 5vw, 65px) !important;
+    font-weight: 750;
+    line-height: 1.15;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.spiritual-hero h1 span {
+    color: #ffad64;
+}
+
+.spiritual-hero-content > p {
+    max-width: 650px;
+    color: #e7edf7;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.spiritual-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+
+    color: #fff;
+    font-size: 13px;
+}
+
+.spiritual-breadcrumb a {
+    color: #ffb36f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.spiritual-breadcrumb a:hover {
+    color: #fff;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.spiritual-intro {
+    background: #fff;
+}
+
+.spiritual-intro-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.spiritual-label {
+    display: inline-block;
+    color: var(--spiritual-orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.spiritual-intro h2,
+.spiritual-section-heading h2 {
+    color: var(--spiritual-blue);
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 22px;
+}
+
+.spiritual-intro h2 span,
+.spiritual-section-heading h2 span {
+    color: var(--spiritual-orange);
+}
+
+.spiritual-intro-content > p {
+    color: var(--spiritual-text);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.spiritual-intro-content strong {
+    color: var(--spiritual-blue);
+}
+
+
+/* =========================================
+   VALUES
+========================================= */
+
+.spiritual-values {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.spiritual-value-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 18px 15px;
+
+    background: var(--spiritual-light);
+    border-radius: 8px;
+    border-bottom: 3px solid transparent;
+
+    transition: all 0.3s ease;
+}
+
+.spiritual-value-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--spiritual-orange);
+    box-shadow: 0 8px 20px rgba(23, 59, 115, 0.08);
+}
+
+.spiritual-value-card i {
+    flex-shrink: 0;
+    color: var(--spiritual-orange);
+    font-size: 21px;
+}
+
+.spiritual-value-card span {
+    color: var(--spiritual-blue);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   SPIRITUAL GUIDES
+========================================= */
+
+.spiritual-guides-section {
+    background: var(--spiritual-light);
+}
+
+.spiritual-section-heading {
+    max-width: 750px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.spiritual-section-heading p {
+    color: var(--spiritual-text);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.spiritual-guides-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.spiritual-guide-card {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 25px;
+
+    min-width: 0;
+    padding: 40px;
+
+    background: #fff;
+    border-radius: 12px;
+    border-left: 4px solid var(--spiritual-orange);
+
+    box-shadow: 0 8px 30px rgba(23, 59, 115, 0.06);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spiritual-guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(23, 59, 115, 0.11);
+}
+
+.spiritual-guide-number {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0e2;
+    color: var(--spiritual-orange);
+
+    font-size: 20px;
+    font-weight: 800;
+
+    border-radius: 12px;
+}
+
+.spiritual-guide-content {
+    min-width: 0;
+}
+
+.spiritual-guide-tag {
+    color: var(--spiritual-orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.spiritual-guide-content h3 {
+    color: var(--spiritual-blue);
+    font-size: clamp(21px, 3vw, 27px);
+    line-height: 1.4;
+    margin: 12px 0 20px;
+}
+
+.spiritual-guide-content p {
+    color: var(--spiritual-text);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.spiritual-guide-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   CLOSING SECTION
+========================================= */
+
+.spiritual-closing {
+    padding: 75px 0;
+    text-align: center;
+
+    background: linear-gradient(
+        110deg,
+        #102b50,
+        #173B73
+    );
+}
+
+.spiritual-closing .spiritual-container {
+    max-width: 900px;
+}
+
+.spiritual-closing i {
+    color: #ffad64;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.spiritual-closing h2 {
+    color: #fff;
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.35;
+    margin-bottom: 18px;
+}
+
+.spiritual-closing h2 span {
+    color: #ffad64;
+}
+
+.spiritual-closing p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #dce6f5;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .spiritual-section {
+        padding: 65px 0;
+    }
+
+    .spiritual-hero {
+        min-height: 450px;
+    }
+
+    .spiritual-hero-content {
+        padding: 80px 25px;
+    }
+
+    .spiritual-hero-image img {
+        object-position: 60% center;
+    }
+
+    .spiritual-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .spiritual-guide-card {
+        padding: 30px;
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .spiritual-container {
+        padding: 0 20px;
+    }
+
+    .spiritual-section {
+        padding: 55px 0;
+    }
+
+    /* Hero */
+
+    .spiritual-hero {
+        min-height: 380px;
+        align-items: center;
+    }
+
+    .spiritual-hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .spiritual-hero-overlay {
+        background: rgba(8, 30, 66, 0.75);
+    }
+
+    .spiritual-hero-content {
+        width: 100%;
+        padding: 65px 20px;
+    }
+
+    .spiritual-hero h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(32px, 8vw, 42px) !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .spiritual-hero-content > p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Values */
+
+    .spiritual-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .spiritual-value-card {
+        padding: 15px 12px;
+    }
+
+    /* Guide Cards */
+
+    .spiritual-guide-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .spiritual-guide-number {
+        width: 55px;
+        height: 55px;
+    }
+
+    .spiritual-section-heading {
+        margin-bottom: 35px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .spiritual-container {
+        padding: 0 16px;
+    }
+
+    /* Hero */
+
+    .spiritual-hero {
+        min-height: 320px;
+    }
+
+    .spiritual-hero-content {
+        padding: 50px 18px;
+    }
+
+    .spiritual-hero h1 {
+        font-size: 34px !important;
+        line-height: 1.2;
+        max-width: 100%;
+    }
+
+    .spiritual-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .spiritual-breadcrumb {
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    /* Introduction */
+
+    .spiritual-intro h2 {
+        font-size: 29px;
+    }
+
+    .spiritual-intro-content > p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    /* Values */
+
+    .spiritual-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .spiritual-value-card {
+        gap: 9px;
+        padding: 13px 10px;
+    }
+
+    .spiritual-value-card span {
+        font-size: 12px;
+    }
+
+    /* Guide Cards */
+
+    .spiritual-guide-card {
+        padding: 22px 18px;
+    }
+
+    .spiritual-guide-content h3 {
+        font-size: 21px;
+    }
+
+    .spiritual-guide-content p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    /* Closing */
+
+    .spiritual-closing {
+        padding: 55px 0;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+    .spiritual-hero {
+        min-height: 300px;
+    }
+
+    .spiritual-hero-content {
+        padding: 40px 16px;
+    }
+
+    .spiritual-hero h1 {
+        font-size: 30px !important;
+    }
+
+    .spiritual-values {
+        grid-template-columns: 1fr;
+    }
+
+    .spiritual-guide-card {
+        padding: 20px 15px;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .spiritual-page *,
+    .spiritual-page *::before,
+    .spiritual-page *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
