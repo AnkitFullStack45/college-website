@@ -1,0 +1,1338 @@
+/* =========================================
+   BA LLB PAGE - BASE
+========================================= */
+
+.ballb-page {
+    --ballb-blue: #173B73;
+    --ballb-blue-2: #2a6ccf;
+    --ballb-dark: #0b1f40;
+    --ballb-orange: #E87516;
+    --ballb-orange-2: #ff9a3c;
+    --ballb-sky: #38a9e8;
+    --ballb-text: #4a5568;
+    --radius: 20px;
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    color: #252d3a;
+    font-family: inherit;
+}
+
+.ballb-page *,
+.ballb-page *::before,
+.ballb-page *::after {
+    box-sizing: border-box;
+}
+
+.ballb-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes ballbFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ballbReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ballbFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(35px, 30px, 0) scale(1.15);
+    }
+}
+
+@keyframes ballbShimmer {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes ballbPulse {
+    0%, 100% {
+        box-shadow: 0 10px 25px rgba(232, 117, 22, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 10px 38px rgba(232, 117, 22, 0.65);
+    }
+}
+
+@keyframes ballbGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes ballbRing {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+@keyframes ballbFaqOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   FULL-WIDTH BANNER IMAGE
+   Original image ratio preserved
+========================================= */
+
+.ballb-banner {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #0b1f40;
+    line-height: 0;
+}
+
+.ballb-banner-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =========================================
+   SECTION BASE
+========================================= */
+
+.ballb-section {
+    --glass-bg: rgba(255, 255, 255, 0.42);
+    --glass-bg-hover: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.85);
+    --glass-inset: rgba(255, 255, 255, 0.95);
+    --glass-shadow: 0 12px 35px rgba(23, 59, 115, 0.16);
+
+    --card-title: #173B73;
+    --card-text: #4a5568;
+    --sec-text: #4a5568;
+    --accent: #E87516;
+    --heading-gradient: linear-gradient(90deg, #173B73, #2a6ccf);
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 65px 0;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(255, 145, 65, 0.42),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 92% 25%,
+            rgba(56, 169, 232, 0.42),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 55% 100%,
+            rgba(150, 90, 240, 0.28),
+            transparent 42%
+        ),
+        linear-gradient(135deg, #fff0e3, #e9eaff 55%, #d9eff7);
+}
+
+/* Alternate section */
+
+.ballb-section-alt {
+    --glass-bg: rgba(255, 255, 255, 0.10);
+    --glass-bg-hover: rgba(255, 255, 255, 0.18);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-inset: rgba(255, 255, 255, 0.22);
+    --glass-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+
+    --card-title: #ffffff;
+    --card-text: #dce7f7;
+    --sec-text: #dce7f7;
+    --accent: #ffb36f;
+    --heading-gradient: linear-gradient(90deg, #ffffff, #ffc58f);
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(232, 117, 22, 0.48),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(56, 169, 232, 0.42),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 55% 10%,
+            rgba(130, 80, 230, 0.3),
+            transparent 42%
+        ),
+        linear-gradient(135deg, #071a38, #173B73 60%, #0e3470);
+}
+
+/* Background decorative effects */
+
+.ballb-section::before,
+.ballb-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(55px);
+}
+
+.ballb-section::before {
+    top: -120px;
+    left: -130px;
+    background: radial-gradient(
+        circle,
+        rgba(232, 117, 22, 0.4),
+        transparent 70%
+    );
+    animation: ballbFloat 16s ease-in-out infinite;
+}
+
+.ballb-section::after {
+    right: -130px;
+    bottom: -140px;
+    background: radial-gradient(
+        circle,
+        rgba(56, 169, 232, 0.4),
+        transparent 70%
+    );
+    animation: ballbFloat 19s ease-in-out infinite reverse;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.ballb-heading {
+    position: relative;
+    margin-bottom: 38px;
+}
+
+.ballb-label {
+    display: inline-block;
+    padding: 7px 16px;
+    margin-bottom: 15px;
+
+    color: var(--accent, #E87516);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    background: rgba(232, 117, 22, 0.12);
+    border: 1px solid rgba(232, 117, 22, 0.35);
+    border-radius: 50px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.ballb-heading h1,
+.ballb-heading h2 {
+    max-width: 950px;
+    margin: 0;
+
+    font-size: clamp(27px, 3.5vw, 40px);
+    font-weight: 800;
+    line-height: 1.25;
+
+    background: var(--heading-gradient, linear-gradient(90deg, #173B73, #2a6ccf));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ballb-heading h1 {
+    font-size: clamp(30px, 4vw, 44px);
+}
+
+.ballb-heading h2 {
+    font-size: clamp(27px, 3.5vw, 38px);
+}
+
+.ballb-heading h2 + .ballb-title-line,
+.ballb-heading h1 + .ballb-title-line {
+    margin-top: 18px;
+}
+
+.ballb-title-line {
+    width: 80px;
+    height: 4px;
+    margin-top: 18px;
+
+    background: linear-gradient(
+        90deg,
+        #E87516,
+        #ffca9b,
+        #E87516
+    );
+
+    background-size: 200% 100%;
+    border-radius: 10px;
+    animation: ballbShimmer 3s linear infinite;
+}
+
+.ballb-heading h2:not(:first-child) {
+    margin-top: 10px;
+}
+
+.ballb-heading > h2:only-of-type {
+    margin-top: 0;
+}
+
+.ballb-subheading {
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   GLASSMORPHISM SHARED CARDS
+========================================= */
+
+.ballb-glass {
+    position: relative;
+    min-width: 0;
+
+    background: var(--glass-bg, rgba(255, 255, 255, 0.5));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.8));
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+    box-shadow:
+        var(--glass-shadow, 0 12px 35px rgba(23, 59, 115, 0.16)),
+        inset 0 1px 0 var(--glass-inset, rgba(255, 255, 255, 0.9));
+
+    transition:
+        transform 0.4s var(--ease),
+        box-shadow 0.4s var(--ease),
+        background 0.4s var(--ease),
+        border-color 0.4s var(--ease);
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.ballb-intro-card {
+    padding: 32px 36px;
+    margin-bottom: 35px;
+    border-left: 5px solid var(--ballb-orange);
+}
+
+.ballb-intro-card p {
+    margin: 0 0 18px;
+    color: var(--card-text, #4a5568);
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.ballb-intro-card p:last-child {
+    margin-bottom: 0;
+}
+
+.ballb-intro-card a,
+.ballb-affiliation-card a,
+.ballb-visit-card a {
+    color: var(--ballb-orange);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ballb-intro-card a:hover,
+.ballb-affiliation-card a:hover,
+.ballb-visit-card a:hover {
+    color: var(--ballb-blue-2);
+}
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.ballb-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.ballb-highlight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 16px;
+}
+
+.ballb-highlight:hover {
+    transform: translateY(-7px);
+    background: var(--glass-bg-hover);
+    border-color: rgba(232, 117, 22, 0.55);
+    box-shadow: 0 20px 45px rgba(23, 59, 115, 0.24);
+}
+
+.ballb-highlight > span {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        var(--ballb-orange),
+        var(--ballb-orange-2)
+    );
+
+    border-radius: 12px;
+    box-shadow: 0 7px 18px rgba(232, 117, 22, 0.4);
+    transition: transform 0.4s var(--ease);
+}
+
+.ballb-highlight:hover > span {
+    transform: rotate(-8deg) scale(1.1);
+}
+
+.ballb-highlight h3 {
+    margin: 0;
+    color: var(--card-title, #173B73);
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+/* =========================================
+   PROGRAM OVERVIEW
+========================================= */
+
+.ballb-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.ballb-info-card {
+    overflow: hidden;
+    padding: 30px;
+}
+
+.ballb-info-card::before,
+.ballb-reason-card::before,
+.ballb-facility-card::before,
+.ballb-career-card::before,
+.ballb-admission-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--ballb-orange),
+        var(--ballb-orange-2),
+        var(--ballb-sky)
+    );
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease);
+}
+
+.ballb-info-card:hover::before,
+.ballb-reason-card:hover::before,
+.ballb-facility-card:hover::before,
+.ballb-career-card:hover::before,
+.ballb-admission-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ballb-info-card:hover,
+.ballb-reason-card:hover,
+.ballb-facility-card:hover,
+.ballb-career-card:hover,
+.ballb-admission-card:hover {
+    transform: translateY(-7px);
+    background: var(--glass-bg-hover);
+    border-color: rgba(232, 117, 22, 0.55);
+    box-shadow: 0 22px 48px rgba(23, 59, 115, 0.23);
+}
+
+.ballb-card-number {
+    display: inline-block;
+    margin-bottom: 15px;
+
+    color: var(--ballb-orange);
+    font-size: 35px;
+    font-weight: 850;
+    line-height: 1;
+
+    background: linear-gradient(135deg, #E87516, #ffb36f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    transition: transform 0.4s var(--ease);
+}
+
+.ballb-info-card:hover .ballb-card-number,
+.ballb-reason-card:hover .ballb-card-number {
+    transform: translateX(5px) scale(1.1);
+}
+
+.ballb-info-card h3,
+.ballb-reason-card h3,
+.ballb-facility-card h3,
+.ballb-career-card h3 {
+    margin: 0 0 13px;
+    color: var(--card-title, #173B73);
+    font-size: 19px;
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.ballb-info-card p,
+.ballb-reason-card p,
+.ballb-facility-card p,
+.ballb-career-card p {
+    margin: 0;
+    color: var(--card-text, #4a5568);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.ballb-info-card a {
+    color: var(--ballb-orange);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.ballb-info-card a:hover {
+    color: var(--ballb-blue-2);
+}
+
+.ballb-info-wide {
+    grid-column: 1 / -1;
+}
+
+/* =========================================
+   WHY CHOOSE LSR
+========================================= */
+
+.ballb-reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ballb-reason-card {
+    overflow: hidden;
+    padding: 28px;
+    border-left: 4px solid var(--ballb-orange);
+}
+
+.ballb-reason-card .ballb-card-number {
+    font-size: 30px;
+}
+
+.ballb-reason-card h3 {
+    font-size: 18px;
+}
+
+.ballb-reason-card p {
+    line-height: 1.85;
+}
+
+/* =========================================
+   AFFILIATIONS
+========================================= */
+
+.ballb-affiliation-card {
+    padding: 35px 38px;
+    border-left: 5px solid var(--ballb-orange);
+}
+
+.ballb-affiliation-card p {
+    margin: 0;
+    color: var(--card-text, #4a5568);
+    font-size: 15px;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+/* =========================================
+   ELIGIBILITY
+========================================= */
+
+.ballb-eligibility-card {
+    padding: 28px 35px;
+    border-left: 5px solid var(--ballb-orange);
+}
+
+.ballb-eligibility-card ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.ballb-eligibility-card li {
+    margin-bottom: 14px;
+    color: var(--card-text, #4a5568);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.ballb-eligibility-card li:last-child {
+    margin-bottom: 0;
+}
+
+.ballb-eligibility-card li::marker {
+    color: var(--ballb-orange);
+}
+
+/* =========================================
+   CENTER TEXT
+========================================= */
+
+.ballb-center-text {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    color: var(--sec-text, #4a5568);
+    font-size: 15px;
+    line-height: 1.85;
+    text-align: center;
+}
+
+/* =========================================
+   ADMISSION PROCESS
+========================================= */
+
+.ballb-admission-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ballb-admission-card {
+    overflow: hidden;
+    padding: 28px 22px;
+}
+
+.ballb-admission-card > span {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        var(--ballb-orange),
+        var(--ballb-orange-2)
+    );
+
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(232, 117, 22, 0.4);
+}
+
+.ballb-admission-card h3 {
+    margin: 0 0 12px;
+    color: var(--card-title, #173B73);
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.ballb-admission-card p {
+    margin: 0;
+    color: var(--card-text, #4a5568);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SEAT INTAKE
+========================================= */
+
+.ballb-seat-card {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-top: 28px;
+    padding: 35px 40px;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(56, 169, 232, 0.4),
+            transparent 40%
+        ),
+        linear-gradient(
+            120deg,
+            #0b1f40,
+            #173B73,
+            #245ab0
+        );
+
+    background-size: 200% 200%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 22px;
+
+    box-shadow: 0 20px 45px rgba(23, 59, 115, 0.3);
+
+    animation: ballbGradient 10s ease-in-out infinite;
+}
+
+.ballb-seat-card > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ballb-seat-card > div span {
+    color: #ffc58f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.ballb-seat-card strong {
+    color: #fff;
+    font-size: 65px;
+    font-weight: 850;
+    line-height: 1.1;
+}
+
+.ballb-seat-card p {
+    max-width: 450px;
+    margin: 0;
+    color: #e1eafa;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   VISIT CARD
+========================================= */
+
+.ballb-visit-card {
+    margin-top: 22px;
+    padding: 25px 30px;
+    border-left: 4px solid var(--ballb-orange);
+}
+
+.ballb-visit-card p {
+    margin: 0;
+    color: var(--card-text, #4a5568);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   INFRASTRUCTURE
+========================================= */
+
+.ballb-facility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.ballb-facility-card {
+    overflow: hidden;
+    padding: 30px 26px;
+}
+
+.ballb-facility-card > span,
+.ballb-career-card > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+    margin-bottom: 18px;
+
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        var(--ballb-orange),
+        var(--ballb-orange-2)
+    );
+
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(232, 117, 22, 0.35);
+}
+
+/* =========================================
+   CAREER OPPORTUNITIES
+========================================= */
+
+.ballb-career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.ballb-career-card {
+    overflow: hidden;
+    padding: 30px 26px;
+}
+
+.ballb-career-card h3 {
+    font-size: 18px;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.ballb-faq-list {
+    max-width: 950px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ballb-faq {
+    overflow: hidden;
+    border-left: 4px solid var(--ballb-orange);
+}
+
+.ballb-faq:hover {
+    background: var(--glass-bg-hover);
+    box-shadow: 0 18px 40px rgba(23, 59, 115, 0.2);
+}
+
+.ballb-faq[open] {
+    background: var(--glass-bg-hover);
+    border-color: rgba(232, 117, 22, 0.6);
+    border-left-color: var(--ballb-orange);
+}
+
+.ballb-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    padding: 21px 25px;
+
+    color: var(--card-title, #173B73);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.ballb-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.ballb-faq summary:hover {
+    color: var(--accent, #E87516);
+}
+
+.ballb-faq summary:focus-visible {
+    outline: 2px solid var(--ballb-orange);
+    outline-offset: -3px;
+}
+
+.ballb-faq-icon {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 33px;
+    height: 33px;
+
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        135deg,
+        var(--ballb-orange),
+        var(--ballb-orange-2)
+    );
+
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(232, 117, 22, 0.35);
+
+    transition: transform 0.4s var(--ease);
+}
+
+.ballb-faq[open] .ballb-faq-icon {
+    transform: rotate(135deg);
+}
+
+.ballb-faq-answer {
+    padding: 0 25px 24px;
+}
+
+.ballb-faq[open] .ballb-faq-answer {
+    animation: ballbFaqOpen 0.4s var(--ease);
+}
+
+.ballb-faq-answer p {
+    margin: 0;
+    color: var(--card-text, #4a5568);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.ballb-cta-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 65px 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 170, 90, 0.5),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(56, 169, 232, 0.45),
+            transparent 42%
+        ),
+        linear-gradient(
+            120deg,
+            #c85a0a,
+            #173B73 60%,
+            #0b1f40
+        );
+}
+
+.ballb-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 42px 45px;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.ballb-cta-card .ballb-label {
+    color: #ffe2c4;
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ballb-cta-card h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(25px, 3.5vw, 36px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.ballb-cta-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 28px;
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+
+    background: linear-gradient(
+        135deg,
+        var(--ballb-orange),
+        var(--ballb-orange-2)
+    );
+
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(232, 117, 22, 0.4);
+
+    transition:
+        transform 0.3s var(--ease),
+        box-shadow 0.3s var(--ease);
+
+    animation: ballbPulse 2.8s ease-in-out infinite;
+}
+
+.ballb-cta-button:hover {
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(232, 117, 22, 0.55);
+}
+
+.ballb-cta-button span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.ballb-cta-button:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+@supports (animation-timeline: view()) {
+    .ballb-highlight,
+    .ballb-info-card,
+    .ballb-reason-card,
+    .ballb-facility-card,
+    .ballb-career-card,
+    .ballb-admission-card,
+    .ballb-faq,
+    .ballb-affiliation-card,
+    .ballb-eligibility-card,
+    .ballb-centered-heading,
+    .ballb-heading {
+        animation: ballbReveal linear both;
+        animation-timeline: view();
+        animation-range: entry 5% cover 25%;
+    }
+}
+
+/* =========================================
+   BACKDROP FILTER FALLBACK
+========================================= */
+
+@supports not (
+    (backdrop-filter: blur(1px)) or
+    (-webkit-backdrop-filter: blur(1px))
+) {
+    .ballb-glass {
+        background: rgba(255, 255, 255, 0.92);
+    }
+
+    .ballb-section-alt .ballb-glass {
+        background: rgba(20, 50, 100, 0.9);
+    }
+
+    .ballb-cta-card {
+        background: rgba(20, 50, 100, 0.85);
+    }
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+    .ballb-section {
+        padding: 55px 0;
+    }
+
+    .ballb-highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ballb-admission-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ballb-facility-grid,
+    .ballb-career-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ballb-seat-card {
+        padding: 30px;
+    }
+
+    .ballb-cta-card {
+        padding: 35px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .ballb-container {
+        padding: 0 20px;
+    }
+
+    .ballb-section {
+        padding: 45px 0;
+    }
+
+    .ballb-heading {
+        margin-bottom: 28px;
+    }
+
+    .ballb-heading h1 {
+        font-size: 29px;
+    }
+
+    .ballb-heading h2 {
+        font-size: 27px;
+    }
+
+    .ballb-intro-card {
+        padding: 25px 22px;
+    }
+
+    .ballb-intro-card p,
+    .ballb-affiliation-card p {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .ballb-info-grid,
+    .ballb-reasons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ballb-info-wide {
+        grid-column: auto;
+    }
+
+    .ballb-highlight-grid,
+    .ballb-admission-grid,
+    .ballb-facility-grid,
+    .ballb-career-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .ballb-info-card,
+    .ballb-reason-card,
+    .ballb-facility-card,
+    .ballb-career-card {
+        padding: 24px 22px;
+    }
+
+    .ballb-seat-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .ballb-cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+    }
+
+    .ballb-cta-button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .ballb-container {
+        padding: 0 16px;
+    }
+
+    .ballb-section {
+        padding: 38px 0;
+    }
+
+    .ballb-heading h1 {
+        font-size: 25px;
+    }
+
+    .ballb-heading h2 {
+        font-size: 24px;
+    }
+
+    .ballb-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .ballb-highlight-grid,
+    .ballb-admission-grid,
+    .ballb-facility-grid,
+    .ballb-career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ballb-highlight {
+        padding: 15px;
+    }
+
+    .ballb-info-card,
+    .ballb-reason-card,
+    .ballb-facility-card,
+    .ballb-career-card {
+        padding: 22px 19px;
+    }
+
+    .ballb-card-number {
+        font-size: 30px;
+    }
+
+    .ballb-affiliation-card,
+    .ballb-eligibility-card {
+        padding: 24px 20px;
+    }
+
+    .ballb-seat-card {
+        padding: 25px 22px;
+    }
+
+    .ballb-seat-card strong {
+        font-size: 55px;
+    }
+
+    .ballb-faq summary {
+        padding: 17px;
+        font-size: 14px;
+    }
+
+    .ballb-faq-answer {
+        padding: 0 17px 20px;
+    }
+
+    .ballb-cta-card {
+        padding: 27px 21px;
+    }
+
+    .ballb-cta-card h2 {
+        font-size: 25px;
+    }
+
+    .ballb-cta-button {
+        padding: 14px 20px;
+        font-size: 13px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ballb-page *,
+    .ballb-page *::before,
+    .ballb-page *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

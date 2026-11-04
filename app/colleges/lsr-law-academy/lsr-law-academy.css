@@ -1,0 +1,1348 @@
+/* =================================
+   LSR LAW ACADEMY PAGE
+================================= */
+
+.lsr-page {
+    --lsr-orange: #e87516;
+    --lsr-orange-dark: #cf5e08;
+    --lsr-blue: #173b73;
+    --lsr-blue-dark: #102b53;
+    --lsr-text: #39465a;
+    --lsr-muted: #68758a;
+    --lsr-light: #f5f7fb;
+
+    width: 100%;
+    overflow: hidden;
+    color: var(--lsr-text);
+}
+
+.lsr-page * {
+    box-sizing: border-box;
+}
+
+.lsr-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.lsr-section {
+    padding: 40px 0;
+}
+
+
+/* =================================
+   COMMON HEADING
+================================= */
+
+.lsr-section-heading {
+    max-width: 760px;
+    margin-bottom: 28px;
+}
+
+.lsr-heading-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lsr-eyebrow {
+    display: inline-block;
+    color: var(--lsr-orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.lsr-section-heading h2,
+.lsr-intro-content h2,
+.lsr-location-header h2,
+.lsr-location-benefit h2,
+.lsr-careers-content h2,
+.lsr-faq-intro h2,
+.lsr-join-box h2,
+.lsr-admission-content h2 {
+    color: var(--lsr-blue);
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 800;
+    line-height: 1.22;
+    margin: 0 0 12px;
+}
+
+.lsr-section-heading h2 span,
+.lsr-intro-content h2 span,
+.lsr-location-header h2 span,
+.lsr-location-benefit h2 span,
+.lsr-careers-content h2 span,
+.lsr-faq-intro h2 span,
+.lsr-join-box h2 span,
+.lsr-admission-content h2 span {
+    color: var(--lsr-orange);
+}
+
+.lsr-section-heading > p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.lsr-hero {
+    min-height: 475px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(
+        120deg,
+        #0b2446,
+        #173b73 65%,
+        #24528a
+    );
+}
+
+.lsr-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 27, 54, 0.25),
+            transparent
+        );
+}
+
+.lsr-hero-decoration {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.lsr-decoration-one {
+    width: 450px;
+    height: 450px;
+    right: -100px;
+    top: -150px;
+}
+
+.lsr-decoration-two {
+    width: 300px;
+    height: 300px;
+    right: 100px;
+    bottom: -200px;
+    border: 35px solid rgba(255, 255, 255, 0.035);
+}
+
+.lsr-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 60px;
+    padding-bottom: 90px;
+    color: #fff;
+}
+
+.lsr-hero-label {
+    display: inline-block;
+    padding: 8px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    margin-bottom: 24px;
+}
+
+.lsr-hero-small-title {
+    display: block;
+    color: #ffad69;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.lsr-hero-content h1 {
+    max-width: 800px;
+    color: #fff;
+    font-size: clamp(37px, 5vw, 60px);
+    font-weight: 900;
+    line-height: 1.12;
+    margin: 0 0 17px;
+}
+
+.lsr-hero-content h1 span {
+    display: block;
+    margin-top: 9px;
+    color: #ff9b42;
+    font-size: clamp(23px, 3vw, 34px);
+}
+
+.lsr-hero-content > p {
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0 0 24px;
+}
+
+.lsr-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.lsr-btn {
+    min-height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 21px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.lsr-btn-orange {
+    color: #fff;
+    background: var(--lsr-orange);
+    border: 1px solid var(--lsr-orange);
+}
+
+.lsr-btn-orange:hover {
+    color: #fff;
+    background: var(--lsr-orange-dark);
+    border-color: var(--lsr-orange-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(232, 117, 22, 0.25);
+}
+
+.lsr-btn-outline {
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.lsr-btn-outline:hover {
+    color: var(--lsr-blue);
+    background: #fff;
+    border-color: #fff;
+}
+
+.lsr-hero-features {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(6, 24, 48, 0.45);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.lsr-intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.lsr-intro-content h2 {
+    max-width: 580px;
+}
+
+.lsr-intro-content > p,
+.lsr-campus-intro p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 13px;
+}
+
+.lsr-intro-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 18px;
+}
+
+.lsr-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--lsr-orange);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: gap 0.25s ease;
+}
+
+.lsr-text-link:hover {
+    color: var(--lsr-blue);
+    gap: 14px;
+}
+
+.lsr-intro-highlight {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(
+        140deg,
+        var(--lsr-blue),
+        var(--lsr-blue-dark)
+    );
+}
+
+.lsr-intro-highlight::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    bottom: -100px;
+    width: 220px;
+    height: 220px;
+    border: 30px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.lsr-highlight-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.lsr-highlight-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: var(--lsr-orange);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.lsr-highlight-top > span:last-child {
+    color: #ffbf8d;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.lsr-intro-highlight h3 {
+    color: #fff;
+    font-size: 32px;
+    line-height: 1.35;
+    margin: 0 0 12px;
+}
+
+.lsr-intro-highlight h3 span {
+    color: #ff9b42;
+}
+
+.lsr-intro-highlight > p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.lsr-highlight-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 27px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lsr-highlight-bottom div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lsr-highlight-bottom strong {
+    color: #ffad69;
+    font-size: 19px;
+}
+
+.lsr-highlight-bottom span {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 11px;
+}
+
+
+/* =================================
+   ADVANTAGES
+================================= */
+
+.lsr-advantages {
+    background: var(--lsr-light);
+}
+
+.lsr-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.lsr-advantage-card {
+    padding: 21px;
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.lsr-advantage-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--lsr-orange);
+    box-shadow: 0 10px 25px rgba(23, 59, 115, 0.08);
+}
+
+.lsr-advantage-number {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+    border-radius: 7px;
+    background: #fff1e5;
+    color: var(--lsr-orange);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.lsr-advantage-card h3 {
+    color: var(--lsr-blue);
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0 0 9px;
+}
+
+.lsr-advantage-card p {
+    color: var(--lsr-muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   LOCATION
+================================= */
+
+.lsr-location {
+    background: #fff;
+}
+
+.lsr-location-header {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 35px;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.lsr-location-header h2 {
+    max-width: 620px;
+    margin-bottom: 0;
+}
+
+.lsr-location-header > p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.lsr-location-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    margin-bottom: 18px;
+    background: var(--lsr-blue);
+    border-radius: 9px;
+}
+
+.lsr-location-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.lsr-location-icon {
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: var(--lsr-orange);
+    color: #fff;
+    font-size: 26px;
+}
+
+.lsr-address-label {
+    color: #ffb77e;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.lsr-location-address h3 {
+    color: #fff;
+    font-size: 17px;
+    margin: 7px 0;
+}
+
+.lsr-location-address p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.lsr-location-connectivity {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    justify-content: flex-end;
+}
+
+.lsr-location-connectivity span {
+    padding: 8px 11px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.lsr-location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.lsr-location-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 19px;
+    border: 1px solid #e8edf4;
+    border-radius: 7px;
+    transition: all 0.25s ease;
+}
+
+.lsr-location-card:hover {
+    border-color: var(--lsr-orange);
+    box-shadow: 0 8px 22px rgba(23, 59, 115, 0.07);
+}
+
+.lsr-location-card > span {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    background: #fff1e5;
+    color: var(--lsr-orange);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.lsr-location-card h3 {
+    color: var(--lsr-blue);
+    font-size: 15px;
+    margin: 2px 0 7px;
+}
+
+.lsr-location-card p {
+    color: var(--lsr-muted);
+    font-size: 12px;
+    line-height: 1.75;
+    margin: 0;
+}
+
+
+/* =================================
+   LOCATION BENEFITS
+================================= */
+
+.lsr-location-benefit {
+    background: var(--lsr-light);
+}
+
+.lsr-location-benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.lsr-location-benefit h2 {
+    max-width: 540px;
+    margin-bottom: 0;
+}
+
+.lsr-location-benefit-grid > div:last-child p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 12px;
+}
+
+
+/* =================================
+   CAMPUS LIFE
+================================= */
+
+.lsr-campus {
+    background: #fff;
+}
+
+.lsr-campus-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 22px;
+}
+
+.lsr-campus-intro p {
+    margin: 0;
+}
+
+.lsr-campus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.lsr-campus-card {
+    padding: 22px;
+    border: 1px solid #e8edf4;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.lsr-campus-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--lsr-orange);
+    box-shadow: 0 8px 22px rgba(23, 59, 115, 0.07);
+}
+
+.lsr-campus-number {
+    display: inline-block;
+    color: var(--lsr-orange);
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 13px;
+}
+
+.lsr-campus-card h3 {
+    color: var(--lsr-blue);
+    font-size: 16px;
+    margin: 0 0 9px;
+}
+
+.lsr-campus-card p {
+    color: var(--lsr-muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.lsr-campus-footer {
+    padding: 18px 20px;
+    margin-top: 18px;
+    border-left: 4px solid var(--lsr-orange);
+    background: var(--lsr-light);
+}
+
+.lsr-campus-footer p {
+    color: var(--lsr-blue);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   LAW PROGRAMS
+================================= */
+
+.lsr-programs {
+    background: var(--lsr-light);
+}
+
+.lsr-program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lsr-program-card {
+    padding: 27px;
+    border: 1px solid #e4eaf2;
+    border-radius: 9px;
+    background: #fff;
+    transition: all 0.25s ease;
+}
+
+.lsr-program-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--lsr-orange);
+    box-shadow: 0 12px 25px rgba(23, 59, 115, 0.08);
+}
+
+.lsr-program-featured {
+    border-top: 4px solid var(--lsr-orange);
+}
+
+.lsr-program-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.lsr-program-tag {
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: var(--lsr-orange);
+    background: #fff1e5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.lsr-program-number {
+    color: #dce3ed;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.lsr-program-card h3 {
+    color: var(--lsr-blue);
+    font-size: 25px;
+    margin: 0 0 17px;
+}
+
+.lsr-program-duration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    background: var(--lsr-light);
+    border-radius: 5px;
+}
+
+.lsr-program-duration span {
+    color: var(--lsr-muted);
+    font-size: 12px;
+}
+
+.lsr-program-duration strong {
+    color: var(--lsr-orange);
+    font-size: 14px;
+}
+
+.lsr-program-card > p {
+    color: var(--lsr-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+}
+
+.lsr-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--lsr-blue);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: gap 0.25s ease;
+}
+
+.lsr-card-link:hover {
+    color: var(--lsr-orange);
+    gap: 15px;
+}
+
+
+/* =================================
+   CAREER OPPORTUNITIES
+================================= */
+
+.lsr-careers {
+    background: #fff;
+}
+
+.lsr-careers-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 45px;
+}
+
+.lsr-careers-content {
+    position: sticky;
+    top: 100px;
+}
+
+.lsr-careers-content > p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0;
+}
+
+.lsr-career-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.lsr-career-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 53px;
+    padding: 11px 12px;
+    border: 1px solid #e8edf4;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.lsr-career-item:hover {
+    border-color: var(--lsr-orange);
+    background: #fffaf5;
+}
+
+.lsr-career-item > span:first-child {
+    color: var(--lsr-orange);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.lsr-career-item strong {
+    flex: 1;
+    color: var(--lsr-blue);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.lsr-career-arrow {
+    color: var(--lsr-orange);
+    font-size: 15px;
+}
+
+
+/* =================================
+   JOIN LSR CTA
+================================= */
+
+.lsr-join {
+    padding-top: 20px;
+}
+
+.lsr-join-box {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 35px;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(
+        130deg,
+        var(--lsr-blue-dark),
+        var(--lsr-blue)
+    );
+}
+
+.lsr-join-box::before,
+.lsr-join-box::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 28px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.lsr-join-box::before {
+    top: -110px;
+    left: -65px;
+}
+
+.lsr-join-box::after {
+    right: -65px;
+    bottom: -110px;
+}
+
+.lsr-join-box .iet-eyebrow,
+.lsr-join-box .lsr-eyebrow {
+    color: #ffbd8b;
+}
+
+.lsr-join-box h2 {
+    max-width: 800px;
+    margin: 0 auto 14px;
+    color: #fff;
+}
+
+.lsr-join-box h2 span {
+    display: block;
+    color: #ff9b42;
+}
+
+.lsr-join-box > p {
+    position: relative;
+    z-index: 1;
+    max-width: 790px;
+    margin: 0 auto 13px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.lsr-join-box .lsr-btn {
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+
+/* =================================
+   FAQ
+================================= */
+
+.lsr-faq {
+    background: #fff;
+}
+
+.lsr-faq-grid {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: start;
+    gap: 45px;
+}
+
+.lsr-faq-intro {
+    position: sticky;
+    top: 100px;
+}
+
+.lsr-faq-intro > p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0 0 15px;
+}
+
+.lsr-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lsr-faq-item {
+    overflow: hidden;
+    border: 1px solid #e5eaf1;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.lsr-faq-item[open] {
+    border-color: rgba(232, 117, 22, 0.6);
+    box-shadow: 0 5px 17px rgba(23, 59, 115, 0.06);
+}
+
+.lsr-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 16px 18px;
+    color: var(--lsr-blue);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.lsr-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.lsr-faq-icon {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--lsr-orange);
+    background: #fff1e5;
+    font-size: 19px;
+    transition: transform 0.2s ease;
+}
+
+.lsr-faq-item[open] .lsr-faq-icon {
+    transform: rotate(45deg);
+}
+
+.lsr-faq-item > p {
+    padding: 0 18px 16px;
+    color: var(--lsr-muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   ADMISSION CTA
+================================= */
+
+.lsr-admission {
+    background: var(--lsr-light);
+}
+
+.lsr-admission-box {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.lsr-admission-content > p {
+    color: var(--lsr-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 16px;
+}
+
+.lsr-admission-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.lsr-admission-benefits span {
+    color: var(--lsr-blue);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.lsr-admission-benefits span::first-letter {
+    color: var(--lsr-orange);
+}
+
+.lsr-admission-content .lsr-admission-note {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.lsr-admission-card {
+    padding: 28px;
+    border: 1px solid #e5eaf1;
+    border-radius: 9px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(23, 59, 115, 0.07);
+}
+
+.lsr-admission-card-label {
+    color: var(--lsr-orange);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.lsr-admission-card h3 {
+    color: var(--lsr-blue);
+    font-size: 23px;
+    line-height: 1.4;
+    margin: 13px 0;
+}
+
+.lsr-admission-card > p {
+    color: var(--lsr-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+}
+
+.lsr-admission-btn {
+    width: 100%;
+}
+
+.lsr-admission-programs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 19px;
+}
+
+.lsr-admission-programs span {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--lsr-blue);
+    background: #f0f3f8;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 991px) {
+
+    .lsr-advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lsr-location-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lsr-campus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lsr-intro-grid,
+    .lsr-location-benefit-grid,
+    .lsr-careers-grid,
+    .lsr-admission-box {
+        gap: 25px;
+    }
+
+    .lsr-careers-content,
+    .lsr-faq-intro {
+        position: static;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .lsr-section {
+        padding: 32px 0;
+    }
+
+    .lsr-container {
+        width: min(100% - 30px, 600px);
+    }
+
+    .lsr-hero {
+        min-height: 460px;
+    }
+
+    .lsr-hero-content {
+        padding-top: 55px;
+        padding-bottom: 100px;
+    }
+
+    .lsr-hero-content h1 {
+        font-size: 40px;
+    }
+
+    .lsr-hero-content h1 span {
+        font-size: 25px;
+    }
+
+    .lsr-hero-content > p {
+        font-size: 13px;
+    }
+
+    .lsr-hero-features {
+        gap: 12px 18px;
+        font-size: 10px;
+    }
+
+    .lsr-intro-grid,
+    .lsr-location-header,
+    .lsr-location-info,
+    .lsr-location-benefit-grid,
+    .lsr-campus-intro,
+    .lsr-careers-grid,
+    .lsr-faq-grid,
+    .lsr-admission-box {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .lsr-advantages-grid,
+    .lsr-location-grid,
+    .lsr-campus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lsr-location-connectivity {
+        justify-content: flex-start;
+    }
+
+    .lsr-program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lsr-career-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .lsr-join-box {
+        padding: 32px 22px;
+    }
+
+    .lsr-admission-benefits {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .lsr-section {
+        padding: 28px 0;
+    }
+
+    .lsr-section-heading {
+        margin-bottom: 22px;
+    }
+
+    .lsr-section-heading h2,
+    .lsr-intro-content h2,
+    .lsr-location-header h2,
+    .lsr-location-benefit h2,
+    .lsr-careers-content h2,
+    .lsr-faq-intro h2,
+    .lsr-join-box h2,
+    .lsr-admission-content h2 {
+        font-size: 27px;
+    }
+
+    .lsr-hero {
+        min-height: 450px;
+    }
+
+    .lsr-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .lsr-hero-content h1 span {
+        font-size: 22px;
+    }
+
+    .lsr-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 250px;
+    }
+
+    .lsr-hero-features {
+        gap: 9px 13px;
+        padding: 12px 15px;
+        font-size: 9px;
+    }
+
+    .lsr-intro-highlight {
+        padding: 23px;
+    }
+
+    .lsr-intro-highlight h3 {
+        font-size: 28px;
+    }
+
+    .lsr-advantages-grid,
+    .lsr-location-grid,
+    .lsr-campus-grid,
+    .lsr-career-list {
+        grid-template-columns: 1fr;
+    }
+
+    .lsr-advantage-card,
+    .lsr-campus-card {
+        padding: 19px;
+    }
+
+    .lsr-location-info {
+        padding: 18px;
+    }
+
+    .lsr-location-card {
+        padding: 16px;
+    }
+
+    .lsr-program-card {
+        padding: 22px;
+    }
+
+    .lsr-program-card h3 {
+        font-size: 22px;
+    }
+
+    .lsr-join-box {
+        padding: 28px 17px;
+    }
+
+    .lsr-faq-item summary {
+        padding: 14px;
+        font-size: 12px;
+    }
+
+    .lsr-faq-item > p {
+        padding: 0 14px 14px;
+    }
+
+    .lsr-admission-benefits {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .lsr-admission-card {
+        padding: 22px;
+    }
+
+    .lsr-admission-card h3 {
+        font-size: 21px;
+    }
+}

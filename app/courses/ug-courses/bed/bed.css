@@ -1,0 +1,996 @@
+/* =========================================
+   B.ED PAGE - BASE
+========================================= */
+
+.bed-page {
+    --bed-blue: #173B73;
+    --bed-blue-2: #2a6ccf;
+    --bed-dark: #0b1f40;
+    --bed-orange: #E87516;
+    --bed-orange-2: #ff9a3c;
+    --bed-sky: #38a9e8;
+    --bed-text: #4a5568;
+    --bed-radius: 20px;
+    --bed-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    color: #252d3a;
+    font-family: inherit;
+}
+
+.bed-page *,
+.bed-page *::before,
+.bed-page *::after {
+    box-sizing: border-box;
+}
+
+.bed-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes bedFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bedFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(40px, 30px) scale(1.15);
+    }
+}
+
+@keyframes bedShimmer {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes bedPulse {
+    0%, 100% {
+        box-shadow: 0 10px 25px rgba(232, 117, 22, 0.35);
+    }
+    50% {
+        box-shadow: 0 12px 38px rgba(232, 117, 22, 0.7);
+    }
+}
+
+@keyframes bedGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* =========================================
+   FULL WIDTH BANNER IMAGE
+   ORIGINAL IMAGE - NO CROP
+========================================= */
+
+.bed-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #0b1f40;
+    line-height: 0;
+}
+
+.bed-banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =========================================
+   TOP INTRO SECTION
+========================================= */
+
+.bed-top-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 55px 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(232, 117, 22, 0.55), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 169, 232, 0.45), transparent 42%),
+        linear-gradient(120deg, #071a38, #173B73 60%, #1d4e94);
+}
+
+.bed-top-section::before,
+.bed-top-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(55px);
+    pointer-events: none;
+}
+
+.bed-top-section::before {
+    top: -160px;
+    right: -100px;
+    background: rgba(232, 117, 22, 0.35);
+    animation: bedFloat 16s ease-in-out infinite;
+}
+
+.bed-top-section::after {
+    bottom: -180px;
+    left: -100px;
+    background: rgba(56, 169, 232, 0.3);
+    animation: bedFloat 18s ease-in-out infinite reverse;
+}
+
+.bed-hero-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 48px 55px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    animation: bedFadeUp 0.9s ease both;
+}
+
+.bed-label {
+    display: inline-block;
+    padding: 7px 16px;
+    margin-bottom: 17px;
+    color: #ffc58f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: rgba(232, 117, 22, 0.14);
+    border: 1px solid rgba(232, 117, 22, 0.35);
+    border-radius: 999px;
+}
+
+.bed-hero-content h1 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.bed-title-line {
+    width: 85px;
+    height: 4px;
+    margin: 18px auto 24px;
+    background: linear-gradient(
+        90deg,
+        var(--bed-orange),
+        #ffc58f,
+        var(--bed-sky)
+    );
+    background-size: 200% 100%;
+    border-radius: 5px;
+    animation: bedShimmer 3s linear infinite;
+}
+
+.bed-hero-content h2 {
+    margin: 0 0 18px;
+    color: #ffc58f;
+    font-size: clamp(19px, 2.5vw, 25px);
+    line-height: 1.5;
+}
+
+.bed-hero-content > p {
+    max-width: 900px;
+    margin: 0 auto 28px;
+    color: #e7edf7;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.bed-primary-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(
+        135deg,
+        var(--bed-orange),
+        var(--bed-orange-2)
+    );
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 10px 25px rgba(232, 117, 22, 0.4);
+    transition: all 0.35s var(--bed-ease);
+}
+
+.bed-primary-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+}
+
+.bed-primary-btn:hover {
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(232, 117, 22, 0.55);
+}
+
+.bed-primary-btn:hover::before {
+    left: 140%;
+}
+
+.bed-primary-btn span {
+    transition: transform 0.3s ease;
+}
+
+.bed-primary-btn:hover span {
+    transform: translateX(6px);
+}
+
+/* =========================================
+   SHARED GLASSMORPHISM
+========================================= */
+
+.bed-glass {
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--bed-radius);
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    backdrop-filter: blur(18px) saturate(170%);
+    box-shadow:
+        0 12px 40px rgba(23, 59, 115, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transition:
+        transform 0.4s var(--bed-ease),
+        box-shadow 0.4s var(--bed-ease),
+        background 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* =========================================
+   COURSE DETAILS CARDS
+========================================= */
+
+.bed-course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.bed-course-card {
+    padding: 25px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.bed-course-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.bed-card-number {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--bed-orange);
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.bed-course-card .bed-card-number {
+    color: #ffc58f;
+}
+
+.bed-course-card h3 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.bed-course-card p {
+    margin: 0;
+    color: #e5edf9;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+.bed-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 65px 0;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255, 140, 50, 0.35), transparent 38%),
+        radial-gradient(circle at 90% 80%, rgba(56, 169, 232, 0.35), transparent 40%),
+        linear-gradient(135deg, #e8f0ff, #fff0df);
+}
+
+.bed-section::before,
+.bed-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(55px);
+    pointer-events: none;
+}
+
+.bed-section::before {
+    top: -160px;
+    left: -150px;
+    background: rgba(232, 117, 22, 0.25);
+    animation: bedFloat 18s ease-in-out infinite;
+}
+
+.bed-section::after {
+    right: -150px;
+    bottom: -160px;
+    background: rgba(56, 169, 232, 0.25);
+    animation: bedFloat 20s ease-in-out infinite reverse;
+}
+
+.bed-section-dark {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(232, 117, 22, 0.4), transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(56, 169, 232, 0.35), transparent 42%),
+        linear-gradient(135deg, #071a38, #173B73 60%, #0e3470);
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.bed-heading {
+    max-width: 900px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.bed-heading h2 {
+    margin: 0;
+    color: var(--bed-blue);
+    font-size: clamp(27px, 4vw, 39px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.bed-section-dark .bed-heading h2 {
+    color: #fff;
+}
+
+.bed-section-dark .bed-label {
+    color: #ffc58f;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.bed-center-text {
+    max-width: 850px;
+    margin: -15px auto 35px;
+    color: var(--bed-text);
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.bed-section-dark .bed-center-text {
+    color: #d6e2f5;
+}
+
+/* =========================================
+   WHY CHOOSE CARDS
+========================================= */
+
+.bed-reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.bed-reason-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border-left: 5px solid var(--bed-orange);
+}
+
+.bed-reason-card::before,
+.bed-advantage-card::before,
+.bed-career-card::before,
+.bed-admission-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--bed-orange),
+        var(--bed-orange-2),
+        var(--bed-sky)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+}
+
+.bed-reason-card:hover::before,
+.bed-advantage-card:hover::before,
+.bed-career-card:hover::before,
+.bed-admission-card:hover::before {
+    transform: scaleX(1);
+}
+
+.bed-reason-card:hover,
+.bed-advantage-card:hover,
+.bed-career-card:hover,
+.bed-admission-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.72);
+    border-color: rgba(232, 117, 22, 0.55);
+    box-shadow: 0 24px 55px rgba(23, 59, 115, 0.24);
+}
+
+.bed-reason-card h3,
+.bed-advantage-card h3,
+.bed-career-card h3,
+.bed-admission-card h3 {
+    margin: 0 0 13px;
+    color: var(--bed-blue);
+    font-size: 19px;
+    line-height: 1.45;
+}
+
+.bed-reason-card p,
+.bed-advantage-card p,
+.bed-career-card p,
+.bed-admission-card p {
+    margin: 0;
+    color: var(--bed-text);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   COURSE DETAILS
+========================================= */
+
+.bed-details-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.bed-details-card,
+.bed-eligibility-card {
+    padding: 32px;
+}
+
+.bed-details-card h3,
+.bed-eligibility-card h3 {
+    margin: 0 0 24px;
+    color: var(--bed-blue);
+    font-size: 23px;
+}
+
+.bed-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(23, 59, 115, 0.15);
+}
+
+.bed-detail-row:last-child {
+    border-bottom: 0;
+}
+
+.bed-detail-row span {
+    color: var(--bed-text);
+    font-size: 14px;
+}
+
+.bed-detail-row strong {
+    color: var(--bed-blue);
+    font-size: 14px;
+    text-align: right;
+}
+
+.bed-eligibility-card p,
+.bed-eligibility-card li {
+    color: var(--bed-text);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.bed-eligibility-card ul {
+    margin: 18px 0 0;
+    padding-left: 22px;
+}
+
+.bed-eligibility-card li {
+    margin-bottom: 12px;
+}
+
+.bed-eligibility-card li::marker {
+    color: var(--bed-orange);
+}
+
+/* Dark section glass cards */
+
+.bed-section-dark .bed-glass {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.bed-section-dark .bed-details-card h3,
+.bed-section-dark .bed-eligibility-card h3 {
+    color: #fff;
+}
+
+.bed-section-dark .bed-detail-row {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bed-section-dark .bed-detail-row span,
+.bed-section-dark .bed-eligibility-card p,
+.bed-section-dark .bed-eligibility-card li {
+    color: #d6e2f5;
+}
+
+.bed-section-dark .bed-detail-row strong {
+    color: #ffc58f;
+}
+
+/* =========================================
+   ADMISSION CARDS
+========================================= */
+
+.bed-admission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bed-admission-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.bed-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
+    background: linear-gradient(
+        135deg,
+        var(--bed-orange),
+        var(--bed-orange-2)
+    );
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(232, 117, 22, 0.35);
+}
+
+/* =========================================
+   ADVANTAGES GRID
+========================================= */
+
+.bed-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bed-advantage-card {
+    position: relative;
+    overflow: hidden;
+    padding: 28px 25px;
+}
+
+.bed-advantage-card .bed-card-number {
+    color: #ffc58f;
+}
+
+.bed-advantage-card h3 {
+    color: #fff;
+}
+
+.bed-advantage-card p {
+    color: #d6e2f5;
+}
+
+.bed-advantage-card:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================
+   CAREER GRID
+========================================= */
+
+.bed-career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bed-career-card {
+    position: relative;
+    overflow: hidden;
+    padding: 27px 25px;
+}
+
+.bed-career-card .bed-card-number {
+    font-size: 30px;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.bed-cta-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 65px 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 170, 90, 0.5), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 169, 232, 0.4), transparent 42%),
+        linear-gradient(120deg, #c85a0a, #173B73 60%, #0b1f40);
+}
+
+.bed-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 45px;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.bed-cta-card > div {
+    max-width: 850px;
+}
+
+.bed-cta-card h2 {
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: clamp(25px, 3.5vw, 36px);
+    line-height: 1.35;
+}
+
+.bed-cta-card p {
+    margin: 0 0 14px;
+    color: #e7edf7;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.bed-cta-card .bed-primary-btn {
+    flex-shrink: 0;
+    animation: bedPulse 2.6s ease-in-out infinite;
+}
+
+/* =========================================
+   REGISTRATION
+========================================= */
+
+.bed-registration-section {
+    scroll-margin-top: 90px;
+}
+
+.bed-registration-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.bed-registration-card h3 {
+    margin: 0 0 15px;
+    color: var(--bed-blue);
+    font-size: 22px;
+}
+
+.bed-registration-card > p {
+    margin: 0 0 28px;
+    color: var(--bed-text);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.bed-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+.bed-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.bed-benefit-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(23, 59, 115, 0.12);
+}
+
+.bed-benefit-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    background: linear-gradient(
+        135deg,
+        var(--bed-orange),
+        var(--bed-orange-2)
+    );
+    border-radius: 50%;
+}
+
+.bed-benefit-item p {
+    margin: 2px 0 0;
+    color: var(--bed-blue);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bed-registration-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(23, 59, 115, 0.15);
+}
+
+.bed-registration-footer p {
+    margin: 0;
+    color: var(--bed-text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.bed-registration-footer strong {
+    color: var(--bed-blue);
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 992px) {
+    .bed-section {
+        padding: 55px 0;
+    }
+
+    .bed-course-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bed-advantages-grid,
+    .bed-career-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bed-details-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .bed-cta-card {
+        padding: 35px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+    .bed-container {
+        padding: 0 18px;
+    }
+
+    .bed-top-section {
+        padding: 40px 0;
+    }
+
+    .bed-hero-content {
+        padding: 32px 25px;
+        border-radius: 20px;
+    }
+
+    .bed-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .bed-hero-content > p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .bed-section {
+        padding: 45px 0;
+    }
+
+    .bed-heading {
+        margin-bottom: 30px;
+    }
+
+    .bed-reasons-grid,
+    .bed-admission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bed-cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+    }
+
+    .bed-registration-card {
+        padding: 28px 22px;
+    }
+
+    .bed-registration-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bed-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .bed-container {
+        padding: 0 15px;
+    }
+
+    .bed-course-grid,
+    .bed-advantages-grid,
+    .bed-career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bed-hero-content {
+        padding: 28px 19px;
+    }
+
+    .bed-hero-content h1 {
+        font-size: 26px;
+    }
+
+    .bed-heading h2 {
+        font-size: 26px;
+    }
+
+    .bed-reason-card,
+    .bed-admission-card,
+    .bed-advantage-card,
+    .bed-career-card {
+        padding: 24px 20px;
+    }
+
+    .bed-details-card,
+    .bed-eligibility-card {
+        padding: 24px 19px;
+    }
+
+    .bed-detail-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .bed-detail-row strong {
+        text-align: left;
+    }
+
+    .bed-primary-btn {
+        width: 100%;
+    }
+
+    .bed-registration-footer .bed-primary-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .bed-page *,
+    .bed-page *::before,
+    .bed-page *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

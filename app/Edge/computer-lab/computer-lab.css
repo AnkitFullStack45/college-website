@@ -1,0 +1,783 @@
+/* =================================
+   COMPUTER LAB PAGE
+================================= */
+
+.computer-lab-page {
+    width: 100%;
+    overflow: hidden;
+    color: #333;
+}
+
+.cl-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.computer-lab-page h2,
+.computer-lab-page h3,
+.computer-lab-page p {
+    overflow-wrap: break-word;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.cl-hero {
+    width: 100%;
+    line-height: 0;
+}
+
+.cl-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.cl-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.cl-heading > span {
+    display: block;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 1.8px;
+    margin-bottom: 8px;
+}
+
+.cl-heading h2 {
+    color: #173B73;
+    font-size: 30px;
+    font-weight: 750;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.cl-heading h2 strong {
+    color: #E87516;
+    font-weight: 750;
+}
+
+.cl-heading-line {
+    width: 55px;
+    height: 3px;
+    background: #E87516;
+    border-radius: 5px;
+    margin: 12px auto 0;
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.cl-intro {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+.cl-intro > p {
+    max-width: 1000px;
+    margin: 0 auto 12px;
+    color: #626262;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.cl-intro-highlight {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border: 1px solid #f2e0d0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(23, 59, 115, 0.07);
+}
+
+.cl-intro-highlight > div:first-child {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff0e4;
+    color: #E87516;
+    font-size: 23px;
+}
+
+.cl-intro-highlight h3 {
+    color: #173B73;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.cl-intro-highlight p {
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =================================
+   INFRASTRUCTURE
+================================= */
+
+.cl-infrastructure {
+    padding: 40px 0;
+    background: #f6f8fb;
+}
+
+.cl-infrastructure-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.cl-subtitle {
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+}
+
+.cl-infrastructure h2,
+.cl-hackathon h2 {
+    color: #173B73;
+    font-size: 29px;
+    font-weight: 750;
+    line-height: 1.4;
+    margin: 10px 0 15px;
+}
+
+.cl-infrastructure h2 strong,
+.cl-hackathon h2 strong {
+    color: #E87516;
+}
+
+.cl-infrastructure p,
+.cl-hackathon p {
+    color: #666;
+    font-size: 14.5px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.cl-check-list {
+    margin-top: 17px;
+}
+
+.cl-check-list div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 11px;
+}
+
+.cl-check-list i {
+    color: #E87516;
+    font-size: 16px;
+}
+
+.cl-infrastructure-card {
+    background: #173B73;
+    padding: 38px 25px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(23, 59, 115, 0.15);
+}
+
+.cl-infrastructure-card > i {
+    font-size: 48px;
+    color: #ff9b48;
+    margin-bottom: 18px;
+}
+
+.cl-infrastructure-card h3 {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.cl-infrastructure-card p {
+    color: #e3eaf5;
+    margin: 0;
+}
+
+
+/* =================================
+   FEATURES
+================================= */
+
+.cl-features {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cl-section-desc {
+    max-width: 850px;
+    margin: 0 auto 25px;
+    text-align: center;
+    color: #666;
+    font-size: 14.5px;
+    line-height: 1.8;
+}
+
+.cl-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.cl-feature-card {
+    padding: 23px 20px;
+    background: white;
+    border: 1px solid #e9edf2;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cl-feature-card::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #E87516;
+    left: 0;
+    top: 0;
+    transition: width 0.35s ease;
+}
+
+.cl-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #f1c39f;
+    box-shadow: 0 8px 22px rgba(23, 59, 115, 0.09);
+}
+
+.cl-feature-card:hover::before {
+    width: 100%;
+}
+
+.cl-feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0e4;
+    color: #E87516;
+    border-radius: 9px;
+    font-size: 21px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.cl-feature-card:hover .cl-feature-icon {
+    background: #E87516;
+    color: white;
+}
+
+.cl-feature-card h3 {
+    color: #173B73;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cl-feature-card p {
+    color: #666;
+    font-size: 13.5px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   HACKATHON
+================================= */
+
+.cl-hackathon {
+    background: #f6f8fb;
+    padding: 35px 0;
+}
+
+.cl-hackathon-grid {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.cl-hackathon-icon {
+    width: 115px;
+    height: 115px;
+    background: #173B73;
+    color: #ff9842;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    border-radius: 15px;
+}
+
+.cl-hackathon-content h2 {
+    font-size: 27px;
+}
+
+.cl-hackathon-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 15px;
+}
+
+.cl-hackathon-tags span {
+    padding: 7px 14px;
+    color: #173B73;
+    background: white;
+    border: 1px solid #e6eaf0;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =================================
+   PROGRAMMING TECHNOLOGIES
+================================= */
+
+.cl-technologies {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cl-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cl-tech-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 17px;
+    border: 1px solid #e9edf2;
+    border-radius: 7px;
+    color: #173B73;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cl-tech-item i {
+    color: #E87516;
+}
+
+.cl-tech-item:hover {
+    background: #173B73;
+    color: white;
+    border-color: #173B73;
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   EMERGING TECHNOLOGIES
+================================= */
+
+.cl-emerging {
+    padding: 40px 0;
+    background: #f6f8fb;
+}
+
+.cl-emerging-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.cl-emerging-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    border: 1px solid #e9edf2;
+    padding: 18px;
+    border-radius: 9px;
+    transition: all 0.3s ease;
+}
+
+.cl-emerging-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 20px rgba(23, 59, 115, 0.08);
+}
+
+.cl-emerging-card i {
+    color: #E87516;
+    font-size: 24px;
+}
+
+.cl-emerging-card h3 {
+    color: #173B73;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* =================================
+   BENEFITS
+================================= */
+
+.cl-benefits {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cl-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.cl-benefit-card {
+    text-align: center;
+    padding: 22px 16px;
+    border: 1px solid #e9edf2;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.cl-benefit-card:hover {
+    border-color: #E87516;
+    transform: translateY(-5px);
+    box-shadow: 0 7px 20px rgba(23, 59, 115, 0.08);
+}
+
+.cl-benefit-card > i {
+    font-size: 30px;
+    color: #E87516;
+    margin-bottom: 15px;
+}
+
+.cl-benefit-card h3 {
+    color: #173B73;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cl-benefit-card p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   KEY HIGHLIGHTS
+================================= */
+
+.cl-highlights {
+    padding: 35px 0;
+    background: #f6f8fb;
+}
+
+.cl-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px 30px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.cl-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #444;
+    font-size: 14px;
+}
+
+.cl-highlight-item i {
+    color: #E87516;
+    font-size: 17px;
+}
+
+
+/* =================================
+   WHY CHOOSE TEMPL
+================================= */
+
+.cl-why {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.cl-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.cl-why-grid > div {
+    padding: 20px 17px;
+    border: 1px solid #e9edf2;
+    border-radius: 9px;
+    transition: all 0.3s ease;
+}
+
+.cl-why-grid > div:hover {
+    border-color: #E87516;
+    box-shadow: 0 6px 18px rgba(23, 59, 115, 0.08);
+    transform: translateY(-4px);
+}
+
+.cl-why-grid i {
+    color: #E87516;
+    font-size: 27px;
+    margin-bottom: 14px;
+}
+
+.cl-why-grid h3 {
+    color: #173B73;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.cl-why-grid p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =================================
+   FAQ
+================================= */
+
+.cl-faq {
+    padding: 40px 0;
+    background: #f6f8fb;
+}
+
+.cl-faq-list {
+    max-width: 950px;
+    margin: auto;
+}
+
+.cl-faq-item {
+    background: white;
+    border: 1px solid #e8edf2;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.cl-faq-item[open] {
+    border-color: #E87516;
+}
+
+.cl-faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 19px;
+    cursor: pointer;
+    color: #173B73;
+    font-size: 14px;
+    font-weight: 650;
+    list-style: none;
+}
+
+.cl-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.cl-faq-item summary i {
+    color: #E87516;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.cl-faq-item[open] summary i {
+    transform: rotate(45deg);
+}
+
+.cl-faq-item > p {
+    color: #666;
+    font-size: 13.5px;
+    line-height: 1.8;
+    padding: 0 19px 15px;
+    margin: 0;
+}
+
+
+/* =================================
+   CONCLUSION
+================================= */
+
+.cl-conclusion {
+    background: #173B73;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cl-conclusion .cl-container {
+    max-width: 950px;
+}
+
+.cl-conclusion span {
+    color: #ffad65;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.cl-conclusion h2 {
+    color: white;
+    font-size: 29px;
+    font-weight: 750;
+    line-height: 1.4;
+    margin: 12px 0 15px;
+}
+
+.cl-conclusion p {
+    color: #e3eaf5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+
+/* =================================
+   TABLET RESPONSIVE
+================================= */
+
+@media (max-width: 992px) {
+
+    .cl-feature-grid,
+    .cl-emerging-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cl-benefit-grid,
+    .cl-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cl-infrastructure-grid {
+        gap: 25px;
+    }
+
+}
+
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+    .cl-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .cl-heading h2 {
+        font-size: 25px;
+    }
+
+    .cl-infrastructure-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cl-infrastructure h2,
+    .cl-hackathon h2 {
+        font-size: 25px;
+    }
+
+    .cl-hackathon-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cl-hackathon-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .cl-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .cl-heading h2 {
+        font-size: 22px;
+    }
+
+    .cl-feature-grid,
+    .cl-emerging-grid,
+    .cl-benefit-grid,
+    .cl-why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cl-intro-highlight {
+        padding: 12px;
+    }
+
+    .cl-intro-highlight h3 {
+        font-size: 16px;
+    }
+
+    .cl-tech-item {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .cl-conclusion h2 {
+        font-size: 23px;
+    }
+
+    .cl-faq-item summary {
+        font-size: 13px;
+        padding: 13px;
+    }
+
+}

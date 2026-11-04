@@ -34,10 +34,10 @@ const menuItems = [
             { name: "TEMPL EDGE", href: "/Edge/templ-edge" },
             { name: "Infrastructure", href: "/Edge/infrastructure" },
             { name: "Placement Facility", href: "/Edge/placement-facility" },
-            { name: "Campus Life", href: "/campus-life" },
-            { name: "Library", href: "/library" },
-            { name: "Computer Lab", href: "/computer-lab" },
-            { name: "College Club", href: "/college-clubs" },
+            { name: "Campus Life", href: "/Edge/campus-life" },
+            { name: "Library", href: "/Edge/library" },
+            { name: "Computer Lab", href: "/Edge/computer-lab" },
+            { name: "College Club", href: "/Edge/college-clubs" },
         ],
     },
 
@@ -48,11 +48,11 @@ const menuItems = [
         submenu: [
             {
                 name: "Institute For Education & Technical Sciences",
-                href: "/iet-college",
+                href: "/colleges/iet-college",
             },
             {
                 name: "LSR Law Academy",
-                href: "/lsr-law-academy",
+                href: "/colleges/lsr-law-academy",
             },
         ],
     },
@@ -64,21 +64,23 @@ const menuItems = [
         submenu: [
             {
                 name: "UG Courses",
-                href: "/courses/ug",
+                href: "/ug-courses",
                 submenu: [
-                    { name: "BCA (IET)", href: "/courses/bca" },
-                    { name: "BBA (IET)", href: "/courses/bba" },
-                    { name: "B.Com (IET)", href: "/courses/bcom" },
-                    { name: "B.A.LL.B (LSR)", href: "/courses/ba-llb" },
-                    { name: "B.P.E.S (IET)", href: "/courses/bpes" },
+                    { name: "BCA (IET)", href: "/courses/ug-courses/bca" },
+                    { name: "BBA (IET)", href: "/courses/ug-courses/bba" },
+                    { name: "B.Com (IET)", href: "/courses/ug-courses/bcom" },
+                    { name: "B.A.LL.B (LSR)", href: "/courses/ug-courses/ballb" },
+                    { name: "B.P.E.S (IET)", href: "/courses/ug-courses/bpes" },
+                    { name: "B.Ed (IET)", href: "/courses/ug-courses/bed" },
+                    { name: "LLB (LSR)", href: "/courses/ug-courses/llb" }
                 ],
             },
 
             {
                 name: "PG Courses",
-                href: "/courses/pg",
+                href: "/courses/pg-courses",
                 submenu: [
-                    { name: "M.Ed (IET)", href: "/courses/med" },
+                    { name: "M.Ed (IET)", href: "/courses/pg-courses/med" },
                 ],
             },
 
@@ -87,8 +89,7 @@ const menuItems = [
                 href: "/courses/pg-diploma",
                 submenu: [
                     {
-                        name: "PG Diploma Courses",
-                        href: "/courses/pg-diploma",
+                        name: "PG Diploma Courses",href: "/courses/pg-diploma",
                     },
                 ],
             },
@@ -194,6 +195,9 @@ export default function Navbar() {
     // Nested mobile dropdown
     const [activeNestedDropdown, setActiveNestedDropdown] = useState(null);
 
+    // Hides desktop dropdowns after a link click (until the mouse leaves)
+    const [hideDropdown, setHideDropdown] = useState(false);
+
     // Toggle mobile navigation
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
@@ -217,205 +221,206 @@ export default function Navbar() {
         setMenuOpen(false);
         setActiveDropdown(null);
         setActiveNestedDropdown(null);
+        setHideDropdown(true);
+        document.activeElement?.blur();
     };
 
     return (
-    <header className="main-navbar">
-        <div className="navbar-container">
+        <header className="main-navbar">
+            <div className="navbar-container">
 
-            {/* LOGO */}
-            <Link href="/" className="navbar-logo" onClick={closeMenu}>
-                <img
-                    src="/images/templ.webp"
-                    alt="TEMPL Group of Institutions"
-                />
-            </Link>
+                {/* LOGO */}
+                <Link href="/" className="navbar-logo" onClick={closeMenu}>
+                    <img
+                        src="/images/templ.webp"
+                        alt="TEMPL Group of Institutions"
+                    />
+                </Link>
 
-            {/* MOBILE MENU BUTTON */}
-            <button
-                type="button"
-                className={`mobile-toggle ${menuOpen ? "active" : ""}`}
-                onClick={toggleMenu}
-                aria-label="Toggle navigation"
-                aria-expanded={menuOpen}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                {/* MOBILE MENU BUTTON */}
+                <button
+                    type="button"
+                    className={`mobile-toggle ${menuOpen ? "active" : ""}`}
+                    onClick={toggleMenu}
+                    aria-label="Toggle navigation"
+                    aria-expanded={menuOpen}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-            {/* NAVIGATION */}
-            <nav className={`navbar-menu ${menuOpen ? "menu-open" : ""}`}>
-                <ul className="navbar-list">
-
-                    {menuItems.map((item) => (
-                        <li
-                            key={item.name}
-                            className={`navbar-item ${
-                                item.submenu ? "has-dropdown" : ""
-                            }`}
-                        >
-                            {/* MAIN MENU */}
-                            <div className="navbar-link-wrapper">
-
-                                <Link
-                                    href={item.href}
-                                    className="navbar-link"
-                                    onClick={(e) => {
-                                        if (
-                                            item.submenu &&
-                                            window.innerWidth <= 992
-                                        ) {
-                                            e.preventDefault();
-                                            toggleDropdown(item.name);
-                                        } else {
-                                            closeMenu();
-                                        }
-                                    }}
-                                >
-                                    {item.name}
-                                </Link>
-
-                                {item.submenu && (
-                                    <>
-                                        <span className="desktop-arrow">
-                                            <span></span>
-                                        </span>
-
-                                        <button
-                                            type="button"
-                                            className="mobile-arrow"
-                                            onClick={() =>
-                                                toggleDropdown(item.name)
+                {/* NAVIGATION */}
+                <nav
+                    className={`navbar-menu ${menuOpen ? "menu-open" : ""} ${
+                        hideDropdown ? "dropdown-hidden" : ""
+                    }`}
+                >
+                    <ul className="navbar-list">
+                        {menuItems.map((item) => (
+                            <li
+                                key={item.name}
+                                className={`navbar-item ${
+                                    item.submenu ? "has-dropdown" : ""
+                                }`}
+                                onMouseLeave={() => setHideDropdown(false)}
+                            >
+                                {/* MAIN MENU */}
+                                <div className="navbar-link-wrapper">
+                                    <Link
+                                        href={item.href}
+                                        className="navbar-link"
+                                        onClick={(e) => {
+                                            if (
+                                                item.submenu &&
+                                                window.innerWidth <= 992
+                                            ) {
+                                                e.preventDefault();
+                                                toggleDropdown(item.name);
+                                            } else {
+                                                closeMenu();
                                             }
-                                            aria-label={`Toggle ${item.name}`}
-                                        >
-                                            <span></span>
-                                        </button>
-                                    </>
-                                )}
-                            </div>
+                                        }}
+                                    >
+                                        {item.name}
+                                    </Link>
 
-                            {/* FIRST DROPDOWN */}
-                            {item.submenu && (
-                                <div
-                                    className={`dropdown-wrapper ${
-                                        activeDropdown === item.name
-                                            ? "dropdown-open"
-                                            : ""
-                                    }`}
-                                >
-                                    <ul className="dropdown-list">
+                                    {item.submenu && (
+                                        <>
+                                            <span className="desktop-arrow">
+                                                <span></span>
+                                            </span>
 
-                                        {item.submenu.map((subItem) => (
-                                            <li
-                                                key={subItem.name}
-                                                className={`dropdown-item ${
-                                                    subItem.submenu
-                                                        ? "has-nested-dropdown"
-                                                        : ""
-                                                }`}
+                                            <button
+                                                type="button"
+                                                className="mobile-arrow"
+                                                onClick={() =>
+                                                    toggleDropdown(item.name)
+                                                }
+                                                aria-label={`Toggle ${item.name}`}
                                             >
-                                                <div className="dropdown-link-wrapper">
+                                                <span></span>
+                                            </button>
+                                        </>
+                                    )}
+                                </div>
 
-                                                    <Link
-                                                        href={subItem.href}
-                                                        onClick={(e) => {
-                                                            if (
-                                                                subItem.submenu &&
-                                                                window.innerWidth <= 992
-                                                            ) {
-                                                                e.preventDefault();
-                                                                toggleNestedDropdown(
-                                                                    subItem.name
-                                                                );
-                                                            } else {
-                                                                closeMenu();
-                                                            }
-                                                        }}
-                                                    >
-                                                        {subItem.name}
-                                                    </Link>
-
-                                                    {subItem.submenu && (
-                                                        <>
-                                                            <span className="nested-desktop-arrow">
-                                                                ›
-                                                            </span>
-
-                                                            <button
-                                                                type="button"
-                                                                className="nested-mobile-arrow"
-                                                                onClick={() =>
+                                {/* FIRST DROPDOWN */}
+                                {item.submenu && (
+                                    <div
+                                        className={`dropdown-wrapper ${
+                                            activeDropdown === item.name
+                                                ? "dropdown-open"
+                                                : ""
+                                        }`}
+                                    >
+                                        <ul className="dropdown-list">
+                                            {item.submenu.map((subItem) => (
+                                                <li
+                                                    key={subItem.name}
+                                                    className={`dropdown-item ${
+                                                        subItem.submenu
+                                                            ? "has-nested-dropdown"
+                                                            : ""
+                                                    }`}
+                                                >
+                                                    <div className="dropdown-link-wrapper">
+                                                        <Link
+                                                            href={subItem.href}
+                                                            onClick={(e) => {
+                                                                if (
+                                                                    subItem.submenu &&
+                                                                    window.innerWidth <= 992
+                                                                ) {
+                                                                    e.preventDefault();
                                                                     toggleNestedDropdown(
                                                                         subItem.name
-                                                                    )
+                                                                    );
+                                                                } else {
+                                                                    closeMenu();
                                                                 }
-                                                                aria-label={`Toggle ${subItem.name}`}
-                                                            >
-                                                                ›
-                                                            </button>
-                                                        </>
-                                                    )}
-                                                </div>
+                                                            }}
+                                                        >
+                                                            {subItem.name}
+                                                        </Link>
 
-                                                {/* SECOND DROPDOWN */}
-                                                {subItem.submenu && (
-                                                    <div
-                                                        className={`nested-dropdown-wrapper ${
-                                                            activeNestedDropdown ===
-                                                            subItem.name
-                                                                ? "nested-dropdown-open"
-                                                                : ""
-                                                        }`}
-                                                    >
-                                                        <ul className="nested-dropdown-list">
-                                                            {subItem.submenu.map(
-                                                                (course) => (
-                                                                    <li key={course.name}>
-                                                                        <Link
-                                                                            href={course.href}
-                                                                            onClick={closeMenu}
-                                                                        >
-                                                                            {course.name}
-                                                                        </Link>
-                                                                    </li>
-                                                                )
-                                                            )}
-                                                        </ul>
+                                                        {subItem.submenu && (
+                                                            <>
+                                                                <span className="nested-desktop-arrow">
+                                                                    ›
+                                                                </span>
+
+                                                                <button
+                                                                    type="button"
+                                                                    className="nested-mobile-arrow"
+                                                                    onClick={() =>
+                                                                        toggleNestedDropdown(
+                                                                            subItem.name
+                                                                        )
+                                                                    }
+                                                                    aria-label={`Toggle ${subItem.name}`}
+                                                                >
+                                                                    ›
+                                                                </button>
+                                                            </>
+                                                        )}
                                                     </div>
-                                                )}
-                                            </li>
-                                        ))}
 
-                                    </ul>
-                                </div>
-                            )}
-                        </li>
-                    ))}
+                                                    {/* SECOND DROPDOWN */}
+                                                    {subItem.submenu && (
+                                                        <div
+                                                            className={`nested-dropdown-wrapper ${
+                                                                activeNestedDropdown ===
+                                                                subItem.name
+                                                                    ? "nested-dropdown-open"
+                                                                    : ""
+                                                            }`}
+                                                        >
+                                                            <ul className="nested-dropdown-list">
+                                                                {subItem.submenu.map(
+                                                                    (course) => (
+                                                                        <li key={course.name}>
+                                                                            <Link
+                                                                                href={course.href}
+                                                                                onClick={closeMenu}
+                                                                            >
+                                                                                {course.name}
+                                                                            </Link>
+                                                                        </li>
+                                                                    )
+                                                                )}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
 
-                </ul>
-            </nav>
-
-            {/* ERP LOGIN */}
-            <a
-                href="https://erp.templgroup.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="erp-login"
-                aria-label="ERP Login"
-                title="ERP Login"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 640"
-                    fill="currentColor"
+                {/* ERP LOGIN */}
+                <a
+                    href="https://erp.templgroup.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="erp-login"
+                    aria-label="ERP Login"
+                    title="ERP Login"
                 >
-                    <path d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112  562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z" />
-                </svg>
-            </a>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                        fill="currentColor"
+                    >
+                        <path d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112  562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z" />
+                    </svg>
+                </a>
 
-        </div>
-    </header>
-);
+            </div>
+        </header>
+    );
 }

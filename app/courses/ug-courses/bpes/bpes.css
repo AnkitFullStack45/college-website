@@ -1,0 +1,1197 @@
+/* =========================================
+   M.ED PAGE - BASE
+========================================= */
+
+.med-page {
+    --med-blue: #173B73;
+    --med-blue-2: #2a6ccf;
+    --med-dark: #0b1f40;
+    --med-orange: #E87516;
+    --med-orange-2: #ff9a3c;
+    --med-sky: #38a9e8;
+    --med-text: #4a5568;
+    --med-radius: 20px;
+    --med-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    color: #252d3a;
+}
+
+.med-page *,
+.med-page *::before,
+.med-page *::after {
+    box-sizing: border-box;
+}
+
+.med-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes medFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes medFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(45px, 30px) scale(1.15);
+    }
+}
+
+@keyframes medGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes medShimmer {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes medPulse {
+    0%, 100% {
+        box-shadow: 0 10px 25px rgba(232, 117, 22, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 12px 38px rgba(232, 117, 22, 0.7);
+    }
+}
+
+/* =========================================
+   FULL-WIDTH BANNER IMAGE
+========================================= */
+
+.med-banner {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+    background: #0b1f40;
+}
+
+.med-banner-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.med-heading {
+    position: relative;
+    padding: 45px 0 35px;
+    text-align: center;
+}
+
+.med-eyebrow {
+    display: inline-block;
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    color: #E87516;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(232, 117, 22, 0.1);
+    border: 1px solid rgba(232, 117, 22, 0.3);
+    border-radius: 999px;
+}
+
+.med-heading h1 {
+    max-width: 950px;
+    margin: 0 auto 15px;
+    color: var(--med-blue);
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.med-heading-highlight {
+    display: block;
+    margin-top: 10px;
+    color: var(--med-orange);
+    font-size: clamp(19px, 2.5vw, 27px);
+}
+
+.med-heading-line {
+    width: 75px;
+    height: 4px;
+    margin: 18px auto 0;
+    background: linear-gradient(
+        90deg,
+        var(--med-orange),
+        #ffbd83,
+        var(--med-orange)
+    );
+    background-size: 200% 100%;
+    border-radius: 10px;
+    animation: medShimmer 3s linear infinite;
+}
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+.med-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 40px 0;
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255, 140, 50, 0.4),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(56, 169, 232, 0.4),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 55% 95%,
+            rgba(150, 90, 240, 0.25),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #e3eeff, #fdeedd);
+}
+
+.med-soft-section {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(232, 117, 22, 0.28),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(56, 169, 232, 0.35),
+            transparent 42%
+        ),
+        linear-gradient(135deg, #fce9dc, #dceaff 55%, #eadcff);
+}
+
+.med-section::before,
+.med-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.med-section::before {
+    top: -180px;
+    left: -140px;
+    background: rgba(232, 117, 22, 0.17);
+    animation: medFloat 17s ease-in-out infinite;
+}
+
+.med-section::after {
+    right: -150px;
+    bottom: -180px;
+    background: rgba(56, 169, 232, 0.2);
+    animation: medFloat 20s ease-in-out infinite reverse;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.med-section-heading {
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.med-section-heading > span {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 15px;
+    color: var(--med-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(232, 117, 22, 0.1);
+    border: 1px solid rgba(232, 117, 22, 0.3);
+    border-radius: 999px;
+}
+
+.med-section-heading h2,
+.med-section h2 {
+    margin: 0;
+    color: var(--med-blue);
+    font-size: clamp(25px, 3.3vw, 36px);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.med-section-heading h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin-top: 15px;
+    background: linear-gradient(
+        90deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border-radius: 10px;
+}
+
+.med-section p {
+    margin: 10px 0;
+    color: var(--med-text);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.med-section-description {
+    margin-bottom: 25px !important;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.med-intro {
+    padding: 40px 0;
+}
+
+.med-intro h2 {
+    margin-bottom: 15px;
+    font-size: clamp(23px, 3vw, 31px);
+}
+
+.med-intro p {
+    margin: 0;
+    color: var(--med-text);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   INLINE LINKS
+========================================= */
+
+.med-inline-link {
+    color: var(--med-orange);
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.med-inline-link:hover {
+    color: var(--med-blue);
+}
+
+/* =========================================
+   HIGHLIGHT BOX
+========================================= */
+
+.med-highlight-box {
+    position: relative;
+    padding: 25px 28px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-left: 5px solid var(--med-orange);
+    border-radius: 18px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 30px rgba(23, 59, 115, 0.1);
+}
+
+.med-highlight-box p {
+    margin: 0;
+}
+
+/* =========================================
+   SHARED GLASS CARD
+========================================= */
+
+.med-glass-card {
+    position: relative;
+    overflow: hidden;
+    padding: 27px;
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    backdrop-filter: blur(18px) saturate(170%);
+    box-shadow:
+        0 12px 35px rgba(23, 59, 115, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition:
+        transform 0.4s var(--med-ease),
+        box-shadow 0.4s var(--med-ease),
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.med-glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--med-orange),
+        var(--med-orange-2),
+        var(--med-sky)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.med-glass-card:hover::before {
+    transform: scaleX(1);
+}
+
+.med-glass-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(232, 117, 22, 0.55);
+    box-shadow: 0 22px 45px rgba(23, 59, 115, 0.2);
+}
+
+.med-card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    background: linear-gradient(
+        135deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border-radius: 12px;
+    box-shadow: 0 7px 15px rgba(232, 117, 22, 0.35);
+}
+
+.med-glass-card h3 {
+    margin: 0 0 12px;
+    color: var(--med-blue);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.med-glass-card p {
+    margin: 0;
+    color: var(--med-text);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   CARD GRIDS
+========================================= */
+
+.med-card-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.med-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.med-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.med-eligibility-card {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   ADMISSION PROCESS
+========================================= */
+
+.med-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.med-process-card {
+    position: relative;
+    overflow: hidden;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 12px 30px rgba(23, 59, 115, 0.12);
+    transition: all 0.4s var(--med-ease);
+}
+
+.med-process-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(232, 117, 22, 0.55);
+    box-shadow: 0 20px 40px rgba(23, 59, 115, 0.2);
+}
+
+.med-process-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    background: linear-gradient(
+        135deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border-radius: 50%;
+    box-shadow: 0 7px 18px rgba(232, 117, 22, 0.3);
+}
+
+.med-process-card h3 {
+    margin: 0 0 12px;
+    color: var(--med-blue);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.med-process-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SEAT INTAKE
+========================================= */
+
+.med-seat-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 22px;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.13);
+}
+
+.med-seat-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--med-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.med-seat-box h2 {
+    margin-bottom: 12px;
+}
+
+.med-seat-box p {
+    margin: 10px 0;
+}
+
+.med-seat-count {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 155px;
+    height: 155px;
+    color: #fff;
+    background: linear-gradient(
+        135deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border: 7px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(232, 117, 22, 0.4);
+    animation: medPulse 2.8s ease-in-out infinite;
+}
+
+.med-seat-count strong {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.med-seat-count span {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* =========================================
+   CAREER SECTION
+========================================= */
+
+.med-career-card {
+    position: relative;
+    overflow: hidden;
+    padding: 35px;
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 22px;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.13);
+    transition: all 0.4s var(--med-ease);
+}
+
+.med-career-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 22px 45px rgba(23, 59, 115, 0.18);
+}
+
+.med-career-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(23, 59, 115, 0.12);
+}
+
+.med-career-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+    background: linear-gradient(
+        135deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border-radius: 16px;
+    box-shadow: 0 7px 18px rgba(232, 117, 22, 0.3);
+}
+
+.med-career-header h3 {
+    margin: 0;
+    color: var(--med-blue);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.med-career-subtitle {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--med-orange);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.med-career-card h4 {
+    margin: 22px 0 10px;
+    color: var(--med-blue);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.med-career-card p {
+    margin: 0;
+    color: var(--med-text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   CAREER RESPONSIBILITIES
+========================================= */
+
+.med-check-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    padding: 0;
+    margin: 15px 0;
+    list-style: none;
+}
+
+.med-check-list li {
+    position: relative;
+    padding: 13px 15px 13px 43px;
+    color: var(--med-text);
+    font-size: 14px;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+}
+
+.med-check-list li::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    background: var(--med-orange);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+/* =========================================
+   FAQ SECTION
+========================================= */
+
+.med-faq-list {
+    display: grid;
+    gap: 15px;
+}
+
+.med-faq-item {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(23, 59, 115, 0.1);
+    transition: all 0.35s ease;
+}
+
+.med-faq-item:hover,
+.med-faq-item[open] {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(232, 117, 22, 0.5);
+    box-shadow: 0 15px 32px rgba(23, 59, 115, 0.16);
+}
+
+.med-faq-item summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 22px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.med-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.med-faq-number {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    background: linear-gradient(
+        135deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border-radius: 10px;
+}
+
+.med-faq-question {
+    flex: 1;
+    color: var(--med-blue);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.med-faq-toggle {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    font-size: 22px;
+    background: var(--med-blue);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.med-faq-item[open] .med-faq-toggle {
+    color: #fff;
+    background: var(--med-orange);
+    transform: rotate(45deg);
+}
+
+.med-faq-answer {
+    padding: 0 25px 20px 73px;
+}
+
+.med-faq-answer p {
+    margin: 0;
+    color: var(--med-text);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   FINAL ADMISSION CTA
+========================================= */
+
+.med-admission-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 55px 35px;
+    margin: 40px 0;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 170, 90, 0.45),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(56, 169, 232, 0.4),
+            transparent 42%
+        ),
+        linear-gradient(
+            120deg,
+            #c85a0a,
+            #173B73 60%,
+            #0b1f40
+        );
+    background-size: 200% 200%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    box-shadow: 0 20px 45px rgba(23, 59, 115, 0.25);
+    animation: medGradient 8s ease infinite;
+}
+
+.med-admission-cta::before,
+.med-admission-cta::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(50px);
+    pointer-events: none;
+}
+
+.med-admission-cta::before {
+    top: -130px;
+    left: -80px;
+    background: rgba(255, 170, 90, 0.35);
+}
+
+.med-admission-cta::after {
+    right: -80px;
+    bottom: -130px;
+    background: rgba(56, 169, 232, 0.3);
+}
+
+.med-cta-eyebrow {
+    display: inline-block;
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    color: #ffe0c0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+}
+
+.med-admission-cta h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 15px;
+    color: #fff;
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.med-admission-cta p {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    color: #e7edf7;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.med-cta-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden;
+    padding: 14px 30px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(
+        135deg,
+        var(--med-orange),
+        var(--med-orange-2)
+    );
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 10px 25px rgba(232, 117, 22, 0.4);
+    transition:
+        transform 0.35s var(--med-ease),
+        box-shadow 0.35s var(--med-ease);
+    animation: medPulse 2.8s ease-in-out infinite;
+}
+
+.med-cta-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+}
+
+.med-cta-button:hover {
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(232, 117, 22, 0.55);
+}
+
+.med-cta-button:hover::before {
+    left: 140%;
+}
+
+.med-cta-button span {
+    transition: transform 0.3s ease;
+}
+
+.med-cta-button:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+    .med-container {
+        padding: 0 22px;
+    }
+
+    .med-section {
+        padding: 35px 0;
+    }
+
+    .med-grid-three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .med-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .med-seat-box {
+        padding: 28px;
+    }
+
+    .med-glass-card {
+        padding: 23px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    .med-container {
+        padding: 0 20px;
+    }
+
+    .med-heading {
+        padding: 35px 0 25px;
+    }
+
+    .med-heading h1 {
+        font-size: 30px;
+    }
+
+    .med-heading-highlight {
+        font-size: 19px;
+    }
+
+    .med-section {
+        padding: 32px 0;
+    }
+
+    .med-intro {
+        padding: 30px 0;
+    }
+
+    .med-grid-two,
+    .med-grid-three,
+    .med-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .med-seat-box {
+        padding: 25px;
+    }
+
+    .med-seat-count {
+        width: 130px;
+        height: 130px;
+    }
+
+    .med-seat-count strong {
+        font-size: 42px;
+    }
+
+    .med-career-card {
+        padding: 28px;
+    }
+
+    .med-check-list {
+        grid-template-columns: 1fr;
+    }
+
+    .med-admission-cta {
+        padding: 40px 25px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .med-container {
+        padding: 0 16px;
+    }
+
+    .med-banner-image {
+        height: auto;
+    }
+
+    .med-heading {
+        padding: 28px 0 20px;
+    }
+
+    .med-heading h1 {
+        font-size: 25px;
+    }
+
+    .med-heading-highlight {
+        font-size: 17px;
+    }
+
+    .med-section {
+        padding: 28px 0;
+    }
+
+    .med-section-heading h2,
+    .med-section h2 {
+        font-size: 24px;
+    }
+
+    .med-section p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .med-grid-two,
+    .med-grid-three,
+    .med-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .med-glass-card {
+        padding: 22px;
+    }
+
+    .med-highlight-box {
+        padding: 20px;
+    }
+
+    .med-seat-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 23px;
+    }
+
+    .med-seat-count {
+        align-self: center;
+        width: 125px;
+        height: 125px;
+    }
+
+    .med-seat-count strong {
+        font-size: 40px;
+    }
+
+    .med-career-card {
+        padding: 22px;
+    }
+
+    .med-career-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .med-career-header h3 {
+        font-size: 18px;
+    }
+
+    .med-career-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .med-faq-item summary {
+        gap: 10px;
+        padding: 15px 12px;
+    }
+
+    .med-faq-number {
+        width: 31px;
+        height: 31px;
+    }
+
+    .med-faq-question {
+        font-size: 13px;
+    }
+
+    .med-faq-toggle {
+        width: 27px;
+        height: 27px;
+        font-size: 19px;
+    }
+
+    .med-faq-answer {
+        padding: 0 15px 17px 53px;
+    }
+
+    .med-admission-cta {
+        padding: 32px 20px;
+        margin: 25px 0;
+    }
+
+    .med-admission-cta h2 {
+        font-size: 25px;
+    }
+
+    .med-admission-cta p {
+        font-size: 14px;
+    }
+
+    .med-cta-button {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .med-page *,
+    .med-page *::before,
+    .med-page *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,1063 @@
+/* ================================
+   IET COLLEGE PAGE
+================================ */
+
+.iet-page {
+    --iet-orange: #e87516;
+    --iet-orange-dark: #cf5e08;
+    --iet-blue: #173b73;
+    --iet-blue-dark: #102b53;
+    --iet-text: #39465a;
+    --iet-muted: #68758a;
+    --iet-light: #f5f7fb;
+
+    width: 100%;
+    overflow: hidden;
+    color: var(--iet-text);
+}
+
+.iet-page * {
+    box-sizing: border-box;
+}
+
+.iet-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.iet-section {
+    padding: 40px 0;
+}
+
+
+/* ================================
+   COMMON SECTION HEADING
+================================ */
+
+.iet-section-heading {
+    max-width: 760px;
+    margin-bottom: 28px;
+}
+
+.iet-heading-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.iet-eyebrow {
+    display: inline-block;
+    color: var(--iet-orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.iet-section-heading h2,
+.iet-intro-left h2,
+.iet-learning-content h2,
+.iet-faq-intro h2,
+.iet-future-box h2,
+.iet-admission-content h2 {
+    color: var(--iet-blue);
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+}
+
+.iet-section-heading h2 span,
+.iet-intro-left h2 span,
+.iet-learning-content h2 span,
+.iet-faq-intro h2 span,
+.iet-future-box h2 span,
+.iet-admission-content h2 span {
+    color: var(--iet-orange);
+}
+
+.iet-section-heading p {
+    color: var(--iet-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.iet-hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    background: var(--iet-blue-dark);
+    isolation: isolate;
+}
+
+.iet-hero-image,
+.iet-hero-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.iet-hero-image {
+    z-index: -2;
+}
+
+.iet-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.iet-hero-overlay {
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(9, 29, 59, 0.94) 0%,
+        rgba(14, 42, 79, 0.83) 48%,
+        rgba(14, 42, 79, 0.32) 100%
+    );
+}
+
+.iet-hero-content {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 65px 0 90px;
+    color: #fff;
+}
+
+.iet-hero-label {
+    display: inline-block;
+    color: #ffb16e;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.iet-hero-content h1 {
+    max-width: 760px;
+    color: #fff;
+    font-size: clamp(34px, 5vw, 57px);
+    line-height: 1.15;
+    font-weight: 800;
+    margin: 0 0 18px;
+}
+
+.iet-hero-content h1 span {
+    display: block;
+    color: #ff9b42;
+}
+
+.iet-hero-content > p {
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 25px;
+}
+
+.iet-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.iet-btn {
+    min-height: 46px;
+    padding: 12px 21px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.iet-btn-orange {
+    color: #fff;
+    background: var(--iet-orange);
+    border: 1px solid var(--iet-orange);
+}
+
+.iet-btn-orange:hover {
+    color: #fff;
+    background: var(--iet-orange-dark);
+    border-color: var(--iet-orange-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(232, 117, 22, 0.25);
+}
+
+.iet-btn-outline {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+}
+
+.iet-btn-outline:hover {
+    color: var(--iet-blue);
+    background: #fff;
+    border-color: #fff;
+}
+
+.iet-hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px 20px;
+    background: rgba(10, 31, 62, 0.78);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   INTRODUCTION
+================================ */
+
+.iet-intro-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.iet-intro-left h2 {
+    max-width: 560px;
+}
+
+.iet-intro-left p,
+.iet-learning-text p {
+    color: var(--iet-muted);
+    font-size: 15px;
+    line-height: 1.85;
+    margin: 0 0 13px;
+}
+
+.iet-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--iet-orange);
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: gap 0.25s ease;
+}
+
+.iet-text-link:hover {
+    color: var(--iet-blue);
+    gap: 14px;
+}
+
+.iet-intro-card {
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--iet-blue);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.iet-intro-card::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: -75px;
+    bottom: -95px;
+    border: 30px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.iet-intro-card-top {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 25px;
+}
+
+.iet-intro-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--iet-orange);
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 900;
+}
+
+.iet-intro-card-label {
+    color: #ffc18b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.iet-intro-card h3 {
+    font-size: 24px;
+    line-height: 1.35;
+    color: #fff;
+    margin: 0 0 12px;
+}
+
+.iet-intro-card > p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.iet-intro-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.iet-intro-card-footer span {
+    padding: 7px 10px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+
+/* ================================
+   ACADEMIC PROGRAMS
+================================ */
+
+.iet-programs {
+    background: var(--iet-light);
+}
+
+.iet-program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.iet-program-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 23px;
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 9px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.iet-program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 59, 115, 0.1);
+    border-color: rgba(232, 117, 22, 0.45);
+}
+
+.iet-program-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.iet-card-number {
+    color: var(--iet-orange);
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.iet-program-tag {
+    padding: 6px 9px;
+    color: var(--iet-blue);
+    background: #edf2fa;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.iet-program-card h3 {
+    color: var(--iet-blue);
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0 0 8px;
+}
+
+.iet-program-year {
+    color: var(--iet-orange);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.iet-program-card p {
+    color: var(--iet-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 18px;
+    flex-grow: 1;
+}
+
+.iet-card-link {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    color: var(--iet-blue);
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: gap 0.25s ease;
+}
+
+.iet-card-link:hover {
+    color: var(--iet-orange);
+    gap: 14px;
+}
+
+
+/* ================================
+   WHY CHOOSE IET
+================================ */
+
+.iet-reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.iet-reason-card {
+    padding: 23px;
+    border: 1px solid #e9edf3;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.25s ease;
+}
+
+.iet-reason-card:hover {
+    border-color: var(--iet-orange);
+    box-shadow: 0 9px 24px rgba(23, 59, 115, 0.08);
+}
+
+.iet-reason-number {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 17px;
+    border-radius: 7px;
+    background: #fff1e5;
+    color: var(--iet-orange);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.iet-reason-card h3 {
+    color: var(--iet-blue);
+    font-size: 17px;
+    margin: 0 0 9px;
+}
+
+.iet-reason-card p {
+    color: var(--iet-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* ================================
+   CAMPUS FACILITIES
+================================ */
+
+.iet-facilities {
+    background: var(--iet-light);
+}
+
+.iet-facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.iet-facility-card {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    padding: 20px 16px;
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.iet-facility-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--iet-orange);
+    box-shadow: 0 9px 22px rgba(23, 59, 115, 0.08);
+}
+
+.iet-facility-number {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--iet-orange);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.iet-facility-card h3 {
+    color: var(--iet-blue);
+    font-size: 15px;
+    margin: 2px 0 8px;
+}
+
+.iet-facility-card p {
+    color: var(--iet-muted);
+    font-size: 12px;
+    line-height: 1.75;
+    margin: 0;
+}
+
+
+/* ================================
+   LEARNING ENVIRONMENT
+================================ */
+
+.iet-learning {
+    background: #fff;
+}
+
+.iet-learning-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.iet-learning-content h2 {
+    max-width: 530px;
+    margin-bottom: 0;
+}
+
+.iet-learning-text p:last-child {
+    margin-bottom: 0;
+}
+
+.iet-learning-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.iet-learning-points span {
+    padding: 10px 16px;
+    border-radius: 5px;
+    background: #f1f4f9;
+    color: var(--iet-blue);
+    font-size: 12px;
+    font-weight: 700;
+    border-left: 3px solid var(--iet-orange);
+}
+
+
+/* ================================
+   RECOGNITIONS
+================================ */
+
+.iet-recognitions {
+    background: var(--iet-light);
+}
+
+.iet-recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.iet-recognition-card {
+    padding: 23px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e8edf4;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.iet-recognition-card:hover {
+    border-color: var(--iet-orange);
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(23, 59, 115, 0.08);
+}
+
+.iet-recognition-badge {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    border: 2px solid #ffdfc4;
+    border-radius: 50%;
+    background: #fff7f0;
+    color: var(--iet-orange);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.iet-recognition-card h3 {
+    color: var(--iet-blue);
+    font-size: 16px;
+    margin: 0 0 8px;
+}
+
+.iet-recognition-card p {
+    color: var(--iet-muted);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ================================
+   FAQ
+================================ */
+
+.iet-faq-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: start;
+    gap: 45px;
+}
+
+.iet-faq-intro {
+    position: sticky;
+    top: 100px;
+}
+
+.iet-faq-intro p {
+    color: var(--iet-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0 0 15px;
+}
+
+.iet-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.iet-faq-item {
+    background: #fff;
+    border: 1px solid #e5eaf1;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.iet-faq-item[open] {
+    border-color: rgba(232, 117, 22, 0.55);
+    box-shadow: 0 5px 18px rgba(23, 59, 115, 0.06);
+}
+
+.iet-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 16px 18px;
+    color: var(--iet-blue);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.iet-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.iet-faq-plus {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff1e5;
+    color: var(--iet-orange);
+    font-size: 19px;
+    transition: transform 0.2s ease;
+}
+
+.iet-faq-item[open] .iet-faq-plus {
+    transform: rotate(45deg);
+}
+
+.iet-faq-item > p {
+    padding: 0 18px 16px;
+    color: var(--iet-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* ================================
+   FUTURE CTA
+================================ */
+
+.iet-future {
+    padding-top: 20px;
+}
+
+.iet-future-box {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 35px;
+    border-radius: 12px;
+    text-align: center;
+    background: var(--iet-blue);
+    color: #fff;
+}
+
+.iet-future-box::before,
+.iet-future-box::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border: 30px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.iet-future-box::before {
+    top: -110px;
+    left: -65px;
+}
+
+.iet-future-box::after {
+    right: -65px;
+    bottom: -110px;
+}
+
+.iet-future-box .iet-eyebrow {
+    color: #ffb77e;
+}
+
+.iet-future-box h2 {
+    color: #fff;
+    margin-bottom: 13px;
+}
+
+.iet-future-box h2 span {
+    color: #ff9b42;
+}
+
+.iet-future-box > p {
+    max-width: 720px;
+    margin: 0 auto 22px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.iet-future-box .iet-btn {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ================================
+   ADMISSION CTA
+================================ */
+
+.iet-admission {
+    background: var(--iet-light);
+}
+
+.iet-admission-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.iet-admission-content > p {
+    color: var(--iet-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 17px;
+}
+
+.iet-admission-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.iet-admission-benefits span {
+    color: var(--iet-blue);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.iet-admission-benefits span::first-letter {
+    color: var(--iet-orange);
+}
+
+.iet-admission-content .iet-admission-note {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.iet-admission-card {
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e7ecf3;
+    box-shadow: 0 10px 28px rgba(23, 59, 115, 0.07);
+}
+
+.iet-admission-card-label {
+    color: var(--iet-orange);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.iet-admission-card h3 {
+    color: var(--iet-blue);
+    font-size: 24px;
+    line-height: 1.35;
+    margin: 13px 0;
+}
+
+.iet-admission-card > p {
+    color: var(--iet-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+}
+
+.iet-admission-btn {
+    width: 100%;
+}
+
+.iet-admission-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.iet-admission-courses span {
+    padding: 7px 12px;
+    color: var(--iet-blue);
+    background: #f0f3f8;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 991px) {
+
+    .iet-program-grid,
+    .iet-reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iet-facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iet-intro-grid,
+    .iet-admission-grid {
+        gap: 25px;
+    }
+
+    .iet-faq-layout {
+        gap: 25px;
+    }
+
+    .iet-recognition-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .iet-section {
+        padding: 32px 0;
+    }
+
+    .iet-container {
+        width: min(100% - 30px, 600px);
+    }
+
+    .iet-hero {
+        min-height: 470px;
+    }
+
+    .iet-hero-content {
+        width: min(100% - 30px, 600px);
+        padding: 55px 0 105px;
+    }
+
+    .iet-hero-overlay {
+        background: rgba(9, 29, 59, 0.82);
+    }
+
+    .iet-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .iet-hero-content > p {
+        font-size: 14px;
+    }
+
+    .iet-hero-bottom {
+        gap: 12px 22px;
+        font-size: 11px;
+    }
+
+    .iet-intro-grid,
+    .iet-learning-content,
+    .iet-admission-grid,
+    .iet-faq-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .iet-intro-card {
+        padding: 24px;
+    }
+
+    .iet-program-grid,
+    .iet-reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iet-faq-intro {
+        position: static;
+    }
+
+    .iet-future-box {
+        padding: 32px 20px;
+    }
+
+    .iet-admission-benefits {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .iet-section {
+        padding: 28px 0;
+    }
+
+    .iet-section-heading {
+        margin-bottom: 22px;
+    }
+
+    .iet-section-heading h2,
+    .iet-intro-left h2,
+    .iet-learning-content h2,
+    .iet-faq-intro h2,
+    .iet-future-box h2,
+    .iet-admission-content h2 {
+        font-size: 27px;
+    }
+
+    .iet-hero {
+        min-height: 440px;
+    }
+
+    .iet-hero-content h1 {
+        font-size: 31px;
+    }
+
+    .iet-hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 240px;
+    }
+
+    .iet-hero-bottom {
+        gap: 8px 14px;
+        padding: 12px 8px;
+        font-size: 10px;
+    }
+
+    .iet-program-grid,
+    .iet-reasons-grid,
+    .iet-facilities-grid,
+    .iet-recognition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .iet-program-card,
+    .iet-reason-card {
+        padding: 20px;
+    }
+
+    .iet-facility-card {
+        padding: 17px;
+    }
+
+    .iet-faq-item summary {
+        padding: 14px;
+        font-size: 13px;
+    }
+
+    .iet-faq-item > p {
+        padding: 0 14px 14px;
+    }
+
+    .iet-future-box {
+        padding: 28px 17px;
+    }
+
+    .iet-admission-card {
+        padding: 23px;
+    }
+
+    .iet-admission-card h3 {
+        font-size: 21px;
+    }
+}

@@ -1,0 +1,775 @@
+/* =====================================
+   COLLEGE CLUBS PAGE
+===================================== */
+
+.college-clubs-page {
+    width: 100%;
+    overflow: hidden;
+    color: #333;
+}
+
+.clubs-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.college-clubs-page h2,
+.college-clubs-page h3,
+.college-clubs-page h4,
+.college-clubs-page h5,
+.college-clubs-page p {
+    overflow-wrap: break-word;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.clubs-hero {
+    width: 100%;
+    line-height: 0;
+}
+
+.clubs-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* =====================================
+   SECTION HEADING
+===================================== */
+
+.clubs-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.clubs-heading > span {
+    display: block;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 1.7px;
+    margin-bottom: 8px;
+}
+
+.clubs-heading h2 {
+    color: #173B73;
+    font-size: 29px;
+    font-weight: 750;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.clubs-heading h2 strong {
+    color: #E87516;
+}
+
+.clubs-heading-line {
+    width: 55px;
+    height: 3px;
+    background: #E87516;
+    border-radius: 5px;
+    margin: 11px auto 0;
+}
+
+.clubs-section-desc {
+    max-width: 850px;
+    margin: 0 auto 25px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   INTRODUCTION
+===================================== */
+
+.clubs-intro {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
+.clubs-intro > p {
+    max-width: 1000px;
+    margin: 0 auto 12px;
+    color: #666;
+    font-size: 14.5px;
+    line-height: 1.85;
+}
+
+.clubs-intro-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 22px;
+}
+
+.clubs-intro-stats > div {
+    min-width: 155px;
+    padding: 15px 25px;
+    border: 1px solid #edf0f4;
+    border-radius: 9px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.clubs-intro-stats > div:hover {
+    border-color: #E87516;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(23, 59, 115, 0.08);
+}
+
+.clubs-intro-stats i {
+    color: #E87516;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.clubs-intro-stats h3 {
+    color: #173B73;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 3px;
+}
+
+.clubs-intro-stats p {
+    color: #777;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* =====================================
+   CLUB OVERVIEW
+===================================== */
+
+.clubs-overview {
+    padding: 40px 0;
+    background: #f6f8fb;
+}
+
+.clubs-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.clubs-overview-card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    background: white;
+    border: 1px solid #e9edf2;
+    border-radius: 11px;
+    padding: 24px 19px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.clubs-overview-card:hover {
+    transform: translateY(-6px);
+    border-color: #E87516;
+    box-shadow: 0 10px 25px rgba(23, 59, 115, 0.09);
+}
+
+.clubs-card-number {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    font-size: 35px;
+    font-weight: 800;
+    color: #f0f1f4;
+    transition: color 0.3s ease;
+}
+
+.clubs-overview-card:hover .clubs-card-number {
+    color: #ffead9;
+}
+
+.clubs-overview-icon {
+    position: relative;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0e4;
+    color: #E87516;
+    border-radius: 10px;
+    font-size: 23px;
+    margin-bottom: 17px;
+    transition: all 0.3s ease;
+}
+
+.clubs-overview-card:hover .clubs-overview-icon {
+    background: #E87516;
+    color: white;
+    transform: scale(1.07);
+}
+
+.clubs-overview-card h3 {
+    position: relative;
+    color: #173B73;
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.5;
+    margin-bottom: 7px;
+}
+
+.clubs-overview-card > p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.6;
+    min-height: 38px;
+    margin-bottom: 15px;
+}
+
+.clubs-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 700;
+    transition: gap 0.3s ease;
+}
+
+.clubs-overview-card:hover .clubs-explore {
+    gap: 15px;
+}
+
+
+/* =====================================
+   INDIVIDUAL CLUB DETAILS
+===================================== */
+
+.clubs-details {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.clubs-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.club-detail-card {
+    padding: 25px;
+    border: 1px solid #e9edf2;
+    border-radius: 11px;
+    background: white;
+    scroll-margin-top: 100px;
+    transition: box-shadow 0.3s ease;
+}
+
+.club-detail-card:hover {
+    box-shadow: 0 7px 22px rgba(23, 59, 115, 0.07);
+}
+
+.club-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 15px;
+}
+
+.club-detail-icon {
+    min-width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #173B73;
+    border-radius: 11px;
+    font-size: 26px;
+    transition: all 0.3s ease;
+}
+
+.club-detail-card:hover .club-detail-icon {
+    background: #E87516;
+    transform: rotate(-5deg);
+}
+
+.club-detail-header > div:last-child > span {
+    color: #E87516;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1px;
+}
+
+.club-detail-header h3 {
+    color: #173B73;
+    font-size: 22px;
+    font-weight: 750;
+    margin: 3px 0;
+}
+
+.club-detail-header p {
+    color: #777;
+    font-size: 13px;
+    margin: 0;
+}
+
+.club-detail-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+}
+
+.club-activities-heading {
+    color: #173B73;
+    font-size: 16px;
+    font-weight: 750;
+    margin-bottom: 13px;
+}
+
+.club-activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.club-activity {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.club-activity:hover {
+    background: #fff2e8;
+    transform: translateY(-3px);
+}
+
+.club-activity > i {
+    min-width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E87516;
+    background: white;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.club-activity h5 {
+    color: #173B73;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 2px 0 6px;
+}
+
+.club-activity p {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.club-management {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 17px;
+    margin-top: 18px;
+    border-top: 1px solid #edf0f4;
+}
+
+.club-management > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.club-management > div > i {
+    color: #E87516;
+    font-size: 19px;
+}
+
+.club-management span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: #777;
+    font-size: 11px;
+}
+
+.club-management strong {
+    color: #173B73;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   BENEFITS
+===================================== */
+
+.clubs-benefits {
+    padding: 40px 0;
+    background: #f6f8fb;
+}
+
+.clubs-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.clubs-benefit-card {
+    background: white;
+    border: 1px solid #e9edf2;
+    border-radius: 10px;
+    padding: 23px 19px;
+    transition: all 0.3s ease;
+}
+
+.clubs-benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: #E87516;
+    box-shadow: 0 8px 20px rgba(23, 59, 115, 0.08);
+}
+
+.clubs-benefit-icon {
+    width: 49px;
+    height: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff0e4;
+    color: #E87516;
+    border-radius: 9px;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.clubs-benefit-card h3 {
+    color: #173B73;
+    font-size: 16px;
+    font-weight: 750;
+    margin-bottom: 10px;
+}
+
+.clubs-benefit-card p {
+    color: #666;
+    font-size: 12.5px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =====================================
+   HOLISTIC DEVELOPMENT
+===================================== */
+
+.clubs-holistic {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.clubs-holistic-content > span {
+    color: #E87516;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+}
+
+.clubs-holistic-content h2 {
+    color: #173B73;
+    font-size: 27px;
+    font-weight: 750;
+    line-height: 1.45;
+    margin: 10px 0 14px;
+}
+
+.clubs-holistic-content h2 strong {
+    color: #E87516;
+}
+
+.clubs-holistic-content p {
+    color: #666;
+    font-size: 13.5px;
+    line-height: 1.85;
+    margin-bottom: 10px;
+}
+
+.clubs-holistic-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.clubs-holistic-icons > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 10px;
+    background: #f6f8fb;
+    border-radius: 9px;
+    transition: all 0.3s ease;
+}
+
+.clubs-holistic-icons > div:hover {
+    background: #173B73;
+    transform: translateY(-4px);
+}
+
+.clubs-holistic-icons i {
+    color: #E87516;
+    font-size: 25px;
+}
+
+.clubs-holistic-icons span {
+    color: #173B73;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.clubs-holistic-icons > div:hover span {
+    color: white;
+}
+
+
+/* =====================================
+   FAQ
+===================================== */
+
+.clubs-faq {
+    padding: 40px 0;
+    background: #f6f8fb;
+}
+
+.clubs-faq-list {
+    max-width: 950px;
+    margin: auto;
+}
+
+.clubs-faq-item {
+    background: white;
+    border: 1px solid #e9edf2;
+    border-radius: 8px;
+    margin-bottom: 9px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.clubs-faq-item[open] {
+    border-color: #E87516;
+}
+
+.clubs-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 18px;
+    color: #173B73;
+    font-size: 13.5px;
+    font-weight: 650;
+    cursor: pointer;
+    list-style: none;
+}
+
+.clubs-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.clubs-faq-item summary i {
+    color: #E87516;
+    font-size: 13px;
+    transition: transform 0.3s ease;
+}
+
+.clubs-faq-item[open] summary i {
+    transform: rotate(45deg);
+}
+
+.clubs-faq-item > p {
+    padding: 0 18px 14px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =====================================
+   CONCLUSION
+===================================== */
+
+.clubs-conclusion {
+    padding: 40px 0;
+    background: #173B73;
+    text-align: center;
+}
+
+.clubs-conclusion .clubs-container {
+    max-width: 950px;
+}
+
+.clubs-conclusion > div > span {
+    color: #ffad65;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 2px;
+}
+
+.clubs-conclusion h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 750;
+    line-height: 1.45;
+    margin: 12px 0;
+}
+
+.clubs-conclusion h2 strong {
+    color: #ffad65;
+}
+
+.clubs-conclusion p {
+    color: #e1e9f4;
+    font-size: 13.5px;
+    line-height: 1.85;
+    margin: 0;
+}
+
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 992px) {
+
+    .clubs-overview-grid,
+    .clubs-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .club-activities-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .clubs-holistic {
+        grid-template-columns: 1fr 0.6fr;
+        gap: 25px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .clubs-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .clubs-heading h2 {
+        font-size: 25px;
+    }
+
+    .clubs-holistic {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .club-activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .club-detail-card {
+        padding: 19px;
+    }
+
+    .club-detail-header h3 {
+        font-size: 19px;
+    }
+
+    .clubs-intro-stats {
+        gap: 10px;
+    }
+
+    .clubs-intro-stats > div {
+        min-width: 125px;
+        padding: 13px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .clubs-heading h2 {
+        font-size: 22px;
+    }
+
+    .clubs-heading > span {
+        font-size: 10px;
+    }
+
+    .clubs-overview-grid,
+    .clubs-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clubs-overview-card {
+        padding: 20px;
+    }
+
+    .club-detail-header {
+        gap: 12px;
+    }
+
+    .club-detail-icon {
+        min-width: 49px;
+        height: 49px;
+        font-size: 21px;
+    }
+
+    .club-management {
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .clubs-conclusion h2 {
+        font-size: 23px;
+    }
+
+    .clubs-intro-stats > div {
+        min-width: 105px;
+        padding: 12px 8px;
+    }
+
+}
