@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import "./Navbar.css";
@@ -25,7 +24,6 @@ const menuItems = [
             { name: "Head - Administrations & Finance Message", href: "/about/head-administration-finance-message"},
         ],
     },
-
     // OUR EDGE
     {
         name: "Our Edge",
@@ -40,7 +38,6 @@ const menuItems = [
             { name: "College Club", href: "/Edge/college-clubs" },
         ],
     },
-
     // COLLEGES
     {
         name: "Colleges",
@@ -75,7 +72,6 @@ const menuItems = [
                     { name: "LLB (LSR)", href: "/courses/ug-courses/llb" }
                 ],
             },
-
             {
                 name: "PG Courses",
                 href: "/courses/pg-courses",
@@ -83,25 +79,22 @@ const menuItems = [
                     { name: "M.Ed (IET)", href: "/courses/pg-courses/med" },
                 ],
             },
-
             {
                 name: "PG Diploma",
                 href: "/courses/pg-diploma",
                 submenu: [
                     {
-                        name: "PG Diploma Courses",href: "/courses/pg-diploma",
+                        name: "D.El.Ed",  href: "/courses/pg-diploma/deled",
                     },
                 ],
             },
-
             {
                 name: "English Speaking",
                 href: "/courses/english-speaking",
             },
-
             {
                 name: "Free Courses",
-                href: "/courses/free",
+                href: "/courses/free-courses",
             },
         ],
     },
@@ -113,46 +106,47 @@ const menuItems = [
         submenu: [
             {
                 name: "Department of Management",
-                href: "/management",
+                href: "/departments/dep-management",
             },
             {
                 name: "Department of Computer Science",
-                href: "/dep-computer-science",
+                href: "/departments/dep-computer",
             },
             {
                 name: "Department of Commerce",
-                href: "/dep-commerce",
+                href: "/departments/dep-commerce",
             },
             {
                 name: "Department of Law",
-                href: "/dep-of-law",
+                href: "/departments/dep-law",
             },
             {
-                name: "Department of Physical Education & Sports",
-                href: "/bpes",
+                name: "Department of Education",
+                href: "/departments/dep-education",
             },
+                 
         ],
     },
 
     // REGISTER NOW
     {
         name: "Register Now",
-        href: "/register-now",
+        href: "/register",
         submenu: [
-            { name: "Enquiry Form", href: "/enquiry-form" },
+            { name: "Enquiry Form", href: "/register/enquiry" },
             {
                 name: "Information Brochure",
                 href: "/information-brochure",
             },
+            { name: "Book a Demo Class", href: "/register/demo-class" },
             { name: "Admission 2026", href: "/admission-2026" },
-            { name: "Book a Demo Class", href: "/demo-class" },
             {
                 name: "Scholarship and Career Evaluation",
                 href: "/scholar-registration",
             },
             {
                 name: "Webinar Registration",
-                href: "/student-login",
+                href: "/register/webinar",
             },
         ],
     },
@@ -176,11 +170,11 @@ const menuItems = [
             },
             {
                 name: "MCQ Assessment",
-                href: "/mcq-assessment",
+                href: "/student/mcq_assessment_test",
             },
             {
                 name: "Student Login",
-                href: "/student-login",
+                href: "/student/student_login",
             },
         ],
     },

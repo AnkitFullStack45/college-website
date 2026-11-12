@@ -1,0 +1,212 @@
+/* =========================================
+   DEMO CLASS REQUEST PAGE
+========================================= */
+
+.demo-page {
+    --demo-primary: #173d75;
+    --demo-secondary: #2366b1;
+    --demo-accent: #e7a83e;
+    --demo-dark: #12243d;
+    --demo-text: #566579;
+
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 70px;
+    background: #f4f8fd;
+    color: var(--demo-dark);
+    font-family: inherit;
+}
+
+.demo-page * {
+    box-sizing: border-box;
+}
+
+/* ---------- Hero ---------- */
+
+.demo-hero {
+    padding: 70px 20px 90px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1), transparent 25%),
+        linear-gradient(120deg, #122c53, #2366a8);
+    text-align: center;
+}
+
+.demo-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #f6c56e;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.demo-hero h1 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.demo-hero h1 span {
+    color: #f6c56e;
+}
+
+.demo-hero p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ---------- Form card ---------- */
+
+.demo-container {
+    width: min(760px, 92%);
+    margin: -45px auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.demo-form-card {
+    padding: 38px 34px;
+    border: 1px solid rgba(35, 102, 177, 0.13);
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 35px rgba(30, 67, 112, 0.08);
+}
+
+.demo-form-card h2 {
+    margin: 0 0 25px;
+    color: var(--demo-dark);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.demo-form-card form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.demo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.demo-full {
+    grid-column: 1 / -1;
+}
+
+.demo-field label {
+    color: var(--demo-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.demo-field label b {
+    color: #d93025;
+}
+
+.demo-field input,
+.demo-field select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dbe7f6;
+    border-radius: 11px;
+    background: #f8fbff;
+    color: var(--demo-dark);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.demo-field select {
+    text-overflow: ellipsis;
+}
+
+.demo-field input::placeholder {
+    color: #9aa8ba;
+}
+
+.demo-field input:focus,
+.demo-field select:focus {
+    border-color: var(--demo-secondary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(35, 102, 177, 0.12);
+}
+
+.demo-field small {
+    color: #d93025;
+    font-size: 12px;
+}
+
+.demo-submit {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--demo-accent);
+    color: #192b43;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.demo-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+    background: #ffc45f;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.demo-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ---------- Alerts ---------- */
+
+.demo-alert {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.demo-alert-success {
+    border: 1px solid #b7e1c1;
+    background: #e8f3e9;
+    color: #1f6b36;
+}
+
+.demo-alert-error {
+    border: 1px solid #f3c1bc;
+    background: #fdecea;
+    color: #a52a20;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 576px) {
+    .demo-hero {
+        padding: 50px 20px 75px;
+    }
+
+    .demo-form-card {
+        padding: 26px 20px;
+    }
+
+    .demo-form-card form {
+        grid-template-columns: 1fr;
+    }
+}

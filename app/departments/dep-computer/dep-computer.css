@@ -1,0 +1,1228 @@
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+    --primary: #1746a2;
+    --primary-dark: #102c63;
+    --secondary: #087fbd;
+    --accent: #00b8d9;
+
+    --dark: #14213d;
+    --text: #394963;
+    --muted: #718096;
+
+    --white: #ffffff;
+    --light: #f4f8ff;
+
+    --border: rgba(23, 70, 162, 0.12);
+
+    --glass: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.8);
+
+    --shadow:
+        0 8px 30px rgba(23, 70, 162, 0.08);
+
+    --shadow-hover:
+        0 18px 40px rgba(23, 70, 162, 0.15);
+
+    --radius: 16px;
+}
+
+
+/* ================= GLOBAL ================= */
+
+.page,
+.page * {
+    box-sizing: border-box;
+}
+
+.page {
+    width: 100%;
+    overflow: hidden;
+    color: var(--text);
+    background: #ffffff;
+}
+
+.page p {
+    line-height: 1.7;
+}
+
+.page a {
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+
+/* ================= HERO IMAGE ================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: clamp(260px, 34vw, 470px);
+    overflow: hidden;
+    background: #eaf1fb;
+}
+
+.heroImage {
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1.2s ease;
+}
+
+.hero:hover .heroImage {
+    transform: scale(1.025);
+}
+
+
+/* ================= COMMON SECTION HEADING ================= */
+
+.sectionHeading {
+    text-align: center;
+    margin-bottom: 27px;
+    animation: fadeUp 0.8s ease both;
+}
+
+.sectionHeading > span {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.sectionHeading h2 {
+    color: var(--dark);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+    margin: 0 0 9px;
+    letter-spacing: -0.7px;
+}
+
+.sectionHeading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ================= INTRODUCTION ================= */
+
+.introSection {
+    padding: 42px 0;
+    background:
+        radial-gradient(circle at 10% 20%, #eaf4ff 0, transparent 35%),
+        radial-gradient(circle at 90% 80%, #e6faff 0, transparent 35%),
+        #ffffff;
+}
+
+.sectionLabel {
+    display: table;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background: #eaf2ff;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin: 0 auto 12px;
+}
+
+.mainTitle {
+    color: var(--dark);
+    text-align: center;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin: 0 0 7px;
+    background: linear-gradient(100deg, #123b85, #078bc1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subTitle {
+    color: var(--primary);
+    text-align: center;
+    font-size: 19px;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+.groupText {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 28px;
+}
+
+.introContent {
+    display: grid;
+    grid-template-columns: 1.7fr 0.9fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.introText {
+    padding: 23px 25px;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.introText h3 {
+    font-size: 23px;
+    color: var(--primary);
+    margin: 0 0 13px;
+}
+
+.introText p {
+    color: var(--text);
+    font-size: 14px;
+    margin: 0 0 11px;
+}
+
+.introText p:last-child {
+    margin-bottom: 0;
+}
+
+.introHighlight {
+    position: relative;
+    overflow: hidden;
+    padding: 27px 24px;
+    border-radius: var(--radius);
+    color: #ffffff;
+    background: linear-gradient(140deg, #123b85, #087fbd, #08a6c9);
+    box-shadow: 0 12px 30px rgba(8, 127, 189, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.introHighlight::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -65px;
+    top: -65px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.highlightIcon {
+    font-size: 35px;
+    margin-bottom: 13px;
+}
+
+.introHighlight h3 {
+    font-size: 23px;
+    margin: 0 0 12px;
+    color: #ffffff;
+}
+
+.introHighlight p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.highlightFooter {
+    margin-top: 18px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ================= DEPARTMENT HIGHLIGHTS ================= */
+
+.highlightsSection {
+    padding: 43px 0;
+    background: var(--light);
+}
+
+.highlightGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.highlightCard {
+    padding: 20px 17px;
+    border: 1px solid var(--border);
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: all 0.35s ease;
+    animation: fadeUp 0.7s ease both;
+}
+
+.highlightCard:hover {
+    transform: translateY(-7px);
+    border-color: rgba(0, 184, 217, 0.45);
+    box-shadow: var(--shadow-hover);
+    background: #ffffff;
+}
+
+.cardIcon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e4efff, #d9f7ff);
+    font-size: 23px;
+    margin-bottom: 13px;
+    transition: transform 0.3s ease;
+}
+
+.highlightCard:hover .cardIcon {
+    transform: rotate(-7deg) scale(1.1);
+}
+
+.highlightCard h3 {
+    color: var(--primary);
+    font-size: 15px;
+    margin: 0 0 9px;
+    line-height: 1.4;
+}
+
+.highlightCard p {
+    color: var(--muted);
+    font-size: 12.5px;
+    margin: 0;
+    line-height: 1.65;
+}
+
+
+/* ================= PROGRAM SECTION ================= */
+
+.programSection {
+    padding: 43px 0;
+    background:
+        radial-gradient(circle at 90% 10%, #e7f5ff, transparent 35%),
+        #ffffff;
+}
+
+.programCard {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 27px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow);
+    transition: all 0.35s ease;
+}
+
+.programCard:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.programTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.programBadge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #e8f3ff;
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.programTop h3 {
+    font-size: 24px;
+    color: var(--dark);
+    margin: 0 0 8px;
+}
+
+.programTop p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+}
+
+.programIcon {
+    min-width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e4edff, #d8f8ff);
+    border-radius: 18px;
+    font-size: 36px;
+}
+
+.programDescription {
+    color: var(--text);
+    font-size: 14px;
+    margin: 17px 0 0;
+}
+
+.programFooter {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.programFooter > span {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.programButton {
+    display: inline-block;
+    padding: 11px 19px;
+    color: #ffffff;
+    background: linear-gradient(110deg, #1746a2, #078fca);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.programButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(23, 70, 162, 0.25);
+}
+
+
+/* ================= BCA FEATURES ================= */
+
+.featuresSection {
+    padding: 43px 0;
+    background: #f4f8ff;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 19px;
+    border-radius: 13px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+    transform: translateX(5px);
+    background: #ffffff;
+    box-shadow: var(--shadow-hover);
+}
+
+.featureNumber {
+    min-width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1746a2, #00a9d4);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.featureItem h3 {
+    color: var(--primary);
+    font-size: 15px;
+    margin: 1px 0 7px;
+}
+
+.featureItem p {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 0;
+}
+
+
+/* ================= LEGACY ================= */
+
+.legacySection {
+    padding: 43px 0;
+    background: linear-gradient(125deg, #102c63, #1746a2, #087fbd);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.legacySection::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    right: -100px;
+    top: -150px;
+}
+
+.legacyContent {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.legacyLabel {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.legacyContent h2 {
+    color: #ffffff;
+    font-size: clamp(24px, 3vw, 34px);
+    margin: 17px 0;
+}
+
+.legacyContent p {
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 14px;
+    margin: 0 0 12px;
+}
+
+.legacyContent a {
+    color: #7ce9ff;
+    font-weight: 800;
+}
+
+.legacyContent a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.legacyStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 28px;
+}
+
+.legacyStats > div {
+    padding: 19px;
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 13px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.legacyStats > div:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.legacyStats strong {
+    display: block;
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.legacyStats span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ================= WHY CHOOSE US ================= */
+
+.whySection {
+    padding: 43px 0;
+    background: #ffffff;
+}
+
+.whyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.whyItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 17px;
+    border: 1px solid var(--border);
+    background: #f8fbff;
+    border-radius: 11px;
+    transition: all 0.3s ease;
+}
+
+.whyItem:hover {
+    background: #edf6ff;
+    border-color: #9ec9ef;
+    transform: translateY(-3px);
+}
+
+.whyItem > span {
+    min-width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1746a2, #00a9d4);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.whyItem p {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+    margin: 0;
+}
+
+
+/* ================= FACILITIES ================= */
+
+.facilitiesSection {
+    padding: 43px 0;
+    background: var(--light);
+}
+
+.facilitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.facilityCard {
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: all 0.35s ease;
+}
+
+.facilityCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    background: #ffffff;
+}
+
+.facilityIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #e3edff, #d6f8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 13px;
+}
+
+.facilityCard h3 {
+    color: var(--primary);
+    font-size: 16px;
+    margin: 0 0 8px;
+}
+
+.facilityCard p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* ================= ADMISSION ================= */
+
+.admissionSection {
+    padding: 43px 0;
+    background: #ffffff;
+}
+
+.eligibilityBox {
+    max-width: 900px;
+    margin: 0 auto 22px;
+    padding: 20px 24px;
+    border-radius: 13px;
+    border-left: 4px solid var(--accent);
+    background: linear-gradient(110deg, #edf5ff, #e9faff);
+}
+
+.eligibilityBox h3 {
+    color: var(--primary);
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+.eligibilityBox p {
+    color: var(--text);
+    font-size: 13px;
+    margin: 0;
+}
+
+.admissionGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.admissionCard {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.admissionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stepNumber {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.admissionCard h3 {
+    color: var(--primary);
+    font-size: 15px;
+    margin: 0 0 8px;
+}
+
+.admissionCard p {
+    color: var(--muted);
+    font-size: 12.5px;
+    margin: 0;
+}
+
+
+/* ================= CAREER ================= */
+
+.careerSection {
+    padding: 43px 0;
+    background: linear-gradient(120deg, #eef5ff, #e8faff);
+}
+
+.careerContent {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.careerLabel {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.careerContent h2 {
+    color: var(--dark);
+    font-size: 30px;
+    margin: 0 0 15px;
+}
+
+.careerContent p {
+    font-size: 13.5px;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.careerRoles {
+    padding: 23px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.careerRoles h3 {
+    color: var(--primary);
+    font-size: 17px;
+    margin: 0 0 16px;
+}
+
+.roleItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.roleItem:last-child {
+    border-bottom: none;
+}
+
+.roleItem span {
+    color: #079dba;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+
+/* ================= FAQ ================= */
+
+.faqSection {
+    padding: 43px 0;
+    background: #ffffff;
+}
+
+.faqList {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faqItem {
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    overflow: hidden;
+    background: #f9fbff;
+    transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+    border-color: #9dc8ed;
+}
+
+.faqItem[open] {
+    background: #ffffff;
+    border-color: #9bc8ed;
+    box-shadow: var(--shadow);
+}
+
+.faqItem summary {
+    padding: 16px 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    cursor: pointer;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.faqItem summary::-webkit-details-marker {
+    display: none;
+}
+
+.faqIcon {
+    min-width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e7f2ff;
+    color: var(--primary);
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faqItem[open] .faqIcon {
+    transform: rotate(45deg);
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.faqAnswer {
+    padding: 0 19px 17px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    animation: fadeUp 0.3s ease;
+}
+
+
+/* ================= FINAL CTA ================= */
+
+.ctaSection {
+    padding: 43px 20px;
+    text-align: center;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0, 184, 217, 0.25), transparent 30%),
+        linear-gradient(120deg, #102c63, #1746a2, #087fbd);
+}
+
+.ctaSection .container > span {
+    display: inline-block;
+    color: #91eaff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.ctaSection h2 {
+    max-width: 750px;
+    margin: 0 auto 13px;
+    color: #ffffff;
+    font-size: clamp(25px, 3vw, 35px);
+}
+
+.ctaSection p {
+    max-width: 680px;
+    margin: 0 auto 22px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.ctaButtons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.ctaPrimary {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+.ctaSecondary {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.ctaPrimary:hover,
+.ctaSecondary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ctaSecondary:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.introSection,
+.highlightsSection,
+.programSection,
+.featuresSection,
+.legacySection,
+.whySection,
+.facilitiesSection,
+.admissionSection,
+.careerSection,
+.faqSection,
+.ctaSection {
+    animation: fadeIn 0.7s ease both;
+}
+
+
+/* ================= RESPONSIVE TABLET ================= */
+
+@media (max-width: 1000px) {
+
+    .highlightGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .admissionGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .whyGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .introContent {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+}
+
+
+/* ================= RESPONSIVE MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        height: 260px;
+    }
+
+    .introSection,
+    .highlightsSection,
+    .programSection,
+    .featuresSection,
+    .legacySection,
+    .whySection,
+    .facilitiesSection,
+    .admissionSection,
+    .careerSection,
+    .faqSection,
+    .ctaSection {
+        padding: 30px 0;
+    }
+
+    .sectionHeading {
+        margin-bottom: 21px;
+    }
+
+    .sectionHeading h2 {
+        font-size: 25px;
+    }
+
+    .introContent {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .introText,
+    .introHighlight {
+        padding: 20px;
+    }
+
+    .mainTitle {
+        font-size: 29px;
+    }
+
+    .subTitle {
+        font-size: 17px;
+    }
+
+    .highlightGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+    }
+
+    .highlightCard {
+        padding: 15px;
+    }
+
+    .highlightCard h3 {
+        font-size: 14px;
+    }
+
+    .highlightCard p {
+        font-size: 12px;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .programCard {
+        padding: 19px;
+    }
+
+    .programTop h3 {
+        font-size: 19px;
+    }
+
+    .programIcon {
+        min-width: 55px;
+        height: 55px;
+        font-size: 27px;
+    }
+
+    .programFooter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .legacyStats {
+        gap: 9px;
+    }
+
+    .legacyStats > div {
+        padding: 13px 7px;
+    }
+
+    .legacyStats strong {
+        font-size: 24px;
+    }
+
+    .legacyStats span {
+        font-size: 10px;
+    }
+
+    .whyGrid,
+    .facilitiesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admissionGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .careerContent {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .careerContent h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 420px) {
+
+    .highlightGrid,
+    .whyGrid,
+    .facilitiesGrid,
+    .admissionGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 220px;
+    }
+
+    .mainTitle {
+        font-size: 25px;
+    }
+
+    .sectionHeading h2 {
+        font-size: 23px;
+    }
+
+    .programTop {
+        align-items: flex-start;
+    }
+
+    .programIcon {
+        min-width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .legacyStats strong {
+        font-size: 21px;
+    }
+
+    .faqItem summary {
+        font-size: 12.5px;
+        padding: 14px;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        width: 100%;
+    }
+
+}
+
+
+/* ================= ACCESSIBILITY ================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page *,
+    .page *::before,
+    .page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

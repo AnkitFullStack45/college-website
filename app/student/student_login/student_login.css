@@ -1,0 +1,510 @@
+/* =========================================
+   STUDENT PORTAL LOGIN (GLASSMORPHISM)
+========================================= */
+
+.slogin-page {
+    --sl-primary: #173d75;
+    --sl-secondary: #2366b1;
+    --sl-accent: #e7a83e;
+
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0d2347, #173d75, #2366b1, #0d2347);
+    background-size: 300% 300%;
+    animation: sloginGradient 14s ease infinite;
+    color: #ffffff;
+    font-family: inherit;
+}
+
+.slogin-page * {
+    box-sizing: border-box;
+}
+
+/* ---------- Animated background ---------- */
+
+.slogin-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.slogin-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+}
+
+.slogin-orb-1 {
+    top: -120px;
+    left: -100px;
+    width: 420px;
+    height: 420px;
+    background: #2f80ed;
+    animation: sloginFloat1 12s ease-in-out infinite;
+}
+
+.slogin-orb-2 {
+    right: -120px;
+    bottom: -140px;
+    width: 460px;
+    height: 460px;
+    background: #e7a83e;
+    opacity: 0.35;
+    animation: sloginFloat2 15s ease-in-out infinite;
+}
+
+.slogin-orb-3 {
+    top: 45%;
+    left: 55%;
+    width: 280px;
+    height: 280px;
+    background: #6c5ce7;
+    opacity: 0.35;
+    animation: sloginFloat3 18s ease-in-out infinite;
+}
+
+.slogin-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at center, #000 25%, transparent 75%);
+    -webkit-mask-image: radial-gradient(circle at center, #000 25%, transparent 75%);
+}
+
+/* ---------- Glass card ---------- */
+
+.slogin-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 34px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 25px 60px rgba(4, 14, 36, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    backdrop-filter: blur(22px) saturate(160%);
+    text-align: center;
+    animation: sloginCardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.slogin-logo {
+    display: inline-flex;
+    width: 68px;
+    height: 68px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+    box-shadow: 0 10px 28px rgba(4, 14, 36, 0.35);
+    color: #ffffff;
+    animation: sloginPulse 3.5s ease-in-out infinite;
+}
+
+.slogin-card h1 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    animation: sloginFadeUp 0.7s 0.15s ease both;
+}
+
+.slogin-subtitle {
+    margin: 0 0 26px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+    line-height: 1.7;
+    animation: sloginFadeUp 0.7s 0.25s ease both;
+}
+
+/* ---------- Form ---------- */
+
+.slogin-card form {
+    display: grid;
+    gap: 18px;
+    text-align: left;
+}
+
+.slogin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    animation: sloginFadeUp 0.7s ease both;
+}
+
+.slogin-field:nth-of-type(1) {
+    animation-delay: 0.35s;
+}
+
+.slogin-field:nth-of-type(2) {
+    animation-delay: 0.45s;
+}
+
+.slogin-field label {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.slogin-input-wrap {
+    position: relative;
+}
+
+.slogin-input-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: rgba(255, 255, 255, 0.65);
+    transform: translateY(-50%);
+    transition: color 0.3s ease;
+    pointer-events: none;
+}
+
+.slogin-input-wrap input {
+    width: 100%;
+    padding: 14px 46px 14px 44px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.slogin-input-wrap input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.slogin-input-wrap input:focus {
+    border-color: rgba(246, 197, 110, 0.9);
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 0 0 4px rgba(246, 197, 110, 0.18);
+}
+
+.slogin-input-wrap:focus-within .slogin-input-icon {
+    color: #f6c56e;
+}
+
+.slogin-input-wrap input[aria-invalid="true"] {
+    border-color: rgba(255, 128, 117, 0.9);
+}
+
+/* Fix browser autofill colours on glass */
+.slogin-input-wrap input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.slogin-toggle {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    display: flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+.slogin-toggle:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+.slogin-field small {
+    color: #ffb4ab;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.slogin-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -6px;
+    animation: sloginFadeUp 0.7s 0.55s ease both;
+}
+
+.slogin-row a,
+.slogin-register a {
+    color: #f6c56e;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.slogin-row a:hover,
+.slogin-register a:hover {
+    color: #ffd98f;
+    text-decoration: underline;
+}
+
+/* ---------- Submit button ---------- */
+
+.slogin-submit {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 30px;
+    background: linear-gradient(120deg, #e7a83e, #ffc45f);
+    box-shadow: 0 10px 25px rgba(231, 168, 62, 0.35);
+    color: #192b43;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+    animation: sloginFadeUp 0.7s 0.65s ease both;
+}
+
+/* Shimmer sweep */
+.slogin-submit::before {
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+    );
+    content: "";
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+}
+
+.slogin-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(231, 168, 62, 0.5);
+}
+
+.slogin-submit:hover:not(:disabled)::before {
+    left: 130%;
+}
+
+.slogin-submit:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.slogin-submit:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.slogin-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(25, 43, 67, 0.3);
+    border-top-color: #192b43;
+    border-radius: 50%;
+    animation: sloginSpin 0.7s linear infinite;
+}
+
+/* ---------- Alert / links / footer ---------- */
+
+.slogin-alert {
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 128, 117, 0.5);
+    border-radius: 12px;
+    background: rgba(217, 48, 37, 0.22);
+    color: #ffd7d3;
+    font-size: 13px;
+    line-height: 1.6;
+    animation: sloginShake 0.45s ease;
+}
+
+.slogin-register {
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    animation: sloginFadeUp 0.7s 0.75s ease both;
+}
+
+.slogin-footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 26px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes sloginGradient {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes sloginFloat1 {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(70px, 60px) scale(1.12);
+    }
+}
+
+@keyframes sloginFloat2 {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-80px, -50px) scale(1.1);
+    }
+}
+
+@keyframes sloginFloat3 {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-60px, 70px) scale(0.9);
+    }
+}
+
+@keyframes sloginCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sloginFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sloginPulse {
+    0%,
+    100% {
+        box-shadow: 0 10px 28px rgba(4, 14, 36, 0.35), 0 0 0 0 rgba(255, 255, 255, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 10px 28px rgba(4, 14, 36, 0.35), 0 0 0 12px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes sloginSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sloginShake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-6px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(6px);
+    }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+    .slogin-card {
+        padding: 32px 22px 24px;
+        border-radius: 20px;
+    }
+
+    .slogin-card h1 {
+        font-size: 24px;
+    }
+
+    .slogin-orb-1,
+    .slogin-orb-2 {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* ---------- Fallback if backdrop-filter is unsupported ---------- */
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .slogin-card {
+        background: rgba(13, 35, 71, 0.85);
+    }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .slogin-page *,
+    .slogin-page *::before,
+    .slogin-page *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

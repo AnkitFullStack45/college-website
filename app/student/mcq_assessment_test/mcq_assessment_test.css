@@ -1,0 +1,193 @@
+/* =========================================
+   MCQ ASSESSMENT PORTAL LOGIN
+========================================= */
+
+.mcq-page {
+    --mcq-primary: #173d75;
+    --mcq-secondary: #2366b1;
+    --mcq-accent: #e7a83e;
+    --mcq-dark: #12243d;
+    --mcq-text: #566579;
+
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1), transparent 25%),
+        linear-gradient(120deg, #122c53, #2366a8);
+    color: var(--mcq-dark);
+    font-family: inherit;
+}
+
+.mcq-page * {
+    box-sizing: border-box;
+}
+
+/* ---------- Card ---------- */
+
+.mcq-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 34px 30px;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 25px 60px rgba(8, 24, 52, 0.35);
+    text-align: center;
+}
+
+.mcq-icon {
+    display: inline-flex;
+    width: 66px;
+    height: 66px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #173d75, #286eb5);
+    box-shadow: 0 10px 25px rgba(23, 61, 117, 0.3);
+    color: #ffffff;
+}
+
+.mcq-eyebrow {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--mcq-secondary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mcq-card h1 {
+    margin: 0 0 8px;
+    color: var(--mcq-dark);
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.mcq-subtitle {
+    margin: 0 0 28px;
+    color: var(--mcq-text);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ---------- Form ---------- */
+
+.mcq-card form {
+    display: grid;
+    gap: 18px;
+    text-align: left;
+}
+
+.mcq-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.mcq-field label {
+    color: var(--mcq-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.mcq-field input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe7f6;
+    border-radius: 12px;
+    background: #f8fbff;
+    color: var(--mcq-dark);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.mcq-field input::placeholder {
+    color: #9aa8ba;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.mcq-field input:focus {
+    border-color: var(--mcq-secondary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(35, 102, 177, 0.12);
+}
+
+.mcq-field input[aria-invalid="true"] {
+    border-color: #d93025;
+    background: #fff8f7;
+}
+
+.mcq-field small {
+    color: #d93025;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.mcq-submit {
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 30px;
+    background: var(--mcq-accent);
+    color: #192b43;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.mcq-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+    background: #ffc45f;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mcq-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ---------- Help text ---------- */
+
+.mcq-help {
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid #e4ebf5;
+    color: var(--mcq-text);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.mcq-help a {
+    color: var(--mcq-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.mcq-help a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+    .mcq-card {
+        padding: 32px 22px 24px;
+        border-radius: 18px;
+    }
+
+    .mcq-card h1 {
+        font-size: 22px;
+    }
+}

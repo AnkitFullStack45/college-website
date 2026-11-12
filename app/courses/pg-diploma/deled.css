@@ -1,0 +1,627 @@
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+
+.deled-page {
+    --primary: #2563eb;
+    --secondary: #7c3aed;
+    --accent: #06b6d4;
+    --dark: #10213b;
+    --text: #475569;
+
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 10%, #dbeafe 0, transparent 30%),
+        radial-gradient(circle at 90% 40%, #ede9fe 0, transparent 30%),
+        linear-gradient(135deg, #f8fbff, #eef4ff);
+
+    color: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.deled-container {
+    width: min(1180px, 92%);
+    margin: auto;
+    padding: 25px 0 35px;
+}
+
+
+/* =====================================
+   HERO IMAGE
+===================================== */
+
+.full-hero {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+}
+
+.full-hero-img {
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =====================================
+   GLASSMORPHISM
+===================================== */
+
+.glass {
+    background: rgba(255, 255, 255, 0.66);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px rgba(30, 64, 175, 0.07),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.13);
+}
+
+
+/* =====================================
+   INTRODUCTION
+===================================== */
+
+.intro-section {
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.section-badge {
+    display: inline-block;
+
+    color: var(--primary);
+
+    background: rgba(37, 99, 235, 0.09);
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.main-title {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 800;
+
+    margin: 5px 0 15px;
+
+    background: linear-gradient(
+        90deg,
+        #1d4ed8,
+        #7c3aed
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lead-text {
+    color: var(--text);
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   STATS
+===================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 22px;
+}
+
+.stat-card {
+    text-align: center;
+
+    padding: 18px 12px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(219, 234, 254, 0.8),
+        rgba(237, 233, 254, 0.8)
+    );
+
+    border: 1px solid rgba(99, 102, 241, 0.13);
+
+    border-radius: 13px;
+}
+
+.stat-card strong {
+    display: block;
+
+    font-size: 25px;
+    color: var(--primary);
+
+    margin-bottom: 5px;
+}
+
+.stat-card span {
+    color: var(--text);
+    font-size: 13px;
+}
+
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+.content-section {
+    margin-bottom: 20px;
+}
+
+.content-section.glass {
+    padding: 25px;
+}
+
+.section-heading {
+    font-size: 25px;
+    font-weight: 800;
+
+    color: var(--dark);
+
+    margin-bottom: 15px;
+}
+
+.section-text {
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-header span {
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+
+    margin: 8px 0;
+
+    color: var(--dark);
+}
+
+
+/* =====================================
+   GRIDS
+===================================== */
+
+.grid-2 {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.grid-3 {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+/* =====================================
+   FEATURE CARDS
+===================================== */
+
+.feature-card,
+.career-card,
+.placement-card {
+    padding: 22px;
+
+    height: 100%;
+}
+
+.feature-card:hover,
+.career-card:hover,
+.placement-card:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #ede9fe
+    );
+
+    margin-bottom: 13px;
+}
+
+.feature-card h3,
+.career-card h3,
+.placement-card h3 {
+    font-size: 17px;
+    font-weight: 750;
+
+    margin-bottom: 10px;
+
+    color: var(--dark);
+}
+
+.feature-card p,
+.career-card p,
+.placement-card p {
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: var(--text);
+}
+
+
+/* =====================================
+   ELIGIBILITY
+===================================== */
+
+.content-card {
+    padding: 25px;
+}
+
+.custom-list {
+    padding-left: 20px;
+    color: var(--text);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.big-number {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 15px 22px;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    color: white;
+
+    background: linear-gradient(
+        120deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius: 12px;
+}
+
+
+/* =====================================
+   ADMISSION STEPS
+===================================== */
+
+.steps-list {
+    display: grid;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    background: rgba(239, 246, 255, 0.7);
+
+    transition: 0.3s;
+}
+
+.step-item:hover {
+    background: rgba(219, 234, 254, 0.9);
+
+    transform: translateX(5px);
+}
+
+.step-number {
+    min-width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+.step-item h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.step-item p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   CAREERS
+===================================== */
+
+.center-text {
+    max-width: 850px;
+
+    margin: 0 auto 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: var(--text);
+}
+
+.card-check {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   WHY CHOOSE
+===================================== */
+
+.why-card {
+    display: flex;
+    gap: 12px;
+
+    padding: 15px;
+
+    background: rgba(239, 246, 255, 0.7);
+
+    border-radius: 12px;
+}
+
+.why-card .card-check {
+    flex-shrink: 0;
+}
+
+.why-card h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.why-card p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   FOOTER CTA
+===================================== */
+
+.footer-section {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-bottom: 0;
+}
+
+.footer-section h2 {
+    font-size: clamp(23px, 3vw, 32px);
+
+    margin: 10px 0;
+
+    color: var(--dark);
+}
+
+.footer-section p {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    color: var(--text);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.primary-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    color: white;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        120deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-section,
+.feature-card,
+.career-card,
+.placement-card,
+.footer-section {
+    animation: fadeUp 0.7s ease both;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .full-hero {
+        height: 260px;
+    }
+
+    .deled-container {
+        width: 94%;
+        padding-top: 15px;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-section,
+    .content-section.glass,
+    .content-card {
+        padding: 18px;
+    }
+
+    .main-title {
+        font-size: 26px;
+    }
+
+    .section-heading {
+        font-size: 21px;
+    }
+
+    .section-header h2 {
+        font-size: 23px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .deled-page *,
+    .deled-page *::before,
+    .deled-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

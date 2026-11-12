@@ -1,0 +1,1039 @@
+/* =========================================
+   DEPARTMENT OF MANAGEMENT
+   TEMPL GROUP OF INSTITUTIONS
+========================================= */
+
+.management-page {
+    --mg-navy: #07172e;
+    --mg-navy2: #0d2342;
+    --mg-orange: #ff8500;
+    --mg-muted: #68758a;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #17243a;
+    background: #f6f8fc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.management-page *,
+.management-page *::before,
+.management-page *::after {
+    box-sizing: border-box;
+}
+
+.management-page a {
+    text-decoration: none;
+}
+
+.management-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+/* =========================================
+   FULL SCREEN HERO
+========================================= */
+.management-hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+/* HERO BACKGROUND IMAGE */
+.management-hero-image {
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+.management-hero-content {
+    padding-top: 30px;
+}
+
+.management-hero-card {
+    width: min(760px, 100%);
+    padding: clamp(14px, 5vw, 25px);
+    border: 1px solid #ffffff33;
+    border-radius: 26px;
+    background: #07172e80;
+    box-shadow: 0 24px 80px #0004;
+    backdrop-filter: blur(12px);
+    animation: mg-up .7s ease both;
+}
+
+/* HERO BADGE */
+
+.management-badge,
+.management-label {
+    display: inline-flex;
+    align-items: center;
+    color: var(--mg-orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.management-badge {
+    padding: 10px 14px;
+    border: 1px solid #ff850077;
+    border-radius: 999px;
+    background: #ff85001f;
+}
+
+/* HERO HEADING */
+
+.management-hero h1 {
+    margin: 24px 0 18px;
+    max-width: 700px;
+    color: #fff;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.management-hero h1 span,
+.management-section-heading h2 span,
+.management-final-cta h2 span {
+    color: var(--mg-orange);
+}
+
+.management-hero-card > p {
+    max-width: 620px;
+    margin: 0;
+
+    color: #ffffffd1;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* HERO BUTTONS */
+
+.management-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.management-primary-btn,
+.management-secondary-btn {
+    min-height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 22px;
+    border-radius: 9px;
+    font-weight: 800;
+    transition: .25s;
+}
+
+.management-primary-btn {
+    color: #fff;
+    background: var(--mg-orange);
+    box-shadow: 0 10px 28px #ff850038;
+}
+
+.management-primary-btn:hover {
+    color: #fff;
+    background: #e87500;
+    transform: translateY(-3px);
+}
+
+.management-secondary-btn {
+    color: #fff;
+    border: 1px solid #ffffff73;
+    background: #ffffff12;
+}
+
+.management-secondary-btn:hover {
+    color: #fff;
+    background: #ffffff29;
+    transform: translateY(-3px);
+}
+
+/* HERO INFORMATION */
+
+.management-hero-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+    margin-top: 30px;
+    color: #ffffffcc;
+    font-size: 13px;
+}
+
+/* SCROLL INDICATOR */
+
+.management-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffffd9;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    transform: translateX(-50%);
+}
+
+.management-scroll span:last-child {
+    color: var(--mg-orange);
+    font-size: 22px;
+
+    animation: mg-bounce 1.5s infinite;
+}
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+.management-section {
+    position: relative;
+    padding: 100px 0;
+    background: #f7f9fd;
+}
+
+.management-dark-section {
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ff850017,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            var(--mg-navy),
+            var(--mg-navy2)
+        );
+}
+
+.management-section-heading {
+    max-width: 760px;
+    margin: 0 auto 52px;
+    text-align: center;
+}
+
+.management-section-heading h2 {
+    margin: 14px 0;
+
+    color: var(--mg-navy);
+
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.management-dark-section .management-section-heading h2 {
+    color: #fff;
+}
+
+.management-section-heading > p {
+    margin: 0 auto;
+
+    color: var(--mg-muted);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.management-dark-section .management-section-heading > p {
+    color: #ffffffad;
+}
+
+/* =========================================
+   ABOUT DEPARTMENT
+========================================= */
+
+.management-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.management-about-image {
+    min-height: 440px;
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #dce4ef;
+
+    box-shadow: 0 22px 55px #07172e29;
+}
+
+.management-about-image img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.management-about-content h3 {
+    margin: 14px 0 20px;
+
+    color: var(--mg-navy);
+
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.25;
+}
+
+.management-about-content > p {
+    color: var(--mg-muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.management-about-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-top: 25px;
+}
+
+.management-about-points span {
+    color: var(--mg-navy);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.management-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.management-glass-card {
+    min-height: 250px;
+    position: relative;
+    padding: 26px 23px;
+    overflow: hidden;
+
+    border: 1px solid #ffffff24;
+    border-radius: 17px;
+
+    background: #ffffff13;
+
+    transition: .3s;
+}
+
+.management-glass-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #ff8500a6;
+
+    background: #ffffff1c;
+}
+
+.management-card-icon,
+.management-infrastructure-icon {
+    width: 54px;
+    height: 54px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    background: #ff850026;
+
+    font-size: 27px;
+}
+
+.management-card-number {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+
+    color: #ffffff2e;
+
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.management-glass-card h3,
+.management-infrastructure-card h3 {
+    margin: 22px 0 10px;
+
+    color: #fff;
+
+    font-size: 18px;
+}
+
+.management-glass-card p,
+.management-infrastructure-card p {
+    margin: 0;
+
+    color: #ffffffad;
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* =========================================
+   KEY FEATURES
+========================================= */
+
+.management-features-wrapper {
+    max-width: 900px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    margin: auto;
+}
+
+.management-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 20px;
+
+    border: 1px solid #e5eaf2;
+    border-radius: 13px;
+
+    background: #fff;
+
+    box-shadow: 0 8px 25px #07172e0b;
+}
+
+.management-feature-check {
+    flex: 0 0 28px;
+
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+    background: var(--mg-orange);
+
+    font-weight: 900;
+}
+
+.management-feature-item p {
+    margin: 2px 0 0;
+
+    color: #42516a;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   INFRASTRUCTURE
+========================================= */
+
+.management-infrastructure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.management-infrastructure-card {
+    padding: 25px;
+
+    border: 1px solid #ffffff24;
+    border-radius: 16px;
+
+    background: #ffffff0f;
+
+    transition: .25s;
+}
+
+.management-infrastructure-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff85008c;
+}
+
+.management-infrastructure-card h3 {
+    margin-top: 18px;
+}
+
+/* =========================================
+   ADMISSION PROCESS
+========================================= */
+
+.management-admission-grid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.management-eligibility-card,
+.management-admission-steps {
+    padding: 34px;
+
+    border: 1px solid #e5eaf2;
+    border-radius: 20px;
+
+    background: #fff;
+
+    box-shadow: 0 15px 45px #07172e12;
+}
+
+.management-eligibility-card h3,
+.management-admission-steps > h3 {
+    margin: 20px 0 12px;
+
+    color: var(--mg-navy);
+
+    font-size: 23px;
+}
+
+.management-eligibility-card > p {
+    color: var(--mg-muted);
+    line-height: 1.8;
+}
+
+.management-marks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.management-marks > div {
+    padding: 18px 12px;
+
+    border-radius: 12px;
+
+    background: #fff5e9;
+
+    text-align: center;
+}
+
+.management-marks strong {
+    display: block;
+
+    color: var(--mg-orange);
+
+    font-size: 32px;
+}
+
+.management-marks span,
+.management-intake span {
+    color: var(--mg-muted);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.management-intake {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e8edf4;
+}
+
+.management-intake strong {
+    color: var(--mg-navy);
+}
+
+.management-step {
+    display: flex;
+    gap: 16px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #edf0f5;
+}
+
+.management-step-number {
+    flex: 0 0 38px;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+    background: var(--mg-orange);
+
+    font-weight: 900;
+}
+
+.management-step h4 {
+    margin: 0 0 6px;
+
+    color: var(--mg-navy);
+
+    font-size: 16px;
+}
+
+.management-step p {
+    margin: 0;
+
+    color: var(--mg-muted);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.management-admission-steps > .management-primary-btn {
+    margin-top: 24px;
+}
+
+/* =========================================
+   CAREER AND PLACEMENT
+========================================= */
+
+.management-placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.management-placement-card,
+.management-career-card {
+    padding: 32px;
+
+    border: 1px solid #ffffff24;
+    border-radius: 19px;
+
+    background: #ffffff11;
+}
+
+.management-placement-card h3,
+.management-career-card > h3 {
+    margin: 0 0 12px;
+
+    color: #fff;
+
+    font-size: 23px;
+}
+
+.management-placement-card > p,
+.management-career-card > p {
+    color: #ffffffad;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.management-placement-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+
+    margin-top: 25px;
+}
+
+.management-placement-list > div {
+    display: flex;
+    gap: 9px;
+
+    color: #ffffffd4;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.management-placement-list span {
+    color: var(--mg-orange);
+    font-weight: 900;
+}
+
+.management-career-item {
+    display: flex;
+    gap: 15px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #ffffff1f;
+}
+
+.management-career-icon {
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: #ff850026;
+
+    font-size: 21px;
+}
+
+.management-career-item h4,
+.management-higher-education h4 {
+    margin: 0 0 5px;
+
+    color: #fff;
+
+    font-size: 15px;
+}
+
+.management-career-item p,
+.management-higher-education p {
+    margin: 0;
+
+    color: #ffffffa6;
+
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.management-higher-education {
+    display: flex;
+    gap: 13px;
+
+    margin-top: 20px;
+    padding: 17px;
+
+    border-radius: 13px;
+
+    background: #ff85001f;
+}
+
+.management-higher-education > span {
+    font-size: 22px;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.management-faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.management-faq-item {
+    margin-bottom: 13px;
+    overflow: hidden;
+
+    border: 1px solid #e5eaf2;
+    border-radius: 13px;
+
+    background: #fff;
+
+    box-shadow: 0 7px 22px #07172e0a;
+}
+
+.management-faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 21px 23px;
+
+    color: var(--mg-navy);
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    list-style: none;
+}
+
+.management-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.management-faq-icon {
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+    background: var(--mg-orange);
+
+    font-size: 20px;
+
+    transition: transform .2s;
+}
+
+.management-faq-item[open] .management-faq-icon {
+    transform: rotate(45deg);
+}
+
+.management-faq-answer {
+    padding: 0 23px 21px;
+}
+
+.management-faq-answer p {
+    margin: 0;
+
+    color: var(--mg-muted);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.management-final-cta {
+    padding: 95px 24px;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #ff850038,
+            transparent 28%
+        ),
+        linear-gradient(
+            125deg,
+            #06152b,
+            #12345b
+        );
+
+    text-align: center;
+}
+
+.management-cta-content {
+    max-width: 760px;
+    margin: auto;
+}
+
+.management-final-cta h2 {
+    margin: 17px 0;
+
+    color: #fff;
+
+    font-size: clamp(30px, 4.5vw, 48px);
+    line-height: 1.2;
+}
+
+.management-final-cta p {
+    margin: 0 auto 28px;
+
+    color: #ffffffb8;
+
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+.management-footer {
+    padding: 23px 20px;
+
+    color: #ffffffa6;
+    background: #041020;
+
+    text-align: center;
+}
+
+.management-footer p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+.mg-reveal {
+    animation: mg-up .65s ease both;
+    animation-delay: var(--delay, 0ms);
+}
+
+@keyframes mg-up {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mg-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 992px) {
+
+    .management-section {
+        padding: 78px 0;
+    }
+
+    .management-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .management-about-grid {
+        gap: 32px;
+    }
+
+    .management-infrastructure-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .management-admission-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .management-container {
+        width: calc(100% - 32px);
+    }
+
+    .management-hero-image {
+        object-position: 58% center;
+    }
+
+    .management-hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                #040f20ed,
+                #040f20b3
+            ),
+            linear-gradient(
+                0deg,
+                #040f2080,
+                transparent
+            );
+    }
+
+    .management-hero-content {
+        padding-top: 95px;
+        padding-bottom: 95px;
+    }
+
+    .management-hero-card {
+        padding: 25px 21px;
+        border-radius: 19px;
+    }
+
+    .management-hero h1 {
+        font-size: clamp(36px, 10vw, 52px);
+        letter-spacing: -1.2px;
+    }
+
+    .management-hero-card > p {
+        font-size: 15px;
+    }
+
+    .management-hero-info {
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .management-scroll {
+        bottom: 25px;
+        white-space: nowrap;
+    }
+
+    .management-section {
+        padding: 66px 0;
+    }
+
+    .management-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .management-about-grid,
+    .management-admission-grid,
+    .management-placement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .management-about-image {
+        min-height: 300px;
+    }
+
+    .management-why-grid,
+    .management-infrastructure-grid,
+    .management-features-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .management-glass-card {
+        min-height: auto;
+    }
+
+    .management-placement-list,
+    .management-about-points {
+        grid-template-columns: 1fr;
+    }
+
+    .management-eligibility-card,
+    .management-admission-steps,
+    .management-placement-card,
+    .management-career-card {
+        padding: 25px 21px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .management-page *,
+    .management-page *::before,
+    .management-page *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}

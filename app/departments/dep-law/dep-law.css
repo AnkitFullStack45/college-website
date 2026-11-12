@@ -1,0 +1,1407 @@
+/* =========================================
+   DEPARTMENT OF LAW - LSR LAW ACADEMY
+   GLOBAL CSS
+========================================= */
+
+.law-page {
+    --law-primary: #1769e0;
+    --law-secondary: #06b6d4;
+    --law-purple: #7952d9;
+    --law-dark: #102044;
+    --law-text: #52627c;
+    --law-light: #f4f8ff;
+
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    color: var(--law-dark);
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(6, 182, 212, 0.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 35%,
+            rgba(121, 82, 217, 0.07),
+            transparent 25%
+        ),
+        #f7faff;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.law-page *,
+.law-page *::before,
+.law-page *::after {
+    box-sizing: border-box;
+}
+
+.law-page h1,
+.law-page h2,
+.law-page h3 {
+    color: var(--law-dark);
+    line-height: 1.3;
+}
+
+.law-page p {
+    color: var(--law-text);
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.law-hero {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    min-height: 300px;
+    overflow: hidden;
+    background: #dce9f8;
+}
+
+.law-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================
+   COMMON LAYOUT
+========================================= */
+
+.law-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+.law-section {
+    position: relative;
+    padding: 48px 0;
+}
+
+.law-section-heading {
+    max-width: 780px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.law-section-tag {
+    display: inline-block;
+    padding: 7px 15px;
+    margin-bottom: 13px;
+
+    border: 1px solid rgba(23, 105, 224, 0.15);
+    border-radius: 30px;
+
+    color: var(--law-primary);
+    background: rgba(23, 105, 224, 0.07);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.law-section-heading h2 {
+    margin: 0 0 12px;
+
+    font-size: clamp(26px, 4vw, 37px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.law-section-heading h2 span {
+    color: var(--law-primary);
+}
+
+.law-section-heading p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   GLASSMORPHISM
+========================================= */
+
+.law-glass {
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    box-shadow:
+        0 10px 35px rgba(25, 65, 130, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.law-glass:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(23, 105, 224, 0.2);
+
+    box-shadow:
+        0 18px 40px rgba(25, 65, 130, 0.12);
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.law-intro-section {
+    padding-top: 38px;
+}
+
+.law-intro-card {
+    padding: 35px 40px;
+    border-radius: 24px;
+}
+
+.law-intro-card h1 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 41px);
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.law-intro-card h1 span {
+    color: var(--law-primary);
+}
+
+.law-intro-card h2 {
+    margin: 0 0 18px;
+    color: #536783;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.law-intro-card p {
+    margin: 0 0 12px;
+    font-size: 15px;
+}
+
+.law-intro-buttons,
+.law-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.law-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 46px;
+    padding: 12px 22px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.law-primary-btn {
+    color: #fff;
+
+    background: linear-gradient(
+        120deg,
+        var(--law-primary),
+        var(--law-secondary)
+    );
+
+    box-shadow: 0 7px 18px rgba(23, 105, 224, 0.2);
+}
+
+.law-primary-btn:hover {
+    color: #fff;
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(23, 105, 224, 0.3);
+}
+
+.law-secondary-btn {
+    color: var(--law-primary);
+
+    border: 1px solid rgba(23, 105, 224, 0.25);
+    background: #fff;
+}
+
+.law-secondary-btn:hover {
+    color: #fff;
+    background: var(--law-primary);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   COURSE OVERVIEW
+========================================= */
+
+.law-course-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.law-course-card {
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.law-course-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 17px;
+    place-items: center;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(23, 105, 224, 0.13),
+        rgba(6, 182, 212, 0.15)
+    );
+
+    font-size: 29px;
+}
+
+.law-course-label {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: var(--law-primary);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+}
+
+.law-course-card h3 {
+    margin: 0 0 12px;
+    font-size: 27px;
+}
+
+.law-course-card p {
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+.law-course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.law-course-meta span {
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    color: var(--law-primary);
+    background: rgba(23, 105, 224, 0.08);
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.law-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--law-primary);
+
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.law-text-link:hover {
+    gap: 14px;
+}
+
+.law-disclaimer,
+.law-small-note {
+    margin-top: 15px;
+    font-size: 12px !important;
+}
+
+
+/* =========================================
+   COURSE HEADER
+========================================= */
+
+.law-course-section {
+    background: linear-gradient(
+        130deg,
+        rgba(23, 105, 224, 0.035),
+        rgba(121, 82, 217, 0.045)
+    );
+}
+
+.law-course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.law-course-header h2 {
+    margin: 0 0 10px;
+    font-size: clamp(25px, 3.5vw, 34px);
+}
+
+.law-course-header h2 span {
+    color: var(--law-primary);
+}
+
+.law-course-header p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.law-course-duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 115px;
+    height: 115px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        var(--law-primary),
+        var(--law-secondary)
+    );
+
+    box-shadow: 0 12px 25px rgba(23, 105, 224, 0.2);
+}
+
+.law-course-duration strong {
+    color: #fff;
+    font-size: 35px;
+    line-height: 1;
+}
+
+.law-course-duration span {
+    margin-top: 5px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   COURSE CONTENT
+========================================= */
+
+.law-content-card {
+    padding: 28px;
+    margin-bottom: 42px;
+}
+
+.law-content-card h3 {
+    margin: 0 0 14px;
+    font-size: 23px;
+}
+
+.law-content-card p {
+    margin: 0 0 12px;
+    font-size: 14px;
+}
+
+.law-info-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    margin-top: 24px;
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(23, 105, 224, 0.07),
+        rgba(6, 182, 212, 0.07)
+    );
+}
+
+.law-info-strip div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding-right: 10px;
+
+    border-right: 1px solid rgba(23, 105, 224, 0.12);
+}
+
+.law-info-strip div:last-child {
+    border-right: none;
+}
+
+.law-info-strip span {
+    color: #73829a;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.law-info-strip strong {
+    color: var(--law-dark);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SUBSECTIONS
+========================================= */
+
+.law-subsection {
+    margin-top: 48px;
+}
+
+
+/* =========================================
+   REASONS GRID
+========================================= */
+
+.law-reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.law-reason-card {
+    position: relative;
+    padding: 25px;
+}
+
+.law-reason-number {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 15px;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        var(--law-primary),
+        var(--law-secondary)
+    );
+
+    font-size: 13px;
+    font-weight: 850;
+}
+
+.law-reason-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.law-reason-card p {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   ELIGIBILITY
+========================================= */
+
+.law-eligibility-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 20px;
+}
+
+.law-eligibility-card,
+.law-seat-card {
+    padding: 28px;
+}
+
+.law-card-icon {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(23, 105, 224, 0.12),
+        rgba(121, 82, 217, 0.12)
+    );
+
+    font-size: 24px;
+}
+
+.law-eligibility-card h3,
+.law-seat-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.law-qualification {
+    margin: 0 0 17px;
+    font-size: 14px;
+}
+
+.law-marks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.law-marks-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: rgba(23, 105, 224, 0.06);
+}
+
+.law-marks-row span {
+    color: var(--law-dark);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.law-marks-row strong {
+    color: var(--law-primary);
+    font-size: 16px;
+}
+
+.law-seat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.law-seat-card strong {
+    color: var(--law-primary);
+    font-size: 55px;
+    font-weight: 850;
+}
+
+.law-seat-card p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.law-seat-card > span {
+    color: var(--law-text);
+    font-size: 12px;
+}
+
+
+/* =========================================
+   ADMISSION PROCESS
+========================================= */
+
+.law-admission-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.law-admission-card {
+    padding: 23px;
+}
+
+.law-step-number {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    place-items: center;
+
+    border-radius: 14px;
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        var(--law-primary),
+        var(--law-secondary)
+    );
+
+    font-size: 14px;
+    font-weight: 850;
+}
+
+.law-admission-card h3 {
+    margin: 0 0 9px;
+    font-size: 17px;
+}
+
+.law-admission-card p {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   LLB SECTION
+========================================= */
+
+.law-llb-section {
+    background: linear-gradient(
+        135deg,
+        rgba(6, 182, 212, 0.035),
+        rgba(121, 82, 217, 0.045)
+    );
+}
+
+
+/* =========================================
+   CAREER OPPORTUNITIES
+========================================= */
+
+.law-career-section {
+    margin-top: 55px;
+}
+
+.law-career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.law-career-card {
+    padding: 23px;
+}
+
+.law-career-card h3 {
+    margin: 0 0 9px;
+    font-size: 17px;
+}
+
+.law-career-card p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.law-higher-study {
+    margin-top: 22px;
+    padding: 25px;
+    text-align: center;
+}
+
+.law-higher-study h3 {
+    margin: 0 0 9px;
+    font-size: 21px;
+}
+
+.law-higher-study p {
+    margin: 0 0 17px;
+    font-size: 14px;
+}
+
+.law-higher-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.law-higher-tags span {
+    padding: 10px 20px;
+    border: 1px solid rgba(23, 105, 224, 0.15);
+    border-radius: 9px;
+
+    color: var(--law-primary);
+    background: rgba(23, 105, 224, 0.07);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   AFFILIATION
+========================================= */
+
+.law-affiliation-section {
+    background: linear-gradient(
+        130deg,
+        rgba(23, 105, 224, 0.04),
+        rgba(6, 182, 212, 0.05)
+    );
+}
+
+.law-affiliation-card {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 35px;
+    text-align: center;
+}
+
+.law-affiliation-icon {
+    display: grid;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    place-items: center;
+
+    border-radius: 18px;
+
+    background: rgba(23, 105, 224, 0.09);
+    font-size: 31px;
+}
+
+.law-affiliation-card h3 {
+    margin: 0 0 12px;
+    font-size: 23px;
+}
+
+.law-affiliation-card > p {
+    font-size: 14px;
+}
+
+.law-affiliation-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px;
+    margin: 20px 0;
+}
+
+.law-affiliation-tags span {
+    padding: 10px 17px;
+
+    border-radius: 9px;
+
+    color: var(--law-primary);
+    background: rgba(23, 105, 224, 0.08);
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+
+/* =========================================
+   INFRASTRUCTURE
+========================================= */
+
+.law-infrastructure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19px;
+}
+
+.law-infrastructure-card {
+    padding: 25px;
+}
+
+.law-infrastructure-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.law-infrastructure-card p {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   WHY CHOOSE
+========================================= */
+
+.law-why-section {
+    background: linear-gradient(
+        135deg,
+        rgba(23, 105, 224, 0.035),
+        rgba(121, 82, 217, 0.04)
+    );
+}
+
+.law-why-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 30px;
+    padding: 28px;
+}
+
+.law-why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(23, 105, 224, 0.1);
+}
+
+.law-why-item > span {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        var(--law-primary),
+        var(--law-secondary)
+    );
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.law-why-item p {
+    margin: 1px 0 0;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   REGULATIONS
+========================================= */
+
+.law-regulation-card {
+    padding: 30px;
+}
+
+.law-regulation-card h2 {
+    margin: 0 0 14px;
+    font-size: 24px;
+}
+
+.law-regulation-card p {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.law-faq-section {
+    background: linear-gradient(
+        135deg,
+        rgba(6, 182, 212, 0.035),
+        rgba(121, 82, 217, 0.04)
+    );
+}
+
+.law-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.law-faq-item {
+    padding: 0;
+    overflow: hidden;
+}
+
+.law-faq-item summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 19px 22px;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.law-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.law-faq-number {
+    display: grid;
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    place-items: center;
+
+    border-radius: 10px;
+
+    color: var(--law-primary);
+    background: rgba(23, 105, 224, 0.09);
+
+    font-size: 12px;
+    font-weight: 850;
+}
+
+.law-faq-question {
+    flex: 1;
+
+    color: var(--law-dark);
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.law-faq-plus {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--law-primary);
+    background: rgba(23, 105, 224, 0.09);
+
+    font-size: 21px;
+
+    transition: transform 0.3s ease;
+}
+
+.law-faq-item[open] .law-faq-plus {
+    transform: rotate(45deg);
+}
+
+.law-faq-answer {
+    padding: 0 22px 18px 74px;
+}
+
+.law-faq-answer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.law-cta-section {
+    padding-top: 35px;
+    padding-bottom: 60px;
+}
+
+.law-cta-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    min-height: 280px;
+    padding: 40px 50px;
+
+    overflow: hidden;
+    border: none;
+
+    background: linear-gradient(
+        120deg,
+        rgba(23, 105, 224, 0.1),
+        rgba(6, 182, 212, 0.1),
+        rgba(121, 82, 217, 0.09)
+    );
+}
+
+.law-cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.law-cta-content h2 {
+    margin: 0 0 13px;
+    font-size: clamp(25px, 4vw, 36px);
+    font-weight: 850;
+}
+
+.law-cta-content h2 span {
+    color: var(--law-primary);
+}
+
+.law-cta-content p {
+    margin: 0 0 12px;
+    font-size: 14px;
+}
+
+.law-cta-decoration {
+    display: grid;
+    width: 190px;
+    height: 190px;
+    flex-shrink: 0;
+    place-items: center;
+
+    border: 1px solid rgba(23, 105, 224, 0.12);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.law-cta-circle {
+    display: grid;
+    width: 125px;
+    height: 125px;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        var(--law-primary),
+        var(--law-secondary)
+    );
+
+    box-shadow: 0 12px 30px rgba(23, 105, 224, 0.25);
+
+    font-size: 55px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes lawFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.law-intro-card,
+.law-section-heading,
+.law-glass {
+    animation: lawFadeUp 0.7s ease both;
+}
+
+
+/* =========================================
+   RESPONSIVE: TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .law-hero {
+        height: 350px;
+    }
+
+    .law-course-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .law-reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .law-admission-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .law-career-grid,
+    .law-infrastructure-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .law-info-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .law-info-strip div:nth-child(2) {
+        border-right: none;
+    }
+
+    .law-info-strip div:nth-child(3),
+    .law-info-strip div:nth-child(4) {
+        padding-top: 10px;
+        border-top: 1px solid rgba(23, 105, 224, 0.12);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE: MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .law-container {
+        width: 92%;
+    }
+
+    .law-hero {
+        height: 250px;
+        min-height: 220px;
+    }
+
+    .law-section {
+        padding: 35px 0;
+    }
+
+    .law-intro-section {
+        padding-top: 25px;
+    }
+
+    .law-intro-card {
+        padding: 24px 20px;
+    }
+
+    .law-intro-card h1 {
+        font-size: 27px;
+    }
+
+    .law-intro-card h2 {
+        font-size: 17px;
+    }
+
+    .law-intro-card p {
+        font-size: 14px;
+    }
+
+    .law-intro-buttons {
+        flex-direction: column;
+    }
+
+    .law-btn {
+        width: 100%;
+    }
+
+    .law-section-heading {
+        margin-bottom: 24px;
+    }
+
+    .law-section-heading h2 {
+        font-size: 27px;
+    }
+
+    .law-section-heading p {
+        font-size: 13px;
+    }
+
+    .law-course-overview-grid,
+    .law-reasons-grid,
+    .law-eligibility-grid,
+    .law-admission-grid,
+    .law-career-grid,
+    .law-infrastructure-grid,
+    .law-why-card {
+        grid-template-columns: 1fr;
+    }
+
+    .law-course-card {
+        padding: 23px;
+    }
+
+    .law-course-header {
+        align-items: flex-start;
+        padding: 22px;
+    }
+
+    .law-course-header h2 {
+        font-size: 24px;
+    }
+
+    .law-course-duration {
+        width: 75px;
+        height: 75px;
+    }
+
+    .law-course-duration strong {
+        font-size: 25px;
+    }
+
+    .law-course-duration span {
+        font-size: 10px;
+    }
+
+    .law-content-card {
+        padding: 21px;
+        margin-bottom: 32px;
+    }
+
+    .law-content-card h3 {
+        font-size: 21px;
+    }
+
+    .law-info-strip {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 14px;
+    }
+
+    .law-info-strip div {
+        padding: 8px;
+    }
+
+    .law-reason-card,
+    .law-eligibility-card,
+    .law-seat-card,
+    .law-admission-card,
+    .law-career-card,
+    .law-infrastructure-card {
+        padding: 21px;
+    }
+
+    .law-affiliation-card {
+        padding: 23px;
+    }
+
+    .law-why-card {
+        padding: 20px;
+    }
+
+    .law-why-item {
+        padding: 12px 0;
+    }
+
+    .law-faq-item summary {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .law-faq-question {
+        font-size: 13px;
+    }
+
+    .law-faq-number {
+        width: 31px;
+        height: 31px;
+    }
+
+    .law-faq-answer {
+        padding: 0 15px 17px 56px;
+    }
+
+    .law-faq-answer p {
+        font-size: 13px;
+    }
+
+    .law-cta-card {
+        min-height: auto;
+        padding: 28px 22px;
+    }
+
+    .law-cta-decoration {
+        display: none;
+    }
+
+    .law-cta-content h2 {
+        font-size: 27px;
+    }
+
+    .law-cta-content p {
+        font-size: 13px;
+    }
+
+    .law-cta-buttons {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .law-hero {
+        height: 210px;
+    }
+
+    .law-intro-card h1 {
+        font-size: 24px;
+    }
+
+    .law-course-header {
+        flex-direction: column;
+    }
+
+    .law-course-duration {
+        width: 80px;
+        height: 80px;
+    }
+
+    .law-info-strip strong {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .law-page *,
+    .law-page *::before,
+    .law-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
