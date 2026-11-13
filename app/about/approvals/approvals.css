@@ -1,0 +1,774 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+.affiliations-page {
+    width: 100%;
+    overflow: hidden;
+    color: #252b36;
+    background: #fff;
+}
+
+.affiliations-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.affiliations-hero {
+    min-height: 330px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(15, 39, 78, 0.96),
+            rgba(23, 59, 115, 0.88)
+        );
+
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.affiliations-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(232, 117, 22, 0.18),
+            transparent 35%
+        );
+}
+
+.affiliations-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+.affiliations-eyebrow {
+    display: inline-block;
+
+    color: #ffb16c;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.affiliations-hero h1 {
+    color: #fff;
+
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    margin: 0 0 15px;
+}
+
+.affiliations-hero h1 span {
+    color: #f28b36;
+}
+
+.affiliations-hero-content > p {
+    max-width: 620px;
+    margin: 0 auto 25px;
+
+    color: #e1e8f3;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* BREADCRUMB */
+
+.affiliations-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    font-size: 12px;
+    color: #d8e1ef;
+}
+
+.affiliations-breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.affiliations-breadcrumb a:hover {
+    color: #f28b36;
+}
+
+.affiliations-breadcrumb i {
+    font-size: 9px;
+    color: #f28b36;
+}
+
+.affiliations-breadcrumb span {
+    color: #ffae6b;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.affiliations-intro {
+    padding: 65px 0 45px;
+    text-align: center;
+}
+
+.affiliations-intro-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    background: #fff2e8;
+    color: #c45d10;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.affiliations-intro h2 {
+    font-size: 35px;
+    font-weight: 750;
+
+    line-height: 1.3;
+
+    color: #173b73;
+
+    margin: 0 0 20px;
+}
+
+.affiliations-intro h2 span {
+    color: #e87516;
+}
+
+.affiliations-intro p {
+    max-width: 850px;
+
+    margin: 0 auto 12px;
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    color: #626b79;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.recognised-section {
+    padding: 45px 0 75px;
+    background: #f7f8fa;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: #e87516;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    color: #173b73;
+
+    font-size: 34px;
+    font-weight: 750;
+
+    line-height: 1.3;
+
+    margin: 0 0 12px;
+}
+
+.section-heading h2 span {
+    color: #e87516;
+}
+
+.section-heading p {
+    color: #6a7280;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   RECOGNISED BODIES GRID
+========================================= */
+
+.recognised-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.recognised-card {
+    min-height: 245px;
+
+    position: relative;
+
+    background: #fff;
+
+    border: 1px solid #e6e9ee;
+    border-radius: 13px;
+
+    padding: 25px 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.recognised-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #e87516;
+
+    box-shadow:
+        0 12px 30px rgba(23, 59, 115, 0.09);
+}
+
+
+/* LOGO */
+
+.recognised-logo {
+    width: 115px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+.recognised-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* CARD TEXT */
+
+.recognised-short-name {
+    display: block;
+
+    color: #e87516;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.recognised-info h3 {
+    color: #173b73;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/* CHECK ICON */
+
+.recognised-card-icon {
+    position: absolute;
+
+    top: 13px;
+    right: 13px;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #fff2e8;
+    color: #e87516;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   PROGRAMME SECTION
+========================================= */
+
+.programme-section {
+    padding: 75px 0;
+    background: #fff;
+}
+
+.programme-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #e5e8ee;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 25px rgba(23, 59, 115, 0.05);
+}
+
+.programme-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+
+    text-align: left;
+}
+
+
+/* TABLE HEADER */
+
+.programme-table thead {
+    background: #173b73;
+}
+
+.programme-table th {
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 19px 20px;
+
+    white-space: nowrap;
+}
+
+
+/* TABLE BODY */
+
+.programme-table td {
+    padding: 17px 20px;
+
+    color: #596273;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.programme-table tbody tr {
+    transition: background 0.25s ease;
+}
+
+.programme-table tbody tr:nth-child(even) {
+    background: #f8f9fb;
+}
+
+.programme-table tbody tr:hover {
+    background: #fff4eb;
+}
+
+.programme-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.programme-table td:first-child {
+    color: #e87516;
+    font-weight: 750;
+}
+
+.programme-name {
+    color: #173b73 !important;
+    font-weight: 650;
+}
+
+
+/* COLLEGE TAG */
+
+.college-tag {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    background: #eef3fb;
+    color: #173b73;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+
+/* DISCLAIMER */
+
+.programme-disclaimer {
+    margin: 18px 0 0;
+
+    color: #7a8290;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CTA SECTION
+========================================= */
+
+.affiliations-cta {
+    padding: 65px 25px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #173b73,
+            #102c59
+        );
+
+    text-align: center;
+}
+
+.affiliations-cta-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.affiliations-cta-content > span {
+    display: inline-block;
+
+    color: #ffad68;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.affiliations-cta h2 {
+    color: #fff;
+
+    font-size: 34px;
+    line-height: 1.4;
+
+    font-weight: 750;
+
+    margin: 0 0 15px;
+}
+
+.affiliations-cta p {
+    color: #d7e1f0;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+/* CTA BUTTONS */
+
+.affiliations-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+    min-width: 145px;
+
+    padding: 13px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.cta-primary {
+    background: #e87516;
+    color: #fff;
+}
+
+.cta-primary:hover {
+    background: #fff;
+    color: #173b73;
+
+    transform: translateY(-3px);
+}
+
+.cta-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+}
+
+.cta-secondary:hover {
+    background: #fff;
+    color: #173b73;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .recognised-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .affiliations-intro h2,
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - SMALL TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .affiliations-hero {
+        min-height: 290px;
+    }
+
+    .recognised-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .recognised-card {
+        min-height: 225px;
+    }
+
+    .recognised-logo {
+        width: 105px;
+        height: 95px;
+    }
+
+    .programme-section,
+    .recognised-section {
+        padding: 50px 0;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .affiliations-container {
+        padding: 0 18px;
+    }
+
+    .affiliations-hero {
+        min-height: 270px;
+        padding: 45px 15px;
+    }
+
+    .affiliations-eyebrow {
+        font-size: 10px;
+    }
+
+    .affiliations-hero h1 {
+        font-size: 32px;
+    }
+
+    .affiliations-hero-content > p {
+        font-size: 13px;
+    }
+
+    .affiliations-breadcrumb {
+        gap: 8px;
+        font-size: 10px;
+    }
+
+    .affiliations-intro {
+        padding: 45px 0 35px;
+    }
+
+    .affiliations-intro h2,
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .affiliations-intro p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .recognised-grid {
+        gap: 12px;
+    }
+
+    .recognised-card {
+        min-height: 200px;
+        padding: 20px 10px;
+    }
+
+    .recognised-logo {
+        width: 85px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .recognised-info h3 {
+        font-size: 11px;
+    }
+
+    .recognised-short-name {
+        font-size: 10px;
+    }
+
+    .recognised-card-icon {
+        width: 21px;
+        height: 21px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .programme-section {
+        padding: 45px 0;
+    }
+
+    .programme-table th,
+    .programme-table td {
+        padding: 14px 13px;
+        font-size: 12px;
+    }
+
+    .programme-disclaimer {
+        font-size: 11px;
+    }
+
+    .affiliations-cta {
+        padding: 50px 18px;
+    }
+
+    .affiliations-cta h2 {
+        font-size: 26px;
+    }
+
+    .affiliations-cta p {
+        font-size: 13px;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .recognised-card,
+    .cta-primary,
+    .cta-secondary,
+    .affiliations-breadcrumb a {
+        transition: none;
+    }
+
+}

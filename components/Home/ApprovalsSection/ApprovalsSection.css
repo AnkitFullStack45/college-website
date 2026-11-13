@@ -1,0 +1,449 @@
+/* ==========================================
+   APPROVALS SECTION
+========================================== */
+
+.approvals-section {
+    width: 100%;
+    padding: 65px 25px;
+    background: #f6f6f7;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.approvals-container {
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.95fr 2fr;
+    align-items: center;
+    gap: 35px;
+}
+
+
+/* ==========================================
+   LEFT CONTENT
+========================================== */
+
+.approvals-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.approvals-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    background: #eee8e8;
+    color: #173B73;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.approvals-badge i {
+    font-size: 11px;
+    color: #173B73;
+}
+
+.approvals-content h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #173B73;
+    margin: 0 0 10px;
+}
+
+.approvals-content h2 span {
+    display: block;
+    color: #E87516;
+}
+
+.approvals-content p {
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #444;
+
+    margin: 0 0 18px;
+    max-width: 360px;
+}
+
+.approvals-link {
+    display: inline-flex;
+    align-items: center;
+
+    color: #173B73;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.approvals-link span {
+    display: inline-block;
+    margin-left: 6px;
+
+    transition: transform 0.3s ease;
+}
+
+.approvals-link:hover {
+    color: #E87516;
+}
+
+.approvals-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ==========================================
+   CAROUSEL
+========================================== */
+
+.approvals-carousel {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+
+    padding-top: 35px;
+}
+
+
+/* ==========================================
+   NAVIGATION BUTTONS
+========================================== */
+
+.approvals-controls {
+    position: absolute;
+
+    right: 0;
+    top: -22px;
+
+    display: flex;
+    gap: 10px;
+
+    z-index: 5;
+}
+
+.approvals-controls button {
+    width: 43px;
+    height: 43px;
+
+    border: 1px solid #ded8d8;
+    border-radius: 50%;
+
+    background: #eee9e9;
+    color:black;
+
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.approvals-controls button:hover {
+    background: #E87516;
+    color: #fff;
+
+    border-color: #E87516;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(232, 117, 22, 0.2);
+}
+
+.approvals-controls button:active {
+    transform: scale(0.94);
+}
+
+
+/* ==========================================
+   SLIDER VIEWPORT
+========================================== */
+
+.approvals-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ==========================================
+   SLIDER TRACK
+========================================== */
+
+.approvals-track {
+    display: flex;
+    gap: 16px;
+
+    width: 100%;
+
+    will-change: transform;
+}
+
+.approvals-track.slide-active {
+    transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.approvals-track.slide-reset {
+    transition: none;
+}
+
+
+/* ==========================================
+   INDIVIDUAL CARDS
+========================================== */
+
+.approval-card {
+    flex: 0 0 calc(
+        (100% - (16px * (var(--visible-cards) - 1)))
+        / var(--visible-cards)
+    );
+
+    min-width: 0;
+    min-height: 245px;
+
+    padding: 25px 15px;
+
+    background: #fff;
+
+    border: 1px solid #e0e3e9;
+    border-radius: 13px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.approval-card:hover {
+    border-color: #E87516;
+
+    box-shadow: 0 10px 25px rgba(232, 117, 22, 0.12);
+}
+
+
+/* ==========================================
+   IMAGE WRAPPER
+========================================== */
+
+.approval-image-wrapper {
+    width: 130px;
+    height: 130px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #e0e3e9;
+    border-radius: 50%;
+
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.approval-card:hover .approval-image-wrapper {
+    border-color: #E87516;
+
+    transform: scale(1.04);
+
+    box-shadow: 0 5px 15px rgba(232, 117, 22, 0.12);
+}
+
+
+/* ==========================================
+   APPROVAL LOGOS
+========================================== */
+
+.approval-image {
+    width: 110px;
+    height: 85px;
+
+    max-width: 90%;
+    max-height: 75%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* ==========================================
+   APPROVAL TITLE
+========================================== */
+
+.approval-card h3 {
+    color: #173B73;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    max-width: 190px;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .approvals-section {
+        padding: 55px 25px;
+    }
+
+    .approvals-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .approvals-content {
+        max-width: 600px;
+    }
+
+    .approvals-content h2 {
+        font-size: 31px;
+    }
+
+    .approvals-carousel {
+        padding-top: 40px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL TABLET
+========================================== */
+
+@media (max-width: 700px) {
+
+    .approvals-section {
+        padding: 45px 20px;
+    }
+
+    .approvals-content h2 {
+        font-size: 29px;
+    }
+
+    .approval-card {
+        min-height: 230px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .approvals-section {
+        padding: 40px 18px;
+    }
+
+    .approvals-container {
+        gap: 25px;
+    }
+
+    .approvals-content h2 {
+        font-size: 27px;
+    }
+
+    .approvals-content p {
+        font-size: 13px;
+    }
+
+    .approvals-carousel {
+        padding-top: 38px;
+    }
+
+    .approvals-controls {
+        top: -12px;
+    }
+
+    .approvals-controls button {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+    }
+
+    .approval-card {
+        min-height: 225px;
+        padding: 22px 15px;
+    }
+
+    .approval-image-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .approval-image {
+        width: 100px;
+        height: 75px;
+    }
+
+    .approval-card h3 {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .approvals-track.slide-active {
+        transition: none;
+    }
+
+    .approval-card,
+    .approval-image-wrapper {
+        transition: none;
+    }
+
+}

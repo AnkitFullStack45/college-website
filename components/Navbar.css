@@ -597,3 +597,51 @@
     pointer-events: none !important;
   }
 }
+/* =========================================
+   EXTRA LARGE SCREENS
+========================================= */
+
+@media (min-width: 1440px) {
+
+    .navbar-container {
+        padding-left: clamp(50px, 5vw, 100px);
+        padding-right: clamp(50px, 5vw, 100px);
+    }
+
+    .navbar-list {
+        gap: clamp(18px, 1.5vw, 28px);
+    }
+
+    .navbar-link {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .erp-login {
+        margin-left: 20px;
+    }
+}
+
+/* =========================================
+   ULTRA WIDE SCREENS
+========================================= */
+
+@media (min-width: 1800px) {
+
+    .navbar-container {
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+
+    .navbar-list {
+        gap: 32px;
+    }
+
+    .navbar-link {
+        font-size: 14px;
+    }
+
+    .erp-login {
+        margin-left: 24px;
+    }
+}

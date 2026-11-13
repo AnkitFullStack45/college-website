@@ -51,11 +51,11 @@ return ( <footer className="main-footer">
 
                 <ul className="footer-links">
                     <li><Link href="/">Home</Link></li>
-                    <li><Link href="/about-templ">About Us</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
+                    <li><Link href="/about">About Us</Link></li>
+                    <li><Link href="/register/enquiry">Contact</Link></li>
                     <li><Link href="/blog">Blog</Link></li>
-                    <li><Link href="/campus">Campus</Link></li>
-                    <li><Link href="/placement">Placement</Link></li>
+                    <li><Link href="/Edge/campus-life">Campus</Link></li>
+                    <li><Link href="/Edge/placement-facility">Placement</Link></li>
                     <li><Link href="/blog-login">Blog Login</Link></li>
                 </ul>
 
@@ -63,13 +63,11 @@ return ( <footer className="main-footer">
 
          {/* Column 3: Our Services */}
             <div className="footer-column">
-
                 <h3>Our Services</h3>
-
                 <ul className="footer-links">
                     <li><Link href="/departments">Departments</Link></li>
                     <li><Link href="/courses">Courses</Link></li>
-                    <li><Link href="/colleges">Colleges</Link></li>
+                    <li><Link href="/colleges/iet-college">Colleges</Link></li>
                     <li><Link href="/gallery">Gallery</Link></li>
                     <li><Link href="/privacy-policy">Privacy Policy</Link></li>
                     <li><Link href="/terms-of-service">Terms of Service</Link></li>
@@ -79,9 +77,7 @@ return ( <footer className="main-footer">
 
             {/* Column 4: Social Networks */}
             <div className="footer-column">
-
                 <h3>Our Social Networks</h3>
-
                 <div className="footer-social">
                     <a
                         href="https://www.facebook.com/profile.php?id=100063790814316/"
@@ -91,7 +87,6 @@ return ( <footer className="main-footer">
                     >
                         <i className="fa-brands fa-facebook-f"></i>
                     </a>
-
                     <a
                         href="https://www.instagram.com/templgroup/"
                         target="_blank"
@@ -100,7 +95,6 @@ return ( <footer className="main-footer">
                     >
                         <i className="fa-brands fa-instagram"></i>
                     </a>
-
                     <a
                         href="https://www.youtube.com/@TEMPLGroupofinstitutions"
                         target="_blank"
@@ -109,11 +103,8 @@ return ( <footer className="main-footer">
                     >
                         <i className="fa-brands fa-youtube"></i>
                     </a>
-
                 </div>
-
             </div>
-
         </div>
 
 
