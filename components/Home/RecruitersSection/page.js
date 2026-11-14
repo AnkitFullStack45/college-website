@@ -17,7 +17,7 @@ const recruiters = [
     {
         id: 3,
         name: "DYAUSMED",
-        image: "/images/recruiters/dy.webp",
+        image: "/images/recruiters/dyausmed1.webp",
     },
     {
         id: 4,
@@ -122,7 +122,7 @@ export default function RecruitersSection() {
                 <div className="recruiters-button-wrapper">
 
                     <Link
-                        href="/placements/recruiters"
+                        href="/Edge/placement-facility/recruiters"
                         className="recruiters-view-btn"
                     >
 

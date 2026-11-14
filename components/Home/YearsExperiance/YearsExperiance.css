@@ -1,0 +1,245 @@
+/* =========================================
+   22 YEARS OF EXPERIENCE  (Glassmorphism)
+========================================= */
+
+.years-section {
+    position: relative;
+    width: 100%;
+    padding: 65px 25px 70px;
+    background: linear-gradient(135deg, #eeeafc 0%, #e6f3fd 55%, #fff3e8 100%);
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* Soft colour blobs so the glass has something to blur */
+.years-section::before,
+.years-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.years-section::before {
+    width: 340px;
+    height: 340px;
+    background: #8b7ae6;
+    top: -100px;
+    left: -90px;
+}
+
+.years-section::after {
+    width: 320px;
+    height: 320px;
+    background: #5cc4f5;
+    bottom: -100px;
+    right: -70px;
+}
+
+.years-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ---------- Heading ---------- */
+
+.years-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px;
+}
+
+.years-heading h2 {
+    margin: 0 0 20px;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #111;
+}
+
+.years-heading h2 span {
+    color: #5b45c9;
+}
+
+.years-heading p {
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+
+/* ---------- Stats row ---------- */
+
+.years-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/* ---------- Glass stat card ---------- */
+
+.years-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 14px 22px;
+
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 18px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow:
+        0 8px 28px rgba(91, 69, 201, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+.years-stat:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow:
+        0 16px 36px rgba(31, 166, 238, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* Icon inside a small glass circle */
+
+.years-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 14px;
+    font-size: 26px;
+    line-height: 1;
+    color: #0a0a0a;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    box-shadow:
+        0 6px 16px rgba(23, 59, 115, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        background 0.35s ease;
+}
+
+.years-stat:hover .years-stat-icon {
+    transform: translateY(-3px) scale(1.08);
+    color: #fff;
+    background: #1fa6ee;
+}
+
+.years-stat-number {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #1fa6ee;
+    margin-bottom: 12px;
+}
+
+.years-stat-unit {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.years-stat-label {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #222;
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+    .years-heading h2 {
+        font-size: 32px;
+    }
+
+    .years-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 550px) {
+    .years-section {
+        padding: 50px 16px 55px;
+    }
+
+    .years-heading {
+        margin-bottom: 36px;
+    }
+
+    .years-heading h2 {
+        font-size: 26px;
+    }
+
+    .years-heading p {
+        font-size: 13.5px;
+        line-height: 1.75;
+    }
+
+    .years-stats {
+        gap: 14px;
+    }
+
+    .years-stat {
+        padding: 20px 10px 18px;
+        border-radius: 16px;
+    }
+
+    .years-stat-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 23px;
+    }
+
+    .years-stat-number {
+        font-size: 32px;
+    }
+
+    .years-stat-unit {
+        font-size: 17px;
+    }
+
+    .years-stat-label {
+        font-size: 12.5px;
+    }
+}
+
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .years-stat,
+    .years-stat-icon {
+        transition: none;
+    }
+}

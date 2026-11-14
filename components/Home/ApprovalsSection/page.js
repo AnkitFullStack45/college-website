@@ -157,17 +157,22 @@ export default function ApprovalsSection() {
 
     }, []);
 
-    // Infinite carousel reset
-    const handleTransitionEnd = () => {
+    // Infinite carousel reset  (ONLY THIS FUNCTION IS CHANGED)
+    const handleTransitionEnd = (e) => {
 
-        if (currentIndex === approvals.length + 1) {
+        // ignore hover transitions bubbling up from the cards
+        if (e.target !== e.currentTarget) return;
+
+        // went past the last real card -> jump back to the start
+        if (currentIndex >= approvals.length + 1) {
 
             setTransitionEnabled(false);
-            setCurrentIndex(1);
+            setCurrentIndex(1 + ((currentIndex - 1) % approvals.length));
 
         }
 
-        if (currentIndex === 0) {
+        // went before the first real card -> jump to the end
+        if (currentIndex <= 0) {
 
             setTransitionEnabled(false);
             setCurrentIndex(approvals.length);

@@ -16,14 +16,15 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/free-regular-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
-    "next": "^16.4.5",
+    "@fortawesome/react-fontawesome": "^3.5.0",
+    "next": "16.4.5",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
-    "eslint": "^4.0.0",
-    "eslint-config-next": "^12.0.4",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.4.5",
     "tailwindcss": "^4"
   }
 }

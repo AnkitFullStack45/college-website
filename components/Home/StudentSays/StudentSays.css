@@ -1,0 +1,265 @@
+/* =========================================
+   WHAT OUR STUDENTS SAY  (Glassmorphism)
+========================================= */
+
+.students-section {
+    position: relative;
+    width: 100%;
+    padding: 55px 25px 65px;
+    background: linear-gradient(135deg, #f4f7ff 0%, #fff6ee 100%);
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* Soft colour blobs so the glass has something to blur */
+.students-section::before,
+.students-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.students-section::before {
+    width: 340px;
+    height: 340px;
+    background: #6f93d6;
+    top: -90px;
+    left: -90px;
+}
+
+.students-section::after {
+    width: 320px;
+    height: 320px;
+    background: #ffb27a;
+    bottom: -90px;
+    right: -70px;
+}
+
+.students-title {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #173B73;
+}
+/* ---------- Slider frame ---------- */
+
+.students-slider {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 56px;
+}
+
+
+/* ---------- Glass panel (stays still, slides move inside) ---------- */
+
+.students-viewport {
+    width: 100%;
+    padding: 30px 14px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow:
+        0 10px 32px rgba(23, 59, 115, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.students-track {
+    display: flex;
+    width: 100%;
+}
+
+.students-track.is-animating {
+    transition: transform 0.8s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+
+/* ---------- Slide ---------- */
+
+.students-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    padding: 0 16px;
+}
+
+/* Photo with a glass ring */
+.students-photo {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    padding: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 8px 22px rgba(23, 59, 115, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.students-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+.students-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.students-quote {
+    margin: 0 0 12px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #4a5260;
+}
+
+.students-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #173B73;
+}
+
+
+/* ---------- Glass arrows ---------- */
+
+.students-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    color: #173B73;
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+        0 6px 16px rgba(23, 59, 115, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.students-arrow-prev { left: 0; }
+.students-arrow-next { right: 0; }
+
+.students-arrow:hover {
+    color: #fff;
+    background: #E87516;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow:
+        0 10px 22px rgba(232, 117, 22, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.students-arrow:focus-visible {
+    outline: 2px solid #E87516;
+    outline-offset: 2px;
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+    .students-title {
+        margin-bottom: 45px;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+    .students-section {
+        padding: 45px 16px 50px;
+    }
+
+    .students-title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .students-slider {
+        padding: 0 4px;
+    }
+
+    .students-viewport {
+        padding: 24px 8px 64px; /* extra bottom room for the arrows */
+        border-radius: 18px;
+    }
+
+    .students-slide {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+        padding: 0 8px;
+    }
+
+    .students-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .students-quote {
+        font-size: 13.5px;
+    }
+
+    /* arrows move to the bottom centre on phones */
+    .students-arrow {
+        top: auto;
+        bottom: 14px;
+        width: 38px;
+        height: 38px;
+        transform: none;
+    }
+
+    .students-arrow-prev { left: calc(50% - 46px); }
+    .students-arrow-next { right: calc(50% - 46px); }
+
+    .students-arrow:hover {
+        transform: scale(1.08);
+    }
+}
+
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .students-track.is-animating,
+    .students-arrow {
+        transition: none;
+    }
+}

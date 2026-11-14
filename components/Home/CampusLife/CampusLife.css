@@ -1,0 +1,431 @@
+/* =========================================
+   TEMPL CAMPUS LIFE SECTION  (Glassmorphism)
+========================================= */
+
+.campus-life-section {
+    position: relative;
+    width: 100%;
+    padding: 65px 25px;
+    background: linear-gradient(135deg, #f4f7ff 0%, #fff6ee 100%);
+    overflow: hidden;
+}
+
+/* Soft colour blobs so the glass has something to blur */
+.campus-life-section::before,
+.campus-life-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.campus-life-section::before {
+    width: 340px;
+    height: 340px;
+    background: #6f93d6;
+    top: -90px;
+    left: -90px;
+}
+
+.campus-life-section::after {
+    width: 320px;
+    height: 320px;
+    background: #ffb27a;
+    bottom: -90px;
+    right: -70px;
+}
+
+.campus-life-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.campus-life-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 55px;
+}
+
+/* Glass pill label */
+.campus-section-label {
+    display: inline-block;
+    padding: 7px 18px;
+    color: #E87516;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 14px rgba(23, 59, 115, 0.08);
+}
+
+.campus-life-heading h2 {
+    font-size: 36px;
+    font-weight: 750;
+    color: #173B73;
+    line-height: 1.3;
+    margin: 0 0 20px;
+    letter-spacing: -0.7px;
+}
+
+.campus-life-heading h2 span {
+    color: #E87516;
+}
+
+.campus-life-heading p {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #5b6472;
+    font-weight: 400;
+}
+
+.campus-heading-line {
+    width: 55px;
+    height: 3px;
+    background: #E87516;
+    border-radius: 10px;
+    margin: 22px auto 0;
+}
+
+
+/* =========================================
+   CAMPUS GALLERY GRID
+========================================= */
+
+.campus-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 24px;
+}
+
+
+/* =========================================
+   COMMON GALLERY CARD
+========================================= */
+
+.campus-gallery-card {
+    position: relative;
+    width: 100%;
+    height: 208px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    isolation: isolate;
+
+    box-shadow:
+        0 8px 28px rgba(23, 59, 115, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.campus-gallery-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 36px rgba(23, 59, 115, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.video-card {
+    background: rgba(17, 17, 17, 0.4);
+}
+
+.image-card {
+    background: rgba(34, 34, 34, 0.35);
+}
+
+
+/* =========================================
+   MEDIA WRAPPER (shared by image + video)
+========================================= */
+
+.campus-media-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   VIDEO + IMAGE
+========================================= */
+
+.campus-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    background: #111;
+    border-radius: 16px;
+    pointer-events: none; /* hover/click handled by wrapper */
+
+    transition:
+        transform 0.65s cubic-bezier(0.2, 0.7, 0.3, 1),
+        filter 0.5s ease;
+}
+
+.campus-image {
+    object-fit: cover;
+
+    transition:
+        transform 0.65s cubic-bezier(0.2, 0.7, 0.3, 1),
+        filter 0.5s ease;
+}
+
+/* Zoom effect (image + video) */
+.campus-media-wrapper:hover .campus-image,
+.campus-media-wrapper:hover .campus-video {
+    transform: scale(1.09);
+    filter: brightness(0.9);
+}
+
+
+/* =========================================
+   HOVER OVERLAY  (frosted glass panel)
+========================================= */
+
+.campus-image-overlay {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    padding: 12px 14px 12px;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        0 8px 22px rgba(12, 35, 69, 0.25);
+
+    opacity: 0;
+    transform: translateY(25px);
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+.campus-media-wrapper:hover .campus-image-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    background: rgba(23, 59, 115, 0.45);
+}
+
+/* Title */
+.campus-image-overlay h3 {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 650;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+
+    transition: color 0.3s ease;
+}
+
+.campus-media-wrapper:hover .campus-overlay-line {
+    width: 60px;
+}
+
+
+/* =========================================
+   ABOUT TEMPL BUTTON  (glass)
+========================================= */
+
+.campus-about-button-wrapper {
+    margin-top: 22px;
+    text-align: left;
+}
+
+.campus-about-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 22px;
+
+    background: rgba(23, 59, 115, 0.82);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    border-radius: 10px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 6px 16px rgba(23, 59, 115, 0.25);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.campus-about-button span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.campus-about-button:hover {
+    background: rgba(22, 155, 232, 0.9);
+    color: #fff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 10px 22px rgba(232, 117, 22, 0.35);
+}
+
+.campus-about-button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .campus-life-section {
+        padding: 55px 25px;
+    }
+
+    .campus-life-container {
+        max-width: 750px;
+    }
+
+    .campus-video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .campus-gallery-card {
+        height: 210px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .campus-life-section {
+        padding: 45px 16px;
+    }
+
+    .campus-life-heading {
+        margin-bottom: 35px;
+    }
+
+    .campus-life-heading h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .campus-life-heading p {
+        font-size: 13.5px;
+        line-height: 1.8;
+    }
+
+    .campus-video-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .campus-gallery-card {
+        height: 230px;
+    }
+
+    .campus-image-overlay {
+        padding: 12px 16px 14px;
+    }
+
+    .campus-image-overlay h3 {
+        font-size: 16px;
+    }
+
+    .campus-about-button-wrapper {
+        margin-top: 22px;
+    }
+
+}
+
+
+/* =========================================
+   TOUCH DEVICE SUPPORT
+   (no hover on phones, so the glass title stays visible)
+========================================= */
+
+@media (hover: none) {
+
+    .campus-image-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(23, 59, 115, 0.4);
+    }
+
+    .campus-image,
+    .campus-video {
+        filter: brightness(0.92);
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .campus-gallery-card,
+    .campus-image,
+    .campus-video,
+    .campus-image-overlay,
+    .campus-overlay-line,
+    .campus-about-button,
+    .campus-about-button span {
+        transition: none;
+    }
+
+}
