@@ -1,0 +1,191 @@
+/* =========================================
+   WELCOME TO TEMPL GROUP  (Soft Glassmorphism, Full Width)
+========================================= */
+
+.welcome-templ {
+  position: relative;
+  width: 100%;
+  padding: 50px 40px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7f9ff 0%, #fff8f1 100%);
+  box-sizing: border-box;
+}
+
+/* Soft pastel blobs behind the glass */
+.welcome-templ::before,
+.welcome-templ::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.welcome-templ::before {
+  width: 360px;
+  height: 360px;
+  background: #a9c1f0;
+  top: -100px;
+  left: -80px;
+}
+
+.welcome-templ::after {
+  width: 380px;
+  height: 380px;
+  background: #ffd0a8;
+  bottom: -110px;
+  right: -80px;
+}
+
+
+/* ---------- Glass panel (full width) ---------- */
+
+.welcome-templ-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 52px 56px;
+
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  box-shadow:
+    0 10px 30px rgba(23, 59, 115, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-templ-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(23, 59, 115, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+
+/* ---------- Title & subtitle ---------- */
+
+.welcome-templ-title {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #173b73;
+  letter-spacing: 0.3px;
+}
+
+.welcome-templ-subtitle {
+  margin: 0 0 34px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #e87516;
+}
+
+
+/* ---------- Overview heading ---------- */
+
+.welcome-templ-heading {
+  position: relative;
+  margin: 0 0 20px;
+  padding-left: 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #173b73;
+}
+
+/* soft orange bar beside the heading */
+.welcome-templ-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background: #f2a15f;
+}
+
+
+/* ---------- Text ---------- */
+
+.welcome-templ-text {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #4a5568;
+  text-align: justify;
+}
+
+.welcome-templ-text:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+  .welcome-templ {
+    padding: 56px 24px;
+  }
+
+  .welcome-templ-card {
+    padding: 38px 32px;
+  }
+
+  .welcome-templ-title {
+    font-size: 1.9rem;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+  .welcome-templ {
+    padding: 44px 14px;
+  }
+
+  .welcome-templ-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .welcome-templ-title {
+    font-size: 1.5rem;
+  }
+
+  .welcome-templ-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 26px;
+  }
+
+  .welcome-templ-heading {
+    font-size: 1.2rem;
+  }
+
+  .welcome-templ-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-templ-card {
+    transition: none;
+  }
+
+  .welcome-templ-card:hover {
+    transform: none;
+  }
+}

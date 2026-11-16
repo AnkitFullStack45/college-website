@@ -1,0 +1,213 @@
+/* =========================================
+   SCHOLARSHIP SECTION
+========================================= */
+
+.scholarship-section {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.scholarship-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.scholarship-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 24px 40px;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+/* ---------- White circle icon overlapping the top edge ---------- */
+
+.scholarship-icon {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.scholarship-icon img {
+  display: block;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+}
+.scholarship-card:hover .scholarship-icon {
+  transform: translateX(-50%) scale(1.1);
+}
+/* ---------- Content ---------- */
+
+.scholarship-content {
+  text-align: center;
+  color: #fff;
+}
+
+.scholarship-value {
+  font-family: serif !important;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.scholarship-value.large {
+  font-family: serif !important;
+  font-size: 70px;
+  letter-spacing: 3px;
+  line-height: 0.9;
+}
+
+.scholarship-title {
+  margin-top: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.scholarship-title.large {
+  font-size: 23px;
+  letter-spacing: 0.5px;
+}
+
+.scholarship-info {
+  margin-top: 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.scholarship-info.small {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.scholarship-info.price {
+  margin-top: 22px;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.scholarship-info sup {
+  font-size: 12px;
+}
+
+.or-text {
+  font-size: 1.1em;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* ---------- Large laptops ---------- */
+
+@media (max-width: 1400px) {
+  .scholarship-value {
+    font-size: 40px;
+  }
+
+  .scholarship-value.large {
+    font-size: 56px;
+  }
+
+  .scholarship-title {
+    font-size: 16px;
+  }
+
+  .scholarship-title.large {
+    font-size: 19px;
+  }
+
+  .scholarship-info {
+    font-size: 14px;
+  }
+
+  .scholarship-info.small {
+    font-size: 12px;
+  }
+
+  .scholarship-info.price {
+    font-size: 20px;
+  }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 992px) {
+  .scholarship-grid {
+    grid-template-columns: repeat(2, 1fr);
+   /* room for the icon that sticks out above each row */
+    padding-top: 60px;      /* room for the first row's icons */
+  }
+
+  /* the card's own background must start where the icon starts, so
+     bottom row cards don't leave a gap */
+  .scholarship-card {
+    padding-bottom: 50px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 576px) {
+  .scholarship-grid {
+    grid-template-columns: 1fr;
+
+    align-items: stretch;
+  }
+
+  .scholarship-card {
+    padding: 80px 18px; /* clears the lower half of the icon (60px) */
+  }
+
+  .scholarship-content {
+    text-align: center;
+    color: #fff;
+  }
+
+  .scholarship-value {
+    font-size: 36px;
+  }
+
+  .scholarship-value.large {
+    font-size: 48px;
+  }
+
+  .scholarship-title {
+    font-size: 15px;
+  }
+
+  .scholarship-title.large {
+    font-size: 18px;
+  }
+
+  .scholarship-info.price {
+    font-size: 18px;
+  }
+}

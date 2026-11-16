@@ -1,0 +1,674 @@
+/* =====================================================
+   WHAT WE OFFER - GLASSMORPHISM SECTION
+===================================================== */
+
+.offer-creative-section {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 75px 25px 85px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(105, 231, 183, 0.20),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(107, 169, 235, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            125deg,
+            #effdf6 0%,
+            #f8fffb 50%,
+            #f3f8ff 100%
+        );
+}
+
+
+/* =====================================================
+   LARGE TRANSPARENT BACKGROUND CIRCLES
+===================================================== */
+
+.offer-creative-section::before,
+.offer-creative-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    border-radius: 50%;
+    pointer-events: none;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Top-left green circle */
+
+.offer-creative-section::before {
+    width: 320px;
+    height: 320px;
+
+    top: -180px;
+    left: -120px;
+
+    background: rgba(72, 215, 158, 0.22);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    box-shadow:
+        inset 0 0 45px rgba(255, 255, 255, 0.45),
+        0 15px 50px rgba(57, 180, 132, 0.08);
+}
+
+/* Bottom-right blue circle */
+
+.offer-creative-section::after {
+    width: 350px;
+    height: 350px;
+
+    bottom: -210px;
+    right: -140px;
+
+    background: rgba(93, 155, 231, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        inset 0 0 45px rgba(255, 255, 255, 0.45),
+        0 15px 50px rgba(67, 120, 190, 0.08);
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.offer-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   SMALL FLOATING GLASS CIRCLES
+===================================================== */
+
+.offer-container::before,
+.offer-container::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    border-radius: 50%;
+    pointer-events: none;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    animation: offerFloat 8s ease-in-out infinite;
+}
+
+/* Green floating circle */
+
+.offer-container::before {
+    width: 105px;
+    height: 105px;
+
+    top: 130px;
+    left: -100px;
+
+    background: rgba(71, 220, 164, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 10px 30px rgba(58, 190, 143, 0.08);
+}
+
+/* Orange floating circle */
+
+.offer-container::after {
+    width: 85px;
+    height: 85px;
+    bottom: 20px;
+    right: -90px;
+    background: rgba(232, 117, 22, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    animation-delay: 2s;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.offer-section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.offer-section-title h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 18px;
+    color: #173B73;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    background: rgba(255, 255, 255, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+        0 8px 30px rgba(23, 59, 115, 0.07),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Orange underline */
+
+.offer-title-line {
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin: 14px auto;
+
+    background: linear-gradient(
+        90deg,
+        #E87516,
+        #ffb15e
+    );
+
+    border-radius: 20px;
+}
+
+.offer-section-title p {
+    margin: 0;
+
+    color: #637080;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   OFFER GRID
+===================================================== */
+
+.offer-row {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    gap: 22px;
+}
+
+.offer-column {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =====================================================
+   VIDEO CARD
+===================================================== */
+
+.offer-card {
+    position: relative;
+
+    width: 100%;
+    height: 225px;
+
+    overflow: hidden;
+
+    background: #173B73;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(23, 59, 115, 0.11),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(232, 117, 22, 0.65);
+
+    box-shadow:
+        0 20px 40px rgba(23, 59, 115, 0.18),
+        0 0 20px rgba(232, 117, 22, 0.10);
+}
+
+
+/* =====================================================
+   VIDEO AND POSTER
+===================================================== */
+
+.offer-card .card-video {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: transform 0.8s ease;
+}
+
+/* Zoom video on hover (no dimming) */
+
+.offer-card:hover .card-video {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   BOTTOM GRADIENT OVERLAY
+===================================================== */
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        to top,
+        rgba(8, 24, 44, 0.80) 0%,
+        rgba(8, 24, 44, 0.45) 25%,
+        rgba(8, 24, 44, 0.08) 55%,
+        rgba(8, 24, 44, 0) 100%
+    );
+
+    transition: background 0.4s ease;
+}
+
+/* Lighter on hover so the playing video is clearer */
+
+.offer-card:hover .card-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(12, 34, 60, 0.75) 0%,
+        rgba(12, 34, 60, 0.35) 30%,
+        rgba(12, 34, 60, 0) 100%
+    );
+}
+
+
+/* =====================================================
+   BOTTOM CONTENT
+===================================================== */
+
+.card-bottom-content {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 8px 5px 3px;
+
+    transform: translateY(5px);
+
+    transition: transform 0.4s ease;
+}
+
+.offer-card:hover .card-bottom-content {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.card-bottom-content h3 {
+    margin: 0 0 13px;
+
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.55);
+
+    transition:
+        transform 0.35s ease,
+        letter-spacing 0.35s ease;
+}
+
+.offer-card:hover .card-bottom-content h3 {
+    transform: translateY(-2px);
+    letter-spacing: 0.2px;
+}
+
+
+/* =====================================================
+   GLASSMORPHISM BUTTON
+===================================================== */
+
+.read-more-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+
+    padding: 9px 22px;
+
+    color: #ffffff;
+    background: rgba(232, 117, 22, 0.95);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 16px rgba(232, 117, 22, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.read-more-btn:hover {
+    color: #ffffff;
+
+    background: #173B73;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(23, 59, 115, 0.30);
+}
+
+
+/* =====================================================
+   FLOATING CIRCLE ANIMATION
+===================================================== */
+
+@keyframes offerFloat {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-18px) translateX(8px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+
+/* =====================================================
+   LARGE SCREENS
+===================================================== */
+
+@media (min-width: 1400px) {
+
+    .offer-container {
+        max-width: 1250px;
+    }
+
+    .offer-row {
+        max-width: 900px;
+        gap: 24px;
+    }
+
+    .offer-card {
+        height: 240px;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .offer-creative-section {
+        padding: 65px 25px;
+    }
+
+    .offer-row {
+        max-width: 750px;
+        gap: 18px;
+    }
+
+    .offer-card {
+        height: 205px;
+    }
+
+    .card-bottom-content h3 {
+        font-size: 17px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .offer-creative-section {
+        padding: 55px 20px;
+    }
+
+    .offer-section-title {
+        margin-bottom: 38px;
+    }
+
+    .offer-section-title h2 {
+        font-size: 28px;
+    }
+
+    .offer-row {
+        gap: 15px;
+    }
+
+    .offer-card {
+        height: 190px;
+        border-radius: 14px;
+    }
+
+    .card-overlay {
+        padding: 15px;
+    }
+
+    .card-bottom-content h3 {
+        font-size: 16px;
+    }
+
+    .read-more-btn {
+        padding: 8px 18px;
+        font-size: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .offer-creative-section {
+        padding: 45px 16px 55px;
+    }
+
+    .offer-section-title {
+        margin-bottom: 30px;
+    }
+
+    .offer-section-title h2 {
+        font-size: 25px;
+        padding: 10px 22px;
+    }
+
+    .offer-section-title p {
+        font-size: 14px;
+        padding: 0 8px;
+    }
+
+    .offer-row {
+        grid-template-columns: 1fr;
+
+        max-width: 420px;
+
+        gap: 18px;
+    }
+
+    .offer-card {
+        height: 210px;
+        border-radius: 14px;
+    }
+
+    .card-overlay {
+        padding: 18px;
+    }
+
+    .card-bottom-content h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .read-more-btn {
+        min-width: 90px;
+        padding: 9px 20px;
+        font-size: 13px;
+    }
+
+    .offer-creative-section::before {
+        width: 200px;
+        height: 200px;
+
+        top: -120px;
+        left: -100px;
+    }
+
+    .offer-creative-section::after {
+        width: 220px;
+        height: 220px;
+
+        bottom: -130px;
+        right: -110px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .offer-creative-section {
+        padding: 40px 12px;
+    }
+
+    .offer-section-title h2 {
+        font-size: 23px;
+    }
+
+    .offer-card {
+        height: 185px;
+    }
+
+    .card-bottom-content h3 {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY - REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .offer-container::before,
+    .offer-container::after {
+        animation: none;
+    }
+
+    .offer-card,
+    .card-video,
+    .card-overlay,
+    .card-bottom-content,
+    .card-bottom-content h3,
+    .read-more-btn {
+        transition: none;
+    }
+
+}

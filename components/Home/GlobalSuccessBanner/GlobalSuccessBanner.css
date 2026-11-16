@@ -1,0 +1,114 @@
+/* =========================================
+   YOUR PATH TO GLOBAL SUCCESS  (Parallax banner)
+========================================= */
+
+.gs-banner {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* keep top/bottom equal to RANGE in the JSX */
+.gs-banner-bg {
+  position: absolute;
+  top: -60px;
+  bottom: -60px;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+.gs-banner-img {
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.gs-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 35, 25, 0.3);
+}
+
+.gs-banner-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.gs-banner-text {
+  max-width: 440px;
+}
+
+.gs-banner-title {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.gs-banner-desc {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: #f1f1f1;
+}
+
+.gs-banner-btn {
+  flex-shrink: 0;
+  padding: 11px 22px;
+  border-radius: 6px;
+  background: #ffa733;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.gs-banner-btn:hover {
+  background: #e87516;
+  transform: translateY(-2px);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+  .gs-banner {
+    min-height: 360px;
+  }
+
+  .gs-banner-inner {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 36px 18px;
+  }
+
+  .gs-banner-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-banner-btn {
+    transition: none;
+  }
+
+  .gs-banner-btn:hover {
+    transform: none;
+  }
+}

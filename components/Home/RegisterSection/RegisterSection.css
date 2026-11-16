@@ -1,0 +1,241 @@
+/* =========================================
+   REGISTER SECTION  (Image + blue form)
+========================================= */
+
+.register-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 520px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- Image side ---------- */
+
+.register-image {
+  position: relative;
+  min-height: 520px;
+}
+
+.register-img {
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* ---------- Form side ---------- */
+
+.register-form-wrap {
+  padding: 28px 28px 36px;
+  background: #3b82f6;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.register-title {
+  margin: 0 0 22px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.register-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.register-field label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.req {
+  color: #fecaca;
+}
+
+.register-field input,
+.register-field select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: #fff;
+  color: #1f2937;
+  font-family: inherit;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.register-field input::placeholder {
+  color: #6b7280;
+}
+
+.register-field input:focus,
+.register-field select:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.35);
+}
+
+.err {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #fee2e2;
+  background: rgba(185, 28, 28, 0.55);
+  padding: 2px 8px;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+
+/* ---------- Captcha ---------- */
+
+.register-captcha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.register-captcha-code {
+  display: inline-block;
+  min-width: 96px;
+  padding: 3px 12px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(
+    45deg,
+    #d1d5db,
+    #d1d5db 4px,
+    #e5e7eb 4px,
+    #e5e7eb 8px
+  );
+  color: #374151;
+  font-family: "Courier New", monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-align: center;
+  text-decoration: line-through;
+  text-decoration-color: rgba(55, 65, 81, 0.4);
+  user-select: none;
+}
+
+.register-captcha-refresh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.4s ease;
+}
+
+.register-captcha-refresh:hover {
+  background: #e87516;
+  transform: rotate(180deg);
+}
+
+/* ---------- Submit ---------- */
+
+.register-submit {
+  align-self: center;
+  margin-top: 6px;
+  padding: 10px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background: #1d6ff2;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.register-submit:hover:not(:disabled) {
+  background: #e87516;
+  transform: translateY(-2px);
+}
+
+.register-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-status {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.register-status.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.register-status.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ---------- Tablet / Mobile ---------- */
+
+@media (max-width: 900px) {
+  .register-section {
+    grid-template-columns: 1fr;
+  }
+
+  .register-image {
+    min-height: 320px;
+  }
+
+  .register-img {
+    object-position: center top;
+  }
+}
+
+@media (max-width: 560px) {
+  .register-image {
+    min-height: 240px;
+  }
+
+  .register-form-wrap {
+    padding: 24px 16px 30px;
+  }
+
+  .register-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-submit,
+  .register-captcha-refresh,
+  .register-field input,
+  .register-field select {
+    transition: none;
+  }
+}

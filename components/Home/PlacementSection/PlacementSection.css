@@ -1,0 +1,264 @@
+/* =========================================
+   STUDENT GROOMING AND PLACEMENTS 
+========================================= */
+
+.placement-section {
+  width: 100%;
+  padding: 50px 20px 60px;
+  background: #f5f7fb;
+  box-sizing: border-box;
+}
+
+.placement-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.placement-heading {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.placement-title {
+  margin: 0 0 16px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #166534;
+}
+
+.placement-title-blue {
+  color: #1d4ed8;
+}
+
+.placement-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+
+/* ---------- Slider ---------- */
+
+.placement-slider {
+  position: relative;
+  padding: 0 64px;
+}
+
+.placement-viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.placement-track {
+  display: flex;
+  width: 100%;
+}
+
+.placement-track.is-animating {
+  transition: transform 0.8s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.placement-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 10px 6px 18px;
+  box-sizing: border-box;
+}
+
+
+/* ---------- Card ---------- */
+
+.placement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 420px;
+  padding: 40px 44px 36px;
+  background: #fff;
+  border-top: 6px solid var(--accent);
+  border-radius: 16px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+.placement-img {
+  width: 120px;
+  height: 120px;
+  padding: 2px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.placement-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.placement-card-title {
+  margin: 22px 0 14px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.placement-card-text {
+  flex: 1;
+  margin: 0 0 26px;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.placement-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.placement-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+
+/* ---------- Arrows ---------- */
+
+.placement-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0 0 4px;
+  border: none;
+  border-radius: 50%;
+  background: #1f6eee;
+  color: #fff;
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.placement-arrow:hover {
+  background: #e87516;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.placement-arrow-prev { left: 0; }
+.placement-arrow-next { right: 0; }
+
+
+/* ---------- Dots ---------- */
+
+.placement-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.placement-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #c3cbd9;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.placement-dot.active {
+  width: 28px;
+  border-radius: 10px;
+  background: #e87516;
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 768px) {
+  .placement-slider {
+    padding: 0 8px;
+  }
+
+  .placement-card {
+    padding: 32px 24px 30px;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .placement-section {
+    padding: 48px 14px 56px;
+  }
+
+  .placement-title {
+    font-size: 1.6rem;
+  }
+
+  .placement-slider {
+    padding: 0 0 64px;
+  }
+
+  .placement-card {
+    min-height: 0;
+  }
+
+  .placement-card-title {
+    font-size: 1.3rem;
+  }
+
+  .placement-card-text {
+    font-size: 0.92rem;
+  }
+
+  /* arrows go below the card on phones */
+  .placement-arrow {
+    top: auto;
+    bottom: 6px;
+    width: 40px;
+    height: 40px;
+    transform: none;
+  }
+
+  .placement-arrow:hover {
+    transform: scale(1.08);
+  }
+
+  .placement-arrow-prev { left: calc(50% - 48px); }
+  .placement-arrow-next { right: calc(50% - 48px); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .placement-track.is-animating,
+  .placement-btn,
+  .placement-arrow,
+  .placement-dot {
+    transition: none;
+  }
+}

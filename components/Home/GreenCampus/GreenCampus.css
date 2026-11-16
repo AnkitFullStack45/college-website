@@ -1,0 +1,34 @@
+/* =========================================
+   GREEN CAMPUS  (Full-width single image)
+========================================= */
+
+.green-campus {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.green-campus-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 110px;
+  object-fit: cover;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 992px) {
+  .green-campus-label {
+    padding: 12px 22px;
+  }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 576px) {
+  .green-campus-img {
+    min-height: 130px;
+  }
+}

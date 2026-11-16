@@ -5,9 +5,8 @@
 .students-section {
     position: relative;
     width: 100%;
-    padding: 55px 25px 65px;
+    padding: 40px 25px 45px;
     background: linear-gradient(135deg, #f4f7ff 0%, #fff6ee 100%);
-    font-family: "Poppins", sans-serif;
     overflow: hidden;
 }
 

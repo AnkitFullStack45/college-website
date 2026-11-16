@@ -1,0 +1,25 @@
+/* =========================================
+   DIWALI BANNER  (Image only)
+========================================= */
+
+.dw-banner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.dw-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Phones: keep the banner tall enough to see */
+@media (max-width: 576px) {
+  .dw-banner-img {
+    min-height: 160px;
+    object-fit: cover;
+  }
+}

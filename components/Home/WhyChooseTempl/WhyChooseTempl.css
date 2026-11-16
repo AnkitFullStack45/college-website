@@ -1,0 +1,126 @@
+/* =========================================
+   WHY CHOOSE TEMPL GROUP  (Soft Glassmorphism)
+========================================= */
+
+.why-templ {
+  position: relative;
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7f9ff 0%, #fff8f1 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Soft pastel blobs behind the glass */
+.why-templ::before,
+.why-templ::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.why-templ::before {
+  width: 320px;
+  height: 320px;
+  background: #a9c1f0;
+  top: -80px;
+  left: -60px;
+}
+
+.why-templ::after {
+  width: 340px;
+  height: 340px;
+  background: #ffd0a8;
+  bottom: -90px;
+  right: -70px;
+}
+
+.why-templ-card {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  width: 100%;
+  padding: 44px 44px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 10px 30px rgba(23, 59, 115, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-templ-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 36px rgba(23, 59, 115, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.why-templ-title {
+  margin: 0 0 26px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #173b73;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* soft orange accent line */
+.why-templ-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 4px;
+  background: #f2a15f;
+}
+
+.why-templ-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #4a5568;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .why-templ {
+    padding: 48px 14px;
+  }
+
+  .why-templ-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .why-templ-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .why-templ-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-templ-card {
+    transition: none;
+  }
+
+  .why-templ-card:hover {
+    transform: none;
+  }
+}

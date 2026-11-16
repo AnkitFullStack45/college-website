@@ -272,10 +272,6 @@ export default function StudentLoginPage() {
                     New student? <a href={REGISTER_URL}>Create an account</a>
                 </p>
             </div>
-
-            <footer className="slogin-footer">
-                &copy; 2026 IET ERP. All rights reserved.
-            </footer>
         </main>
     );
 }
