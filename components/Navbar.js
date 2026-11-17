@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import "./Navbar.css";
@@ -41,7 +42,7 @@ const menuItems = [
     // COLLEGES
     {
         name: "Colleges",
-        href: "/colleges",
+        href: "/colleges/iet-college",
         submenu: [
             {
                 name: "Institute For Education & Technical Sciences",
@@ -154,7 +155,7 @@ const menuItems = [
     // STUDENT
     {
         name: "Student",
-        href: "/student",
+        href: "/",
         submenu: [
             {
                 name: "Semester Registration",

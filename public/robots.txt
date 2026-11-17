@@ -1,5 +1,3 @@
-Robots.txt for TEMPL Group of Institutions
-
 Website: https://www.templgroup.in/
 
 User-agent: * Allow: /
