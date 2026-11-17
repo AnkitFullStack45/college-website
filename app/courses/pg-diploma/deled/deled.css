@@ -3,21 +3,22 @@
 ===================================== */
 
 .deled-page {
-    --primary: #2563eb;
-    --secondary: #7c3aed;
-    --accent: #06b6d4;
-    --dark: #10213b;
-    --text: #475569;
+    --primary: #E87516;
+    --secondary: #173B73;
+    --accent: #F59E0B;
+    --dark: #142B4A;
+    --text: #526176;
+    --light: #FFF7ED;
 
     position: relative;
     overflow: hidden;
+
     background:
-        radial-gradient(circle at 10% 10%, #dbeafe 0, transparent 30%),
-        radial-gradient(circle at 90% 40%, #ede9fe 0, transparent 30%),
-        linear-gradient(135deg, #f8fbff, #eef4ff);
+        radial-gradient(circle at 10% 10%, #FFF0DF 0, transparent 30%),
+        radial-gradient(circle at 90% 40%, #EAF0FA 0, transparent 30%),
+        linear-gradient(135deg, #FFFFFF, #F5F8FC);
 
     color: var(--dark);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .deled-container {
@@ -34,7 +35,7 @@
 .full-hero {
     position: relative;
     width: 100%;
-    height: 430px;
+    height: 580px;
     overflow: hidden;
 }
 
@@ -49,27 +50,33 @@
 ===================================== */
 
 .glass {
-    background: rgba(255, 255, 255, 0.66);
+    background: rgba(255, 255, 255, 0.78);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    border: 1px solid rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(232, 117, 22, 0.12);
 
     border-radius: 18px;
 
     box-shadow:
-        0 8px 30px rgba(30, 64, 175, 0.07),
+        0 8px 30px rgba(23, 59, 115, 0.07),
         inset 0 1px 1px rgba(255, 255, 255, 0.8);
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .glass:hover {
     transform: translateY(-4px);
 
+    border-color: rgba(232, 117, 22, 0.3);
+
     box-shadow:
-        0 15px 35px rgba(37, 99, 235, 0.13);
+        0 15px 35px rgba(23, 59, 115, 0.12),
+        0 5px 15px rgba(232, 117, 22, 0.06);
 }
 
 
@@ -87,7 +94,7 @@
 
     color: var(--primary);
 
-    background: rgba(37, 99, 235, 0.09);
+    background: rgba(232, 117, 22, 0.1);
 
     padding: 7px 14px;
 
@@ -108,8 +115,8 @@
 
     background: linear-gradient(
         90deg,
-        #1d4ed8,
-        #7c3aed
+        #173B73,
+        #E87516
     );
 
     -webkit-background-clip: text;
@@ -148,13 +155,22 @@
 
     background: linear-gradient(
         135deg,
-        rgba(219, 234, 254, 0.8),
-        rgba(237, 233, 254, 0.8)
+        rgba(255, 240, 223, 0.9),
+        rgba(234, 240, 250, 0.9)
     );
 
-    border: 1px solid rgba(99, 102, 241, 0.13);
+    border: 1px solid rgba(232, 117, 22, 0.15);
 
     border-radius: 13px;
+
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+
+    box-shadow: 0 8px 20px rgba(23, 59, 115, 0.08);
 }
 
 .stat-card strong {
@@ -188,7 +204,7 @@
     font-size: 25px;
     font-weight: 800;
 
-    color: var(--dark);
+    color: var(--secondary);
 
     margin-bottom: 15px;
 }
@@ -219,7 +235,7 @@
 
     margin: 8px 0;
 
-    color: var(--dark);
+    color: var(--secondary);
 }
 
 
@@ -259,7 +275,7 @@
 .feature-card:hover,
 .career-card:hover,
 .placement-card:hover {
-    border-color: rgba(37, 99, 235, 0.4);
+    border-color: rgba(232, 117, 22, 0.45);
 }
 
 .feature-icon {
@@ -276,9 +292,11 @@
 
     background: linear-gradient(
         135deg,
-        #dbeafe,
-        #ede9fe
+        #FFF0DF,
+        #EAF0FA
     );
+
+    color: var(--primary);
 
     margin-bottom: 13px;
 }
@@ -291,7 +309,7 @@
 
     margin-bottom: 10px;
 
-    color: var(--dark);
+    color: var(--secondary);
 }
 
 .feature-card p,
@@ -320,6 +338,14 @@
     line-height: 1.8;
 }
 
+.custom-list li {
+    margin-bottom: 7px;
+}
+
+.custom-list li::marker {
+    color: var(--primary);
+}
+
 .big-number {
     display: inline-block;
 
@@ -334,11 +360,13 @@
 
     background: linear-gradient(
         120deg,
-        var(--primary),
-        var(--secondary)
+        var(--secondary),
+        var(--primary)
     );
 
     border-radius: 12px;
+
+    box-shadow: 0 6px 18px rgba(23, 59, 115, 0.16);
 }
 
 
@@ -363,13 +391,17 @@
 
     border-radius: 13px;
 
-    background: rgba(239, 246, 255, 0.7);
+    background: rgba(255, 247, 237, 0.85);
 
-    transition: 0.3s;
+    border: 1px solid rgba(232, 117, 22, 0.1);
+
+    transition: 0.3s ease;
 }
 
 .step-item:hover {
-    background: rgba(219, 234, 254, 0.9);
+    background: #FFF0DF;
+
+    border-color: rgba(232, 117, 22, 0.3);
 
     transform: translateX(5px);
 }
@@ -390,14 +422,15 @@
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        var(--secondary)
+        var(--secondary),
+        var(--primary)
     );
 }
 
 .step-item h3 {
     font-size: 16px;
     margin-bottom: 6px;
+    color: var(--secondary);
 }
 
 .step-item p {
@@ -438,8 +471,8 @@
 
     background: linear-gradient(
         135deg,
-        var(--primary),
-        var(--secondary)
+        var(--secondary),
+        var(--primary)
     );
 
     margin-bottom: 12px;
@@ -456,9 +489,21 @@
 
     padding: 15px;
 
-    background: rgba(239, 246, 255, 0.7);
+    background: rgba(255, 247, 237, 0.8);
+
+    border: 1px solid rgba(232, 117, 22, 0.1);
 
     border-radius: 12px;
+
+    transition: 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(232, 117, 22, 0.35);
+
+    box-shadow: 0 8px 20px rgba(23, 59, 115, 0.07);
 }
 
 .why-card .card-check {
@@ -468,12 +513,57 @@
 .why-card h3 {
     font-size: 15px;
     margin-bottom: 7px;
+    color: var(--secondary);
 }
 
 .why-card p {
     color: var(--text);
     font-size: 13px;
     line-height: 1.7;
+}
+
+
+/* =====================================
+   FAQ SECTION
+===================================== */
+
+.deled-faq-list {
+    display: grid;
+    gap: 12px;
+}
+
+.deled-faq-item {
+    padding: 18px 20px;
+
+    background: rgba(255, 247, 237, 0.75);
+
+    border: 1px solid rgba(232, 117, 22, 0.12);
+
+    border-radius: 12px;
+
+    transition: 0.3s ease;
+}
+
+.deled-faq-item:hover {
+    border-color: rgba(232, 117, 22, 0.4);
+
+    box-shadow: 0 6px 18px rgba(23, 59, 115, 0.06);
+}
+
+.deled-faq-item h3 {
+    color: var(--secondary);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.deled-faq-item p {
+    color: var(--text);
+
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 
@@ -494,7 +584,7 @@
 
     margin: 10px 0;
 
-    color: var(--dark);
+    color: var(--secondary);
 }
 
 .footer-section p {
@@ -524,17 +614,19 @@
 
     background: linear-gradient(
         120deg,
-        var(--primary),
-        var(--secondary)
+        var(--secondary),
+        var(--primary)
     );
 
-    transition: 0.3s;
+    transition: 0.3s ease;
+
+    box-shadow: 0 5px 15px rgba(23, 59, 115, 0.15);
 }
 
 .primary-button:hover {
     transform: translateY(-3px);
 
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 20px rgba(232, 117, 22, 0.25);
 }
 
 
@@ -613,7 +705,24 @@
         font-size: 23px;
     }
 
+    .footer-section {
+        padding: 25px 15px;
+    }
+
+    .step-item {
+        gap: 12px;
+    }
+
+    .deled-faq-item {
+        padding: 15px;
+    }
+
 }
+
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -622,6 +731,7 @@
     .deled-page *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
 }

@@ -1,17 +1,15 @@
 /* =========================================
-   M.ED PAGE - BASE
+   BPES PAGE - BASE
 ========================================= */
 
-.med-page {
-    --med-blue: #173B73;
-    --med-blue-2: #2a6ccf;
-    --med-dark: #0b1f40;
-    --med-orange: #E87516;
-    --med-orange-2: #ff9a3c;
-    --med-sky: #38a9e8;
-    --med-text: #4a5568;
-    --med-radius: 20px;
-    --med-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+.bpes-page {
+    --bpes-blue: #173B73;
+    --bpes-dark: #0b1f40;
+    --bpes-orange: #E87516;
+    --bpes-orange-2: #ff9a3c;
+    --bpes-sky: #38a9e8;
+    --bpes-text: #4a5568;
+    --bpes-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
     width: 100%;
     max-width: 100%;
@@ -19,13 +17,13 @@
     color: #252d3a;
 }
 
-.med-page *,
-.med-page *::before,
-.med-page *::after {
+.bpes-page *,
+.bpes-page *::before,
+.bpes-page *::after {
     box-sizing: border-box;
 }
 
-.med-container {
+.bpes-container {
     width: 100%;
     max-width: 1200px;
     padding: 0 25px;
@@ -36,7 +34,7 @@
    ANIMATIONS
 ========================================= */
 
-@keyframes medFadeUp {
+@keyframes bpesFadeUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -48,7 +46,7 @@
     }
 }
 
-@keyframes medFloat {
+@keyframes bpesFloat {
     0%, 100% {
         transform: translate(0, 0) scale(1);
     }
@@ -58,7 +56,7 @@
     }
 }
 
-@keyframes medGradient {
+@keyframes bpesGradient {
     0%, 100% {
         background-position: 0% 50%;
     }
@@ -68,7 +66,7 @@
     }
 }
 
-@keyframes medShimmer {
+@keyframes bpesShimmer {
     from {
         background-position: 0% 50%;
     }
@@ -78,7 +76,7 @@
     }
 }
 
-@keyframes medPulse {
+@keyframes bpesPulse {
     0%, 100% {
         box-shadow: 0 10px 25px rgba(232, 117, 22, 0.35);
     }
@@ -92,7 +90,7 @@
    FULL-WIDTH BANNER IMAGE
 ========================================= */
 
-.med-banner {
+.bpes-banner {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -103,7 +101,7 @@
     background: #0b1f40;
 }
 
-.med-banner-image {
+.bpes-banner-img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -115,68 +113,16 @@
 }
 
 /* =========================================
-   PAGE HEADING
+   COMMON SECTION BACKGROUNDS
 ========================================= */
 
-.med-heading {
-    position: relative;
-    padding: 45px 0 35px;
-    text-align: center;
-}
-
-.med-eyebrow {
-    display: inline-block;
-    padding: 7px 15px;
-    margin-bottom: 15px;
-    color: #E87516;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background: rgba(232, 117, 22, 0.1);
-    border: 1px solid rgba(232, 117, 22, 0.3);
-    border-radius: 999px;
-}
-
-.med-heading h1 {
-    max-width: 950px;
-    margin: 0 auto 15px;
-    color: var(--med-blue);
-    font-size: clamp(30px, 4vw, 43px);
-    font-weight: 800;
-    line-height: 1.25;
-}
-
-.med-heading-highlight {
-    display: block;
-    margin-top: 10px;
-    color: var(--med-orange);
-    font-size: clamp(19px, 2.5vw, 27px);
-}
-
-.med-heading-line {
-    width: 75px;
-    height: 4px;
-    margin: 18px auto 0;
-    background: linear-gradient(
-        90deg,
-        var(--med-orange),
-        #ffbd83,
-        var(--med-orange)
-    );
-    background-size: 200% 100%;
-    border-radius: 10px;
-    animation: medShimmer 3s linear infinite;
-}
-
-/* =========================================
-   COMMON SECTIONS
-========================================= */
-
-.med-section {
+.bpes-hero,
+.bpes-section,
+.bpes-cta-section {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: 40px 0;
+    padding: 45px 0;
     background:
         radial-gradient(
             circle at 10% 15%,
@@ -196,7 +142,10 @@
         linear-gradient(135deg, #e3eeff, #fdeedd);
 }
 
-.med-soft-section {
+/* Alternate (softer) background */
+.bpes-hero,
+.bpes-section-alt,
+.bpes-cta-section {
     background:
         radial-gradient(
             circle at 10% 15%,
@@ -211,8 +160,12 @@
         linear-gradient(135deg, #fce9dc, #dceaff 55%, #eadcff);
 }
 
-.med-section::before,
-.med-section::after {
+.bpes-hero::before,
+.bpes-hero::after,
+.bpes-section::before,
+.bpes-section::after,
+.bpes-cta-section::before,
+.bpes-cta-section::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -223,34 +176,70 @@
     pointer-events: none;
 }
 
-.med-section::before {
+.bpes-hero::before,
+.bpes-section::before,
+.bpes-cta-section::before {
     top: -180px;
     left: -140px;
     background: rgba(232, 117, 22, 0.17);
-    animation: medFloat 17s ease-in-out infinite;
+    animation: bpesFloat 17s ease-in-out infinite;
 }
 
-.med-section::after {
+.bpes-hero::after,
+.bpes-section::after,
+.bpes-cta-section::after {
     right: -150px;
     bottom: -180px;
     background: rgba(56, 169, 232, 0.2);
-    animation: medFloat 20s ease-in-out infinite reverse;
+    animation: bpesFloat 20s ease-in-out infinite reverse;
 }
 
 /* =========================================
-   SECTION HEADINGS
+   HERO
 ========================================= */
 
-.med-section-heading {
-    max-width: 900px;
-    margin-bottom: 30px;
+.bpes-hero {
+    padding: 50px 0;
 }
 
-.med-section-heading > span {
+.bpes-hero-card {
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    padding: 50px 40px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 26px;
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+    backdrop-filter: blur(18px) saturate(170%);
+    box-shadow:
+        0 18px 45px rgba(23, 59, 115, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    animation: bpesFadeUp 0.8s var(--bpes-ease) both;
+}
+
+.bpes-hero-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        var(--bpes-orange),
+        var(--bpes-orange-2),
+        var(--bpes-sky)
+    );
+}
+
+.bpes-eyebrow {
     display: inline-block;
-    padding: 6px 14px;
-    margin-bottom: 15px;
-    color: var(--med-orange);
+    padding: 7px 15px;
+    margin-bottom: 18px;
+    color: var(--bpes-orange);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -259,101 +248,139 @@
     border-radius: 999px;
 }
 
-.med-section-heading h2,
-.med-section h2 {
+.bpes-hero-card h1 {
+    max-width: 900px;
+    margin: 0 auto 15px;
+    color: var(--bpes-blue);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.bpes-hero-card h2 {
+    max-width: 800px;
+    margin: 0 auto 18px;
+    color: var(--bpes-orange);
+    font-size: clamp(18px, 2.4vw, 25px);
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+.bpes-hero-card p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--bpes-text);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.bpes-hero-card .bpes-primary-btn {
+    margin-top: 25px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.bpes-section-heading {
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.bpes-centered-heading {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.bpes-label {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 15px;
+    color: var(--bpes-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(232, 117, 22, 0.1);
+    border: 1px solid rgba(232, 117, 22, 0.3);
+    border-radius: 999px;
+}
+
+.bpes-section-heading h2,
+.bpes-centered-heading h2 {
     margin: 0;
-    color: var(--med-blue);
+    color: var(--bpes-blue);
     font-size: clamp(25px, 3.3vw, 36px);
     font-weight: 800;
     line-height: 1.35;
 }
 
-.med-section-heading h2::after {
-    content: "";
-    display: block;
-    width: 70px;
+.bpes-heading-line {
+    width: 75px;
     height: 4px;
-    margin-top: 15px;
+    margin: 16px 0;
     background: linear-gradient(
         90deg,
-        var(--med-orange),
-        var(--med-orange-2)
+        var(--bpes-orange),
+        #ffbd83,
+        var(--bpes-orange)
     );
+    background-size: 200% 100%;
     border-radius: 10px;
+    animation: bpesShimmer 3s linear infinite;
 }
 
-.med-section p {
-    margin: 10px 0;
-    color: var(--med-text);
+.bpes-centered-heading .bpes-heading-line {
+    margin: 16px auto;
+}
+
+.bpes-centered-heading p {
+    margin: 10px 0 0;
+    color: var(--bpes-text);
     font-size: 15px;
     line-height: 1.9;
 }
 
-.med-section-description {
-    margin-bottom: 25px !important;
+.bpes-side-note {
+    margin: 0;
+    color: var(--bpes-orange);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.6;
 }
 
 /* =========================================
    INTRODUCTION
 ========================================= */
 
-.med-intro {
-    padding: 40px 0;
+.bpes-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: 45px;
+    margin-bottom: 40px;
 }
 
-.med-intro h2 {
-    margin-bottom: 15px;
-    font-size: clamp(23px, 3vw, 31px);
+.bpes-intro-grid .bpes-section-heading {
+    margin-bottom: 0;
 }
 
-.med-intro p {
-    margin: 0;
-    color: var(--med-text);
+.bpes-intro-text p {
+    margin: 0 0 14px;
+    color: var(--bpes-text);
     font-size: 15px;
     line-height: 1.9;
 }
 
-/* =========================================
-   INLINE LINKS
-========================================= */
-
-.med-inline-link {
-    color: var(--med-orange);
-    font-weight: 800;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.med-inline-link:hover {
-    color: var(--med-blue);
-}
-
-/* =========================================
-   HIGHLIGHT BOX
-========================================= */
-
-.med-highlight-box {
-    position: relative;
-    padding: 25px 28px;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.48);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-left: 5px solid var(--med-orange);
-    border-radius: 18px;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 12px 30px rgba(23, 59, 115, 0.1);
-}
-
-.med-highlight-box p {
-    margin: 0;
+.bpes-intro-text p:last-child {
+    margin-bottom: 0;
 }
 
 /* =========================================
    SHARED GLASS CARD
 ========================================= */
 
-.med-glass-card {
+.bpes-glass {
     position: relative;
     overflow: hidden;
     padding: 27px;
@@ -366,13 +393,13 @@
         0 12px 35px rgba(23, 59, 115, 0.13),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
     transition:
-        transform 0.4s var(--med-ease),
-        box-shadow 0.4s var(--med-ease),
+        transform 0.4s var(--bpes-ease),
+        box-shadow 0.4s var(--bpes-ease),
         border-color 0.4s ease,
         background 0.4s ease;
 }
 
-.med-glass-card::before {
+.bpes-glass::before {
     content: "";
     position: absolute;
     top: 0;
@@ -381,28 +408,52 @@
     height: 4px;
     background: linear-gradient(
         90deg,
-        var(--med-orange),
-        var(--med-orange-2),
-        var(--med-sky)
+        var(--bpes-orange),
+        var(--bpes-orange-2),
+        var(--bpes-sky)
     );
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s ease;
 }
 
-.med-glass-card:hover::before {
+.bpes-glass:hover::before {
     transform: scaleX(1);
 }
 
-.med-glass-card:hover {
+.bpes-glass:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.75);
     border-color: rgba(232, 117, 22, 0.55);
     box-shadow: 0 22px 45px rgba(23, 59, 115, 0.2);
 }
 
-.med-card-number {
+.bpes-glass h3 {
+    margin: 0 0 12px;
+    color: var(--bpes-blue);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.bpes-glass p {
+    margin: 0;
+    color: var(--bpes-text);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* =========================================
+   NUMBER BADGES
+========================================= */
+
+.bpes-highlight-number,
+.bpes-subject-card > span,
+.bpes-facility-card > span,
+.bpes-sport-card > span,
+.bpes-card-number {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 43px;
@@ -413,80 +464,15 @@
     font-weight: 900;
     background: linear-gradient(
         135deg,
-        var(--med-orange),
-        var(--med-orange-2)
+        var(--bpes-orange),
+        var(--bpes-orange-2)
     );
     border-radius: 12px;
     box-shadow: 0 7px 15px rgba(232, 117, 22, 0.35);
 }
 
-.med-glass-card h3 {
-    margin: 0 0 12px;
-    color: var(--med-blue);
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.med-glass-card p {
-    margin: 0;
-    color: var(--med-text);
-    font-size: 14px;
-    line-height: 1.85;
-}
-
-/* =========================================
-   CARD GRIDS
-========================================= */
-
-.med-card-grid {
-    display: grid;
-    gap: 22px;
-}
-
-.med-grid-two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.med-grid-three {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.med-eligibility-card {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-/* =========================================
-   ADMISSION PROCESS
-========================================= */
-
-.med-process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.med-process-card {
-    position: relative;
-    overflow: hidden;
-    padding: 25px 20px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 12px 30px rgba(23, 59, 115, 0.12);
-    transition: all 0.4s var(--med-ease);
-}
-
-.med-process-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(232, 117, 22, 0.55);
-    box-shadow: 0 20px 40px rgba(23, 59, 115, 0.2);
-}
-
-.med-process-number {
+/* Round badge for admission steps */
+.bpes-admission-card > span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -498,191 +484,134 @@
     font-weight: 900;
     background: linear-gradient(
         135deg,
-        var(--med-orange),
-        var(--med-orange-2)
+        var(--bpes-orange),
+        var(--bpes-orange-2)
     );
     border-radius: 50%;
     box-shadow: 0 7px 18px rgba(232, 117, 22, 0.3);
 }
 
-.med-process-card h3 {
-    margin: 0 0 12px;
-    color: var(--med-blue);
-    font-size: 17px;
-    font-weight: 800;
-}
-
-.med-process-card p {
-    margin: 0;
+/* Check circle */
+.bpes-check,
+.bpes-suitable-card > span {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    color: #fff;
     font-size: 13px;
-    line-height: 1.8;
+    font-weight: 900;
+    background: var(--bpes-orange);
+    border-radius: 50%;
+    box-shadow: 0 5px 12px rgba(232, 117, 22, 0.3);
 }
 
 /* =========================================
-   SEAT INTAKE
+   COURSE HIGHLIGHTS
 ========================================= */
 
-.med-seat-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 35px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 22px;
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.13);
+.bpes-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
-.med-seat-label {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: var(--med-orange);
+.bpes-highlight-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+}
+
+.bpes-highlight-card .bpes-highlight-number {
+    margin-bottom: 0;
+}
+
+.bpes-highlight-card h3 {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   SUBJECTS
+========================================= */
+
+.bpes-subject-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.bpes-subject-card h3 {
+    margin: 0;
+}
+
+/* =========================================
+   COURSE DETAILS
+========================================= */
+
+.bpes-course-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bpes-course-card > span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--bpes-orange);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
-.med-seat-box h2 {
-    margin-bottom: 12px;
-}
-
-.med-seat-box p {
-    margin: 10px 0;
-}
-
-.med-seat-count {
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 155px;
-    height: 155px;
-    color: #fff;
-    background: linear-gradient(
-        135deg,
-        var(--med-orange),
-        var(--med-orange-2)
-    );
-    border: 7px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(232, 117, 22, 0.4);
-    animation: medPulse 2.8s ease-in-out infinite;
-}
-
-.med-seat-count strong {
-    font-size: 50px;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.med-seat-count span {
-    margin-top: 8px;
-    font-size: 13px;
-    font-weight: 800;
+.bpes-course-card h3 {
+    margin: 0;
+    font-size: 17px;
 }
 
 /* =========================================
-   CAREER SECTION
+   ELIGIBILITY
 ========================================= */
 
-.med-career-card {
-    position: relative;
-    overflow: hidden;
-    padding: 35px;
-    margin-top: 25px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 22px;
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.13);
-    transition: all 0.4s var(--med-ease);
+.bpes-glass.bpes-eligibility-card {
+    background: rgba(255, 255, 255, 0.5);
 }
 
-.med-career-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 22px 45px rgba(23, 59, 115, 0.18);
+.bpes-glass.bpes-eligibility-card:hover,
+.bpes-glass.bpes-growth-card:hover {
+    transform: none;
 }
 
-.med-career-header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding-bottom: 22px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(23, 59, 115, 0.12);
-}
-
-.med-career-icon {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 900;
-    background: linear-gradient(
-        135deg,
-        var(--med-orange),
-        var(--med-orange-2)
-    );
-    border-radius: 16px;
-    box-shadow: 0 7px 18px rgba(232, 117, 22, 0.3);
-}
-
-.med-career-header h3 {
-    margin: 0;
-    color: var(--med-blue);
-    font-size: 21px;
+.bpes-eligibility-card > p {
+    margin: 0 0 5px;
+    color: var(--bpes-blue);
+    font-size: 16px;
     font-weight: 800;
 }
 
-.med-career-subtitle {
-    display: inline-block;
-    margin-top: 6px;
-    color: var(--med-orange);
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.med-career-card h4 {
-    margin: 22px 0 10px;
-    color: var(--med-blue);
-    font-size: 17px;
-    font-weight: 800;
-}
-
-.med-career-card p {
-    margin: 0;
-    color: var(--med-text);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-/* =========================================
-   CAREER RESPONSIBILITIES
-========================================= */
-
-.med-check-list {
+.bpes-eligibility-card ul,
+.bpes-career-card ul {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 13px;
     padding: 0;
-    margin: 15px 0;
+    margin: 15px 0 0;
     list-style: none;
 }
 
-.med-check-list li {
+.bpes-eligibility-card ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bpes-eligibility-card li,
+.bpes-career-card li {
     position: relative;
     padding: 13px 15px 13px 43px;
-    color: var(--med-text);
+    color: var(--bpes-text);
     font-size: 14px;
     line-height: 1.7;
     background: rgba(255, 255, 255, 0.5);
@@ -690,7 +619,8 @@
     border-radius: 12px;
 }
 
-.med-check-list li::before {
+.bpes-eligibility-card li::before,
+.bpes-career-card li::before {
     content: "✓";
     position: absolute;
     top: 50%;
@@ -703,78 +633,270 @@
     color: #fff;
     font-size: 12px;
     font-weight: 900;
-    background: var(--med-orange);
+    background: var(--bpes-orange);
     border-radius: 50%;
     transform: translateY(-50%);
 }
 
 /* =========================================
-   FAQ SECTION
+   ADMISSION PROCESS
 ========================================= */
 
-.med-faq-list {
+.bpes-admission-grid {
     display: grid;
-    gap: 15px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
 }
 
-.med-faq-item {
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.48);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 16px;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 25px rgba(23, 59, 115, 0.1);
-    transition: all 0.35s ease;
+.bpes-admission-card {
+    padding: 25px 20px;
 }
 
-.med-faq-item:hover,
-.med-faq-item[open] {
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(232, 117, 22, 0.5);
-    box-shadow: 0 15px 32px rgba(23, 59, 115, 0.16);
+.bpes-admission-card h3 {
+    font-size: 17px;
 }
 
-.med-faq-item summary {
+.bpes-admission-card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   CAMPUS BANNER
+========================================= */
+
+.bpes-campus-banner {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 18px 22px;
-    cursor: pointer;
-    list-style: none;
+    gap: 30px;
+    padding: 30px 35px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-left: 5px solid var(--bpes-orange);
+    border-radius: 22px;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.13);
 }
 
-.med-faq-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.med-faq-number {
+.bpes-campus-number {
     display: flex;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 110px;
+    height: 110px;
     color: #fff;
-    font-size: 12px;
+    font-size: 48px;
     font-weight: 900;
+    line-height: 1;
     background: linear-gradient(
         135deg,
-        var(--med-orange),
-        var(--med-orange-2)
+        var(--bpes-orange),
+        var(--bpes-orange-2)
     );
-    border-radius: 10px;
+    border: 6px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(232, 117, 22, 0.4);
+    animation: bpesPulse 2.8s ease-in-out infinite;
 }
 
-.med-faq-question {
-    flex: 1;
-    color: var(--med-blue);
-    font-size: 15px;
+.bpes-campus-banner span {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--bpes-orange);
+    font-size: 11px;
     font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.bpes-campus-banner h3 {
+    margin: 0;
+    color: var(--bpes-blue);
+    font-size: clamp(19px, 2.4vw, 25px);
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+/* =========================================
+   SPORTS FACILITIES
+========================================= */
+
+.bpes-facility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* =========================================
+   UPCOMING SPORTS
+========================================= */
+
+.bpes-sports-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.bpes-sport-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.bpes-sport-card h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+/* =========================================
+   ACADEMIC / SUPPORT FACILITIES
+========================================= */
+
+.bpes-support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 18px;
+}
+
+.bpes-support-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 22px;
+}
+
+.bpes-support-card h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* =========================================
+   WHO SHOULD JOIN
+========================================= */
+
+.bpes-suitable-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 18px;
+}
+
+.bpes-suitable-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 22px;
+}
+
+.bpes-suitable-card > span {
+    margin-top: 2px;
+}
+
+.bpes-suitable-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CAREER OPPORTUNITIES
+========================================= */
+
+.bpes-career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.bpes-career-card {
+    padding: 30px 25px;
+}
+
+.bpes-career-card h3 {
+    margin-bottom: 5px;
+    font-size: 19px;
+}
+
+.bpes-career-card ul {
+    gap: 10px;
+}
+
+.bpes-career-card li {
+    padding: 11px 12px 11px 40px;
+    font-size: 13.5px;
     line-height: 1.6;
 }
 
-.med-faq-toggle {
+/* =========================================
+   SPORTS INDUSTRY GROWTH
+========================================= */
+
+.bpes-glass.bpes-growth-card {
+    max-width: 950px;
+    padding: 32px 36px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 5px solid var(--bpes-orange);
+}
+
+.bpes-growth-card p {
+    font-size: 16px;
+    line-height: 1.95;
+}
+
+.bpes-growth-card strong {
+    color: var(--bpes-orange);
+    font-weight: 800;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.bpes-faq-list {
+    display: grid;
+    max-width: 900px;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.bpes-glass.bpes-faq-item {
+    padding: 0;
+    background: rgba(255, 255, 255, 0.48);
+    border-radius: 16px;
+}
+
+.bpes-glass.bpes-faq-item:hover {
+    transform: translateY(-3px);
+}
+
+.bpes-glass.bpes-faq-item[open] {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(232, 117, 22, 0.5);
+}
+
+.bpes-faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 22px;
+    color: var(--bpes-blue);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.6;
+    cursor: pointer;
+    list-style: none;
+}
+
+.bpes-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.bpes-faq-item summary::after {
+    content: "+";
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -783,39 +905,39 @@
     height: 32px;
     color: #fff;
     font-size: 22px;
-    background: var(--med-blue);
+    line-height: 1;
+    background: var(--bpes-blue);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 
-.med-faq-item[open] .med-faq-toggle {
-    color: #fff;
-    background: var(--med-orange);
+.bpes-faq-item[open] summary::after {
+    background: var(--bpes-orange);
     transform: rotate(45deg);
 }
 
-.med-faq-answer {
-    padding: 0 25px 20px 73px;
-}
-
-.med-faq-answer p {
+.bpes-faq-item p {
+    padding: 0 25px 20px 22px;
     margin: 0;
-    color: var(--med-text);
+    color: var(--bpes-text);
     font-size: 14px;
     line-height: 1.85;
 }
 
 /* =========================================
-   FINAL ADMISSION CTA
+   FINAL CTA
 ========================================= */
 
-.med-admission-cta {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    padding: 55px 35px;
-    margin: 40px 0;
-    text-align: center;
+.bpes-cta-section {
+    padding: 60px 0;
+}
+
+.bpes-glass.bpes-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 55px 45px;
     background:
         radial-gradient(
             circle at 10% 20%,
@@ -837,49 +959,27 @@
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 25px;
     box-shadow: 0 20px 45px rgba(23, 59, 115, 0.25);
-    animation: medGradient 8s ease infinite;
+    animation: bpesGradient 8s ease infinite;
 }
 
-.med-admission-cta::before,
-.med-admission-cta::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    filter: blur(50px);
-    pointer-events: none;
+.bpes-cta-card::before {
+    display: none;
 }
 
-.med-admission-cta::before {
-    top: -130px;
-    left: -80px;
-    background: rgba(255, 170, 90, 0.35);
+.bpes-glass.bpes-cta-card:hover {
+    transform: none;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 45px rgba(23, 59, 115, 0.25);
 }
 
-.med-admission-cta::after {
-    right: -80px;
-    bottom: -130px;
-    background: rgba(56, 169, 232, 0.3);
-}
-
-.med-cta-eyebrow {
-    display: inline-block;
-    padding: 7px 15px;
-    margin-bottom: 15px;
+.bpes-cta-card .bpes-label {
     color: #ffe0c0;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
     background: rgba(255, 255, 255, 0.13);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 999px;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.med-admission-cta h2 {
-    position: relative;
-    z-index: 1;
+.bpes-cta-card h2 {
     margin: 0 0 15px;
     color: #fff;
     font-size: clamp(26px, 3.5vw, 36px);
@@ -887,23 +987,21 @@
     line-height: 1.3;
 }
 
-.med-admission-cta p {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto 25px;
+.bpes-glass.bpes-cta-card p {
+    max-width: 650px;
     color: #e7edf7;
     font-size: 15px;
     line-height: 1.9;
 }
 
 /* =========================================
-   CTA BUTTON
+   PRIMARY BUTTON
 ========================================= */
 
-.med-cta-button {
+.bpes-primary-btn {
     position: relative;
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     gap: 12px;
@@ -915,19 +1013,19 @@
     text-decoration: none;
     background: linear-gradient(
         135deg,
-        var(--med-orange),
-        var(--med-orange-2)
+        var(--bpes-orange),
+        var(--bpes-orange-2)
     );
     border: 0;
     border-radius: 999px;
     box-shadow: 0 10px 25px rgba(232, 117, 22, 0.4);
     transition:
-        transform 0.35s var(--med-ease),
-        box-shadow 0.35s var(--med-ease);
-    animation: medPulse 2.8s ease-in-out infinite;
+        transform 0.35s var(--bpes-ease),
+        box-shadow 0.35s var(--bpes-ease);
+    animation: bpesPulse 2.8s ease-in-out infinite;
 }
 
-.med-cta-button::before {
+.bpes-primary-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -944,112 +1042,111 @@
     transition: left 0.7s ease;
 }
 
-.med-cta-button:hover {
+.bpes-primary-btn:hover {
     color: #fff;
     transform: translateY(-4px);
     box-shadow: 0 16px 35px rgba(232, 117, 22, 0.55);
 }
 
-.med-cta-button:hover::before {
+.bpes-primary-btn:hover::before {
     left: 140%;
 }
 
-.med-cta-button span {
+.bpes-primary-btn span {
     transition: transform 0.3s ease;
 }
 
-.med-cta-button:hover span {
+.bpes-primary-btn:hover span {
     transform: translateX(5px);
 }
 
 /* =========================================
-   TABLET RESPONSIVE
+   LARGE TABLET
 ========================================= */
 
-@media (max-width: 992px) {
-    .med-container {
-        padding: 0 22px;
-    }
-
-    .med-section {
-        padding: 35px 0;
-    }
-
-    .med-grid-three {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .med-process-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .med-seat-box {
-        padding: 28px;
-    }
-
-    .med-glass-card {
-        padding: 23px;
+@media (max-width: 1100px) {
+    .bpes-admission-grid,
+    .bpes-sports-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 /* =========================================
-   MOBILE RESPONSIVE
+   TABLET
 ========================================= */
 
-@media (max-width: 768px) {
-    .med-container {
-        padding: 0 20px;
+@media (max-width: 992px) {
+    .bpes-container {
+        padding: 0 22px;
     }
 
-    .med-heading {
-        padding: 35px 0 25px;
+    .bpes-hero,
+    .bpes-section,
+    .bpes-cta-section {
+        padding: 38px 0;
     }
 
-    .med-heading h1 {
-        font-size: 30px;
+    .bpes-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    .med-heading-highlight {
-        font-size: 19px;
-    }
-
-    .med-section {
-        padding: 32px 0;
-    }
-
-    .med-intro {
-        padding: 30px 0;
-    }
-
-    .med-grid-two,
-    .med-grid-three,
-    .med-process-grid {
+    .bpes-highlight-grid,
+    .bpes-subject-grid,
+    .bpes-course-details,
+    .bpes-facility-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .med-seat-box {
-        padding: 25px;
-    }
-
-    .med-seat-count {
-        width: 130px;
-        height: 130px;
-    }
-
-    .med-seat-count strong {
-        font-size: 42px;
-    }
-
-    .med-career-card {
-        padding: 28px;
-    }
-
-    .med-check-list {
+    .bpes-career-grid {
         grid-template-columns: 1fr;
     }
 
-    .med-admission-cta {
-        padding: 40px 25px;
+    .bpes-glass {
+        padding: 23px;
+    }
+
+    .bpes-glass.bpes-cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 30px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+    .bpes-container {
+        padding: 0 20px;
+    }
+
+    .bpes-hero-card {
+        padding: 38px 25px;
+    }
+
+    .bpes-admission-grid,
+    .bpes-sports-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bpes-eligibility-card ul {
+        grid-template-columns: 1fr;
+    }
+
+    .bpes-campus-banner {
+        padding: 25px;
+    }
+
+    .bpes-campus-number {
+        width: 90px;
+        height: 90px;
+        font-size: 38px;
+    }
+
+    .bpes-glass.bpes-growth-card {
+        padding: 26px 24px;
     }
 }
 
@@ -1058,126 +1155,91 @@
 ========================================= */
 
 @media (max-width: 480px) {
-    .med-container {
+    .bpes-container {
         padding: 0 16px;
     }
 
-    .med-banner-image {
-        height: auto;
+    .bpes-hero,
+    .bpes-section {
+        padding: 30px 0;
     }
 
-    .med-heading {
-        padding: 28px 0 20px;
+    .bpes-hero-card {
+        padding: 30px 20px;
+        border-radius: 22px;
     }
 
-    .med-heading h1 {
-        font-size: 25px;
+    .bpes-hero-card h1 {
+        font-size: 26px;
     }
 
-    .med-heading-highlight {
+    .bpes-hero-card h2 {
         font-size: 17px;
     }
 
-    .med-section {
-        padding: 28px 0;
-    }
-
-    .med-section-heading h2,
-    .med-section h2 {
+    .bpes-section-heading h2,
+    .bpes-centered-heading h2 {
         font-size: 24px;
     }
 
-    .med-section p {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-    .med-grid-two,
-    .med-grid-three,
-    .med-process-grid {
+    .bpes-highlight-grid,
+    .bpes-subject-grid,
+    .bpes-course-details,
+    .bpes-facility-grid,
+    .bpes-admission-grid {
         grid-template-columns: 1fr;
     }
 
-    .med-glass-card {
+    .bpes-sports-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .bpes-sport-card {
+        padding: 20px 10px;
+    }
+
+    .bpes-glass {
         padding: 22px;
     }
 
-    .med-highlight-box {
-        padding: 20px;
-    }
-
-    .med-seat-box {
+    .bpes-campus-banner {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 23px;
+        align-items: center;
+        text-align: center;
+        border-left: 1px solid rgba(255, 255, 255, 0.8);
+        border-top: 5px solid var(--bpes-orange);
     }
 
-    .med-seat-count {
-        align-self: center;
-        width: 125px;
-        height: 125px;
-    }
-
-    .med-seat-count strong {
-        font-size: 40px;
-    }
-
-    .med-career-card {
-        padding: 22px;
-    }
-
-    .med-career-header {
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .med-career-header h3 {
-        font-size: 18px;
-    }
-
-    .med-career-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .med-faq-item summary {
+    .bpes-faq-item summary {
         gap: 10px;
-        padding: 15px 12px;
+        padding: 15px 14px;
+        font-size: 13.5px;
     }
 
-    .med-faq-number {
-        width: 31px;
-        height: 31px;
-    }
-
-    .med-faq-question {
-        font-size: 13px;
-    }
-
-    .med-faq-toggle {
+    .bpes-faq-item summary::after {
         width: 27px;
         height: 27px;
         font-size: 19px;
     }
 
-    .med-faq-answer {
-        padding: 0 15px 17px 53px;
+    .bpes-faq-item p {
+        padding: 0 16px 17px 14px;
     }
 
-    .med-admission-cta {
+    .bpes-cta-section {
+        padding: 30px 0;
+    }
+
+    .bpes-glass.bpes-cta-card {
         padding: 32px 20px;
-        margin: 25px 0;
     }
 
-    .med-admission-cta h2 {
-        font-size: 25px;
-    }
-
-    .med-admission-cta p {
+    .bpes-glass.bpes-cta-card p {
         font-size: 14px;
     }
 
-    .med-cta-button {
+    .bpes-primary-btn {
         width: 100%;
     }
 }
@@ -1187,9 +1249,9 @@
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-    .med-page *,
-    .med-page *::before,
-    .med-page *::after {
+    .bpes-page *,
+    .bpes-page *::before,
+    .bpes-page *::after {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;

@@ -150,8 +150,8 @@
   padding: 0 0 4px;
   border: none;
   border-radius: 50%;
-  background: #1f6eee;
-  color: #fff;
+  background:white;
+  color: #1d4ed8;
   font-size: 1.9rem;
   line-height: 1;
   cursor: pointer;
@@ -162,6 +162,7 @@
 
 .placement-arrow:hover {
   background: #e87516;
+  color: white;
   transform: translateY(-50%) scale(1.08);
 }
 
@@ -179,8 +180,8 @@
 }
 
 .placement-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   padding: 0;
   border: none;
   border-radius: 50%;

@@ -1,6 +1,71 @@
 import Link from "next/link";
 import "./med.css";
 
+/* =========================================================
+   CONSTANTS
+========================================================= */
+
+const SITE_URL = "https://www.templgroup.in";
+const PAGE_URL = `${SITE_URL}/Med`;
+const BANNER_IMAGE = "/images/med.webp";
+
+/* =========================================================
+   SEO METADATA
+========================================================= */
+
+export const metadata = {
+  metadataBase: new URL(SITE_URL),
+
+  title: "Best M.Ed College in Ghaziabad, Delhi NCR | TEMPL Group",
+
+  description:
+    "NCTE-approved M.Ed at IET College, Ghaziabad. CCSU-affiliated & NAAC-accredited. Research-focused, expert faculty. Admission 2026 open.",
+
+  alternates: {
+    canonical: "/Med",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "Best M.Ed College in Ghaziabad, Delhi NCR | TEMPL Group",
+    description:
+      "NCTE-approved M.Ed at IET College, Ghaziabad. CCSU-affiliated & NAAC-accredited. Research-focused, expert faculty. Admission 2026 open.",
+    url: PAGE_URL,
+    siteName: "TEMPL Group of Institutions",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: BANNER_IMAGE,
+        alt: "M.Ed Master of Education at IET College TEMPL Group Ghaziabad",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Best M.Ed College in Ghaziabad | TEMPL Group",
+    description:
+      "NCTE-approved M.Ed at IET College, Ghaziabad. Admission 2026 open.",
+    images: [BANNER_IMAGE],
+  },
+};
+
+/* =========================================================
+   PAGE DATA
+========================================================= */
+
 const reasons = [
   {
     title: "Top-Ranking Education Institution",
@@ -53,7 +118,7 @@ const admissionSteps = [
     number: "02",
     title: "Entrance Exam",
     description:
-      "Students are required to appear for an entrance test organised by CCS University Meerut. It is mandatory for students to appear for entrance exam to get admission in Bachelor of Education.",
+      "Students are required to appear for an entrance test organised by CCS University Meerut. It is mandatory for students to appear for the entrance exam to get admission in Master of Education.",
   },
   {
     number: "03",
@@ -123,7 +188,7 @@ const faqs = [
   {
     question: "What is the eligibility for M.Ed admission?",
     answer:
-      "Candidates must have completed B.Ed or an equivalent teacher education degree from a recognized university with at least 50–55% marks, as per university guidelines.",
+      "Candidates must have completed B.Ed or an equivalent teacher education degree from a recognized university with a minimum of 55% marks, as per university guidelines.",
   },
   {
     question: "Is there any entrance exam for M.Ed admission?",
@@ -172,13 +237,88 @@ const faqs = [
   },
 ];
 
+/* =========================================================
+   STRUCTURED DATA (JSON-LD)
+========================================================= */
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "Master of Education (M.Ed)",
+  description:
+    "2-year postgraduate M.Ed programme at IET College, TEMPL Group, Ghaziabad. CCSU-affiliated, NCTE-recognised, NAAC-accredited. Advanced teacher training, education research and leadership.",
+  provider: {
+    "@type": "EducationalOrganization",
+    name: "IET College — TEMPL Group of Institutions",
+    url: SITE_URL,
+  },
+  hasCourseInstance: {
+    "@type": "CourseInstance",
+    courseMode: "onsite",
+    duration: "P2Y",
+  },
+  educationalLevel: "Postgraduate",
+  url: PAGE_URL,
+};
+
+// Built from the same `faqs` array that is shown on the page,
+// so the schema always matches the visible content.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: `${SITE_URL}/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "M.Ed — Master of Education",
+      item: PAGE_URL,
+    },
+  ],
+};
+
+const structuredData = [courseSchema, faqSchema, breadcrumbSchema];
+
+/* =========================================================
+   PAGE
+========================================================= */
+
 export default function MedPage() {
   return (
     <main className="med-page">
+      {/* Structured data */}
+      {structuredData.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+          }}
+        />
+      ))}
+
       {/* Full-width banner image */}
       <section className="med-banner">
         <img
-          src="/images/med.webp"
+          src={BANNER_IMAGE}
           alt="M.Ed Master of Education at IET College TEMPL Group Ghaziabad"
           className="med-banner-image"
         />
@@ -187,7 +327,9 @@ export default function MedPage() {
       <div className="med-container">
         {/* Page heading */}
         <header className="med-heading">
-          <span className="med-eyebrow">IET College | TEMPL Group of Institutions</span>
+          <span className="med-eyebrow">
+            IET College | TEMPL Group of Institutions
+          </span>
 
           <h1>
             M.Ed — Master of Education in Ghaziabad
@@ -201,7 +343,9 @@ export default function MedPage() {
 
         {/* Introduction */}
         <section className="med-section med-intro">
-          <h2>Master of Education (M.Ed) Program at TEMPL Group of Institutions</h2>
+          <h2>
+            Master of Education (M.Ed) Program at TEMPL Group of Institutions
+          </h2>
 
           <p>
             Welcome to the Institute for Education and Technical Sciences (IET)
@@ -232,7 +376,7 @@ export default function MedPage() {
               the top colleges in Ghaziabad, including the areas of Modinagar
               and Muradnagar. With a track record of academic excellence and
               state-of-the-art facilities, TEMPL Group offers the perfect
-              environment for pursuing an M.Ed course. Here's why our M.Ed
+              environment for pursuing an M.Ed course. Here&apos;s why our M.Ed
               program stands out:
             </p>
           </div>
@@ -259,9 +403,12 @@ export default function MedPage() {
 
           <div className="med-card-grid med-grid-three">
             {eligibility.map((item, index) => (
-              <article className="med-glass-card med-eligibility-card" key={item.title}>
+              <article
+                className="med-glass-card med-eligibility-card"
+                key={item.title}
+              >
                 <div className="med-card-number">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -325,13 +472,17 @@ export default function MedPage() {
           <div className="med-section-heading">
             <span>THE TEMPL ADVANTAGE</span>
             <h2>
-              Why M.Ed at TEMPL Group of Institutions is the Best Choice for You?
+              Why M.Ed at TEMPL Group of Institutions is the Best Choice for
+              You?
             </h2>
           </div>
 
           <div className="med-card-grid med-grid-two">
             {advantages.map((item, index) => (
-              <article className="med-glass-card med-advantage-card" key={item.title}>
+              <article
+                className="med-glass-card med-advantage-card"
+                key={item.title}
+              >
                 <div className="med-card-number">
                   {String(index + 1).padStart(2, "0")}
                 </div>
@@ -395,8 +546,8 @@ export default function MedPage() {
 
             <h4>Workplaces</h4>
             <p>
-              Government and private teacher training institutes, Institutes
-              of National Importance such as NCERT, SCERT, etc., Online
+              Government and private teacher training institutes, national and
+              state education bodies such as NCERT and SCERT, and online
               education platforms offering teacher certification programs.
             </p>
           </div>

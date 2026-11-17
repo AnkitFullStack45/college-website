@@ -11,11 +11,12 @@ import ExploreCourses from "@/components/Home/ExploreCourses/page";
 import PlacementSection from "@/components/Home/PlacementSection/page";
 import GreenCampus from "@/components/Home/GreenCampus/page";
 import WhatWeOffer from "@/components/Home/WhatWeOffer/page";
-import RegisterSection from "@/components/Home/RegisterSection/page";
 import GlobalSuccessBanner from "@/components/Home/GlobalSuccessBanner/page";
 import HeroBanner from "@/components/Home/HeroBanner/page";
 import ScholarshipSection from "@/components/Home/ScholarshipSection/page";
 import DiwaliBanner from "@/components/Home/DiwaliBanner/page";
+import AdmissionBanner from "@/components/Home/AdmissionBanner/page";
+import BeginJourney from "@/components/Home/BeginJourney/page";
 export default function Home() {
   return (
     <div>
@@ -23,6 +24,7 @@ export default function Home() {
       <DiwaliBanner/>
       <WelcomeTempl/>
       <WhatWeOffer/>
+      <AdmissionBanner/>
    <ApprovalsSection />
    <GlobalSuccessBanner />
    <CampusLife />
@@ -34,7 +36,7 @@ export default function Home() {
    <StudentSays />
    <WhyChooseTempl/>
   <RecruitersSection />
-  <RegisterSection />
+  <BeginJourney/>
    <LocationMap />
     </div>
   );

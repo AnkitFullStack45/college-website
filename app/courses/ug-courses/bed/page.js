@@ -1,272 +1,644 @@
 import Link from "next/link";
+import Image from "next/image";
 import "./bed.css";
 
+/* =========================================================
+   SEO METADATA
+========================================================= */
+
 export const metadata = {
-    title: "Best B.Ed College in Ghaziabad | TEMPL Group of Institutions",
+    metadataBase: new URL("https://www.templgroup.in"),
+
+    title: "B.Ed College in Ghaziabad | Admission 2026 | IET College",
+
     description:
-        "Explore the 2-year B.Ed course at TEMPL Group of Institutions, Ghaziabad. Learn about eligibility, admission process, faculty, infrastructure and career opportunities.",
+        "Explore the 2-year B.Ed programme at IET College, TEMPL Group, Ghaziabad. Discover course details, eligibility, admission guidance, teaching facilities and career opportunities.",
+
+    alternates: {
+        canonical: "/Bed",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
+    },
+
+    openGraph: {
+        title: "B.Ed College in Ghaziabad | IET College – TEMPL Group",
+
+        description:
+            "Explore the Bachelor of Education programme at IET College, TEMPL Group of Institutions, Ghaziabad. Learn about eligibility, admission and teaching career opportunities.",
+
+        url: "https://www.templgroup.in/Bed",
+
+        siteName: "TEMPL Group of Institutions",
+
+        locale: "en_IN",
+
+        type: "website",
+
+        images: [
+            {
+                url: "/images/bed.webp",
+                width: 1200,
+                height: 630,
+                alt: "B.Ed programme at IET College, TEMPL Group of Institutions",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+
+        title: "B.Ed College in Ghaziabad | IET College",
+
+        description:
+            "Explore B.Ed admission at IET College, Ghaziabad. Discover course details, eligibility and teaching career opportunities.",
+
+        images: ["/images/bed.webp"],
+    },
 };
+
+
+/* =========================================================
+   COURSE DETAILS
+========================================================= */
+
+const courseDetails = [
+    {
+        label: "Course Duration",
+        value: "2 Years",
+    },
+    {
+        label: "Degree",
+        value: "Bachelor of Education",
+    },
+    {
+        label: "Study Mode",
+        value: "Full-Time",
+    },
+    {
+        label: "Course Level",
+        value: "Professional Teacher Education",
+    },
+    {
+        label: "Institution",
+        value: "IET College",
+    },
+    {
+        label: "Location",
+        value: "Muradnagar, Ghaziabad",
+    },
+];
+
+
+/* =========================================================
+   WHY CHOOSE TEMPL
+========================================================= */
 
 const reasons = [
     {
-        title: "Best College for B.Ed in Ghaziabad & Delhi NCR",
+        title: "Experienced Faculty",
         description:
-            "At TEMPL Group of Institutions, we strive to provide an educational experience that goes beyond just textbooks. As a leading B.Ed college in Ghaziabad, we offer a world-class learning environment equipped with the latest teaching methodologies, excellent faculty, and modern infrastructure. Located conveniently in the heart of Ghaziabad, we are easily accessible to students from Modinagar, Muradnagar, and nearby regions, making us the best B.Ed college in ghaziabad, Delhi NCR.",
+            "Learn from faculty members who guide students in understanding educational concepts, teaching methodologies and classroom practices.",
     },
     {
-        title: "2-Year B.Ed Program",
+        title: "Teaching-Focused Curriculum",
         description:
-            "The B.Ed course is a 2-year program that prepares students to be effective educators. It’s the perfect choice for those who have completed their Graduation and wish to pursue a career in teaching at schools, colleges, and other educational institutions. With a carefully crafted curriculum, Institute for Education and Technical Sciences ensures that students receive practical training and academic excellence.",
+            "Develop knowledge of educational psychology, pedagogy, curriculum planning, assessment and effective teaching methods.",
     },
     {
-        title: "Top-Ranking Faculty",
+        title: "Practical Learning",
         description:
-            "Our experienced and highly qualified faculty are experts in their fields and bring a combination of theoretical knowledge and practical teaching methods to the classroom. Students are trained to be visionary educators capable of adapting to the rapidly evolving education landscape. As part of the best college for B.Ed in Ghaziabad, students gain exposure to modern teaching tools, technology, and real-world educational challenges.",
+            "Gain exposure to teaching practice, lesson planning, classroom activities and other practical aspects of teacher education.",
     },
     {
-        title: "State-of-the-Art Infrastructure",
+        title: "Learning Infrastructure",
         description:
-            "TEMPL Group of Institutions offers a pollution-free lush green campus with modern facilities, including multimedia classrooms, seminar halls, a well-stocked library, and well-equipped labs. Our infrastructure supports the overall development of students, ensuring they receive the best possible environment for their educational journey.",
+            "Access an academic environment designed to support classroom learning, collaborative activities and professional development.",
+    },
+    {
+        title: "Student Development",
+        description:
+            "Participate in academic and co-curricular activities that encourage communication, confidence and leadership skills.",
+    },
+    {
+        title: "Admission Guidance",
+        description:
+            "Receive assistance from the admission team regarding course information, eligibility requirements and application procedures.",
     },
 ];
 
-const courseDetails = [
-    { label: "Course Duration", value: "2 Years" },
-    { label: "Mode of Study", value: "Full-Time" },
-    { label: "Affiliation", value: "CCS University, Meerut" },
-    { label: "Intake", value: "100 Seats" },
-];
+
+/* =========================================================
+   ADMISSION STEPS
+========================================================= */
 
 const admissionSteps = [
     {
-        title: "Online Application",
+        title: "Enquire About the Programme",
         description:
-            "Interested candidates can apply online through our official website. Simply fill out the B.Ed admission form, providing details such as personal information, academic qualifications, and other required documents.",
+            "Contact the admission team to understand the B.Ed programme, eligibility conditions, available seats and admission requirements.",
     },
     {
-        title: "Entrance Test",
+        title: "Check Eligibility",
         description:
-            "Students are required to appear for an entrance test organised by CCS University Meerut. It is mandatory for students to appear for the entrance exam to get admission in Bachelor of Education.",
+            "Review the academic qualifications and minimum marks required under the applicable university and NCTE admission regulations.",
     },
     {
-        title: "Document Verification & Fee Submission",
+        title: "Complete the Application",
         description:
-            "After successfully clearing the entrance test and interview, candidates will need to submit relevant documents for verification and pay the prescribed admission fee.",
+            "Follow the prescribed application procedure and submit the required personal and academic information.",
     },
     {
-        title: "Commencement of Classes",
+        title: "Document Verification",
         description:
-            "After the admission process, the classes for the B.Ed program begin in line with the academic calendar set by CCS University, Meerut.",
+            "Submit the necessary educational certificates, identity documents and other documents required for admission.",
+    },
+    {
+        title: "Complete Admission Formalities",
+        description:
+            "Follow the applicable admission procedure and complete the required formalities after confirmation of eligibility and selection.",
     },
 ];
+
+
+/* =========================================================
+   INSTITUTION ADVANTAGES
+========================================================= */
 
 const advantages = [
     {
-        title: "Academic Excellence",
+        title: "Established Educational Institution",
         description:
-            "TEMPL Group of Institutions is recognized as one of the top-ranking colleges in Ghaziabad and Delhi NCR for its academic rigor. Our B.Ed program offers students in-depth knowledge, practical teaching experience, and personal development, preparing them to excel in their teaching careers.",
+            "TEMPL Group of Institutions has a long-standing presence in the education sector, with its institutional journey beginning in 1998.",
     },
     {
-        title: "Holistic Development",
+        title: "Academic Learning Environment",
         description:
-            "Our students undergo a well-rounded educational experience that emphasizes personality development, leadership skills, and empathy. We encourage students to engage in various co-curricular activities, workshops, and seminars, ensuring they are well-prepared for the challenges of modern education.",
+            "Students can develop subject knowledge, communication skills and professional abilities through structured academic activities.",
     },
     {
-        title: "Industry Collaboration",
+        title: "Practical Teaching Exposure",
         description:
-            "TEMPL Group of Institutions believes in staying ahead of the curve by providing students with industry exposure through guest lectures, seminars, workshops, and educational tours. This exposure helps students understand the practical aspects of teaching and stay updated with the latest trends in education.",
+            "Teaching practice and related academic activities help students understand the responsibilities and challenges of the teaching profession.",
     },
     {
-        title: "Best-in-Class Infrastructure",
+        title: "Convenient Campus Location",
         description:
-            "Our pollution-free lush green campus offers state-of-the-art facilities, including spacious classrooms, modern computer labs, and a well-documented library. These resources ensure that students receive a top-tier education in the best environment possible.",
+            "The IET College campus is situated on NH-58, Abupur Road, Muradnagar, Ghaziabad, Uttar Pradesh.",
     },
     {
-        title: "Placement Assistance",
+        title: "Student Support",
         description:
-            "As part of our commitment to student success, TEMPL Group of Institutions provides placement assistance to B.Ed students through our dedicated Placement Cell. Our strong industry connections help students secure placements in prestigious schools and educational institutions.",
+            "Students can seek guidance regarding academic matters, admission procedures and institutional activities.",
     },
     {
-        title: "Convenient Location",
+        title: "Overall Development",
         description:
-            "Easily accessible from Modinagar, Muradnagar, Meerut, and the entire Delhi NCR region, our campus is situated on NH-58, providing easy connectivity through public transport and RRTS RapidX metro services.",
+            "Academic and co-curricular opportunities encourage confidence, teamwork, communication and personal growth.",
     },
 ];
 
+
+/* =========================================================
+   CAREER OPPORTUNITIES
+========================================================= */
+
 const careers = [
     {
-        title: "School Teaching Careers",
+        title: "School Teacher",
         description:
-            "Primary, Secondary, and Senior Secondary Schools: Teachers in primary, secondary, and senior secondary schools help students develop skills and knowledge in various subjects. A B.Ed degree allows graduates to teach in government, private, and international schools.",
+            "Explore teaching opportunities in schools, subject to the recruitment and eligibility requirements of the respective institution.",
     },
     {
-        title: "Private Tutoring and Coaching Centers",
+        title: "Private Tutor",
         description:
-            "Build a career by teaching students through private tutoring, coaching institutes, and academic support centres.",
+            "Provide individual or group academic support to school students through private tutoring.",
     },
     {
         title: "Educational Content Developer",
         description:
-            "Create educational resources, digital learning materials, lesson plans, and academic content.",
+            "Contribute to the development of educational resources, worksheets, lesson materials and learning content.",
     },
     {
-        title: "Education Counselling and Guidance",
+        title: "Academic Coordinator",
         description:
-            "Guide students in their academic journey through counselling, mentoring, and educational support.",
+            "Explore academic coordination opportunities with schools and educational organisations, subject to relevant experience and requirements.",
     },
     {
-        title: "Corporate Sector & HR Roles in Education",
+        title: "Online Educator",
         description:
-            "Explore opportunities in educational organisations, training departments, and human resource management.",
+            "Use digital learning platforms to support students through online lessons, tutorials and educational sessions.",
     },
     {
-        title: "Education Administration and Management",
+        title: "Education Sector Opportunities",
         description:
-            "Work in academic administration, school management, educational planning, and institutional coordination.",
-    },
-    {
-        title: "Research and Academia",
-        description:
-            "Pursue opportunities in educational research, academic development, and higher education.",
-    },
-    {
-        title: "NGOs and Social Work in Education",
-        description:
-            "Contribute to educational development, community learning initiatives, and social welfare programmes.",
-    },
-    {
-        title: "Entrepreneurship in Education",
-        description:
-            "Establish educational ventures, coaching centres, tutoring services, and other learning initiatives.",
-    },
-    {
-        title: "Government Jobs in Education",
-        description:
-            "Explore opportunities in government educational institutions and other public-sector education departments.",
+            "Explore other education-related roles with additional qualifications, experience and relevant professional skills.",
     },
 ];
 
+
+/* =========================================================
+   REGISTRATION BENEFITS
+========================================================= */
+
 const registrationBenefits = [
-    "Get personalized admission guidance",
-    "Receive course and eligibility information",
-    "Stay updated on admissions and important dates",
-    "Learn about scholarships and financial assistance",
-    "Explore career opportunities and placement support",
+    "Get information about B.Ed admission requirements.",
+    "Understand eligibility and application procedures.",
+    "Receive guidance about required documents.",
+    "Learn about programme structure and course duration.",
+    "Get information about applicable fees and scholarships.",
+    "Connect with the admission team for assistance.",
 ];
+
+
+/* =========================================================
+   FAQ DATA
+========================================================= */
+
+const faqs = [
+    {
+        question: "What is the duration of the B.Ed course?",
+
+        answer:
+            "The Bachelor of Education (B.Ed) is generally a two-year professional teacher education programme.",
+    },
+    {
+        question: "What is the eligibility for B.Ed admission?",
+
+        answer:
+            "Candidates generally need a bachelor's or master's degree with the minimum marks prescribed by the applicable university and NCTE regulations. Eligibility and relaxation conditions should be checked in the current admission notification.",
+    },
+    {
+        question: "Is the B.Ed programme recognised by NCTE?",
+
+        answer:
+            "Candidates should verify the current NCTE recognition status of the B.Ed programme at IET College for the relevant academic session before applying.",
+    },
+    {
+        question: "Is IET College affiliated with CCS University for B.Ed?",
+
+        answer:
+            "Please confirm the current B.Ed affiliation and admission details with IET College or the relevant university before applying.",
+    },
+    {
+        question: "How many seats are available in the B.Ed programme?",
+
+        answer:
+            "The previously stated intake is 100 seats. The approved intake for the relevant academic session should be confirmed with the institution and applicable regulatory records.",
+    },
+    {
+        question: "What career opportunities are available after B.Ed?",
+
+        answer:
+            "Graduates can explore school teaching, private tutoring, online education and other education-related opportunities. Government and many other school teaching positions may require qualifying examinations such as CTET or the relevant State TET, along with applicable recruitment conditions.",
+    },
+    {
+        question: "Does IET College provide admission assistance?",
+
+        answer:
+            "Students can contact the admission team for information about eligibility, application procedures, documents, fees and admission requirements.",
+    },
+    {
+        question: "Where is IET College located?",
+
+        answer:
+            "IET College is located at NH-58, Abupur Road, Muradnagar, Ghaziabad, Uttar Pradesh 201206.",
+    },
+];
+
+
+/* =========================================================
+   COURSE STRUCTURED DATA
+========================================================= */
+
+const courseSchema = {
+    "@context": "https://schema.org",
+
+    "@type": "Course",
+
+    name: "Bachelor of Education (B.Ed)",
+
+    description:
+        "The Bachelor of Education programme is a professional teacher education course focusing on educational psychology, teaching methodologies, pedagogy, classroom management, assessment and practical teaching skills.",
+
+    url: "https://www.templgroup.in/Bed",
+
+    courseCode: "B.Ed",
+
+    educationalLevel: "Undergraduate",
+
+    teaches: [
+        "Teaching Methodology",
+        "Educational Psychology",
+        "Classroom Management",
+        "Pedagogy",
+        "Educational Technology",
+        "Curriculum Development",
+        "Assessment and Evaluation",
+        "Inclusive Education",
+        "School Internship",
+        "Teaching Practice",
+    ],
+
+    provider: {
+        "@type": "CollegeOrUniversity",
+
+        name: "Institute for Education and Technical Sciences (IET College)",
+
+        parentOrganization: {
+            "@type": "EducationalOrganization",
+
+            name: "TEMPL Group of Institutions",
+
+            url: "https://www.templgroup.in",
+        },
+
+        url: "https://www.templgroup.in",
+
+        address: {
+            "@type": "PostalAddress",
+
+            streetAddress: "NH-58, Abupur Road, Muradnagar",
+
+            addressLocality: "Ghaziabad",
+
+            addressRegion: "Uttar Pradesh",
+
+            postalCode: "201206",
+
+            addressCountry: "IN",
+        },
+    },
+
+    hasCourseInstance: {
+        "@type": "CourseInstance",
+
+        courseMode: "Onsite",
+
+        duration: "P2Y",
+    },
+};
+
+
+/* =========================================================
+   FAQ STRUCTURED DATA
+========================================================= */
+
+const faqSchema = {
+    "@context": "https://schema.org",
+
+    "@type": "FAQPage",
+
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+            "@type": "Answer",
+
+            text: faq.answer,
+        },
+    })),
+};
+
+
+/* =========================================================
+   BREADCRUMB STRUCTURED DATA
+========================================================= */
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+
+    "@type": "BreadcrumbList",
+
+    itemListElement: [
+        {
+            "@type": "ListItem",
+
+            position: 1,
+
+            name: "Home",
+
+            item: "https://www.templgroup.in/",
+        },
+        {
+            "@type": "ListItem",
+
+            position: 2,
+
+            name: "B.Ed",
+
+            item: "https://www.templgroup.in/Bed",
+        },
+    ],
+};
+
+
+/* =========================================================
+   JSON-LD HELPER
+========================================================= */
+
+function JsonLd({ data }) {
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+            }}
+        />
+    );
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
 
 export default function BedPage() {
     return (
         <main className="bed-page">
 
+            {/* STRUCTURED DATA */}
+
+            <JsonLd data={courseSchema} />
+            <JsonLd data={faqSchema} />
+            <JsonLd data={breadcrumbSchema} />
+
+
             {/* FULL-WIDTH BANNER IMAGE */}
+
             <section className="bed-banner">
-                <img
-                    src="/images/bed.webp"
-                    alt="B.Ed Bachelor of Education at IET College, TEMPL Group of Institutions"
+                <Image
+                    src="/images/department_of_education.webp"
+                    alt="Bachelor of Education B.Ed programme at IET College, TEMPL Group of Institutions"
+                    fill
+                    priority
+                    sizes="100vw"
                     className="bed-banner-img"
                 />
             </section>
 
+
             {/* INTRODUCTION */}
+
             <section className="bed-top-section">
                 <div className="bed-container">
 
                     <div className="bed-hero-content">
+
                         <span className="bed-label">
                             IET COLLEGE | TEMPL GROUP OF INSTITUTIONS
                         </span>
 
                         <h1>
-                            B.Ed — Bachelor of Education at the Best B.Ed
-                            College in Ghaziabad
+                            B.Ed – Bachelor of Education in Ghaziabad
                         </h1>
 
                         <div className="bed-title-line"></div>
 
                         <h2>
-                            B.Ed Course at TEMPL Group of Institutions:
-                            Shape the Future of Education
+                            Prepare for a Meaningful Career in Education
                         </h2>
 
                         <p>
-                            Welcome to TEMPL Group of Institutions, home to
-                            Institute for Education and Technical Sciences
-                            (IET), one of the best colleges in Ghaziabad and
-                            a leading institution in the Delhi NCR region.
-                            Our Bachelor of Education (B.Ed) course is
-                            designed for students who are passionate about
-                            shaping the future of education and making a
-                            positive impact on society. As one of the top
-                            B.Ed colleges in Ghaziabad and Delhi NCR, we
-                            provide a comprehensive, industry-aligned
-                            curriculum that empowers future educators with
-                            the necessary knowledge and skills to succeed.
+                            The Bachelor of Education (B.Ed) is a
+                            professional teacher education programme
+                            designed for graduates who aspire to work
+                            in the field of education. At IET College,
+                            TEMPL Group of Institutions, students can
+                            explore the academic foundations of teaching,
+                            educational psychology, pedagogy and classroom
+                            practices.
                         </p>
 
-                        <Link href="#bed-admission" className="bed-primary-btn">
+                        <p>
+                            The programme focuses on developing the
+                            knowledge, communication abilities and
+                            practical skills required to understand
+                            modern teaching environments. Students
+                            learn about lesson planning, assessment,
+                            classroom management and the responsibilities
+                            of an educator.
+                        </p>
+
+                        <Link
+                            href="#bed-admission"
+                            className="bed-primary-btn"
+                        >
                             Explore Admission <span>→</span>
                         </Link>
+
                     </div>
 
+
+                    {/* COURSE HIGHLIGHTS */}
+
                     <div className="bed-course-grid">
+
                         {courseDetails.map((item, index) => (
-                            <article className="bed-glass bed-course-card" key={index}>
+                            <article
+                                className="bed-glass bed-course-card"
+                                key={item.label}
+                            >
                                 <span className="bed-card-number">
-                                    0{index + 1}
+                                    {String(index + 1).padStart(2, "0")}
                                 </span>
+
                                 <h3>{item.label}</h3>
+
                                 <p>{item.value}</p>
                             </article>
                         ))}
+
                     </div>
 
                 </div>
             </section>
 
-            {/* WHY CHOOSE */}
+
+            {/* WHY CHOOSE TEMPL */}
+
             <section className="bed-section">
                 <div className="bed-container">
 
                     <div className="bed-heading">
-                        <span className="bed-label">WHY CHOOSE US</span>
+
+                        <span className="bed-label">
+                            WHY CHOOSE US
+                        </span>
+
                         <h2>
-                            Why Choose TEMPL Group of Institutions for Your B.Ed?
+                            Why Choose IET College for Your B.Ed?
                         </h2>
+
                         <div className="bed-title-line"></div>
+
                     </div>
 
+
                     <div className="bed-reasons-grid">
+
                         {reasons.map((item, index) => (
-                            <article className="bed-glass bed-reason-card" key={index}>
+                            <article
+                                className="bed-glass bed-reason-card"
+                                key={item.title}
+                            >
                                 <span className="bed-card-number">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
 
                                 <h3>{item.title}</h3>
+
                                 <p>{item.description}</p>
                             </article>
                         ))}
+
                     </div>
 
                 </div>
             </section>
 
+
             {/* COURSE DETAILS */}
+
             <section className="bed-section bed-section-dark">
                 <div className="bed-container">
 
                     <div className="bed-heading">
-                        <span className="bed-label">PROGRAM OVERVIEW</span>
+
+                        <span className="bed-label">
+                            PROGRAMME OVERVIEW
+                        </span>
+
                         <h2>
-                            Course Details for B.Ed at TEMPL Group of Institutions
+                            B.Ed Course Details
                         </h2>
+
                         <div className="bed-title-line"></div>
+
                     </div>
+
 
                     <div className="bed-details-layout">
 
                         <div className="bed-glass bed-details-card">
+
                             <h3>Course Information</h3>
+
+                            <div className="bed-detail-row">
+                                <span>Course Name</span>
+                                <strong>Bachelor of Education</strong>
+                            </div>
 
                             <div className="bed-detail-row">
                                 <span>Course Duration</span>
@@ -279,232 +651,393 @@ export default function BedPage() {
                             </div>
 
                             <div className="bed-detail-row">
-                                <span>Affiliation</span>
-                                <strong>CCS University, Meerut</strong>
+                                <span>Course Level</span>
+                                <strong>Professional Teacher Education</strong>
                             </div>
 
                             <div className="bed-detail-row">
-                                <span>Intake</span>
-                                <strong>100 Seats per Academic Year</strong>
+                                <span>Institution</span>
+                                <strong>IET College</strong>
                             </div>
+
+                            <div className="bed-detail-row">
+                                <span>Location</span>
+                                <strong>Ghaziabad, Uttar Pradesh</strong>
+                            </div>
+
                         </div>
 
-                        <div className="bed-glass bed-eligibility-card">
-                            <span className="bed-label">ELIGIBILITY CRITERIA</span>
 
-                            <h3>Who Can Apply for B.Ed?</h3>
+                        <div className="bed-glass bed-eligibility-card">
+
+                            <span className="bed-label">
+                                ELIGIBILITY CRITERIA
+                            </span>
+
+                            <h3>
+                                Who Can Apply for B.Ed?
+                            </h3>
 
                             <p>
-                                The candidate must have completed Graduation
-                                or Post Graduation in any stream with the
-                                following minimum marks:
+                                Candidates interested in B.Ed admission
+                                should generally fulfil the following
+                                academic requirements:
                             </p>
 
                             <ul>
                                 <li>
-                                    Minimum 50% marks for GEN/OBC candidates.
+                                    A bachelor's degree or master's degree
+                                    from a recognised university.
                                 </li>
+
                                 <li>
-                                    Passed for SC/ST candidates.
+                                    Minimum qualifying marks as prescribed
+                                    by the applicable university and
+                                    NCTE regulations.
                                 </li>
+
                                 <li>
-                                    Admission is subject to the norms set by
-                                    CCS University, Meerut, and the NCTE
-                                    (National Council for Teacher Education).
+                                    Applicable relaxation in minimum marks
+                                    for reserved categories, wherever
+                                    permitted by the admission rules.
+                                </li>
+
+                                <li>
+                                    Fulfilment of the current admission
+                                    and counselling requirements.
                                 </li>
                             </ul>
+
+                            <p>
+                                Final eligibility is subject to the
+                                applicable university admission
+                                notification and regulatory guidelines.
+                            </p>
+
                         </div>
 
                     </div>
+
                 </div>
             </section>
 
+
             {/* ADMISSION PROCESS */}
-            <section className="bed-section" id="bed-admission">
+
+            <section
+                className="bed-section"
+                id="bed-admission"
+            >
                 <div className="bed-container">
 
                     <div className="bed-heading">
-                        <span className="bed-label">ADMISSIONS</span>
-                        <h2>Admission Process for B.Ed</h2>
+
+                        <span className="bed-label">
+                            ADMISSIONS
+                        </span>
+
+                        <h2>
+                            B.Ed Admission Process
+                        </h2>
+
                         <div className="bed-title-line"></div>
+
                     </div>
 
+
                     <p className="bed-center-text">
-                        Follow these steps to begin your journey towards
-                        becoming an educator.
+                        Start your journey towards a career in education.
+                        Contact the admission team to understand the
+                        current application process and eligibility
+                        requirements.
                     </p>
 
+
                     <div className="bed-admission-grid">
+
                         {admissionSteps.map((item, index) => (
-                            <article className="bed-glass bed-admission-card" key={index}>
+                            <article
+                                className="bed-glass bed-admission-card"
+                                key={item.title}
+                            >
                                 <span className="bed-step-number">
-                                    0{index + 1}
+                                    {String(index + 1).padStart(2, "0")}
                                 </span>
 
                                 <h3>{item.title}</h3>
+
                                 <p>{item.description}</p>
                             </article>
                         ))}
+
                     </div>
 
                 </div>
             </section>
 
+
             {/* INSTITUTION ADVANTAGES */}
+
             <section className="bed-section bed-section-dark">
                 <div className="bed-container">
 
                     <div className="bed-heading">
-                        <span className="bed-label">TEMPL ADVANTAGE</span>
+
+                        <span className="bed-label">
+                            TEMPL ADVANTAGE
+                        </span>
+
                         <h2>
-                            Why TEMPL Group of Institutions is the Best
-                            College for B.Ed in Ghaziabad, Delhi NCR
+                            Learning at TEMPL Group of Institutions
                         </h2>
+
                         <div className="bed-title-line"></div>
+
                     </div>
 
+
                     <div className="bed-advantages-grid">
+
                         {advantages.map((item, index) => (
-                            <article className="bed-glass bed-advantage-card" key={index}>
+                            <article
+                                className="bed-glass bed-advantage-card"
+                                key={item.title}
+                            >
                                 <span className="bed-card-number">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
 
                                 <h3>{item.title}</h3>
+
                                 <p>{item.description}</p>
                             </article>
                         ))}
+
                     </div>
 
                 </div>
             </section>
 
+
             {/* CAREER OPPORTUNITIES */}
+
             <section className="bed-section">
                 <div className="bed-container">
 
                     <div className="bed-heading">
-                        <span className="bed-label">CAREER PATHS</span>
+
+                        <span className="bed-label">
+                            CAREER OPPORTUNITIES
+                        </span>
+
                         <h2>
-                            Career Prospects After Completing the Bachelor
-                            of Education (B.Ed) Course
+                            Career Opportunities After B.Ed
                         </h2>
+
                         <div className="bed-title-line"></div>
+
                     </div>
 
+
                     <p className="bed-center-text">
-                        Completing the Bachelor of Education (B.Ed) course
-                        from TEMPL Group of Institutions opens a wide range
-                        of career opportunities for students. The B.Ed
-                        degree is the foundation for aspiring teachers,
-                        and graduates can explore diverse career paths
-                        across the education sector.
+                        A Bachelor of Education can help graduates
+                        pursue opportunities in the education sector.
+                        Depending on their qualifications and applicable
+                        recruitment requirements, graduates can explore
+                        different teaching and education-related roles.
                     </p>
 
+
                     <div className="bed-career-grid">
+
                         {careers.map((item, index) => (
-                            <article className="bed-glass bed-career-card" key={index}>
+                            <article
+                                className="bed-glass bed-career-card"
+                                key={item.title}
+                            >
                                 <span className="bed-card-number">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
 
                                 <h3>{item.title}</h3>
+
                                 <p>{item.description}</p>
                             </article>
                         ))}
+
+                    </div>
+
+                    <p className="bed-center-text">
+                        <strong>Important:</strong> A B.Ed degree alone
+                        does not guarantee eligibility for every teaching
+                        post. CTET, State TET or other recruitment
+                        examinations may be required depending on the
+                        position and applicable rules.
+                    </p>
+
+                </div>
+            </section>
+
+
+            {/* FAQ SECTION */}
+
+            <section className="bed-section bed-section-dark">
+                <div className="bed-container">
+
+                    <div className="bed-heading">
+
+                        <span className="bed-label">
+                            FREQUENTLY ASKED QUESTIONS
+                        </span>
+
+                        <h2>
+                            B.Ed Admission FAQs
+                        </h2>
+
+                        <div className="bed-title-line"></div>
+
+                    </div>
+
+
+                    <div className="bed-faq-grid">
+
+                        {faqs.map((faq, index) => (
+                            <article
+                                className="bed-glass bed-faq-card"
+                                key={faq.question}
+                            >
+                                <h3>
+                                    {String(index + 1).padStart(2, "0")}.{" "}
+                                    {faq.question}
+                                </h3>
+
+                                <p>{faq.answer}</p>
+                            </article>
+                        ))}
+
                     </div>
 
                 </div>
             </section>
 
+
             {/* FINAL CTA */}
+
             <section className="bed-cta-section">
                 <div className="bed-container">
 
                     <div className="bed-glass bed-cta-card">
+
                         <div>
+
                             <span className="bed-label">
                                 YOUR FUTURE STARTS HERE
                             </span>
 
                             <h2>
-                                Be Part of the Best B.Ed College in Ghaziabad
-                                & Delhi NCR
+                                Take the First Step Towards a Career in Education
                             </h2>
 
                             <p>
-                                At TEMPL Group of Institutions, we believe
-                                that the best teachers shape the future of
-                                the world. Our B.Ed course is designed to
-                                equip you with the tools, knowledge, and
-                                experience to become an influential and
-                                successful educator. With our exceptional
-                                faculty, world-class infrastructure, and
-                                industry connections, we are one of the best
-                                B.Ed colleges in Ghaziabad and Delhi NCR.
+                                A career in education begins with the
+                                right academic foundation. Explore the
+                                B.Ed programme at IET College, TEMPL Group
+                                of Institutions, and learn more about the
+                                academic opportunities available to
+                                aspiring educators.
                             </p>
 
                             <p>
-                                Whether you are from Modinagar, Muradnagar,
-                                Meerut, or New Delhi, TEMPL Group of
-                                Institutions offers the ideal learning
-                                environment to launch your career in
-                                education.
+                                Students from Muradnagar, Modinagar,
+                                Ghaziabad and nearby areas can contact
+                                the institution for information about
+                                the programme, eligibility and admission
+                                procedures.
                             </p>
+
                         </div>
 
-                        <Link href="#register-interest" className="bed-primary-btn">
-                            Enrol Today <span>→</span>
+
+                        <Link
+                            href="/register"
+                            className="bed-primary-btn"
+                        >
+                            Enquire for Admission <span>→</span>
                         </Link>
+
                     </div>
 
                 </div>
             </section>
 
+
             {/* REGISTRATION */}
-            <section className="bed-section bed-registration-section" id="register-interest">
+
+            <section
+                className="bed-section bed-registration-section"
+                id="register-interest"
+            >
                 <div className="bed-container">
 
                     <div className="bed-heading">
-                        <span className="bed-label">TAKE THE FIRST STEP</span>
-                        <h2>Register Your Interest Today</h2>
+
+                        <span className="bed-label">
+                            TAKE THE FIRST STEP
+                        </span>
+
+                        <h2>
+                            Register Your Interest
+                        </h2>
+
                         <div className="bed-title-line"></div>
+
                     </div>
+
 
                     <div className="bed-glass bed-registration-card">
 
                         <h3>
-                            Build a Successful Future with TEMPL Group of Institutions
+                            Build Your Future with TEMPL Group of Institutions
                         </h3>
 
                         <p>
-                            Are you interested in joining TEMPL Group of
-                            Institutions and building a successful future?
-                            Take the first step toward your academic and
-                            professional goals by registering your interest
-                            today. Our admissions team will guide you
-                            through course selection, eligibility
-                            requirements, admission procedures,
-                            scholarships, and career opportunities.
+                            Interested in pursuing a Bachelor of Education?
+                            Contact our admission team to learn about
+                            programme details, eligibility requirements,
+                            application procedures, fees and available
+                            scholarship opportunities.
                         </p>
 
-                        <h3>Why Register?</h3>
+
+                        <h3>
+                            How We Can Help
+                        </h3>
+
 
                         <div className="bed-benefits-grid">
-                            {registrationBenefits.map((item, index) => (
-                                <div className="bed-benefit-item" key={index}>
+
+                            {registrationBenefits.map((item) => (
+                                <div
+                                    className="bed-benefit-item"
+                                    key={item}
+                                >
                                     <span>✓</span>
                                     <p>{item}</p>
                                 </div>
                             ))}
+
                         </div>
 
+
                         <div className="bed-registration-footer">
+
                             <p>
-                                <strong>Ready to begin your journey?</strong>{" "}
-                                Fill out the registration form or contact
-                                our admissions team to receive detailed
-                                information about your preferred program.
+                                <strong>
+                                    Ready to begin your journey?
+                                </strong>{" "}
+                                Register your interest to connect with
+                                the admission team and receive information
+                                about the B.Ed programme.
                             </p>
 
                             <Link
@@ -513,6 +1046,7 @@ export default function BedPage() {
                             >
                                 Register Your Interest <span>→</span>
                             </Link>
+
                         </div>
 
                     </div>

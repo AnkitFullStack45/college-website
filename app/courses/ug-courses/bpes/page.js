@@ -1,11 +1,217 @@
 import Link from "next/link";
-import "./bpes.css";
+import "./bpes.css"
+
+/* =========================================================
+   CONSTANTS
+========================================================= */
+
+const SITE_URL = "https://www.templgroup.in";
+const PAGE_URL = `${SITE_URL}/Bpes`;
+const BANNER_IMAGE = "/images/offer%27s%20BPES.webp"; // rename file to offers-bpes.webp when possible
+
+/* =========================================================
+   SEO METADATA
+========================================================= */
 
 export const metadata = {
-    title: "BPES College in Ghaziabad | Bachelor of Physical Education & Sports – IET College",
+    metadataBase: new URL(SITE_URL),
+
+    title: "Best BPES College in Ghaziabad | BPES Admission 2026 | TEMPL",
+
     description:
-        "Explore the BPES program at IET College, TEMPL Group of Institutions, Ghaziabad. Learn about eligibility, admission, sports facilities, career opportunities and course highlights.",
+        "Explore the 3-year BPES course at IET College, TEMPL Group, Ghaziabad. CCSU-affiliated and NAAC-accredited institution offering sports training, physical education, fitness development and modern sports facilities.",
+
+    alternates: {
+        canonical: "/Bpes",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
+    },
+
+    openGraph: {
+        title: "Best BPES College in Ghaziabad | BPES Admission 2026 | TEMPL",
+
+        description:
+            "Pursue a Bachelor of Physical Education and Sports at IET College, TEMPL Group of Institutions. Explore sports facilities, practical training, eligibility and career opportunities.",
+
+        url: PAGE_URL,
+
+        siteName: "TEMPL Group of Institutions",
+
+        locale: "en_IN",
+
+        type: "website",
+
+        images: [
+            {
+                url: BANNER_IMAGE,
+                alt: "Bachelor of Physical Education and Sports at IET College, TEMPL Group of Institutions",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+
+        title: "Best BPES College in Ghaziabad | TEMPL Group",
+
+        description:
+            "Explore the BPES program at IET College, Ghaziabad. Learn about sports training, physical education, admission and career opportunities.",
+
+        images: [BANNER_IMAGE],
+    },
 };
+
+/* =========================================================
+   FAQ DATA
+========================================================= */
+
+const faqs = [
+    {
+        question: "What is B.P.E.S and what are its career opportunities?",
+        answer:
+            "B.P.E.S (Bachelor of Physical Education and Sports) is an undergraduate degree focused on physical education, sports science, fitness and sports training. Graduates can explore opportunities as sports coaches, fitness trainers, physical education professionals and sports management executives, subject to applicable qualifications.",
+    },
+    {
+        question: "Is B.P.E.S at IET College affiliated with CCS University?",
+        answer:
+            "Yes. The B.P.E.S program at IET College, TEMPL Group of Institutions, is affiliated with Chaudhary Charan Singh University (CCSU), Meerut.",
+    },
+    {
+        question: "What is the duration of the B.P.E.S course?",
+        answer:
+            "The B.P.E.S program at IET College is a three-year undergraduate course divided into six semesters.",
+    },
+    {
+        question: "What is the eligibility for B.P.E.S admission?",
+        answer:
+            "Candidates must have passed Class 12th or an equivalent examination from a recognised board. General/OBC candidates need 45% marks with a valid sports participation certificate, and SC/ST candidates need 40% marks with a valid sports certificate. Candidates must also demonstrate basic physical fitness, and additional criteria may apply according to university admission guidelines.",
+    },
+    {
+        question: "How many seats are available in the B.P.E.S program?",
+        answer:
+            "The stated intake for the B.P.E.S program at IET College is 60 seats, subject to applicable university approvals.",
+    },
+    {
+        question: "What subjects are taught in B.P.E.S?",
+        answer:
+            "The program covers areas such as human anatomy and physiology, exercise science, sports psychology, sports coaching, physical fitness assessment, sports training and sports administration.",
+    },
+    {
+        question: "What sports facilities are available at IET College?",
+        answer:
+            "The campus offers sports facilities including a cricket ground, basketball court, volleyball court, badminton facility, table tennis, kabaddi ground and gym facilities.",
+    },
+    {
+        question: "Can I pursue higher education after B.P.E.S?",
+        answer:
+            "Yes. Graduates can explore further studies in physical education, sports science, sports management, coaching and related disciplines, subject to the eligibility requirements of the respective institutions.",
+    },
+    {
+        question: "Where is IET College located?",
+        answer:
+            "IET College, TEMPL Group of Institutions, is located at NH-58, Abupur Road, Muradnagar, Ghaziabad, Uttar Pradesh 201206.",
+    },
+];
+
+/* =========================================================
+   STRUCTURED DATA
+========================================================= */
+
+const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "Bachelor of Physical Education and Sports (B.P.E.S)",
+    description:
+        "The Bachelor of Physical Education and Sports (B.P.E.S) is a three-year undergraduate program offered at Institute for Education and Technical Sciences (IET College), TEMPL Group of Institutions, Ghaziabad. The program focuses on physical education, sports science, fitness training, sports coaching, exercise physiology and sports management.",
+    url: PAGE_URL,
+    courseCode: "B.P.E.S",
+    educationalLevel: "Undergraduate",
+    inLanguage: "en-IN",
+    teaches: [
+        "Human Anatomy and Physiology",
+        "Exercise Science",
+        "Sports Psychology",
+        "Sports Coaching",
+        "Physical Fitness Assessment",
+        "Sports Training",
+        "Sports Management",
+        "Sports Administration",
+        "Team Management",
+        "Physical Education",
+    ],
+    provider: {
+        "@type": "CollegeOrUniversity",
+        name: "Institute for Education and Technical Sciences (IET College)",
+        parentOrganization: {
+            "@type": "EducationalOrganization",
+            name: "TEMPL Group of Institutions",
+            url: SITE_URL,
+        },
+        url: SITE_URL,
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: "NH-58, Abupur Road, Muradnagar",
+            addressLocality: "Ghaziabad",
+            addressRegion: "Uttar Pradesh",
+            postalCode: "201206",
+            addressCountry: "IN",
+        },
+    },
+    hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "Onsite",
+        duration: "P3Y",
+    },
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${SITE_URL}/`,
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "B.P.E.S - Bachelor of Physical Education and Sports",
+            item: PAGE_URL,
+        },
+    ],
+};
+
+const structuredData = [courseSchema, faqSchema, breadcrumbSchema];
+
+/* =========================================================
+   PAGE CONTENT DATA
+========================================================= */
 
 const courseHighlights = [
     "3 Years – 6 Semesters",
@@ -165,16 +371,34 @@ const eligibility = [
     "Candidates must demonstrate basic physical fitness and interest in physical education and sports.",
 ];
 
+/* =========================================================
+   PAGE
+========================================================= */
+
 export default function BPESPage() {
     return (
         <main className="bpes-page">
 
+            {/* STRUCTURED DATA (JSON-LD) */}
+            {structuredData.map((schema, index) => (
+                <script
+                    key={index}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+                    }}
+                />
+            ))}
+
             {/* FULL-WIDTH BANNER IMAGE */}
             <section className="bpes-banner">
                 <img
-                    src="/images/offer's BPES.webp"
+                    src={BANNER_IMAGE}
                     alt="Bachelor of Physical Education and Sports at IET College, TEMPL Group of Institutions"
                     className="bpes-banner-img"
+                    width={1920}
+                    height={600}
+                    fetchPriority="high"
                 />
             </section>
 
@@ -247,8 +471,8 @@ export default function BPESPage() {
                             <p>
                                 The Bachelor of Physical Education & Sports
                                 (BPES) program at Institute for Education and
-                                Technical-sciences (IET)—part of TEMPL Group
-                                of Institutions—offers an excellent foundation
+                                Technical Sciences (IET), part of TEMPL Group
+                                of Institutions, offers an excellent foundation
                                 for students who aspire to turn their love for
                                 sports into a successful profession.
                             </p>
@@ -269,7 +493,7 @@ export default function BPESPage() {
                     {/* HIGHLIGHTS */}
                     <div className="bpes-highlight-grid">
                         {courseHighlights.map((item, index) => (
-                            <div className="bpes-glass bpes-highlight-card" key={index}>
+                            <div className="bpes-glass bpes-highlight-card" key={item}>
                                 <span className="bpes-highlight-number">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
@@ -305,7 +529,7 @@ export default function BPESPage() {
 
                     <div className="bpes-subject-grid">
                         {subjects.map((subject, index) => (
-                            <article className="bpes-glass bpes-subject-card" key={index}>
+                            <article className="bpes-glass bpes-subject-card" key={subject}>
                                 <span>{String(index + 1).padStart(2, "0")}</span>
                                 <h3>{subject}</h3>
                             </article>
@@ -364,8 +588,8 @@ export default function BPESPage() {
                         </p>
 
                         <ul>
-                            {eligibility.map((item, index) => (
-                                <li key={index}>{item}</li>
+                            {eligibility.map((item) => (
+                                <li key={item}>{item}</li>
                             ))}
                         </ul>
                     </div>
@@ -389,8 +613,8 @@ export default function BPESPage() {
                     </div>
 
                     <div className="bpes-admission-grid">
-                        {admissionSteps.map((step, index) => (
-                            <article className="bpes-glass bpes-admission-card" key={index}>
+                        {admissionSteps.map((step) => (
+                            <article className="bpes-glass bpes-admission-card" key={step.number}>
                                 <span>{step.number}</span>
                                 <h3>{step.title}</h3>
                                 <p>{step.description}</p>
@@ -414,8 +638,8 @@ export default function BPESPage() {
                         <div className="bpes-heading-line"></div>
 
                         <p>
-                            IET, a premier BPES college in Ghaziabad, we
-                            understand that sports and physical education
+                            As a premier BPES college in Ghaziabad, IET
+                            understands that sports and physical education
                             go far beyond textbooks. We provide an immersive
                             learning environment with state-of-the-art
                             facilities and hands-on learning experiences.
@@ -432,7 +656,7 @@ export default function BPESPage() {
 
                     <div className="bpes-facility-grid">
                         {sportsFacilities.map((facility, index) => (
-                            <article className="bpes-glass bpes-facility-card" key={index}>
+                            <article className="bpes-glass bpes-facility-card" key={facility.title}>
                                 <span>{String(index + 1).padStart(2, "0")}</span>
                                 <h3>{facility.title}</h3>
                                 <p>{facility.description}</p>
@@ -455,7 +679,7 @@ export default function BPESPage() {
 
                     <div className="bpes-sports-grid">
                         {upcomingSports.map((sport, index) => (
-                            <div className="bpes-glass bpes-sport-card" key={index}>
+                            <div className="bpes-glass bpes-sport-card" key={sport}>
                                 <span>{String(index + 1).padStart(2, "0")}</span>
                                 <h3>{sport}</h3>
                             </div>
@@ -476,8 +700,8 @@ export default function BPESPage() {
                     </div>
 
                     <div className="bpes-support-grid">
-                        {academicFacilities.map((facility, index) => (
-                            <div className="bpes-glass bpes-support-card" key={index}>
+                        {academicFacilities.map((facility) => (
+                            <div className="bpes-glass bpes-support-card" key={facility}>
                                 <span className="bpes-check">✓</span>
                                 <h3>{facility}</h3>
                             </div>
@@ -502,8 +726,8 @@ export default function BPESPage() {
                     </div>
 
                     <div className="bpes-suitable-grid">
-                        {suitableStudents.map((item, index) => (
-                            <div className="bpes-glass bpes-suitable-card" key={index}>
+                        {suitableStudents.map((item) => (
+                            <div className="bpes-glass bpes-suitable-card" key={item}>
                                 <span>✓</span>
                                 <p>{item}</p>
                             </div>
@@ -530,8 +754,8 @@ export default function BPESPage() {
                     </div>
 
                     <div className="bpes-career-grid">
-                        {careerOptions.map((career, index) => (
-                            <article className="bpes-glass bpes-career-card" key={index}>
+                        {careerOptions.map((career) => (
+                            <article className="bpes-glass bpes-career-card" key={career.category}>
                                 <span className="bpes-card-number">
                                     {career.icon}
                                 </span>
@@ -539,8 +763,8 @@ export default function BPESPage() {
                                 <h3>{career.category}</h3>
 
                                 <ul>
-                                    {career.careers.map((item, careerIndex) => (
-                                        <li key={careerIndex}>{item}</li>
+                                    {career.careers.map((item) => (
+                                        <li key={item}>{item}</li>
                                     ))}
                                 </ul>
                             </article>
@@ -573,6 +797,28 @@ export default function BPESPage() {
                             now in high demand across both the public and
                             private sectors.
                         </p>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* FAQ (visible content matching the FAQPage schema) */}
+            <section className="bpes-section">
+                <div className="bpes-container">
+
+                    <div className="bpes-centered-heading">
+                        <span className="bpes-label">FAQ</span>
+                        <h2>Frequently Asked Questions About BPES</h2>
+                        <div className="bpes-heading-line"></div>
+                    </div>
+
+                    <div className="bpes-faq-list">
+                        {faqs.map((faq) => (
+                            <details className="bpes-glass bpes-faq-item" key={faq.question}>
+                                <summary>{faq.question}</summary>
+                                <p>{faq.answer}</p>
+                            </details>
+                        ))}
                     </div>
 
                 </div>

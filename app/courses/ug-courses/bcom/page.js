@@ -2,14 +2,78 @@ import Image from "next/image";
 import Link from "next/link";
 import "./bcom.css";
 
+/* =========================================================
+   SEO METADATA
+========================================================= */
+
 export const metadata = {
-    title: "Best B.Com College in Ghaziabad | Bachelor of Commerce at TEMPL Group",
+    metadataBase: new URL("https://www.templgroup.in"),
+
+    title: "Best B.Com College in Ghaziabad | B.Com Admission 2026 | TEMPL",
+
     description:
-        "B.Com (Bachelor of Commerce) at IET College, TEMPL Group of Institutions, Ghaziabad. CCSU affiliated, NAAC accredited, approved by UGC, AICTE, NCTE and SCERT.",
+        "Study B.Com at IET College, TEMPL Group of Institutions, Ghaziabad. CCSU-affiliated and NAAC-accredited institution offering quality commerce education, practical learning and scholarship opportunities up to 40%.",
+
+    alternates: {
+        canonical: "/Bcom",
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
+    },
+
+    openGraph: {
+        title: "Best B.Com College in Ghaziabad | B.Com Admission 2026 | TEMPL",
+
+        description:
+            "Explore the B.Com program at IET College, TEMPL Group of Institutions. CCSU-affiliated, NAAC-accredited commerce education with practical learning and scholarship opportunities.",
+
+        url: "https://www.templgroup.in/Bcom",
+
+        siteName: "TEMPL Group of Institutions",
+
+        locale: "en_IN",
+
+        type: "website",
+
+        images: [
+            {
+                url: "/images/offer's B.COM.webp",
+                width: 1200,
+                height: 400,
+                alt: "B.Com admission at IET College, TEMPL Group of Institutions, Ghaziabad",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+
+        title: "Best B.Com College in Ghaziabad | TEMPL Group",
+
+        description:
+            "Explore B.Com admission at IET College, Ghaziabad. Discover the curriculum, eligibility, facilities and scholarship opportunities.",
+
+        images: ["/images/offer's B.COM.webp"],
+    },
 };
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
 
 const introParagraphs = [
     "Welcome to TEMPL Group of Institutions, where academic excellence meets practical learning. Under the banner of our flagship institution, Institute for Education and Technical Sciences (IET College), we proudly offer a comprehensive Bachelor of Commerce (B.Com) program. This 3-year undergraduate course is affiliated to Chaudhary Charan Singh University (CCSU) Meerut, and the curriculum is designed for students who have completed their 12th standard and wish to pursue a career in the dynamic world of commerce, business, and finance.",
+
     "Institute for Education and Technical Sciences (IET College) is approved by AICTE, NCTE, SCERT, and University Grants Commission (UGC) and accredited by NAAC.",
 ];
 
@@ -26,6 +90,7 @@ const highlights = [
 
 const featureParagraphs = [
     "At IET College, we believe in providing students with the best education in commerce that equips them with the necessary skills and knowledge to excel in the competitive world of business. If you're searching for the best college for B.Com in Ghaziabad, Modinagar, or Muradnagar, our Institute for Education and Technical Sciences offers a robust and dynamic curriculum that blends academic rigor with real-world applications.",
+
     "Our B.Com program ensures that you are not only well-versed in the theoretical aspects of commerce but also gain practical experience through internships, workshops, and industry exposure. Whether you aim to pursue a career in accounting, finance, taxation, or business management, the B.Com course at IET College will lay a solid foundation for your future.",
 ];
 
@@ -289,7 +354,107 @@ const faqs = [
     },
 ];
 
-/* ---------- small helpers ---------- */
+
+/* =========================================================
+   STRUCTURED DATA: COURSE SCHEMA
+========================================================= */
+
+const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+
+    name: "Bachelor of Commerce (B.Com)",
+
+    description:
+        "Three-year undergraduate Bachelor of Commerce program at IET College, TEMPL Group of Institutions, Ghaziabad. The program focuses on accounting, finance, taxation, business economics and management.",
+
+    url: "https://www.templgroup.in/Bcom",
+
+    courseCode: "B.Com",
+
+    educationalLevel: "Undergraduate",
+
+    teaches: curriculum,
+
+    provider: {
+        "@type": "CollegeOrUniversity",
+
+        name: "Institute for Education and Technical Sciences (IET College)",
+
+        parentOrganization: {
+            "@type": "EducationalOrganization",
+            name: "TEMPL Group of Institutions",
+            url: "https://www.templgroup.in",
+        },
+
+        address: {
+            "@type": "PostalAddress",
+            streetAddress: "NH-58, Abupur Road, Muradnagar",
+            addressLocality: "Ghaziabad",
+            addressRegion: "Uttar Pradesh",
+            postalCode: "201206",
+            addressCountry: "IN",
+        },
+    },
+
+    hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "Onsite",
+        duration: "P3Y",
+        startDate: "2026-08-01",
+    },
+};
+
+
+/* =========================================================
+   STRUCTURED DATA: FAQ SCHEMA
+========================================================= */
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+
+        name: faq.question,
+
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+
+/* =========================================================
+   STRUCTURED DATA: BREADCRUMB SCHEMA
+========================================================= */
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+
+    itemListElement: [
+        {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.templgroup.in/",
+        },
+        {
+            "@type": "ListItem",
+            position: 2,
+            name: "B.Com",
+            item: "https://www.templgroup.in/Bcom",
+        },
+    ],
+};
+
+
+/* =========================================================
+   SMALL REUSABLE COMPONENTS
+========================================================= */
 
 function Heading({ label, title, sub }) {
     return (
@@ -310,6 +475,7 @@ function CardGrid({ items, grid, card }) {
                     <span className="bcom-card-number">
                         {String(i + 1).padStart(2, "0")}
                     </span>
+
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
                 </article>
@@ -330,18 +496,19 @@ function PillGrid({ items }) {
     );
 }
 
-// items can be plain strings or [title, text] pairs
 function ReasonGrid({ items }) {
     return (
         <div className="bcom-reasons-grid">
             {items.map((item) => {
                 const isPair = Array.isArray(item);
+
                 return (
                     <div
                         className="bcom-reason-card"
                         key={isPair ? item[0] : item}
                     >
                         <span className="bcom-check">✓</span>
+
                         <p>
                             {isPair ? (
                                 <>
@@ -358,45 +525,93 @@ function ReasonGrid({ items }) {
     );
 }
 
+
+/* =========================================================
+   MAIN B.COM PAGE
+========================================================= */
+
 export default function BcomPage() {
     return (
         <main className="bcom-page">
 
+            {/* STRUCTURED DATA */}
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(courseSchema),
+                }}
+            />
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(faqSchema),
+                }}
+            />
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(breadcrumbSchema),
+                }}
+            />
+
+
             {/* TOP BANNER IMAGE */}
+
             <section className="bcom-banner">
                 <Image
                     src="/images/offer's B.COM.webp"
-                    alt="B.Com — Bachelor of Commerce at IET College TEMPL Group Ghaziabad"
-                    width={0}
-                    height={0}
+                    alt="B.Com admission and Bachelor of Commerce program at IET College, TEMPL Group of Institutions, Ghaziabad"
+                    width={1200}
+                    height={400}
                     sizes="100vw"
                     priority
                 />
             </section>
 
+
             {/* HERO TEXT */}
+
             <section className="bcom-top-text">
                 <div className="bcom-container">
-                    <span className="bcom-eyebrow">TEMPL GROUP OF INSTITUTIONS</span>
-                    <h1>B.Com (BCom) — Bachelor of Commerce in Ghaziabad | TEMPL Group</h1>
+
+                    <span className="bcom-eyebrow">
+                        TEMPL GROUP OF INSTITUTIONS
+                    </span>
+
+                    <h1>
+                        B.Com (BCom) — Bachelor of Commerce in Ghaziabad | TEMPL Group
+                    </h1>
+
                     <h2>
                         B.Com Course at TEMPL Group of Institutions: Your
                         Pathway to Success in Commerce
                     </h2>
+
                     <p>Bachelor of Commerce (B.Com)</p>
+
                     <Link href="#admission" className="bcom-primary-btn">
                         Apply Now <span>→</span>
                     </Link>
+
                 </div>
             </section>
 
+
             {/* INTRODUCTION */}
+
             <section className="bcom-section">
                 <div className="bcom-container">
+
                     <div className="bcom-intro-grid">
+
                         <div className="bcom-section-heading">
                             <span className="bcom-label">B.COM PROGRAM</span>
+
                             <h2>Bachelor of Commerce (B.Com)</h2>
+
                             <div className="bcom-heading-line"></div>
                         </div>
 
@@ -405,6 +620,7 @@ export default function BcomPage() {
                                 <p key={i}>{text}</p>
                             ))}
                         </div>
+
                     </div>
 
                     <div className="bcom-highlight-grid">
@@ -413,16 +629,21 @@ export default function BcomPage() {
                                 <span className="bcom-highlight-icon">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
+
                                 <h3>{item}</h3>
                             </div>
                         ))}
                     </div>
+
                 </div>
             </section>
 
-            {/* KEY FEATURES + CURRICULUM */}
+
+            {/* KEY FEATURES AND CURRICULUM */}
+
             <section className="bcom-section bcom-light-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="PROGRAM FEATURES"
                         title="Key Features of Our B.Com Program"
@@ -435,9 +656,11 @@ export default function BcomPage() {
                     </div>
 
                     <div className="bcom-sub-block">
+
                         <h3 className="bcom-sub-title">
                             B.Com Curriculum and Subjects
                         </h3>
+
                         <div className="bcom-content-width">
                             <p>
                                 The B.Com curriculum at IET College is carefully
@@ -450,7 +673,9 @@ export default function BcomPage() {
                                 professional success.
                             </p>
                         </div>
+
                         <PillGrid items={curriculum} />
+
                         <div className="bcom-content-width bcom-bottom-text">
                             <p>
                                 The curriculum is regularly updated in
@@ -459,13 +684,18 @@ export default function BcomPage() {
                                 competitive in the evolving business landscape.
                             </p>
                         </div>
+
                     </div>
+
                 </div>
             </section>
 
+
             {/* SKILLS */}
+
             <section className="bcom-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="SKILL DEVELOPMENT"
                         title="Skills Developed Through B.Com"
@@ -484,12 +714,16 @@ export default function BcomPage() {
                     </div>
 
                     <PillGrid items={skills} />
+
                 </div>
             </section>
 
+
             {/* CAREERS */}
+
             <section className="bcom-section bcom-light-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="CAREER PATHS"
                         title="Career Opportunities After B.Com"
@@ -504,6 +738,7 @@ export default function BcomPage() {
                             graduates to pursue diverse career paths based on
                             their interests and professional goals.
                         </p>
+
                         <p>
                             Popular career options after completing B.Com
                             include:
@@ -521,12 +756,16 @@ export default function BcomPage() {
                             various banking and government examinations.
                         </p>
                     </div>
+
                 </div>
             </section>
 
+
             {/* WHY CHOOSE IET */}
+
             <section className="bcom-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="WHY IET COLLEGE"
                         title="Why Choose IET College for B.Com?"
@@ -554,12 +793,19 @@ export default function BcomPage() {
                             journey.
                         </p>
                     </div>
+
                 </div>
             </section>
 
+
             {/* ADMISSION */}
-            <section className="bcom-section bcom-admission-section" id="admission">
+
+            <section
+                className="bcom-section bcom-admission-section"
+                id="admission"
+            >
                 <div className="bcom-container">
+
                     <Heading
                         label="JOIN TEMPL"
                         title="B.Com Admission Process 2026"
@@ -577,45 +823,63 @@ export default function BcomPage() {
                     </div>
 
                     <div className="bcom-admission-grid">
+
                         <article className="bcom-admission-card">
+
                             <div className="bcom-admission-icon">01</div>
+
                             <h3>B.Com Eligibility Criteria</h3>
+
                             <ul>
                                 {eligibility.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}
                             </ul>
+
                         </article>
 
                         <article className="bcom-admission-card">
+
                             <div className="bcom-admission-icon">02</div>
+
                             <h3>Admission Process</h3>
+
                             <ol>
                                 {admissionSteps.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}
                             </ol>
+
                         </article>
 
                         <article className="bcom-seats-card">
+
                             <span>SEAT INTAKE</span>
+
                             <strong>120</strong>
+
                             <h3>Total Seats Available</h3>
+
                         </article>
+
                     </div>
 
                     <div className="bcom-admission-cta">
+
                         <div>
                             <h3>Apply Now</h3>
+
                             <p>
                                 Admissions are on a first-come, first-served
                                 basis, subject to merit. Apply early to secure
                                 your place in the B.Com program.
                             </p>
                         </div>
+
                         <Link href="#admission" className="bcom-primary-btn">
                             Apply Now <span>→</span>
                         </Link>
+
                     </div>
 
                     <p className="bcom-admission-note">
@@ -624,32 +888,42 @@ export default function BcomPage() {
                         eligibility, fee structure, scholarships, and course
                         information.
                     </p>
+
                 </div>
             </section>
 
+
             {/* KEY HIGHLIGHTS */}
+
             <section className="bcom-section bcom-light-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="WHY TEMPL"
                         title="Key Highlights of TEMPL Group of Institutions"
                     />
+
                     <CardGrid
                         items={keyHighlights}
                         grid="bcom-careers-grid"
                         card="bcom-career-card"
                     />
+
                 </div>
             </section>
 
+
             {/* INFRASTRUCTURE */}
+
             <section className="bcom-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="CAMPUS FACILITIES"
                         title="State-of-the-Art Infrastructure at TEMPL Group of Institutions, Ghaziabad"
                         sub="A Modern Learning Experience at an Affordable Fee"
                     />
+
                     <CardGrid
                         items={infrastructure}
                         grid="bcom-facilities-grid"
@@ -657,6 +931,7 @@ export default function BcomPage() {
                     />
 
                     <div className="bcom-content-width bcom-bottom-text">
+
                         <p>
                             At TEMPL Group of Institutions, we don't just focus
                             on teaching; we focus on transforming. Our
@@ -666,6 +941,7 @@ export default function BcomPage() {
                             relevant today but also prepares them for the
                             challenges of tomorrow.
                         </p>
+
                         <p>
                             With a nominal fee structure, we provide an
                             opportunity for every student to benefit from an
@@ -675,112 +951,161 @@ export default function BcomPage() {
                             Group of Institutions is the place to shape your
                             future.
                         </p>
+
                     </div>
+
                 </div>
             </section>
 
+
             {/* WHY IET SHORT */}
+
             <section className="bcom-section bcom-light-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="WHY IET COLLEGE"
                         title="Why IET College for B.Com?"
                     />
+
                     <ReasonGrid items={whyIetShort} />
 
                     <div className="bcom-content-width bcom-bottom-text">
+
                         <p>
-                            <strong>Join the Best B.Com college IET in Ghaziabad.</strong>{" "}
+                            <strong>
+                                Explore the B.Com program at IET College in Ghaziabad.
+                            </strong>{" "}
                             If you are ready to embark on a successful career in
-                            commerce, IET College provides you with the ideal
-                            platform. Apply now to secure your spot in the best
-                            B.Com course in Ghaziabad, Modinagar, and
-                            Muradnagar at IET College under TEMPL Group of
-                            Institutions.
+                            commerce, IET College provides you with an academic
+                            platform. Apply now to explore the B.Com course in
+                            Ghaziabad, Modinagar, and Muradnagar at IET College
+                            under TEMPL Group of Institutions.
                         </p>
+
                     </div>
+
                 </div>
             </section>
 
+
             {/* LOCATION */}
+
             <section className="bcom-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="LOCATION"
                         title="Location Advantage of IET College Ghaziabad"
                     />
 
                     <div className="bcom-content-width">
+
                         <p>
                             IET College, a part of TEMPL Group of Institutions,
                             enjoys a strategic location on NH-58, Muradnagar,
-                            making it one of the most accessible colleges for
+                            making it one of the accessible colleges for
                             students across Ghaziabad, Modinagar, Meerut, and
                             Delhi NCR. The campus offers excellent connectivity
                             through major road networks and public
                             transportation, ensuring a convenient and
                             hassle-free commute for students.
                         </p>
+
                     </div>
 
                     <ReasonGrid items={location} />
 
                     <div className="bcom-content-width bcom-bottom-text">
+
                         <p>
                             With its central location and excellent
                             transportation links, IET College offers students
-                            the perfect combination of academic excellence,
+                            the combination of academic opportunities,
                             convenience, and access to opportunities throughout
                             the Delhi NCR region.
                         </p>
+
                     </div>
+
                 </div>
             </section>
 
+
             {/* FAQ */}
+
             <section className="bcom-section bcom-light-section">
                 <div className="bcom-container">
+
                     <Heading
                         label="HAVE QUESTIONS?"
                         title="Frequently Asked Questions (FAQs)"
                     />
 
                     <div className="bcom-faq-list">
+
                         {faqs.map((faq) => (
-                            <details className="bcom-faq-item" key={faq.question}>
+
+                            <details
+                                className="bcom-faq-item"
+                                key={faq.question}
+                            >
+
                                 <summary>
+
                                     <span>{faq.question}</span>
+
                                     <span className="bcom-faq-plus">+</span>
+
                                 </summary>
+
                                 <div className="bcom-faq-answer">
                                     <p>{faq.answer}</p>
                                 </div>
+
                             </details>
+
                         ))}
+
                     </div>
+
                 </div>
             </section>
 
+
             {/* FINAL CTA */}
+
             <section className="bcom-final-cta">
+
                 <div className="bcom-container bcom-final-cta-content">
+
                     <div>
-                        <span className="bcom-label">BEGIN YOUR JOURNEY</span>
-                        <h2>Join IET College and Start Your B.Com Journey Today</h2>
+
+                        <span className="bcom-label">
+                            BEGIN YOUR JOURNEY
+                        </span>
+
+                        <h2>
+                            Join IET College and Start Your B.Com Journey Today
+                        </h2>
+
                         <p>
-                            Looking for the best B.Com college in Ghaziabad? IET
+                            Looking for a B.Com college in Ghaziabad? IET
                             College offers a comprehensive Bachelor of Commerce
                             program with experienced faculty, modern learning
                             facilities, industry exposure, and placement
                             support. Begin your journey toward a successful
                             career in commerce and business.
                         </p>
+
                     </div>
 
                     <Link href="#admission" className="bcom-primary-btn">
                         Apply Now <span>→</span>
                     </Link>
+
                 </div>
+
             </section>
 
         </main>
