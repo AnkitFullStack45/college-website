@@ -1,5 +1,5 @@
 /* =========================================
-   EXPLORE COURSES  (Solid colours)
+   EXPLORE COURSES  (auto text colour)
 ========================================= */
 
 .courses-section {
@@ -36,6 +36,23 @@
 }
 
 
+/* ---------- Auto text colour based on background ---------- */
+
+.course-card,
+.course-modal-header {
+  /* fallback for old browsers */
+  --on-accent: #fff;
+}
+
+@supports (color: oklch(from red l c h)) {
+  .course-card,
+  .course-modal-header {
+    /* light background -> dark text, dark background -> white text */
+    --on-accent: oklch(from var(--accent) clamp(0.2, calc((l - 0.66) * -1000), 1) 0 0);
+  }
+}
+
+
 /* ---------- Course card ---------- */
 
 .course-card {
@@ -51,7 +68,7 @@
   border: none;
   border-radius: 16px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   text-align: center;
   cursor: pointer;
   font-family: inherit;
@@ -59,13 +76,14 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* decorative circles */
+/* decorative circles follow the text colour */
 .course-card::before,
 .course-card::after {
   content: "";
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.14);
+  background: color-mix(in srgb, var(--on-accent) 14%, transparent);
   pointer-events: none;
   transition: transform 0.4s ease;
 }
@@ -95,6 +113,7 @@
 
 .course-card:focus-visible {
   outline: 3px solid #173b73;
+  outline: 3px solid var(--on-accent);
   outline-offset: 3px;
 }
 
@@ -102,11 +121,12 @@
 .course-card-full {
   position: relative;
   z-index: 1;
+  color: var(--on-accent);
 }
 
 .course-card-short {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.4px;
 }
 
@@ -117,15 +137,15 @@
   height: 3px;
   margin: 10px auto 0;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--on-accent);
 }
 
 .course-card-full {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  opacity: 0.92;
+  opacity: 1;
 }
 
 
@@ -165,7 +185,7 @@
   padding: 24px 54px;
   overflow: hidden;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .course-modal-header::before,
@@ -174,6 +194,7 @@
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.14);
+  background: color-mix(in srgb, var(--on-accent) 14%, transparent);
   pointer-events: none;
 }
 
@@ -197,7 +218,7 @@
   z-index: 1;
   margin: 0;
   text-align: center;
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .course-modal-title {
@@ -208,10 +229,10 @@
 
 .course-modal-subtitle {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  opacity: 0.95;
+  opacity: 1;
 }
 
 .course-modal-close {
@@ -228,14 +249,16 @@
   border: none;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.25);
-  color: #fff;
+  background: color-mix(in srgb, var(--on-accent) 20%, transparent);
+  color: var(--on-accent);
   font-size: 13px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .course-modal-close:hover {
   background: #173b73;
+  color: #fff;
   transform: rotate(90deg);
 }
 
@@ -250,7 +273,7 @@
   font-size: 0.92rem;
   font-weight: 500;
   line-height: 1.85;
-  color: #3f4a5c;
+  color: #1f2937;
 }
 
 .course-modal-btn {

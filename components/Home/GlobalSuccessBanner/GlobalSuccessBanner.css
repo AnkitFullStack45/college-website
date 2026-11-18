@@ -1,114 +1,104 @@
-/* =========================================
-   YOUR PATH TO GLOBAL SUCCESS  (Parallax banner)
-========================================= */
-
 .gs-banner {
   position: relative;
-  width: 100%;
-  min-height: 400px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 500px;
   overflow: hidden;
 }
 
-/* keep top/bottom equal to RANGE in the JSX */
-.gs-banner-bg {
-  position: absolute;
-  top: -60px;
-  bottom: -60px;
-  left: 0;
-  right: 0;
-  will-change: transform;
-}
-
+/* Picture stays fixed in place */
 .gs-banner-img {
   object-fit: cover;
   object-position: center 15%;
 }
 
+/* Dark overlay so the text is easy to read */
 .gs-banner-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(40, 35, 25, 0.3);
+  background: rgba(7, 17, 43, 0.65);
 }
 
 .gs-banner-inner {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 760px;
   padding: 40px 20px;
+  margin: 0 auto;
+  text-align: center;
   box-sizing: border-box;
 }
-
-.gs-banner-text {
-  max-width: 440px;
+.gs-banner-overlay {
+  position: absolute;
+  inset: 0;
+  /* slightly darker in the middle, where the text sits */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(7, 17, 43, 0.78) 0%,
+    rgba(7, 17, 43, 0.58) 100%
+  );
 }
 
 .gs-banner-title {
-  margin: 0 0 8px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  margin: 0 0 14px;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffc66b; /* warm gold */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .gs-banner-desc {
-  margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.7;
-  color: #f1f1f1;
+  margin: 0 0 26px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #ffffff; /* pure white */
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .gs-banner-btn {
-  flex-shrink: 0;
-  padding: 11px 22px;
-  border-radius: 6px;
-  background: #ffa733;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 500;
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0b1f4a; /* navy text on white */
+  font-size: 0.95rem;
+  font-weight: 800;
   text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .gs-banner-btn:hover {
-  background: #e87516;
-  transform: translateY(-2px);
+  background: #ee7d1c;
+  color: #07112b;
+}
+.gs-banner-btn {
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: 999px;
+  background: #ee7d1c;
+  color: #07112b;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
-/* ---------- Mobile ---------- */
+.gs-banner-btn:hover {
+  background: #ffffff;
+}
 
 @media (max-width: 700px) {
   .gs-banner {
-    min-height: 360px;
+    min-height: 340px;
   }
 
-  .gs-banner-inner {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 36px 18px;
-  }
-
-  .gs-banner-title {
-    font-size: 1.3rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gs-banner-btn {
-    transition: none;
-  }
-
-  .gs-banner-btn:hover {
-    transform: none;
+  .gs-banner-desc {
+    font-size: 0.95rem;
   }
 }

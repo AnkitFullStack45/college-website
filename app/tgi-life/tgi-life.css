@@ -1,0 +1,632 @@
+.lf-page {
+  --cream: #fff8ef;
+  --navy-deep: #07112b;
+  --navy: #0b1f4a;
+  --orange: #ee7d1c;
+  --orange-2: #ffb15c;
+  --orange-dark: #a84a00;
+  --text: #1b2a47;
+
+  width: 100%;
+  color: var(--text);
+  background: var(--cream);
+}
+
+.lf-page *,
+.lf-page *::before,
+.lf-page *::after {
+  box-sizing: border-box;
+}
+
+.lf-wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Buttons ---------- */
+
+.lf-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  color: var(--navy-deep);
+  background: var(--orange);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.lf-btn:hover {
+  background: var(--orange-2);
+  transform: translateY(-3px);
+}
+
+.lf-btn:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+.lf-btn-dark {
+  color: #fff;
+  background: var(--navy-deep);
+}
+
+.lf-btn-dark:hover {
+  color: var(--navy-deep);
+  background: #fff;
+}
+
+/* ---------- Section heads ---------- */
+
+.lf-head {
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+.lf-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  color: var(--orange-dark);
+  border-bottom: 3px solid var(--orange);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.lf-head h2 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.lf-head p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.lf-head-light .lf-tag {
+  color: var(--orange-2);
+}
+
+.lf-head-light h2,
+.lf-head-light p {
+  color: #fff;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.lf-hero {
+  padding: 56px 0 0;
+  background: var(--cream);
+}
+
+.lf-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.lf-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.lf-crumbs a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.lf-crumbs a:hover {
+  color: var(--orange-dark);
+}
+
+.lf-crumbs span[aria-current] {
+  color: var(--orange-dark);
+}
+
+.lf-hero-title {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.lf-hero-title span {
+  color: var(--orange);
+}
+
+.lf-hero-sub {
+  max-width: 520px;
+  margin: 0 0 28px;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* Tilted photo collage */
+.lf-hero-photos {
+  position: relative;
+  height: 380px;
+}
+
+.lf-photo {
+  position: absolute;
+  overflow: hidden;
+  background: #e4d9c8;
+  border: 6px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 18px 36px rgba(7, 17, 43, 0.22);
+}
+
+.lf-photo img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.lf-photo-a {
+  top: 0;
+  left: 6%;
+  width: 52%;
+  height: 58%;
+  transform: rotate(-5deg);
+}
+
+.lf-photo-b {
+  top: 12%;
+  right: 0;
+  width: 46%;
+  height: 52%;
+  transform: rotate(4deg);
+}
+
+.lf-photo-c {
+  bottom: 0;
+  left: 26%;
+  width: 54%;
+  height: 46%;
+  transform: rotate(-2deg);
+}
+
+/* Stats strip */
+.lf-stats {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0;
+  margin: 56px 0 -44px;
+  list-style: none;
+  background: var(--navy);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(7, 17, 43, 0.3);
+}
+
+.lf-stats li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.lf-stats li + li {
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.lf-stats strong {
+  color: var(--orange-2);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.lf-stats span {
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* =========================================
+   CLUBS (expanding panels)
+========================================= */
+
+.lf-clubs {
+  padding: 130px 0 80px;
+  background: var(--navy-deep);
+}
+
+.lf-accordion {
+  display: flex;
+  gap: 12px;
+  height: 540px;
+}
+
+.lf-panel {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--navy);
+  border-radius: 22px;
+  transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lf-panel.is-open {
+  flex: 5;
+}
+
+.lf-panel-img {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+
+.lf-panel.is-open .lf-panel-img {
+  transform: scale(1.04);
+}
+
+/* Dark at the top (title) and bottom (description) */
+.lf-panel-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 17, 43, 0.62) 0%,
+    rgba(7, 17, 43, 0.25) 38%,
+    rgba(7, 17, 43, 0.93) 100%
+  );
+}
+
+/* Whole panel is clickable. Collapsed: number on top, name at the bottom */
+.lf-panel-btn {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 22px 20px;
+  color: #fff;
+  background: none;
+  border: 0;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lf-panel-btn:focus-visible {
+  outline: 3px solid var(--orange-2);
+  outline-offset: -5px;
+  border-radius: 22px;
+}
+
+.lf-panel-num {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--navy-deep);
+  background: var(--orange);
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.lf-panel-name {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  /* vertical text when collapsed */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+/* Open: number + title in one row at the top */
+.lf-panel.is-open .lf-panel-btn {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 14px;
+}
+
+.lf-panel.is-open .lf-panel-name {
+  writing-mode: horizontal-tb;
+  transform: none;
+  max-width: calc(100% - 60px);
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  white-space: normal;
+}
+
+/* Description + chips (shown only when open) */
+.lf-panel-body {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 22px;
+  z-index: 3;
+  max-width: 540px;
+  pointer-events: none;
+  animation: lfUp 0.5s ease 0.15s both;
+}
+
+.lf-panel-body p {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.65;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.lf-panel-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lf-panel-body li {
+  padding: 6px 14px;
+  color: var(--navy-deep);
+  background: var(--orange-2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+@keyframes lfUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   MOMENTS (mosaic)
+========================================= */
+
+.lf-moments {
+  padding: 80px 0;
+  background: var(--cream);
+}
+
+.lf-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 210px;
+  grid-auto-flow: dense;
+  gap: 14px;
+}
+
+.lf-tile {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #e4d9c8;
+  border-radius: 18px;
+}
+
+.lf-tile.big  { grid-column: span 2; grid-row: span 2; }
+.lf-tile.tall { grid-row: span 2; }
+.lf-tile.wide { grid-column: span 2; }
+
+.lf-tile img {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.lf-tile:hover img {
+  transform: scale(1.06);
+}
+
+.lf-tile figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px 16px 14px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(7, 17, 43, 0.9));
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.lf-cta {
+  padding: 0 0 80px;
+  background: var(--cream);
+}
+
+.lf-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px 44px;
+  background: var(--orange);
+  border-radius: 26px;
+}
+
+.lf-cta h2 {
+  margin: 0 0 6px;
+  color: var(--navy-deep);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+}
+
+.lf-cta p {
+  margin: 0;
+  color: var(--navy-deep);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .lf-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lf-hero-photos {
+    height: 320px;
+  }
+
+  .lf-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lf-stats li:nth-child(3) {
+    border-left: 0;
+  }
+
+  .lf-stats li:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .lf-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 190px;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Panels stack vertically */
+  .lf-accordion {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .lf-panel,
+  .lf-panel.is-open {
+    flex: none;
+    transition: height 0.5s ease;
+  }
+
+  .lf-panel {
+    height: 84px;
+  }
+
+  .lf-panel.is-open {
+    height: 440px;
+  }
+
+  /* Number + name in one row (collapsed and open) */
+  .lf-panel-btn,
+  .lf-panel.is-open .lf-panel-btn {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 0 18px;
+  }
+
+  .lf-panel.is-open .lf-panel-btn {
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-top: 21px;
+  }
+
+  .lf-panel-name,
+  .lf-panel.is-open .lf-panel-name {
+    writing-mode: horizontal-tb;
+    transform: none;
+    max-width: calc(100% - 60px);
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
+  .lf-panel.is-open .lf-panel-name {
+    margin-top: 2px;
+  }
+
+  .lf-panel-body {
+    left: 18px;
+    right: 18px;
+  }
+
+  .lf-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  .lf-wrap {
+    padding: 0 16px;
+  }
+
+  .lf-hero {
+    padding-top: 36px;
+  }
+
+  .lf-hero-photos {
+    height: 260px;
+  }
+
+  .lf-clubs {
+    padding: 110px 0 60px;
+  }
+
+  .lf-panel.is-open {
+    height: 470px;
+  }
+
+  .lf-panel-body p {
+    font-size: 0.95rem;
+  }
+
+  .lf-moments {
+    padding: 60px 0;
+  }
+
+  .lf-mosaic {
+    grid-auto-rows: 150px;
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lf-panel,
+  .lf-panel-img,
+  .lf-tile img,
+  .lf-btn {
+    transition: none;
+  }
+
+  .lf-panel-body {
+    animation: none;
+  }
+}

@@ -37,6 +37,7 @@ const columns = [
 ];
 
 const quickChips = [
+  { label: "Life@TGI", href: "/tgi-life"},
   { label: "Apply Online", href: "/register" },
   { label: "Admission Enquiry", href: "/register/enquiry" },
   { label: "All Courses", href: "/courses" },
@@ -85,10 +86,6 @@ function Icon({ children }) {
 export default function Footer() {
   return (
     <footer className="tf-footer">
-      <span className="tf-watermark" aria-hidden="true">
-        TEMPL
-      </span>
-
       <div className="tf-container">
         <div className="tf-top">
           {/* ===== Contact card ===== */}

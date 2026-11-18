@@ -6,7 +6,7 @@
     position: relative;
     isolation: isolate;
     width: 100%;
-    padding: 75px 25px 85px;
+    padding: 40px 25px 55px;
     overflow: hidden;
 
     background:
@@ -196,7 +196,7 @@
 .offer-section-title p {
     margin: 0;
 
-    color: #637080;
+    color:#404040;
 
     font-size: 16px;
     font-weight: 400;

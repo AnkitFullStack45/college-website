@@ -1,7 +1,6 @@
 /* =========================================
    BCA PAGE - BASE
 ========================================= */
-
 .bca-page {
     --bca-blue: #173B73;
     --bca-blue-2: #2a6ccf;
@@ -17,7 +16,6 @@
     max-width: 100%;
     overflow-x: clip;
     color: #252d3a;
-    font-family: inherit;
 }
 
 .bca-page *,
@@ -42,9 +40,10 @@
     to   { opacity: 1; translate: 0 0; }
 }
 
+/* Slide only. Never fades, so text is always fully visible */
 @keyframes bcaReveal {
-    from { opacity: 0; translate: 0 45px; }
-    to   { opacity: 1; translate: 0 0; }
+    from { translate: 0 30px; }
+    to   { translate: 0 0; }
 }
 
 @keyframes bcaFloat {
@@ -63,8 +62,8 @@
 }
 
 @keyframes bcaPulseGlow {
-    0%, 100% { box-shadow: 0 10px 25px rgba(232, 117, 22, 0.4); }
-    50%      { box-shadow: 0 10px 40px rgba(232, 117, 22, 0.8); }
+    0%, 100% { box-shadow: 0 10px 22px rgba(232, 117, 22, 0.4); }
+    50%      { box-shadow: 0 10px 32px rgba(232, 117, 22, 0.8); }
 }
 
 @keyframes bcaGradientShift {
@@ -111,6 +110,7 @@
 .bca-banner::after {
     display: none;
 }
+
 /* =========================================
    HERO TEXT (BELOW IMAGE) - GLASS PANEL
 ========================================= */
@@ -348,7 +348,7 @@
     z-index: -1;
     border-radius: 50%;
     pointer-events: none;
-    filter: blur(45px);
+    filter: blur(25px);
 }
 
 .bca-section::before {
@@ -456,6 +456,7 @@
 .bca-bottom-text {
     margin-top: 48px;
     margin-bottom: 0;
+    font-weight: 500;
 }
 
 /* =========================================
@@ -1226,7 +1227,7 @@
 
 /* =========================================
    SCROLL REVEAL (CSS ONLY)
-   Chrome / Edge / Safari; others show all
+   Cards only, slide only. Text is never faded.
 ========================================= */
 
 @supports (animation-timeline: view()) {
@@ -1241,20 +1242,16 @@
     .bca-choice-card,
     .bca-list-card,
     .bca-faq-item,
-    .bca-special-careers > div,
-    .bca-centered-heading,
-    .bca-section-heading,
-    .bca-intro-text,
-    .bca-content-width {
+    .bca-special-careers > div {
         animation: bcaReveal linear both;
         animation-timeline: view();
-        animation-range: entry 5% cover 28%;
+        animation-range: entry 0% entry 35%;
     }
 
     .bca-seats-card {
         animation: bcaReveal linear both, bcaGradientShift 10s ease-in-out infinite;
         animation-timeline: view(), auto;
-        animation-range: entry 5% cover 28%, normal;
+        animation-range: entry 0% entry 35%, normal;
     }
 }
 
@@ -1458,5 +1455,272 @@
     .bca-page *::after {
         animation: none !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   TEXT VISIBILITY FIX (all screens)
+   Keep this block and the one below at the END of the file.
+========================================================= */
+
+/* Darker text on light sections (dark sections keep light text) */
+.bca-section:not(.bca-light-section) {
+    --sec-text: #2f3a4d;
+    --card-text: #2f3a4d;
+}
+
+.bca-page p.bca-content-width,
+.bca-content-width p,
+.bca-intro-text p,
+.bca-centered-heading h3 {
+    opacity: 1;
+    color: var(--sec-text);
+}
+
+/* =========================================================
+   SMALL SCREENS: LESS SHADOW + NO GRADIENTS (better visibility)
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- No scroll animation on cards ---------- */
+    .bca-highlight-card,
+    .bca-reason-card,
+    .bca-facility-card,
+    .bca-career-card,
+    .bca-certification-card,
+    .bca-placement-card,
+    .bca-admission-card,
+    .bca-admission-cta,
+    .bca-choice-card,
+    .bca-list-card,
+    .bca-faq-item,
+    .bca-special-careers > div {
+        animation: none !important;
+        translate: none !important;
+    }
+
+    /* ---------- Remove animated glow blobs ---------- */
+    .bca-section::before,
+    .bca-section::after,
+    .bca-top-text::before,
+    .bca-top-text::after,
+    .bca-final-cta::before,
+    .bca-final-cta::after,
+    .bca-choice-dark::after,
+    .bca-seats-card::before {
+        display: none;
+    }
+
+    /* ---------- Light sections: solid background, plain white cards ---------- */
+    .bca-section {
+        --glass-bg: #ffffff;
+        --glass-bg-hover: #ffffff;
+        --glass-border: #d9e3f2;
+        --glass-inset: transparent;
+        --glass-shadow: 0 2px 8px rgba(23, 59, 115, 0.10);
+        --card-text: #2f3a4d;
+        --sec-text: #2f3a4d;
+        --h2-solid: #173B73;
+
+        background: #f3f7fd;
+    }
+
+    .bca-admission-section {
+        background: #fff6ec;
+    }
+
+    /* ---------- Dark sections: solid navy, solid lighter cards ---------- */
+    .bca-light-section {
+        --glass-bg: #16376c;
+        --glass-bg-hover: #16376c;
+        --glass-border: rgba(255, 255, 255, 0.18);
+        --glass-inset: transparent;
+        --glass-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        --card-text: #e6eefb;
+        --sec-text: #e6eefb;
+        --h2-solid: #ffffff;
+
+        background: #0f2b5c;
+    }
+
+    /* ---------- Cards: no blur, small shadow ---------- */
+    .bca-highlight-card,
+    .bca-reason-card,
+    .bca-facility-card,
+    .bca-career-card,
+    .bca-certification-card,
+    .bca-placement-card,
+    .bca-admission-card,
+    .bca-admission-cta,
+    .bca-choice-card,
+    .bca-list-card,
+    .bca-faq-item,
+    .bca-special-careers > div {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    /* Hover/tap: no big lift or big shadow */
+    .bca-highlight-card:hover,
+    .bca-facility-card:hover,
+    .bca-career-card:hover,
+    .bca-certification-card:hover,
+    .bca-placement-card:hover,
+    .bca-admission-card:hover,
+    .bca-list-card:hover,
+    .bca-choice-card:not(.bca-choice-dark):hover,
+    .bca-special-careers > div:hover,
+    .bca-reason-card:hover,
+    .bca-faq-item:hover,
+    .bca-choice-dark:hover {
+        transform: none;
+        box-shadow: var(--glass-shadow);
+    }
+
+    /* Card top accent bar: solid color */
+    .bca-facility-card::before,
+    .bca-career-card::before,
+    .bca-certification-card::before,
+    .bca-placement-card::before,
+    .bca-admission-card::before,
+    .bca-list-card::before {
+        background: #E87516;
+    }
+
+    /* ---------- Gradient text -> solid text ---------- */
+    .bca-section-heading h2,
+    .bca-centered-heading h2 {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        color: var(--h2-solid);
+    }
+
+    .bca-card-number {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        color: var(--accent);
+    }
+
+    .bca-top-text h2 {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        color: #ffc58f;
+    }
+
+    .bca-seats-card strong {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+        color: #ffffff;
+    }
+
+    /* ---------- Top hero text block ---------- */
+    .bca-top-text {
+        background: #0f2b5c;
+        border-image: none;
+        border-top: 3px solid #E87516;
+    }
+
+    .bca-top-text .bca-container {
+        background: #16376c;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .bca-top-text h1 {
+        text-shadow: none;
+    }
+
+    .bca-eyebrow {
+        background: rgba(255, 255, 255, 0.12);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    /* ---------- Labels: higher contrast ---------- */
+    .bca-label {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    .bca-section .bca-label {
+        color: #a84a00;
+        background: #ffe9d2;
+        border-color: #f1b57d;
+    }
+
+    .bca-light-section .bca-label {
+        color: #ffd2a6;
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    /* ---------- Buttons: solid, small shadow, no pulse ---------- */
+    .bca-primary-btn {
+        background: #c25400;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        animation: none !important;
+    }
+
+    .bca-primary-btn:hover {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .bca-primary-btn::after {
+        display: none;
+    }
+
+    /* ---------- Small icons / badges: solid ---------- */
+    .bca-highlight-icon,
+    .bca-check,
+    .bca-admission-icon,
+    .bca-faq-plus,
+    .bca-list-card li::before {
+        background: #c25400;
+        box-shadow: none;
+    }
+
+    .bca-heading-line {
+        background: #E87516;
+        animation: none;
+    }
+
+    /* ---------- Seats card ---------- */
+    .bca-seats-card {
+        background: #0f2b5c;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        animation: none !important;
+    }
+
+    /* ---------- Highlighted orange card (BCA vs B.Tech) ---------- */
+    .bca-choice-dark {
+        background: #b85400;
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ---------- Final call-to-action ---------- */
+    .bca-final-cta {
+        background: #173B73;
+    }
+
+    .bca-final-cta .bca-final-cta-content {
+        background: #1d4a8c;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .bca-final-cta h2 {
+        text-shadow: none;
+    }
+
+    .bca-final-cta .bca-label {
+        background: rgba(255, 255, 255, 0.12);
     }
 }

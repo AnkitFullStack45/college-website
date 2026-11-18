@@ -1,11 +1,14 @@
 .tf-footer {
-  --tf-navy-deep: #060f21;
-  --tf-navy-dark: #0b1f40;
-  --tf-navy: #173b73;
-  --tf-orange: #e87516;
-  --tf-orange-2: #ff9a3c;
-  --tf-text: #dbe5f3;
-  --tf-muted: #9fb2cf;
+  --tf-navy-deep: #07112b;
+  --tf-navy: #0b1f4a;
+  --tf-blue: #174088;
+  --tf-orange: #ee7d1c;
+  --tf-orange-2: #fb9a38;
+  --tf-orange-soft: #ffc27a;
+  --tf-text: #e6edf9;
+  --tf-muted: #a9bad8;
+  --tf-glass: rgba(255, 255, 255, 0.06);
+  --tf-glass-border: rgba(255, 255, 255, 0.16);
   --tf-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   position: relative;
@@ -14,9 +17,11 @@
   width: 100%;
   color: var(--tf-text);
   background:
-    radial-gradient(circle at 100% 100%, rgba(232, 117, 22, 0.22), transparent 42%),
-    radial-gradient(circle at 0% 0%, rgba(56, 169, 232, 0.12), transparent 38%),
-    linear-gradient(160deg, var(--tf-navy-deep), var(--tf-navy-dark) 60%, #0f2850);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 40px 40px,
+    radial-gradient(circle at 100% 0%, rgba(238, 125, 28, 0.28), transparent 42%),
+    radial-gradient(circle at 0% 100%, rgba(23, 64, 136, 0.55), transparent 50%),
+    linear-gradient(160deg, var(--tf-navy-deep), var(--tf-navy) 60%, #102f6a);
 }
 
 .tf-footer *,
@@ -29,23 +34,6 @@
   color: inherit;
   text-decoration: none;
 }
-
-/* Large faded brand watermark */
-.tf-watermark {
-  position: absolute;
-  z-index: -1;
-  top: 20px;
-  right: -10px;
-  color: rgba(255, 255, 255, 0.035);
-  font-size: clamp(120px, 20vw, 300px);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -6px;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
-
 .tf-container {
   width: 100%;
   max-width: 1280px;
@@ -57,11 +45,11 @@
   display: grid;
   grid-template-columns: 380px minmax(0, 1fr);
   gap: 56px;
-  padding: 70px 0 56px;
+  padding: 50px 0 40px;
 }
 
 /* =========================================
-   CONTACT CARD
+   CONTACT CARD (orange, like "Our Campus")
 ========================================= */
 
 .tf-card {
@@ -69,37 +57,37 @@
   overflow: hidden;
   align-self: start;
   padding: 30px;
-  background:
-    radial-gradient(circle at 100% 100%, rgba(232, 117, 22, 0.28), transparent 50%),
-    linear-gradient(150deg, #123163, var(--tf-navy-dark));
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 24px;
+  background: linear-gradient(150deg, var(--tf-orange), var(--tf-orange-2));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 28px;
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
 }
 
+/* Big translucent circle in corner */
 .tf-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--tf-orange), var(--tf-orange-2), transparent);
-}
-
-.tf-card::after {
-  content: "";
-  position: absolute;
-  right: -60px;
-  bottom: -60px;
+  top: -70px;
+  right: -70px;
   width: 190px;
   height: 190px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   pointer-events: none;
 }
 
-/* Main logo: scales by height, keeps its own proportions */
+/* Dot grid in corner */
+.tf-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 110px;
+  height: 80px;
+  background: radial-gradient(rgba(255, 255, 255, 0.5) 1.4px, transparent 1.6px) 0 0 / 14px 14px;
+  pointer-events: none;
+}
+
 .tf-logo-box {
   position: relative;
   z-index: 1;
@@ -107,11 +95,11 @@
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  padding: 14px 20px;
+  padding: 12px 18px;
   margin-bottom: 22px;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(7, 17, 43, 0.28);
 }
 
 .tf-logo {
@@ -126,8 +114,8 @@
   position: relative;
   z-index: 1;
   margin: 0 0 8px;
-  color: #fff;
-  font-size: 17px;
+  color: var(--tf-navy-deep);
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -137,19 +125,24 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--tf-text);
-  font-size: 14px;
-  transition: color 0.3s ease;
+  padding: 8px 16px;
+  color: #fff;
+  background: var(--tf-navy-deep);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: transform 0.3s var(--tf-ease), background 0.3s ease;
 }
 
 .tf-site:hover {
-  color: var(--tf-orange-2);
+  background: var(--tf-navy);
+  transform: translateY(-2px);
 }
 
 .tf-divider {
   height: 1px;
   margin: 22px 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25), transparent);
+  background: linear-gradient(90deg, rgba(7, 17, 43, 0.35), transparent);
 }
 
 .tf-contact {
@@ -176,15 +169,16 @@
   width: 42px;
   height: 42px;
   color: var(--tf-orange-2);
-  background: rgba(232, 117, 22, 0.16);
-  border: 1px solid rgba(255, 154, 60, 0.35);
+  background: var(--tf-navy-deep);
   border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(7, 17, 43, 0.3);
 }
 
 .tf-contact address {
-  color: #fff;
+  color: var(--tf-navy-deep);
   font-size: 14px;
   font-style: normal;
+  font-weight: 600;
   line-height: 1.7;
 }
 
@@ -192,8 +186,9 @@
   display: grid;
   gap: 3px;
   padding-top: 2px;
-  color: #fff;
+  color: var(--tf-navy-deep);
   font-size: 14.5px;
+  font-weight: 600;
   line-height: 1.7;
 }
 
@@ -202,54 +197,56 @@
 }
 
 .tf-stack a:hover {
-  color: var(--tf-orange-2);
+  color: #fff;
 }
 
 /* =========================================
-   LINK COLUMNS
+   LINK COLUMNS (glass rows + orange check)
 ========================================= */
 
 .tf-columns {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px;
+  gap: 32px;
 }
 
 .tf-col h3 {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
-  margin: 0 0 30px;
+  margin: 0 0 28px;
   color: #fff;
   font-size: 21px;
   font-weight: 800;
 }
 
 .tf-col h3 span {
-  color: var(--tf-orange-2);
-  font-size: 12px;
+  padding: 4px 10px;
+  color: var(--tf-orange-soft);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .tf-col ul {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-/* Orange underline under heading */
 .tf-col h3 + ul {
   position: relative;
-  padding-top: 26px;
+  padding-top: 24px;
 }
 
 .tf-col h3 + ul::before {
   content: "";
   position: absolute;
-  top: -14px;
+  top: -12px;
   left: 0;
   width: 66px;
   height: 3px;
@@ -262,32 +259,46 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  padding: 0;
   color: var(--tf-text);
+  background: none;
+  border: 0;
+  border-radius: 0;
   font-size: 15.5px;
+  font-weight: 500;
   transition: color 0.3s ease, transform 0.3s var(--tf-ease);
 }
 
+/* Small orange arrow before each link */
 .tf-col li a::before,
 .tf-chips a::before {
-  content: "";
+  content: "\203A";
+  display: inline-block;
   flex-shrink: 0;
-  width: 10px;
-  height: 1.5px;
-  background: var(--tf-muted);
-  transition: width 0.3s var(--tf-ease), background 0.3s ease;
+  width: auto;
+  height: auto;
+  color: var(--tf-orange-2);
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.3s var(--tf-ease);
 }
 
 .tf-col li a:hover,
 .tf-chips a:hover {
   color: var(--tf-orange-2);
+  background: none;
+  border-color: transparent;
   transform: translateX(4px);
 }
 
 .tf-col li a:hover::before,
 .tf-chips a:hover::before {
-  width: 20px;
-  background: var(--tf-orange-2);
+  transform: translateX(3px);
 }
 
 /* =========================================
@@ -302,24 +313,35 @@
   gap: 22px;
   padding-top: 30px;
   margin-top: 44px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--tf-glass-border);
 }
 
 .tf-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px 30px;
+  gap: 12px;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.tf-social {
-  display: flex;
-  gap: 16px;
+/* Quick links as pill buttons */
+.tf-chips a {
+  display: inline-flex;
+  padding: 9px 18px 9px 12px;
+  border-radius: 999px;
+  font-size: 14.5px;
 }
 
-/* Fixed square tile: every logo fits the same box, any dimension */
+.tf-chips a:hover {
+  transform: translateY(-2px);
+}
+
+.tf-social {
+  display: flex;
+  gap: 14px;
+}
+
 .tf-social a {
   display: inline-flex;
   align-items: center;
@@ -331,11 +353,17 @@
   background: #fff;
   border: 2px solid rgba(255, 255, 255, 0.35);
   border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   transition:
     transform 0.3s var(--tf-ease),
     box-shadow 0.3s var(--tf-ease),
     border-color 0.3s ease;
+}
+
+.tf-social a:hover {
+  transform: translateY(-4px);
+  border-color: var(--tf-orange-2);
+  box-shadow: 0 0 0 4px rgba(251, 154, 56, 0.28), 0 12px 22px rgba(0, 0, 0, 0.4);
 }
 
 .tf-social img {
@@ -347,12 +375,11 @@
 }
 
 /* =========================================
-   COPYRIGHT BAR
+   COPYRIGHT BAR (orange)
 ========================================= */
 
 .tf-bottom {
-  background: rgba(0, 0, 0, 0.28);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, var(--tf-orange), var(--tf-orange-2));
 }
 
 .tf-bottom-inner {
@@ -361,14 +388,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px 24px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .tf-bottom p {
   margin: 0;
-  color: var(--tf-muted);
+  color: var(--tf-navy-deep);
   font-size: 14px;
+  font-weight: 700;
   line-height: 1.6;
 }
 
@@ -376,14 +404,16 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  color: var(--tf-navy-deep);
 }
 
 .tf-bottom-links a {
-  transition: color 0.3s ease;
+  font-weight: 800;
 }
 
 .tf-bottom-links a:hover {
-  color: var(--tf-orange-2);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* =========================================
@@ -391,9 +421,13 @@
 ========================================= */
 
 .tf-footer a:focus-visible {
-  outline: 3px solid var(--tf-orange-2);
+  outline: 3px solid var(--tf-orange-soft);
   outline-offset: 4px;
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+.tf-bottom a:focus-visible {
+  outline-color: var(--tf-navy-deep);
 }
 
 /* =========================================
@@ -407,7 +441,7 @@
   }
 
   .tf-columns {
-    gap: 28px;
+    gap: 24px;
   }
 }
 
@@ -432,10 +466,9 @@
     height: 70px;
   }
 
-  /* Two link columns side by side */
   .tf-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 18px;
+    gap: 28px 14px;
   }
 
   .tf-col h3 {
@@ -459,23 +492,25 @@
   .tf-col li a,
   .tf-chips a {
     gap: 8px;
-    font-size: 14px;
-    line-height: 1.4;
+    padding: 9px 10px;
+    font-size: 13.5px;
+    line-height: 1.3;
   }
 
   .tf-col li a::before,
   .tf-chips a::before {
-    width: 8px;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
   }
 
-  /* Third column: full width, links in two columns to save height */
   .tf-col:last-child {
     grid-column: 1 / -1;
   }
 
   .tf-col:last-child ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 18px;
+    gap: 10px 12px;
   }
 
   .tf-chips-wrap {
@@ -487,10 +522,7 @@
   }
 
   .tf-chips {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 18px;
-    width: 100%;
+    gap: 10px;
   }
 
   .tf-social a {
@@ -506,10 +538,6 @@
 }
 
 @media (max-width: 420px) {
-  .tf-columns {
-    gap: 26px 14px;
-  }
-
   .tf-card {
     padding: 24px 20px;
   }
@@ -524,7 +552,7 @@
 
   .tf-col li a,
   .tf-chips a {
-    font-size: 13.5px;
+    font-size: 13px;
   }
 }
 

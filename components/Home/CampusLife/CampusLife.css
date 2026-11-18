@@ -8,6 +8,7 @@
     padding: 40px 25px;
     background: linear-gradient(135deg, #f4f7ff 0%, #fff6ee 100%);
     overflow: hidden;
+
 }
 
 /* Soft colour blobs so the glass has something to blur */
@@ -65,7 +66,6 @@
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 14px;
-
     background: rgba(255, 255, 255, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 50px;
@@ -92,7 +92,7 @@
     margin: 0 auto;
     font-size: 15px;
     line-height: 1.9;
-    color: #5b6472;
+    color: #404040;
     font-weight: 400;
 }
 
@@ -263,57 +263,76 @@
 ========================================= */
 
 .campus-about-button-wrapper {
-    margin-top: 22px;
-    text-align: left;
+  margin-top: 22px;
+  text-align: left;
 }
 
 .campus-about-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    padding: 11px 22px;
+  padding: 13px 30px;
 
-    background: rgba(23, 59, 115, 0.82);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  /* solid colours: text is always readable */
+  background: #0b1f4a;
+  color: #ffffff;
+  border: 2px solid #0b1f4a;
 
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+  text-decoration: none;
 
-    border-radius: 10px;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        0 6px 16px rgba(23, 59, 115, 0.25);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(11, 31, 74, 0.28);
 
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+/* Hide any arrow/span left in the HTML */
 .campus-about-button span {
-    font-size: 18px;
-    transition: transform 0.3s ease;
+  display: none;
 }
 
 .campus-about-button:hover {
-    background: rgba(22, 155, 232, 0.9);
-    color: #fff;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.35),
-        0 10px 22px rgba(232, 117, 22, 0.35);
+  background: #ee7d1c;
+  color: #07112b;
+  border-color: #ee7d1c;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(238, 125, 28, 0.4);
 }
 
-.campus-about-button:hover span {
-    transform: translateX(4px);
+.campus-about-button:active {
+  transform: translateY(-1px);
+}
+
+.campus-about-button:focus-visible {
+  outline: 3px solid #fb9a38;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .campus-about-button {
+    padding: 12px 26px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-about-button {
+    transition: none;
+  }
+
+  .campus-about-button:hover {
+    transform: none;
+  }
 }
 
 

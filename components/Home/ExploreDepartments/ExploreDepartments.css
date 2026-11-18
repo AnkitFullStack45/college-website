@@ -1,7 +1,6 @@
 /* =====================================================
    EXPLORE DEPARTMENTS  (matches ExploreDepartments.jsx)
    ===================================================== */
-
 .explore-dept-section {
     position: relative;
     padding: 40px 20px;
@@ -88,7 +87,7 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 260px;              /* card / image height: change this number */
+    height: 260px;     
     padding: 0;
     margin: 0;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -139,60 +138,75 @@
 }
 
 /* ---------- iOS glass label ---------- */
-
 .explore-dept-glass {
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 12px 14px 12px 18px;
-    border-radius: 18px;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.16);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(18px) saturate(180%);
-    -webkit-backdrop-filter: blur(18px) saturate(180%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45),
-        0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: background 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 12px 18px;
+  border-radius: 18px;
+  color: #ffffff;
+  /* dark navy glass: text stays readable on any photo */
+  background: rgba(7, 17, 43, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.35);
+  transition: background 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
 }
 
 .explore-dept-card:hover .explore-dept-glass {
-    background: rgba(255, 255, 255, 0.26);
-    transform: translateY(-3px);
+  background: rgba(11, 31, 74, 0.92);
+  border-bottom-color: #fb9a38;
+  transform: translateY(-3px);
 }
 
 .explore-dept-title {
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #fff;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
 }
 
 .explore-dept-arrow {
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    color: #4f46e5;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-    transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #07112b;
+  background: linear-gradient(145deg, #ee7d1c, #fb9a38);
+  box-shadow: 0 4px 12px rgba(238, 125, 28, 0.45);
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
 }
 
 .explore-dept-card:hover .explore-dept-arrow {
-    transform: translateX(4px);
-    background: #4f46e5;
-    color: #fff;
+  transform: translateX(4px);
+  background: #ffffff;
+  color: #07112b;
+}
+
+.explore-dept-card:focus-visible .explore-dept-glass,
+.explore-dept-card:focus-within .explore-dept-glass {
+  outline: 3px solid #fb9a38;
+  outline-offset: 2px;
+}
+
+/* Browsers without blur support: make the panel solid enough to read */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .explore-dept-glass {
+    background: rgba(7, 17, 43, 0.94);
+  }
 }
 
 /* =====================================================
