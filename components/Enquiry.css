@@ -1,0 +1,785 @@
+/* =====================================================
+  (navy header + white body)
+===================================================== */
+.enq-panel,
+.enq-tab {
+  --enq-navy: #14185c;
+  --enq-navy-2: #232a94;
+  --enq-indigo: #3a3fb8;
+  --enq-pink: #ff4fa3;
+  --enq-ink: #1b1f4b;
+
+  --enq-navy-rgb: 20, 24, 92;
+  --enq-navy-2-rgb: 35, 42, 148;
+  --enq-pink-rgb: 255, 79, 163;
+  --enq-ink-rgb: 27, 31, 75;
+
+  --enq-field-bg: #f3f4f9;
+  --enq-field-border: #e2e5f0;
+  --enq-icon: #7d869f;
+  --enq-placeholder: #9aa1b9;
+}
+
+/* =====================================================
+   POPUP PANEL
+===================================================== */
+.enq-panel {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  z-index: 2147483000;
+
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  box-shadow:
+    0 30px 70px rgba(var(--enq-navy-rgb), 0.35),
+    0 8px 24px rgba(var(--enq-ink-rgb), 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+
+  transform-origin: left center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-28px, -50%) scale(0.1);
+
+  transition:
+    transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+    opacity 0.3s ease 0.2s,
+    visibility 0s linear 0.5s;
+}
+
+.enq-panel.enq-panel-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%) scale(1);
+
+  transition:
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease,
+    visibility 0s linear 0s;
+}
+
+/* ===== Header (navy + pink glow) ===== */
+.enq-header {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  /* extra top space so the title sits BELOW the close button */
+  padding: 48px 18px 20px;
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 92% 115%, rgba(var(--enq-pink-rgb), 0.85) 0%, rgba(var(--enq-pink-rgb), 0) 55%),
+    radial-gradient(circle at 70% 0%, rgba(120, 90, 255, 0.35) 0%, rgba(120, 90, 255, 0) 50%),
+    linear-gradient(120deg, var(--enq-navy) 0%, var(--enq-navy-2) 65%, #3d34a8 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* glass ring circle, top-left of the header */
+.enq-header::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -46px;
+  left: -40px;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+}
+
+/* light sweep across the header when the popup opens */
+.enq-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+}
+
+.enq-title {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.enq-session {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 5px 16px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.enq-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.enq-close:hover {
+  color: var(--enq-navy);
+  background: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* ===== Form ===== */
+.enq-body {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+}
+
+.enq-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--enq-field-bg);
+  border: 1px solid var(--enq-field-border);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 2px rgba(var(--enq-ink-rgb), 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.enq-field:hover {
+  background: #eef0f8;
+}
+
+.enq-field:focus-within {
+  background: #ffffff;
+  border-color: rgba(var(--enq-navy-2-rgb), 0.7);
+  box-shadow: 0 0 0 4px rgba(var(--enq-navy-2-rgb), 0.15);
+}
+
+.enq-icon {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 14px;
+  font-size: 16px;
+  color: var(--enq-icon);
+  transition: color 0.25s ease;
+}
+
+.enq-field:focus-within .enq-icon {
+  color: var(--enq-navy-2);
+}
+
+.enq-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 12px;
+  color: var(--enq-ink);
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.enq-input::placeholder {
+  color: var(--enq-placeholder);
+  font-weight: 400;
+}
+
+.enq-select .enq-input {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 34px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--enq-navy);
+}
+
+.enq-caret {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--enq-icon);
+  pointer-events: none;
+}
+
+/* ===== Submit button ===== */
+.enq-submit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 6px;
+  padding: 15px 18px;
+
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--enq-navy) 0%, var(--enq-navy-2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 14px 28px rgba(var(--enq-navy-rgb), 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.enq-submit:hover {
+  background: linear-gradient(120deg, var(--enq-navy-2) 0%, var(--enq-indigo) 100%);
+  box-shadow:
+    0 16px 32px rgba(var(--enq-navy-2-rgb), 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.enq-submit:active {
+  transform: scale(0.98);
+}
+
+.enq-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.enq-arrow-chip {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.enq-submit:hover .enq-arrow-chip {
+  background: rgba(255, 255, 255, 0.32);
+  transform: translateX(3px);
+}
+
+.enq-success,
+.enq-error {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.enq-success {
+  color: #1a8a4a;
+}
+
+.enq-error {
+  color: #d93b3b;
+}
+
+/* =====================================================
+   OPENING ANIMATIONS (content appears one by one)
+===================================================== */
+.enq-panel-open .enq-header::after {
+  animation: enqShine 1.1s ease 0.55s;
+}
+
+.enq-panel-open .enq-title {
+  animation: enqDrop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s backwards;
+}
+
+.enq-panel-open .enq-session {
+  animation: enqPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s backwards;
+}
+
+.enq-panel-open .enq-close {
+  animation: enqSpin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s backwards;
+}
+
+.enq-panel-open .enq-body > * {
+  animation: enqFadeUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s backwards;
+}
+
+.enq-panel-open .enq-body > :nth-child(1) { animation-delay: 0.4s; }
+.enq-panel-open .enq-body > :nth-child(2) { animation-delay: 0.48s; }
+.enq-panel-open .enq-body > :nth-child(3) { animation-delay: 0.56s; }
+.enq-panel-open .enq-body > :nth-child(4) { animation-delay: 0.64s; }
+.enq-panel-open .enq-body > :nth-child(5) { animation-delay: 0.72s; }
+
+@keyframes enqFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes enqDrop {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes enqPop {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes enqSpin {
+  from { opacity: 0; transform: rotate(-180deg) scale(0); }
+  to   { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+@keyframes enqShine {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+/* =====================================================
+   LEFT BAR (desktop): navy glass pill
+===================================================== */
+.enq-tab {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 2147482999;
+
+  width: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0 22px;
+  overflow: hidden;
+
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 100% 110%, rgba(var(--enq-pink-rgb), 0.7) 0%, rgba(var(--enq-pink-rgb), 0) 60%),
+    linear-gradient(180deg, var(--enq-navy-2) 0%, var(--enq-navy) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 0;
+  border-radius: 0 24px 24px 0;
+  box-shadow:
+    8px 12px 30px rgba(var(--enq-navy-rgb), 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  font: inherit;
+
+  visibility: hidden;
+  transform: translate(-100%, -50%);
+  transition:
+    transform 0.3s ease-in,
+    visibility 0s linear 0.3s,
+    width 0.25s ease;
+}
+
+.enq-tab.enq-tab-show {
+  visibility: visible;
+  transform: translate(0, -50%);
+
+  transition:
+    transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s,
+    visibility 0s linear 0s,
+    width 0.25s ease;
+}
+
+.enq-tab:hover {
+  width: 60px;
+}
+
+/* transparent circles inside the bar */
+.enq-tab::before,
+.enq-tab::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.enq-tab::before {
+  bottom: -22px;
+  left: -18px;
+  width: 74px;
+  height: 74px;
+}
+
+.enq-tab::after {
+  top: -16px;
+  right: -16px;
+  width: 46px;
+  height: 46px;
+}
+
+.enq-tab-icon,
+.enq-tab-text {
+  position: relative;
+  z-index: 1;
+}
+
+.enq-tab-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--enq-navy);
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  font-size: 15px;
+}
+
+.enq-tab.enq-tab-show .enq-tab-icon {
+  animation: enqRing 2.2s ease-out 1.2s infinite;
+}
+
+.enq-tab-text {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* reads bottom-to-top */
+}
+
+@keyframes enqRing {
+  0%   { box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(255, 255, 255, 0.6); }
+  70%  { box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25), 0 0 0 12px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+@keyframes enqCallPulse {
+  0%   { box-shadow: 0 10px 24px rgba(var(--enq-navy-rgb), 0.5), 0 0 0 0 rgba(var(--enq-navy-2-rgb), 0.55); }
+  70%  { box-shadow: 0 10px 24px rgba(var(--enq-navy-rgb), 0.5), 0 0 0 16px rgba(var(--enq-navy-2-rgb), 0); }
+  100% { box-shadow: 0 10px 24px rgba(var(--enq-navy-rgb), 0.5), 0 0 0 0 rgba(var(--enq-navy-2-rgb), 0); }
+}
+
+/* ===== Fallback if the browser has no backdrop-filter ===== */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .enq-panel {
+    background: rgba(255, 255, 255, 0.99);
+  }
+}
+
+/* ===== Reduced motion: switch all animations off ===== */
+@media (prefers-reduced-motion: reduce) {
+  .enq-panel,
+  .enq-tab {
+    transition: none !important;
+  }
+
+  .enq-panel-open .enq-header::after,
+  .enq-panel-open .enq-title,
+  .enq-panel-open .enq-session,
+  .enq-panel-open .enq-close,
+  .enq-panel-open .enq-body > *,
+  .enq-tab.enq-tab-show,
+  .enq-tab.enq-tab-show .enq-tab-icon {
+    animation: none !important;
+  }
+}
+
+/* =====================================================
+   MOBILE (small screens) - complete block
+   Put this at the END of the CSS file
+===================================================== */
+@media (max-width: 480px) {
+
+  /* ----- Popup panel ----- */
+  .enq-panel {
+    left: 10px;
+    width: 250px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+      0 20px 50px rgba(20, 24, 92, 0.35),
+      0 6px 18px rgba(27, 31, 75, 0.15),
+      inset 0 1px 0 #ffffff;
+
+    /* closed: shrinks toward the round call button (bottom-left) */
+    transform-origin: left bottom;
+    transform: translate(-16px, calc(-50% + 36vh)) scale(0.1);
+  }
+
+  /* ----- Header: navy + pink glow ----- */
+  .enq-header {
+    padding: 38px 12px 14px;
+    background:
+      radial-gradient(circle at 92% 118%, rgba(255, 79, 163, 0.85) 0%, rgba(255, 79, 163, 0) 55%),
+      radial-gradient(circle at 70% 0%, rgba(120, 90, 255, 0.35) 0%, rgba(120, 90, 255, 0) 50%),
+      linear-gradient(120deg, #14185c 0%, #232a94 65%, #3d34a8 100%);
+  }
+
+  /* no inner circle in the header */
+  .enq-header::before {
+    display: none;
+  }
+
+  .enq-title {
+    margin-bottom: 9px;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  .enq-session {
+    padding: 4px 11px;
+    font-size: 9.5px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .enq-close {
+    top: 7px;
+    right: 7px;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  /* ----- Form ----- */
+  .enq-body {
+    gap: 8px;
+    padding: 14px 12px 12px;
+  }
+
+  .enq-field {
+    border-radius: 12px;
+    background: #f3f4f9;
+    border: 1px solid #e2e5f0;
+  }
+
+  .enq-field:focus-within {
+    background: #ffffff;
+    border-color: rgba(35, 42, 148, 0.7);
+    box-shadow: 0 0 0 3px rgba(35, 42, 148, 0.15);
+  }
+
+  .enq-icon {
+    width: 16px;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #7d869f;
+  }
+
+  .enq-field:focus-within .enq-icon {
+    color: #232a94;
+  }
+
+  .enq-input {
+    padding: 10px 8px;
+    font-size: 13px;
+    color: #1b1f4b;
+  }
+
+  .enq-input::placeholder {
+    color: #9aa1b9;
+  }
+
+  .enq-select .enq-input {
+    padding-right: 26px;
+    color: #14185c;
+    font-weight: 700;
+  }
+
+  .enq-caret {
+    right: 11px;
+    font-size: 12px;
+    color: #7d869f;
+  }
+
+  /* ----- Submit button ----- */
+  .enq-submit {
+    gap: 10px;
+    margin-top: 2px;
+    padding: 11px 12px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    letter-spacing: 0.8px;
+
+    color: #ffffff;
+    background: linear-gradient(120deg, #14185c 0%, #232a94 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 10px 22px rgba(20, 24, 92, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .enq-arrow-chip {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .enq-success,
+  .enq-error {
+    font-size: 12px;
+  }
+
+  /* ----- Round call button: plain one colour, no inner circles ----- */
+  .enq-tab {
+    top: auto;
+    bottom: 18px;
+    left: 14px;
+
+    width: 58px;
+    height: 58px;
+    gap: 0;
+    padding: 0;
+    justify-content: center;
+
+    background: #14185c;            /* one solid colour */
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(20, 24, 92, 0.45);
+
+    /* hidden state */
+    transform: translateX(-120px) scale(0.4);
+  }
+
+  .enq-tab.enq-tab-show {
+    transform: translateX(0) scale(1);
+    animation: enqCallPulse 2s ease-out 1s infinite;
+  }
+
+  .enq-tab:hover {
+    width: 58px;
+  }
+
+  /* remove the inner glass circles */
+  .enq-tab::before,
+  .enq-tab::after {
+    display: none;
+  }
+
+  .enq-tab-text {
+    display: none;
+  }
+
+  .enq-tab-icon,
+  .enq-tab.enq-tab-show .enq-tab-icon {
+    width: auto;
+    height: auto;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    animation: none;
+    color: #ffffff;                 /* white logo */
+    font-size: 28px;
+    line-height: 1;
+  }
+}
+/* =====================================================
+   BACKDROP: fades the home screen while the form is open
+===================================================== */
+.enq-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147482998; /* below the popup and the tab, above the page */
+
+  background: rgba(10, 12, 40, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.enq-overlay.enq-overlay-show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0s linear 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enq-overlay {
+    transition: none !important;
+  }
+}

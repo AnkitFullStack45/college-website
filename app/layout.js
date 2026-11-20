@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsappButton";
 import Footer from "@/components/Footer";
-
+import Enquiry from "@/components/Enquiry";
 // Font Awesome
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -20,7 +20,6 @@ import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 
 import Script from "next/script";
-
 // ==========================================
 // SEO METADATA
 // ==========================================
@@ -227,6 +226,8 @@ export default function RootLayout({ children }) {
                 ================================= */}
 
                 <WhatsAppButton />
+                {/*Enquiry button */}
+                <Enquiry/>
 
             </body>
         </html>

@@ -20,7 +20,7 @@ export default function GlobalSuccessBanner() {
           We provide a complete learning experience that prepares students
           for the challenges of the modern global workforce.
         </p>
-        <Link href="/admission" className="gs-banner-btn">
+        <Link href="/register/enquiry" className="gs-banner-btn">
           Apply For Admission
         </Link>
       </div>
