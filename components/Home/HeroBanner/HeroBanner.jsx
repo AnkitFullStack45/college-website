@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./HeroBanner.css";
-import ScholarshipSection from "../ScholarshipSection/page";
+import ScholarshipSection from "../ScholarshipSection/ScholarshipSection";
 
 export default function HeroBanner() {
   return (

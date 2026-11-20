@@ -197,11 +197,10 @@ export default function LifeAtTGI() {
       {/* ===== CTA ===== */}
       <section className="lf-cta">
         <div className="lf-wrap lf-cta-inner">
-          <div>
             <h2>Ready to be part of it?</h2>
             <p>Join TGI and find your people, your passion and your next big step.</p>
-          </div>
-          <Link href="/admission" className="lf-btn lf-btn-dark">
+         
+          <Link href="/register/enquiry" className="lf-btn lf-btn-dark">
             Apply for admission
           </Link>
         </div>

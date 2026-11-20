@@ -6,7 +6,7 @@
     --inspiration-blue: #173B73;
     --inspiration-orange: #E87516;
     --inspiration-light: #f5f7fb;
-    --inspiration-text: #555e6d;
+    --inspiration-text: #333333;
 
     width: 100%;
     max-width: 100%;
@@ -29,7 +29,7 @@
 }
 
 .inspirations-section {
-    padding: 85px 0;
+    padding: 50px 0;
 }
 
 
@@ -198,6 +198,7 @@
     font-size: 15px;
     line-height: 1.9;
     margin-bottom: 16px;
+    font-weight: 500;
 }
 
 .inspirations-intro-content strong {
@@ -263,7 +264,8 @@
 
 .inspirations-value-card p {
     color: var(--inspiration-text);
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
     line-height: 1.6;
     margin: 0;
 }
@@ -286,7 +288,7 @@
 .inspirations-section-heading p {
     color: var(--inspiration-text);
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.2;
 }
 
 .inspirations-list {
@@ -397,6 +399,7 @@
     color: var(--inspiration-text);
     font-size: 14px;
     line-height: 1.9;
+    font-weight: 400;
     margin-bottom: 16px;
 }
 
@@ -410,13 +413,13 @@
 ========================================= */
 
 .inspirations-legacy {
-    padding: 85px 0;
+    padding: 40px 0;
     text-align: center;
 
     background: linear-gradient(
         110deg,
-        #102b50,
-        #173B73
+        #411050,
+        #0e61e6
     );
 }
 

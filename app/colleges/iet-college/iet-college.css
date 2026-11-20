@@ -7,7 +7,7 @@
     --iet-orange-dark: #cf5e08;
     --iet-blue: #173b73;
     --iet-blue-dark: #102b53;
-    --iet-text: #39465a;
+    --iet-text: #333F52;
     --iet-muted: #68758a;
     --iet-light: #f5f7fb;
 
@@ -413,6 +413,7 @@
 .iet-program-card p {
     color: var(--iet-muted);
     font-size: 13px;
+    font-weight:500;
     line-height: 1.8;
     margin: 0 0 18px;
     flex-grow: 1;
@@ -475,12 +476,14 @@
 .iet-reason-card h3 {
     color: var(--iet-blue);
     font-size: 17px;
+    font-weight: 700;
     margin: 0 0 9px;
 }
 
 .iet-reason-card p {
     color: var(--iet-muted);
     font-size: 13px;
+    font-weight: 500;
     line-height: 1.8;
     margin: 0;
 }
@@ -533,12 +536,14 @@
 .iet-facility-card h3 {
     color: var(--iet-blue);
     font-size: 15px;
+    font-weight: 700;
     margin: 2px 0 8px;
 }
 
 .iet-facility-card p {
     color: var(--iet-muted);
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
     line-height: 1.75;
     margin: 0;
 }
@@ -607,6 +612,7 @@
     border: 1px solid #e8edf4;
     border-radius: 8px;
     transition: all 0.25s ease;
+   
 }
 
 .iet-recognition-card:hover {
@@ -632,12 +638,14 @@
 .iet-recognition-card h3 {
     color: var(--iet-blue);
     font-size: 16px;
+    font-weight: 700;
     margin: 0 0 8px;
 }
 
 .iet-recognition-card p {
     color: var(--iet-muted);
     font-size: 13px;
+    font-weight: 500;
     line-height: 1.7;
     margin: 0;
 }
@@ -722,6 +730,7 @@
     padding: 0 18px 16px;
     color: var(--iet-muted);
     font-size: 13px;
+    font-weight: 500;
     line-height: 1.8;
     margin: 0;
 }
@@ -810,6 +819,7 @@
 .iet-admission-content > p {
     color: var(--iet-muted);
     font-size: 14px;
+    font-weight: 500;
     line-height: 1.85;
     margin: 0 0 17px;
 }
@@ -823,7 +833,7 @@
 
 .iet-admission-benefits span {
     color: var(--iet-blue);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
 }
@@ -847,7 +857,7 @@
 
 .iet-admission-card-label {
     color: var(--iet-orange);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 900;
     letter-spacing: 1.5px;
 }
@@ -855,6 +865,7 @@
 .iet-admission-card h3 {
     color: var(--iet-blue);
     font-size: 24px;
+    font-weight: 700;
     line-height: 1.35;
     margin: 13px 0;
 }
@@ -862,6 +873,7 @@
 .iet-admission-card > p {
     color: var(--iet-muted);
     font-size: 13px;
+    font-weight: 500;
     line-height: 1.8;
     margin: 0 0 20px;
 }

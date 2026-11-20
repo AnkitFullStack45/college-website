@@ -587,7 +587,10 @@
   .lf-wrap {
     padding: 0 16px;
   }
-
+.lf-cta-inner{
+  padding: 10px 8px 12px 10px;
+  text-align: center;
+}
   .lf-hero {
     padding-top: 36px;
   }
@@ -615,6 +618,9 @@
   .lf-mosaic {
     grid-auto-rows: 150px;
     gap: 10px;
+  }
+  .lf-cta{
+    padding: 0 0 15px;
   }
 }
 

@@ -1,7 +1,6 @@
 /* =========================================
    SPIRITUAL GUIDES - COMMON
 ========================================= */
-
 .spiritual-page {
     --spiritual-blue: #173B73;
     --spiritual-orange: #E87516;
@@ -29,7 +28,7 @@
 }
 
 .spiritual-section {
-    padding: 85px 0;
+    padding: 65px 0;
 }
 
 
@@ -258,7 +257,7 @@
 
 .spiritual-section-heading {
     max-width: 750px;
-    margin: 0 auto 55px;
+    margin: 0 auto 45px;
     text-align: center;
 }
 
@@ -276,7 +275,6 @@
 
 .spiritual-guide-card {
     position: relative;
-
     display: grid;
     grid-template-columns: 90px minmax(0, 1fr);
     gap: 25px;
@@ -317,6 +315,7 @@
 
 .spiritual-guide-content {
     min-width: 0;
+    font-weight: 500;
 }
 
 .spiritual-guide-tag {
@@ -584,7 +583,7 @@
     /* Closing */
 
     .spiritual-closing {
-        padding: 55px 0;
+        padding: 30px 0;
     }
 }
 
