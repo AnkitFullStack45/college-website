@@ -512,7 +512,7 @@ export default function ManagementPage() {
                 </div>
               ))}
 
-              <Link href="https://www.templgroup.in/#dv_registration" className="management-primary-btn">
+              <Link href="/register/enquiry" className="management-primary-btn">
                 Apply Now <span>→</span>
               </Link>
             </article>

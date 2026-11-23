@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import "./RegisterSection.css";
 
+// Available courses
 const courses = [
   "BCA",
   "BBA",
@@ -17,8 +18,17 @@ const courses = [
   "Cyber Security",
 ];
 
+// Highlights displayed on hero image
+const HIGHLIGHTS = [
+  "Experienced faculty and mentors",
+  "Modern campus in Delhi-NCR",
+  "Career-focused programmes",
+];
+
+// Generate CAPTCHA
 const makeCaptcha = () => String(Math.floor(100000 + Math.random() * 900000));
 
+// Initial form values
 const initialForm = {
   fullName: "",
   mobile: "",
@@ -32,57 +42,112 @@ const initialForm = {
 
 export default function RegisterSection() {
   const [form, setForm] = useState(initialForm);
+
   const [captcha, setCaptcha] = useState("");
+
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState({ type: "", message: "" });
+
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
+
   const [loading, setLoading] = useState(false);
 
-  // Runs only in the browser, so server and client HTML always match
+  // Generate CAPTCHA after component mounts
   useEffect(() => {
     setCaptcha(makeCaptcha());
   }, []);
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   };
 
+  // Refresh CAPTCHA
   const refreshCaptcha = () => {
     setCaptcha(makeCaptcha());
-    setForm((prev) => ({ ...prev, captchaInput: "" }));
+
+    setForm((prev) => ({
+      ...prev,
+      captchaInput: "",
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      captchaInput: "",
+    }));
   };
 
+  // Form validation
   const validate = () => {
     const e = {};
-    if (!form.fullName.trim()) e.fullName = "Please enter the candidate name";
-    if (!/^[6-9]\d{9}$/.test(form.mobile))
+
+    if (!form.fullName.trim()) {
+      e.fullName = "Please enter the candidate name";
+    }
+
+    if (!/^[6-9]\d{9}$/.test(form.mobile)) {
       e.mobile = "Enter a valid 10-digit mobile number";
-    if (form.whatsapp && !/^[6-9]\d{9}$/.test(form.whatsapp))
+    }
+
+    if (form.whatsapp && !/^[6-9]\d{9}$/.test(form.whatsapp)) {
       e.whatsapp = "Enter a valid 10-digit number";
-    if (form.email && !/^\S+@\S+\.\S+$/.test(form.email))
+    }
+
+    if (form.email && !/^\S+@\S+\.\S+$/.test(form.email)) {
       e.email = "Enter a valid email address";
-    if (form.fatherMobile && !/^[6-9]\d{9}$/.test(form.fatherMobile))
+    }
+
+    if (form.fatherMobile && !/^[6-9]\d{9}$/.test(form.fatherMobile)) {
       e.fatherMobile = "Enter a valid 10-digit number";
-    if (!captcha || form.captchaInput !== captcha)
+    }
+
+    if (!captcha || form.captchaInput !== captcha) {
       e.captchaInput = "Security code is incorrect";
+    }
+
     return e;
   };
 
+  // Submit form
   const handleSubmit = async (ev) => {
     ev.preventDefault();
+
     const found = validate();
+
     setErrors(found);
-    if (Object.keys(found).length) return;
+
+    if (Object.keys(found).length > 0) {
+      return;
+    }
 
     setLoading(true);
-    setStatus({ type: "", message: "" });
+
+    setStatus({
+      type: "",
+      message: "",
+    });
 
     try {
-      // Change this URL to your ASP.NET Core API endpoint
+      // ASP.NET Core API endpoint
       const res = await fetch("/api/enquiry", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
         body: JSON.stringify({
           fullName: form.fullName,
           mobile: form.mobile,
@@ -94,13 +159,26 @@ export default function RegisterSection() {
         }),
       });
 
-      if (!res.ok) throw new Error("Request failed");
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
 
-      setStatus({ type: "success", message: "Thank you! We will contact you soon." });
+      // Success
+      setStatus({
+        type: "success",
+        message: "Thank you! We will contact you soon.",
+      });
+
       setForm(initialForm);
+
       setCaptcha(makeCaptcha());
-    } catch {
-      setStatus({ type: "error", message: "Something went wrong. Please try again." });
+
+      setErrors({});
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
     } finally {
       setLoading(false);
     }
@@ -108,155 +186,313 @@ export default function RegisterSection() {
 
   return (
     <section className="register-section">
+      {/* =================================
+                FULL WIDTH HERO IMAGE
+            ================================= */}
+
       <div className="register-image">
         <Image
           src="/images/bg5.webp"
-          alt="TEMPL Group campus"
+          alt="TEMPL Group Campus"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          priority
+          sizes="100vw"
           className="register-img"
         />
+
+        {/* Image overlay */}
+        <div className="register-image-shade"></div>
+
+        {/* Hero content */}
+        <div className="register-image-content">
+          <span className="register-badge">Admissions Open</span>
+
+          <h1>Start Your Journey at TEMPL Group</h1>
+
+          <p>Academic Session 2027-28</p>
+
+          {/* Highlights */}
+          <ul className="register-highlights">
+            {HIGHLIGHTS.map((item) => (
+              <li key={item}>
+                <span className="highlight-check">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
+      {/* =================================
+                REGISTRATION FORM SECTION
+            ================================= */}
+
       <div className="register-form-wrap">
-        <h2 className="register-title">Register</h2>
+        <div className="register-card">
+          {/* Form heading */}
+          <div className="register-head">
+            <span className="register-eyebrow">ADMISSION ENQUIRY</span>
 
-        <form className="register-form" onSubmit={handleSubmit} noValidate>
-          <div className="register-field">
-            <label htmlFor="fullName">
-              Candidate Full Name <span className="req">*</span>
-            </label>
-            <input
-              id="fullName"
-              name="fullName"
-              type="text"
-              value={form.fullName}
-              onChange={handleChange}
-            />
-            {errors.fullName && <small className="err">{errors.fullName}</small>}
+            <h2 className="register-title">Register Now</h2>
+
+            <p className="register-sub">
+              Fill in the details below and our admission team will contact you
+              shortly. Fields marked <span className="req">*</span>
+              are required.
+            </p>
           </div>
 
-          <div className="register-row">
-            <div className="register-field">
-              <label htmlFor="mobile">
-                Mobile No. <span className="req">*</span>
-              </label>
-              <input
-                id="mobile"
-                name="mobile"
-                type="tel"
-                maxLength={10}
-                value={form.mobile}
-                onChange={handleChange}
-              />
-              {errors.mobile && <small className="err">{errors.mobile}</small>}
+          <form className="register-form" onSubmit={handleSubmit} noValidate>
+            {/* =================================
+                            CANDIDATE DETAILS
+                        ================================= */}
+
+            <div className="register-group">
+              <h4 className="register-group-title">
+                <span>01</span>
+                Candidate Details
+              </h4>
+
+              {/* Candidate Name */}
+              <div className="register-field">
+                <label htmlFor="fullName">
+                  Candidate Full Name
+                  <span className="req">*</span>
+                </label>
+
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  placeholder="Enter full name"
+                  autoComplete="name"
+                  value={form.fullName}
+                  onChange={handleChange}
+                  className={errors.fullName ? "has-error" : ""}
+                />
+
+                {errors.fullName && (
+                  <small className="err">{errors.fullName}</small>
+                )}
+              </div>
+
+              {/* Mobile and WhatsApp */}
+              <div className="register-row">
+                <div className="register-field">
+                  <label htmlFor="mobile">
+                    Mobile Number
+                    <span className="req">*</span>
+                  </label>
+
+                  <input
+                    id="mobile"
+                    name="mobile"
+                    type="tel"
+                    inputMode="numeric"
+                    maxLength={10}
+                    placeholder="10-digit mobile number"
+                    autoComplete="tel"
+                    value={form.mobile}
+                    onChange={handleChange}
+                    className={errors.mobile ? "has-error" : ""}
+                  />
+
+                  {errors.mobile && (
+                    <small className="err">{errors.mobile}</small>
+                  )}
+                </div>
+
+                <div className="register-field">
+                  <label htmlFor="whatsapp">WhatsApp Mobile Number</label>
+
+                  <input
+                    id="whatsapp"
+                    name="whatsapp"
+                    type="tel"
+                    inputMode="numeric"
+                    maxLength={10}
+                    placeholder="WhatsApp number"
+                    value={form.whatsapp}
+                    onChange={handleChange}
+                    className={errors.whatsapp ? "has-error" : ""}
+                  />
+
+                  {errors.whatsapp && (
+                    <small className="err">{errors.whatsapp}</small>
+                  )}
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="register-field">
+                <label htmlFor="email">Email Address</label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter email address"
+                  autoComplete="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  className={errors.email ? "has-error" : ""}
+                />
+
+                {errors.email && <small className="err">{errors.email}</small>}
+              </div>
             </div>
 
-            <div className="register-field">
-              <label htmlFor="whatsapp">WhatsApp Mobile No.</label>
-              <input
-                id="whatsapp"
-                name="whatsapp"
-                type="tel"
-                maxLength={10}
-                value={form.whatsapp}
-                onChange={handleChange}
-              />
-              {errors.whatsapp && <small className="err">{errors.whatsapp}</small>}
+            {/* =================================
+                            PARENT DETAILS
+                        ================================= */}
+
+            <div className="register-group">
+              <h4 className="register-group-title">
+                <span>02</span>
+                Parent Details
+              </h4>
+
+              <div className="register-row">
+                {/* Father Name */}
+                <div className="register-field">
+                  <label htmlFor="fatherName">Father's Name</label>
+
+                  <input
+                    id="fatherName"
+                    name="fatherName"
+                    type="text"
+                    placeholder="Enter father's name"
+                    value={form.fatherName}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                {/* Father Mobile */}
+                <div className="register-field">
+                  <label htmlFor="fatherMobile">Father's Mobile Number</label>
+
+                  <input
+                    id="fatherMobile"
+                    name="fatherMobile"
+                    type="tel"
+                    inputMode="numeric"
+                    maxLength={10}
+                    placeholder="10-digit mobile number"
+                    value={form.fatherMobile}
+                    onChange={handleChange}
+                    className={errors.fatherMobile ? "has-error" : ""}
+                  />
+
+                  {errors.fatherMobile && (
+                    <small className="err">{errors.fatherMobile}</small>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="register-field">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={form.email}
-              onChange={handleChange}
-            />
-            {errors.email && <small className="err">{errors.email}</small>}
-          </div>
+            {/* =================================
+                            COURSE & VERIFICATION
+                        ================================= */}
 
-          <div className="register-field">
-            <label htmlFor="fatherName">Father Name</label>
-            <input
-              id="fatherName"
-              name="fatherName"
-              type="text"
-              value={form.fatherName}
-              onChange={handleChange}
-            />
-          </div>
+            <div className="register-group">
+              <h4 className="register-group-title">
+                <span>03</span>
+                Course & Verification
+              </h4>
 
-          <div className="register-field">
-            <label htmlFor="fatherMobile">Father Mobile</label>
-            <input
-              id="fatherMobile"
-              name="fatherMobile"
-              type="tel"
-              maxLength={10}
-              value={form.fatherMobile}
-              onChange={handleChange}
-            />
-            {errors.fatherMobile && (
-              <small className="err">{errors.fatherMobile}</small>
-            )}
-          </div>
+              {/* Course Selection */}
+              <div className="register-field">
+                <label htmlFor="course">Interested Course</label>
 
-          <div className="register-field">
-            <label htmlFor="course">Interested Course</label>
-            <select
-              id="course"
-              name="course"
-              value={form.course}
-              onChange={handleChange}
+                <select
+                  id="course"
+                  name="course"
+                  value={form.course}
+                  onChange={handleChange}
+                >
+                  <option value="">Select a course</option>
+
+                  {courses.map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* CAPTCHA */}
+              <div className="register-field">
+                <label htmlFor="captchaInput">
+                  Security Verification
+                  <span className="req">*</span>
+                </label>
+
+                <div className="register-captcha-row">
+                  <div className="register-captcha">
+                    <span
+                      className="register-captcha-code"
+                      aria-label="Security code"
+                    >
+                      {captcha || "••••••"}
+                    </span>
+
+                    <button
+                      type="button"
+                      className="register-captcha-refresh"
+                      onClick={refreshCaptcha}
+                      aria-label="Refresh security code"
+                    >
+                      ↻
+                    </button>
+                  </div>
+
+                  <input
+                    id="captchaInput"
+                    name="captchaInput"
+                    type="text"
+                    inputMode="numeric"
+                    maxLength={6}
+                    placeholder="Enter security code"
+                    value={form.captchaInput}
+                    onChange={handleChange}
+                    className={errors.captchaInput ? "has-error" : ""}
+                  />
+                </div>
+
+                {errors.captchaInput && (
+                  <small className="err">{errors.captchaInput}</small>
+                )}
+              </div>
+            </div>
+
+            {/* =================================
+                            SUBMIT BUTTON
+                        ================================= */}
+
+            <button
+              type="submit"
+              className="register-submit"
+              disabled={loading}
             >
-              <option value="">Select</option>
-              {courses.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </div>
+              {loading ? "Submitting..." : "Submit Admission Enquiry →"}
+            </button>
 
-          <div className="register-field">
-            <div className="register-captcha">
-              <span className="register-captcha-code" aria-label="Security code">
-                {captcha || "••••••"}
-              </span>
-              <button
-                type="button"
-                className="register-captcha-refresh"
-                onClick={refreshCaptcha}
-                aria-label="Refresh security code"
-              >
-                ↻
-              </button>
-            </div>
-            <input
-              name="captchaInput"
-              type="text"
-              inputMode="numeric"
-              maxLength={6}
-              placeholder="Enter Security code"
-              value={form.captchaInput}
-              onChange={handleChange}
-            />
-            {errors.captchaInput && (
-              <small className="err">{errors.captchaInput}</small>
+            {/* SUCCESS / ERROR MESSAGE */}
+
+            {status.message && (
+              <p role="status" className={`register-status ${status.type}`}>
+                {status.message}
+              </p>
             )}
-          </div>
 
-          <button type="submit" className="register-submit" disabled={loading}>
-            {loading ? "Submitting..." : "Submit Enquiry"}
-          </button>
+            {/* PRIVACY NOTE */}
 
-          {status.message && (
-            <p className={`register-status ${status.type}`}>{status.message}</p>
-          )}
-        </form>
+            <p className="register-note">
+              Your details are safe with us and will only be used to contact you
+              about admissions.
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   );

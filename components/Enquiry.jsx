@@ -34,23 +34,24 @@ const EMPTY_FORM = { name: '', mobile: '', level: 'Undergraduate', course: '' };
 
 export default function Enquiry() {
   const pathname = usePathname();
+  const initialPath = useRef(pathname); // the page the visitor landed on
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false); // closed by default
   const [status, setStatus] = useState('idle'); // idle | sending | done | error
   const [form, setForm] = useState(EMPTY_FORM);
   const panelRef = useRef(null);
 
-  // Render only on the client (needed for the portal)
+  // Runs once per real page load / refresh (this component lives in the layout).
+  // Opens only if the landing page is the home page.
   useEffect(() => {
     setMounted(true);
+    if (initialPath.current === '/') setOpen(true);
   }, []);
 
-  // Auto-open on the home page every time it loads or refreshes.
-  // Every other page (about, departments, 404...) starts closed.
+  // Leaving the home page closes the popup. Coming back via a link does NOT reopen it.
   useEffect(() => {
-    if (!mounted) return;
-    setOpen(pathname === '/');
-  }, [mounted, pathname]);
+    if (pathname !== '/') setOpen(false);
+  }, [pathname]);
 
   // Collapse after real mouse movement / touch / scroll outside the popup
   useEffect(() => {
@@ -81,7 +82,6 @@ export default function Enquiry() {
     };
 
     function onMove(e) {
-      // remember the first cursor position, ignore fake events with same position
       if (startX === null) {
         startX = e.clientX;
         startY = e.clientY;

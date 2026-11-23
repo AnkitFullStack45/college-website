@@ -320,6 +320,7 @@
 
 /* =========================================
    BUTTONS
+   (works for both <Link> and <button>)
 ========================================= */
 
 .bj-actions {
@@ -338,10 +339,13 @@
   justify-content: center;
   gap: 10px;
   padding: 16px 32px;
+  font-family: inherit;
   font-size: 15px;
   font-weight: 700;
+  line-height: normal;
   white-space: nowrap;
   text-decoration: none;
+  cursor: pointer;
   border-radius: 999px;
   transition:
     transform 0.3s var(--bj-ease),
@@ -353,6 +357,7 @@
 .bj-btn-primary {
   color: var(--bj-navy-dark);
   background: linear-gradient(135deg, var(--bj-orange), var(--bj-orange-2));
+  border: 1.5px solid transparent;
   box-shadow: 0 12px 28px rgba(232, 117, 22, 0.42);
 }
 
@@ -591,7 +596,8 @@
    KEYBOARD FOCUS
 ========================================= */
 
-.bj-section a:focus-visible {
+.bj-section a:focus-visible,
+.bj-section button:focus-visible {
   outline: 3px solid var(--bj-orange-2);
   outline-offset: 3px;
 }

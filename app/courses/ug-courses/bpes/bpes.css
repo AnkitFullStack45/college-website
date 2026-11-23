@@ -1,1259 +1,851 @@
-/* =========================================
-   BPES PAGE - BASE
-========================================= */
-
 .bpes-page {
-    --bpes-blue: #173B73;
-    --bpes-dark: #0b1f40;
-    --bpes-orange: #E87516;
-    --bpes-orange-2: #ff9a3c;
-    --bpes-sky: #38a9e8;
-    --bpes-text: #4a5568;
-    --bpes-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-
-    width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
-    color: #252d3a;
+  --bpes-blue: #12305f;
+  --bpes-dark: #0b1f40;
+  --bpes-orange: #e87516;
+  --bpes-orange-2: #ff9a3c;
+  --bpes-sky: #38a9e8;
+  --bpes-text: #34415c;
+  --bpes-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --bpes-white: #ffffff;
+  --bpes-bg: #f3f6fb;
+  --bpes-border: #d9e1ee;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  color: var(--bpes-dark);
+  background: var(--bpes-bg);
 }
-
 .bpes-page *,
 .bpes-page *::before,
 .bpes-page *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 .bpes-container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 25px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 25px;
+  margin: 0 auto;
 }
-
-/* =========================================
-   ANIMATIONS
-========================================= */
-
 @keyframes bpesFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-@keyframes bpesFloat {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(45px, 30px) scale(1.15);
-    }
-}
-
-@keyframes bpesGradient {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes bpesShimmer {
-    from {
-        background-position: 0% 50%;
-    }
-
-    to {
-        background-position: 200% 50%;
-    }
-}
-
-@keyframes bpesPulse {
-    0%, 100% {
-        box-shadow: 0 10px 25px rgba(232, 117, 22, 0.35);
-    }
-
-    50% {
-        box-shadow: 0 12px 38px rgba(232, 117, 22, 0.7);
-    }
-}
-
-/* =========================================
-   FULL-WIDTH BANNER IMAGE
-========================================= */
-
 .bpes-banner {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    line-height: 0;
-    background: #0b1f40;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
+  background: var(--bpes-dark);
 }
-
 .bpes-banner-img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    object-fit: contain;
-    object-position: center;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
 }
-
-/* =========================================
-   COMMON SECTION BACKGROUNDS
-========================================= */
-
 .bpes-hero,
 .bpes-section,
 .bpes-cta-section {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    padding: 45px 0;
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(255, 140, 50, 0.4),
-            transparent 38%
-        ),
-        radial-gradient(
-            circle at 90% 25%,
-            rgba(56, 169, 232, 0.4),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 55% 95%,
-            rgba(150, 90, 240, 0.25),
-            transparent 45%
-        ),
-        linear-gradient(135deg, #e3eeff, #fdeedd);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 45px 0;
+  background: #f3f6fb;
 }
-
-/* Alternate (softer) background */
 .bpes-hero,
 .bpes-section-alt,
 .bpes-cta-section {
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(232, 117, 22, 0.28),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(56, 169, 232, 0.35),
-            transparent 42%
-        ),
-        linear-gradient(135deg, #fce9dc, #dceaff 55%, #eadcff);
+  background: #ffffff;
 }
-
 .bpes-hero::before,
 .bpes-hero::after,
 .bpes-section::before,
 .bpes-section::after,
 .bpes-cta-section::before,
 .bpes-cta-section::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
+  display: none;
 }
-
-.bpes-hero::before,
-.bpes-section::before,
-.bpes-cta-section::before {
-    top: -180px;
-    left: -140px;
-    background: rgba(232, 117, 22, 0.17);
-    animation: bpesFloat 17s ease-in-out infinite;
-}
-
-.bpes-hero::after,
-.bpes-section::after,
-.bpes-cta-section::after {
-    right: -150px;
-    bottom: -180px;
-    background: rgba(56, 169, 232, 0.2);
-    animation: bpesFloat 20s ease-in-out infinite reverse;
-}
-
-/* =========================================
-   HERO
-========================================= */
-
 .bpes-hero {
-    padding: 50px 0;
+  padding: 50px 0;
+  background: #f3f6fb;
 }
-
 .bpes-hero-card {
-    position: relative;
-    overflow: hidden;
-    max-width: 1000px;
-    padding: 50px 40px;
-    margin: 0 auto;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 26px;
-    -webkit-backdrop-filter: blur(18px) saturate(170%);
-    backdrop-filter: blur(18px) saturate(170%);
-    box-shadow:
-        0 18px 45px rgba(23, 59, 115, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    animation: bpesFadeUp 0.8s var(--bpes-ease) both;
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  padding: 45px 40px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--bpes-white);
+  border: 1px solid var(--bpes-border);
+  border-top: 5px solid var(--bpes-orange);
+  border-radius: 18px;
+  box-shadow: 0 3px 14px rgba(11, 31, 64, 0.08);
+  animation: bpesFadeUp 0.7s var(--bpes-ease) both;
 }
-
 .bpes-hero-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(
-        90deg,
-        var(--bpes-orange),
-        var(--bpes-orange-2),
-        var(--bpes-sky)
-    );
+  display: none;
 }
-
 .bpes-eyebrow {
-    display: inline-block;
-    padding: 7px 15px;
-    margin-bottom: 18px;
-    color: var(--bpes-orange);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background: rgba(232, 117, 22, 0.1);
-    border: 1px solid rgba(232, 117, 22, 0.3);
-    border-radius: 999px;
+  display: inline-block;
+  padding: 7px 15px;
+  margin-bottom: 18px;
+  color: #c85b0b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: #fff0df;
+  border: 1px solid #f6d2b2;
+  border-radius: 999px;
 }
-
 .bpes-hero-card h1 {
-    max-width: 900px;
-    margin: 0 auto 15px;
-    color: var(--bpes-blue);
-    font-size: clamp(30px, 4vw, 44px);
-    font-weight: 800;
-    line-height: 1.25;
+  max-width: 900px;
+  margin: 0 auto 15px;
+  color: var(--bpes-blue);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.25;
 }
-
 .bpes-hero-card h2 {
-    max-width: 800px;
-    margin: 0 auto 18px;
-    color: var(--bpes-orange);
-    font-size: clamp(18px, 2.4vw, 25px);
-    font-weight: 800;
-    line-height: 1.45;
+  max-width: 800px;
+  margin: 0 auto 18px;
+  color: var(--bpes-orange);
+  font-size: clamp(18px, 2.4vw, 25px);
+  font-weight: 800;
+  line-height: 1.45;
 }
-
 .bpes-hero-card p {
-    max-width: 780px;
-    margin: 0 auto;
-    color: var(--bpes-text);
-    font-size: 15px;
-    line-height: 1.85;
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--bpes-text);
+  font-size: 15px;
+  line-height: 1.85;
 }
-
 .bpes-hero-card .bpes-primary-btn {
-    margin-top: 25px;
+  margin-top: 25px;
 }
-
-/* =========================================
-   SECTION HEADINGS
-========================================= */
-
 .bpes-section-heading {
-    max-width: 900px;
-    margin-bottom: 30px;
+  max-width: 900px;
+  margin-bottom: 30px;
 }
-
 .bpes-centered-heading {
-    max-width: 900px;
-    margin: 0 auto 35px;
-    text-align: center;
+  max-width: 900px;
+  margin: 0 auto 35px;
+  text-align: center;
 }
-
 .bpes-label {
-    display: inline-block;
-    padding: 6px 14px;
-    margin-bottom: 15px;
-    color: var(--bpes-orange);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background: rgba(232, 117, 22, 0.1);
-    border: 1px solid rgba(232, 117, 22, 0.3);
-    border-radius: 999px;
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 15px;
+  color: #c85b0b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: #fff0df;
+  border: 1px solid #f6d2b2;
+  border-radius: 999px;
 }
-
 .bpes-section-heading h2,
 .bpes-centered-heading h2 {
-    margin: 0;
-    color: var(--bpes-blue);
-    font-size: clamp(25px, 3.3vw, 36px);
-    font-weight: 800;
-    line-height: 1.35;
+  margin: 0;
+  color: var(--bpes-blue);
+  font-size: clamp(25px, 3.3vw, 36px);
+  font-weight: 800;
+  line-height: 1.35;
 }
-
 .bpes-heading-line {
-    width: 75px;
-    height: 4px;
-    margin: 16px 0;
-    background: linear-gradient(
-        90deg,
-        var(--bpes-orange),
-        #ffbd83,
-        var(--bpes-orange)
-    );
-    background-size: 200% 100%;
-    border-radius: 10px;
-    animation: bpesShimmer 3s linear infinite;
+  width: 75px;
+  height: 4px;
+  margin: 16px 0;
+  background: var(--bpes-orange);
+  border-radius: 10px;
 }
-
 .bpes-centered-heading .bpes-heading-line {
-    margin: 16px auto;
+  margin: 16px auto;
 }
-
 .bpes-centered-heading p {
-    margin: 10px 0 0;
-    color: var(--bpes-text);
-    font-size: 15px;
-    line-height: 1.9;
+  margin: 10px 0 0;
+  color: var(--bpes-text);
+  font-size: 15px;
+  line-height: 1.9;
 }
-
 .bpes-side-note {
-    margin: 0;
-    color: var(--bpes-orange);
-    font-size: 17px;
-    font-weight: 800;
-    line-height: 1.6;
+  margin: 0;
+  color: var(--bpes-orange);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.6;
 }
-
-/* =========================================
-   INTRODUCTION
-========================================= */
-
 .bpes-intro-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    align-items: start;
-    gap: 45px;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 45px;
+  margin-bottom: 40px;
 }
-
 .bpes-intro-grid .bpes-section-heading {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
 .bpes-intro-text p {
-    margin: 0 0 14px;
-    color: var(--bpes-text);
-    font-size: 15px;
-    line-height: 1.9;
+  margin: 0 0 14px;
+  color: var(--bpes-text);
+  font-size: 15px;
+  line-height: 1.9;
 }
-
 .bpes-intro-text p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
-/* =========================================
-   SHARED GLASS CARD
-========================================= */
-
 .bpes-glass {
-    position: relative;
-    overflow: hidden;
-    padding: 27px;
-    background: rgba(255, 255, 255, 0.42);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    -webkit-backdrop-filter: blur(18px) saturate(170%);
-    backdrop-filter: blur(18px) saturate(170%);
-    box-shadow:
-        0 12px 35px rgba(23, 59, 115, 0.13),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    transition:
-        transform 0.4s var(--bpes-ease),
-        box-shadow 0.4s var(--bpes-ease),
-        border-color 0.4s ease,
-        background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 27px;
+  background: var(--bpes-white);
+  border: 1px solid var(--bpes-border);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(11, 31, 64, 0.07);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
-
 .bpes-glass::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--bpes-orange),
-        var(--bpes-orange-2),
-        var(--bpes-sky)
-    );
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease;
+  display: none;
 }
-
-.bpes-glass:hover::before {
-    transform: scaleX(1);
-}
-
 .bpes-glass:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.75);
-    border-color: rgba(232, 117, 22, 0.55);
-    box-shadow: 0 22px 45px rgba(23, 59, 115, 0.2);
+  transform: translateY(-4px);
+  border-color: var(--bpes-orange);
+  box-shadow: 0 8px 22px rgba(11, 31, 64, 0.1);
 }
-
 .bpes-glass h3 {
-    margin: 0 0 12px;
-    color: var(--bpes-blue);
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.5;
+  margin: 0 0 12px;
+  color: var(--bpes-blue);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.5;
 }
-
 .bpes-glass p {
-    margin: 0;
-    color: var(--bpes-text);
-    font-size: 14px;
-    line-height: 1.85;
+  margin: 0;
+  color: var(--bpes-text);
+  font-size: 14px;
+  line-height: 1.85;
 }
-
-/* =========================================
-   NUMBER BADGES
-========================================= */
-
 .bpes-highlight-number,
 .bpes-subject-card > span,
 .bpes-facility-card > span,
 .bpes-sport-card > span,
 .bpes-card-number {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 43px;
-    height: 43px;
-    margin-bottom: 18px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 900;
-    background: linear-gradient(
-        135deg,
-        var(--bpes-orange),
-        var(--bpes-orange-2)
-    );
-    border-radius: 12px;
-    box-shadow: 0 7px 15px rgba(232, 117, 22, 0.35);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  background: var(--bpes-orange);
+  border-radius: 12px;
+  box-shadow: none;
 }
-
-/* Round badge for admission steps */
 .bpes-admission-card > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    margin-bottom: 18px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 900;
-    background: linear-gradient(
-        135deg,
-        var(--bpes-orange),
-        var(--bpes-orange-2)
-    );
-    border-radius: 50%;
-    box-shadow: 0 7px 18px rgba(232, 117, 22, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  background: var(--bpes-blue);
+  border: 2px solid var(--bpes-orange);
+  border-radius: 50%;
+  box-shadow: none;
 }
-
-/* Check circle */
 .bpes-check,
 .bpes-suitable-card > span {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 900;
-    background: var(--bpes-orange);
-    border-radius: 50%;
-    box-shadow: 0 5px 12px rgba(232, 117, 22, 0.3);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  background: var(--bpes-orange);
+  border-radius: 50%;
+  box-shadow: none;
 }
-
-/* =========================================
-   COURSE HIGHLIGHTS
-========================================= */
-
 .bpes-highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
 }
-
 .bpes-highlight-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: var(--bpes-white);
+  border: 1px solid var(--bpes-border);
+  border-radius: 15px;
+  box-shadow: 0 2px 9px rgba(11, 31, 64, 0.06);
 }
-
 .bpes-highlight-card .bpes-highlight-number {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
 .bpes-highlight-card h3 {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.5;
+  margin: 0;
+  color: var(--bpes-blue);
+  font-size: 15px;
+  line-height: 1.5;
 }
-
-/* =========================================
-   SUBJECTS
-========================================= */
-
 .bpes-subject-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-bottom: 25px;
 }
-
 .bpes-subject-card h3 {
-    margin: 0;
+  margin: 0;
 }
-
-/* =========================================
-   COURSE DETAILS
-========================================= */
-
 .bpes-course-details {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
-
 .bpes-course-card > span {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--bpes-orange);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--bpes-orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
-
 .bpes-course-card h3 {
-    margin: 0;
-    font-size: 17px;
+  margin: 0;
+  font-size: 17px;
 }
-
-/* =========================================
-   ELIGIBILITY
-========================================= */
-
 .bpes-glass.bpes-eligibility-card {
-    background: rgba(255, 255, 255, 0.5);
+  background: var(--bpes-white);
 }
-
 .bpes-glass.bpes-eligibility-card:hover,
 .bpes-glass.bpes-growth-card:hover {
-    transform: none;
+  transform: none;
 }
-
 .bpes-eligibility-card > p {
-    margin: 0 0 5px;
-    color: var(--bpes-blue);
-    font-size: 16px;
-    font-weight: 800;
+  margin: 0 0 5px;
+  color: var(--bpes-blue);
+  font-size: 16px;
+  font-weight: 800;
 }
-
 .bpes-eligibility-card ul,
 .bpes-career-card ul {
-    display: grid;
-    gap: 13px;
-    padding: 0;
-    margin: 15px 0 0;
-    list-style: none;
+  display: grid;
+  gap: 13px;
+  padding: 0;
+  margin: 15px 0 0;
+  list-style: none;
 }
-
 .bpes-eligibility-card ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
 .bpes-eligibility-card li,
 .bpes-career-card li {
-    position: relative;
-    padding: 13px 15px 13px 43px;
-    color: var(--bpes-text);
-    font-size: 14px;
-    line-height: 1.7;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
+  position: relative;
+  padding: 13px 15px 13px 43px;
+  color: var(--bpes-text);
+  font-size: 14px;
+  line-height: 1.7;
+  background: #f7f9fc;
+  border: 1px solid var(--bpes-border);
+  border-radius: 12px;
 }
-
 .bpes-eligibility-card li::before,
 .bpes-career-card li::before {
-    content: "✓";
-    position: absolute;
-    top: 50%;
-    left: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 21px;
-    height: 21px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 900;
-    background: var(--bpes-orange);
-    border-radius: 50%;
-    transform: translateY(-50%);
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  background: var(--bpes-orange);
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
-
-/* =========================================
-   ADMISSION PROCESS
-========================================= */
-
 .bpes-admission-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
 }
-
 .bpes-admission-card {
-    padding: 25px 20px;
+  padding: 25px 20px;
 }
-
 .bpes-admission-card h3 {
-    font-size: 17px;
+  font-size: 17px;
 }
-
 .bpes-admission-card p {
-    font-size: 13px;
-    line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.8;
 }
-
-/* =========================================
-   CAMPUS BANNER
-========================================= */
-
 .bpes-campus-banner {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 30px 35px;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-left: 5px solid var(--bpes-orange);
-    border-radius: 22px;
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 15px 40px rgba(23, 59, 115, 0.13);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 35px;
+  margin-bottom: 30px;
+  background: var(--bpes-white);
+  border: 1px solid var(--bpes-border);
+  border-left: 5px solid var(--bpes-orange);
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(11, 31, 64, 0.07);
 }
-
 .bpes-campus-number {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    height: 110px;
-    color: #fff;
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1;
-    background: linear-gradient(
-        135deg,
-        var(--bpes-orange),
-        var(--bpes-orange-2)
-    );
-    border: 6px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(232, 117, 22, 0.4);
-    animation: bpesPulse 2.8s ease-in-out infinite;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+  background: var(--bpes-blue);
+  border: 5px solid #f6d2b2;
+  border-radius: 50%;
+  box-shadow: none;
 }
-
 .bpes-campus-banner span {
-    display: inline-block;
-    margin-bottom: 8px;
-    color: var(--bpes-orange);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--bpes-orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
-
 .bpes-campus-banner h3 {
-    margin: 0;
-    color: var(--bpes-blue);
-    font-size: clamp(19px, 2.4vw, 25px);
-    font-weight: 800;
-    line-height: 1.4;
+  margin: 0;
+  color: var(--bpes-blue);
+  font-size: clamp(19px, 2.4vw, 25px);
+  font-weight: 800;
+  line-height: 1.4;
 }
-
-/* =========================================
-   SPORTS FACILITIES
-========================================= */
-
 .bpes-facility-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
 }
-
-/* =========================================
-   UPCOMING SPORTS
-========================================= */
-
 .bpes-sports-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
 }
-
 .bpes-sport-card {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 15px;
+  text-align: center;
+}
+.bpes-sport-card h3 {
+  margin: 0;
+  font-size: 17px;
+}
+.bpes-support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 18px;
+}
+.bpes-support-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+}
+.bpes-support-card h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.bpes-suitable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 18px;
+}
+.bpes-suitable-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px;
+}
+.bpes-suitable-card > span {
+  margin-top: 2px;
+}
+.bpes-suitable-card p {
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+.bpes-career-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.bpes-career-card {
+  padding: 30px 25px;
+}
+.bpes-career-card h3 {
+  margin-bottom: 5px;
+  font-size: 19px;
+}
+.bpes-career-card ul {
+  gap: 10px;
+}
+.bpes-career-card li {
+  padding: 11px 12px 11px 40px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.bpes-glass.bpes-growth-card {
+  max-width: 950px;
+  padding: 32px 36px;
+  margin: 0 auto;
+  background: var(--bpes-white);
+  border-left: 5px solid var(--bpes-orange);
+}
+.bpes-growth-card p {
+  font-size: 16px;
+  line-height: 1.95;
+}
+.bpes-growth-card strong {
+  color: var(--bpes-orange);
+  font-weight: 800;
+}
+.bpes-faq-list {
+  display: grid;
+  max-width: 900px;
+  gap: 15px;
+  margin: 0 auto;
+}
+.bpes-glass.bpes-faq-item {
+  padding: 0;
+  background: var(--bpes-white);
+  border-radius: 14px;
+}
+.bpes-glass.bpes-faq-item:hover {
+  transform: none;
+}
+.bpes-glass.bpes-faq-item[open] {
+  background: var(--bpes-white);
+  border-color: var(--bpes-orange);
+}
+.bpes-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 22px;
+  color: var(--bpes-blue);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.6;
+  cursor: pointer;
+  list-style: none;
+}
+.bpes-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.bpes-faq-item summary::after {
+  content: "+";
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  background: var(--bpes-blue);
+  border-radius: 50%;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+.bpes-faq-item[open] summary::after {
+  background: var(--bpes-orange);
+  transform: rotate(45deg);
+}
+.bpes-faq-item p {
+  padding: 0 25px 20px 22px;
+  margin: 0;
+  color: var(--bpes-text);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.bpes-cta-section {
+  padding: 60px 0;
+  background: #f3f6fb;
+}
+.bpes-glass.bpes-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 45px;
+  background: var(--bpes-blue);
+  border: 0;
+  border-left: 6px solid var(--bpes-orange);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(11, 31, 64, 0.14);
+}
+.bpes-cta-card::before {
+  display: none;
+}
+.bpes-glass.bpes-cta-card:hover {
+  transform: none;
+  background: var(--bpes-blue);
+  border-color: var(--bpes-orange);
+  box-shadow: 0 8px 24px rgba(11, 31, 64, 0.14);
+}
+.bpes-cta-card .bpes-label {
+  color: #ffe0c0;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.bpes-cta-card h2 {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+.bpes-glass.bpes-cta-card p {
+  max-width: 650px;
+  color: #e7edf7;
+  font-size: 15px;
+  line-height: 1.9;
+}
+.bpes-primary-btn {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  padding: 14px 30px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--bpes-orange);
+  border: 2px solid var(--bpes-orange);
+  border-radius: 9px;
+  box-shadow: 0 4px 12px rgba(11, 31, 64, 0.12);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.bpes-primary-btn::before {
+  display: none;
+}
+.bpes-primary-btn:hover {
+  color: #ffffff;
+  background: #c85b0b;
+  border-color: #c85b0b;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(11, 31, 64, 0.16);
+}
+.bpes-primary-btn span {
+  transition: transform 0.3s ease;
+}
+.bpes-primary-btn:hover span {
+  transform: translateX(4px);
+}
+@media (hover: hover) {
+  .bpes-glass:hover,
+  .bpes-highlight-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--bpes-orange);
+    box-shadow: 0 8px 22px rgba(11, 31, 64, 0.1);
+  }
+  .bpes-primary-btn:hover {
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 1100px) {
+  .bpes-admission-grid,
+  .bpes-sports-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 992px) {
+  .bpes-container {
+    padding: 0 22px;
+  }
+  .bpes-hero,
+  .bpes-section,
+  .bpes-cta-section {
+    padding: 38px 0;
+  }
+  .bpes-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .bpes-highlight-grid,
+  .bpes-subject-grid,
+  .bpes-course-details,
+  .bpes-facility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bpes-career-grid {
+    grid-template-columns: 1fr;
+  }
+  .bpes-glass {
+    padding: 23px;
+  }
+  .bpes-glass.bpes-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 30px;
+  }
+}
+@media (max-width: 768px) {
+  .bpes-container {
+    padding: 0 20px;
+  }
+  .bpes-hero-card {
+    padding: 38px 25px;
+  }
+  .bpes-admission-grid,
+  .bpes-sports-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bpes-eligibility-card ul {
+    grid-template-columns: 1fr;
+  }
+  .bpes-campus-banner {
+    padding: 25px;
+  }
+  .bpes-campus-number {
+    width: 90px;
+    height: 90px;
+    font-size: 38px;
+  }
+  .bpes-glass.bpes-growth-card {
+    padding: 26px 24px;
+  }
+}
+@media (max-width: 480px) {
+  .bpes-container {
+    padding: 0 16px;
+  }
+  .bpes-hero,
+  .bpes-section {
+    padding: 30px 0;
+  }
+  .bpes-hero-card {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+  .bpes-hero-card h1 {
+    font-size: 26px;
+  }
+  .bpes-hero-card h2 {
+    font-size: 17px;
+  }
+  .bpes-section-heading h2,
+  .bpes-centered-heading h2 {
+    font-size: 24px;
+  }
+  .bpes-highlight-grid,
+  .bpes-subject-grid,
+  .bpes-course-details,
+  .bpes-facility-grid,
+  .bpes-admission-grid {
+    grid-template-columns: 1fr;
+  }
+  .bpes-sports-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .bpes-sport-card {
+    padding: 20px 10px;
+  }
+  .bpes-glass {
+    padding: 22px;
+  }
+  .bpes-campus-banner {
     flex-direction: column;
     align-items: center;
-    padding: 25px 15px;
     text-align: center;
-}
-
-.bpes-sport-card h3 {
-    margin: 0;
-    font-size: 17px;
-}
-
-/* =========================================
-   ACADEMIC / SUPPORT FACILITIES
-========================================= */
-
-.bpes-support-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    gap: 18px;
-}
-
-.bpes-support-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 20px 22px;
-}
-
-.bpes-support-card h3 {
-    margin: 0;
-    font-size: 15px;
-}
-
-/* =========================================
-   WHO SHOULD JOIN
-========================================= */
-
-.bpes-suitable-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: 18px;
-}
-
-.bpes-suitable-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 22px;
-}
-
-.bpes-suitable-card > span {
-    margin-top: 2px;
-}
-
-.bpes-suitable-card p {
-    font-size: 14.5px;
-    line-height: 1.7;
-}
-
-/* =========================================
-   CAREER OPPORTUNITIES
-========================================= */
-
-.bpes-career-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.bpes-career-card {
-    padding: 30px 25px;
-}
-
-.bpes-career-card h3 {
-    margin-bottom: 5px;
-    font-size: 19px;
-}
-
-.bpes-career-card ul {
+    border-left: 1px solid var(--bpes-border);
+    border-top: 5px solid var(--bpes-orange);
+  }
+  .bpes-faq-item summary {
     gap: 10px;
-}
-
-.bpes-career-card li {
-    padding: 11px 12px 11px 40px;
+    padding: 15px 14px;
     font-size: 13.5px;
-    line-height: 1.6;
-}
-
-/* =========================================
-   SPORTS INDUSTRY GROWTH
-========================================= */
-
-.bpes-glass.bpes-growth-card {
-    max-width: 950px;
-    padding: 32px 36px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.5);
-    border-left: 5px solid var(--bpes-orange);
-}
-
-.bpes-growth-card p {
-    font-size: 16px;
-    line-height: 1.95;
-}
-
-.bpes-growth-card strong {
-    color: var(--bpes-orange);
-    font-weight: 800;
-}
-
-/* =========================================
-   FAQ
-========================================= */
-
-.bpes-faq-list {
-    display: grid;
-    max-width: 900px;
-    gap: 15px;
-    margin: 0 auto;
-}
-
-.bpes-glass.bpes-faq-item {
-    padding: 0;
-    background: rgba(255, 255, 255, 0.48);
-    border-radius: 16px;
-}
-
-.bpes-glass.bpes-faq-item:hover {
-    transform: translateY(-3px);
-}
-
-.bpes-glass.bpes-faq-item[open] {
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(232, 117, 22, 0.5);
-}
-
-.bpes-faq-item summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 18px 22px;
-    color: var(--bpes-blue);
-    font-size: 15px;
-    font-weight: 800;
-    line-height: 1.6;
-    cursor: pointer;
-    list-style: none;
-}
-
-.bpes-faq-item summary::-webkit-details-marker {
-    display: none;
-}
-
-.bpes-faq-item summary::after {
-    content: "+";
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    color: #fff;
-    font-size: 22px;
-    line-height: 1;
-    background: var(--bpes-blue);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.bpes-faq-item[open] summary::after {
-    background: var(--bpes-orange);
-    transform: rotate(45deg);
-}
-
-.bpes-faq-item p {
-    padding: 0 25px 20px 22px;
-    margin: 0;
-    color: var(--bpes-text);
+  }
+  .bpes-faq-item summary::after {
+    width: 27px;
+    height: 27px;
+    font-size: 19px;
+  }
+  .bpes-faq-item p {
+    padding: 0 16px 17px 14px;
+  }
+  .bpes-cta-section {
+    padding: 30px 0;
+  }
+  .bpes-glass.bpes-cta-card {
+    padding: 32px 20px;
+  }
+  .bpes-glass.bpes-cta-card p {
     font-size: 14px;
-    line-height: 1.85;
+  }
+  .bpes-primary-btn {
+    width: 100%;
+  }
 }
-
-/* =========================================
-   FINAL CTA
-========================================= */
-
-.bpes-cta-section {
-    padding: 60px 0;
-}
-
-.bpes-glass.bpes-cta-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 35px;
-    padding: 55px 45px;
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(255, 170, 90, 0.45),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(56, 169, 232, 0.4),
-            transparent 42%
-        ),
-        linear-gradient(
-            120deg,
-            #c85a0a,
-            #173B73 60%,
-            #0b1f40
-        );
-    background-size: 200% 200%;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 25px;
-    box-shadow: 0 20px 45px rgba(23, 59, 115, 0.25);
-    animation: bpesGradient 8s ease infinite;
-}
-
-.bpes-cta-card::before {
-    display: none;
-}
-
-.bpes-glass.bpes-cta-card:hover {
-    transform: none;
-    background-color: transparent;
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 20px 45px rgba(23, 59, 115, 0.25);
-}
-
-.bpes-cta-card .bpes-label {
-    color: #ffe0c0;
-    background: rgba(255, 255, 255, 0.13);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.bpes-cta-card h2 {
-    margin: 0 0 15px;
-    color: #fff;
-    font-size: clamp(26px, 3.5vw, 36px);
-    font-weight: 800;
-    line-height: 1.3;
-}
-
-.bpes-glass.bpes-cta-card p {
-    max-width: 650px;
-    color: #e7edf7;
-    font-size: 15px;
-    line-height: 1.9;
-}
-
-/* =========================================
-   PRIMARY BUTTON
-========================================= */
-
-.bpes-primary-btn {
-    position: relative;
-    display: inline-flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    overflow: hidden;
-    padding: 14px 30px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    background: linear-gradient(
-        135deg,
-        var(--bpes-orange),
-        var(--bpes-orange-2)
-    );
-    border: 0;
-    border-radius: 999px;
-    box-shadow: 0 10px 25px rgba(232, 117, 22, 0.4);
-    transition:
-        transform 0.35s var(--bpes-ease),
-        box-shadow 0.35s var(--bpes-ease);
-    animation: bpesPulse 2.8s ease-in-out infinite;
-}
-
-.bpes-primary-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -120%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.55),
-        transparent
-    );
-    transform: skewX(-20deg);
-    transition: left 0.7s ease;
-}
-
-.bpes-primary-btn:hover {
-    color: #fff;
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(232, 117, 22, 0.55);
-}
-
-.bpes-primary-btn:hover::before {
-    left: 140%;
-}
-
-.bpes-primary-btn span {
-    transition: transform 0.3s ease;
-}
-
-.bpes-primary-btn:hover span {
-    transform: translateX(5px);
-}
-
-/* =========================================
-   LARGE TABLET
-========================================= */
-
-@media (max-width: 1100px) {
-    .bpes-admission-grid,
-    .bpes-sports-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 992px) {
-    .bpes-container {
-        padding: 0 22px;
-    }
-
-    .bpes-hero,
-    .bpes-section,
-    .bpes-cta-section {
-        padding: 38px 0;
-    }
-
-    .bpes-intro-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .bpes-highlight-grid,
-    .bpes-subject-grid,
-    .bpes-course-details,
-    .bpes-facility-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .bpes-career-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .bpes-glass {
-        padding: 23px;
-    }
-
-    .bpes-glass.bpes-cta-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 40px 30px;
-    }
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-    .bpes-container {
-        padding: 0 20px;
-    }
-
-    .bpes-hero-card {
-        padding: 38px 25px;
-    }
-
-    .bpes-admission-grid,
-    .bpes-sports-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .bpes-eligibility-card ul {
-        grid-template-columns: 1fr;
-    }
-
-    .bpes-campus-banner {
-        padding: 25px;
-    }
-
-    .bpes-campus-number {
-        width: 90px;
-        height: 90px;
-        font-size: 38px;
-    }
-
-    .bpes-glass.bpes-growth-card {
-        padding: 26px 24px;
-    }
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-    .bpes-container {
-        padding: 0 16px;
-    }
-
-    .bpes-hero,
-    .bpes-section {
-        padding: 30px 0;
-    }
-
-    .bpes-hero-card {
-        padding: 30px 20px;
-        border-radius: 22px;
-    }
-
-    .bpes-hero-card h1 {
-        font-size: 26px;
-    }
-
-    .bpes-hero-card h2 {
-        font-size: 17px;
-    }
-
-    .bpes-section-heading h2,
-    .bpes-centered-heading h2 {
-        font-size: 24px;
-    }
-
-    .bpes-highlight-grid,
-    .bpes-subject-grid,
-    .bpes-course-details,
-    .bpes-facility-grid,
-    .bpes-admission-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .bpes-sports-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .bpes-sport-card {
-        padding: 20px 10px;
-    }
-
-    .bpes-glass {
-        padding: 22px;
-    }
-
-    .bpes-campus-banner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        border-left: 1px solid rgba(255, 255, 255, 0.8);
-        border-top: 5px solid var(--bpes-orange);
-    }
-
-    .bpes-faq-item summary {
-        gap: 10px;
-        padding: 15px 14px;
-        font-size: 13.5px;
-    }
-
-    .bpes-faq-item summary::after {
-        width: 27px;
-        height: 27px;
-        font-size: 19px;
-    }
-
-    .bpes-faq-item p {
-        padding: 0 16px 17px 14px;
-    }
-
-    .bpes-cta-section {
-        padding: 30px 0;
-    }
-
-    .bpes-glass.bpes-cta-card {
-        padding: 32px 20px;
-    }
-
-    .bpes-glass.bpes-cta-card p {
-        font-size: 14px;
-    }
-
-    .bpes-primary-btn {
-        width: 100%;
-    }
-}
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
 @media (prefers-reduced-motion: reduce) {
-    .bpes-page *,
-    .bpes-page *::before,
-    .bpes-page *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-    }
+  .bpes-page *,
+  .bpes-page *::before,
+  .bpes-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.bpes-page a:focus-visible,
+.bpes-page button:focus-visible,
+.bpes-page summary:focus-visible {
+  outline: 3px solid var(--bpes-orange);
+  outline-offset: 3px;
+}
+.bpes-page ::selection {
+  background: var(--bpes-orange);
+  color: #ffffff;
 }

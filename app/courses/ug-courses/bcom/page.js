@@ -1100,7 +1100,7 @@ export default function BcomPage() {
 
                     </div>
 
-                    <Link href="#admission" className="bcom-primary-btn">
+                    <Link href="/register/enquiry" className="bcom-primary-btn">
                         Apply Now <span>→</span>
                     </Link>
 

@@ -390,12 +390,12 @@ export default function ApprovalsPage() {
 
                     <div className="affiliations-cta-buttons">
 
-                        <Link href="/register-now" className="cta-primary">
+                        <Link href="/register/enquiry" className="cta-primary">
                             Apply Now
                             <i className="fa-solid fa-arrow-right"></i>
                         </Link>
 
-                        <Link href="/contact" className="cta-secondary">
+                        <Link href="/register/enquiry" className="cta-secondary">
                             Contact Us
                         </Link>
 

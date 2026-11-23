@@ -42,7 +42,8 @@ const quickChips = [
   { label: "Admission Enquiry", href: "/register/enquiry" },
   { label: "All Courses", href: "/courses" },
   { label: "Our Colleges", href: "/colleges/iet-college" },
-  { label: "Contact Us", href: "/register/enquiry" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "TGI Virtual Tour", href:"/virtual-tour"}
 ];
 const socials = [
   {

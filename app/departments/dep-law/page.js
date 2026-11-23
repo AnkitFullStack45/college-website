@@ -523,11 +523,11 @@ export default function LawPage() {
                         </p>
 
                         <div className="law-intro-buttons">
-                            <a href="#ba-llb" className="law-btn law-primary-btn">
+                            <a href="/courses/ug-courses/ballb" className="law-btn law-primary-btn">
                                 Explore BA LL.B
                             </a>
 
-                            <a href="#llb" className="law-btn law-secondary-btn">
+                            <a href="/courses/ug-courses/llb" className="law-btn law-secondary-btn">
                                 Explore LL.B
                             </a>
                         </div>
@@ -577,7 +577,7 @@ export default function LawPage() {
                                 <span>After 10+2</span>
                             </div>
 
-                            <a href="#ba-llb" className="law-text-link">
+                            <a href="/courses/ug-courses/ballb" className="law-text-link">
                                 Explore BA LL.B <span>→</span>
                             </a>
                         </article>
@@ -603,7 +603,7 @@ export default function LawPage() {
                                 <span>After Graduation</span>
                             </div>
 
-                            <a href="#llb" className="law-text-link">
+                            <a href="/courses/ug-courses/llb" className="law-text-link">
                                 Explore LL.B <span>→</span>
                             </a>
                         </article>

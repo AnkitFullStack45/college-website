@@ -252,7 +252,6 @@ export default function InfrastructurePage() {
                     <div className="infra-intro-content">
 
                         <h3>Our Premier Institutions</h3>
-
                         <p>
                             At TEMPL Group of Institutions, our two premier
                             institutions—Institute for Education and Technical

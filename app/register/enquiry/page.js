@@ -122,41 +122,7 @@ export default function EnquiryPage() {
                 </p>
             </section>
 
-            <div className="enquiry-container">
-                {/* LEFT: CONTACT INFO */}
-                <aside className="enquiry-info">
-                    <h2>Contact Us</h2>
-
-                    <div className="enquiry-info-block">
-                        <h3>Location</h3>
-                        <p>
-                            TEMPL Group of Institution, Knowledge and
-                            Innovation Campus, NH-58 Abupur Road, Muradnagar,
-                            Midway between Muradnagar and Modinagar, Near SRM
-                            University, Ghaziabad (Delhi-NCR), Uttar Pradesh -
-                            201206
-                        </p>
-                    </div>
-
-                    <div className="enquiry-info-block">
-                        <h3>Email</h3>
-                        <a href="mailto:admin@templgroup.in">
-                            admin@templgroup.in
-                        </a>
-                        <a href="mailto:info@templgroup.in">
-                            info@templgroup.in
-                        </a>
-                    </div>
-
-                    <div className="enquiry-info-block">
-                        <h3>Call</h3>
-                        <a href="tel:+919412221868">+91 9412221868</a>
-                        <a href="tel:+919319828699">+91 9319828699</a>
-                        <a href="tel:+918865961096">+91 8865961096</a>
-                    </div>
-                </aside>
-
-                {/* RIGHT: FORM */}
+            <div className="enquiry-container enquiry-container-single">
                 <section className="enquiry-form-card">
                     <h2>Register</h2>
 

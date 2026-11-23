@@ -1,781 +1,710 @@
 /* =========================================
-   M.Ed PAGE - MAIN STYLING
+   M.ED PAGE - BCA MATCHING DESIGN SYSTEM
 ========================================= */
-
-.med-page {
-  width: 100%;
-  overflow: hidden;
-  background: #ffffff;
-  color: #333333;
-  font-family: inherit;
+.med-page{
+  --navy:#12305f;
+  --navy-deep:#0b1f40;
+  --orange:#e87516;
+  --orange-dark:#b8500a;
+  --orange-soft:#ffc58f;
+  --bg:#f3f6fb;
+  --head:#0f2347;
+  --body:#34415c;
+  --accent:var(--orange-dark);
+  --card:#ffffff;
+  --card-border:#d9e1ee;
+  --line:#e1e7f1;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  overflow-x:clip;
+  color:var(--head);
+  -webkit-text-size-adjust:100%;
 }
-
-.med-page * {
-  box-sizing: border-box;
+.med-page *,.med-page *::before,.med-page *::after{
+  box-sizing:border-box;
 }
-
+.med-page h1,.med-page h2,.med-page h3,.med-page h4,.med-page p,.med-page li,.med-page span,.med-page strong,.med-page summary{
+  overflow-wrap:break-word;
+}
+.med-container{
+  width:100%;
+  max-width:1200px;
+  padding:0 24px;
+  margin:0 auto;
+}
+.med-page a:focus-visible,.med-page summary:focus-visible,.med-page button:focus-visible{
+  outline:3px solid var(--orange);
+  outline-offset:3px;
+}
 /* =========================================
    FULL WIDTH BANNER
 ========================================= */
-
-.med-banner {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  overflow: hidden;
-  line-height: 0;
+.med-banner{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  line-height:0;
+  background:var(--navy-deep);
 }
-
-.med-banner-image {
-  display: block;
-  width: 100%;
-  height: clamp(250px, 38vw, 510px);
-  object-fit: cover;
-  object-position: center;
+.med-banner-image{
+  display:block;
+  width:100%;
+  height:clamp(250px,38vw,510px);
+  object-fit:cover;
+  object-position:center;
 }
-
-/* =========================================
-   MAIN CONTAINER
-========================================= */
-
-.med-container {
-  width: min(1200px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
 /* =========================================
    PAGE HEADING
 ========================================= */
-
-.med-heading {
-  padding: 35px 0 15px;
-  text-align: center;
+.med-heading{
+  padding:35px 0 30px;
+  text-align:center;
+  background:#ffffff;
+  border-bottom:1px solid var(--line);
 }
-
-.med-eyebrow {
-  display: inline-block;
-  color: #e87516;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.med-eyebrow{
+  display:inline-block;
+  padding:7px 16px;
+  color:var(--orange-dark);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  background:#fff1e5;
+  border:1px solid rgba(232,117,22,0.3);
+  border-radius:999px;
 }
-
-.med-heading h1 {
-  max-width: 950px;
-  margin: 12px auto 15px;
-  color: #173b73;
-  font-size: clamp(27px, 3.5vw, 42px);
-  font-weight: 800;
-  line-height: 1.3;
+.med-heading h1{
+  max-width:950px;
+  margin:12px auto 15px;
+  color:var(--head);
+  font-size:clamp(27px,3.5vw,42px);
+  font-weight:800;
+  line-height:1.3;
 }
-
-.med-heading-highlight {
-  display: block;
-  margin-top: 8px;
-  color: #e87516;
-  font-size: clamp(19px, 2.5vw, 27px);
+.med-heading-highlight{
+  display:block;
+  margin-top:8px;
+  color:var(--orange-dark);
+  font-size:clamp(19px,2.5vw,27px);
 }
-
-.med-heading-line {
-  width: 75px;
-  height: 4px;
-  margin: 18px auto 0;
-  border-radius: 20px;
-  background: #e87516;
+.med-heading-line{
+  width:75px;
+  height:4px;
+  margin:18px auto 0;
+  border-radius:20px;
+  background:var(--orange);
 }
-
 /* =========================================
    COMMON SECTION STYLING
 ========================================= */
-
-.med-section {
-  padding: 25px 0;
+.med-section{
+  padding:clamp(35px,5vw,55px) 0;
+  background:var(--bg);
 }
-
-.med-section h2 {
-  color: #173b73;
-  font-size: clamp(22px, 2.5vw, 30px);
-  font-weight: 800;
-  line-height: 1.4;
+.med-section h2{
+  color:var(--head);
+  font-size:clamp(22px,2.5vw,30px);
+  font-weight:800;
+  line-height:1.4;
 }
-
-.med-section p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #38465a;
-  font-size: 15px;
-  line-height: 1.85;
+.med-section p{
+  margin:10px 0;
+  color:var(--body);
+  font-size:15.5px;
+  line-height:1.85;
 }
-
-.med-intro {
-  padding-top: 20px;
+.med-intro{
+  padding-top:35px;
+  background:#ffffff;
 }
-
-.med-intro h2 {
-  margin-bottom: 12px;
+.med-intro h2{
+  margin-bottom:12px;
 }
-
-.med-section-heading {
-  margin-bottom: 20px;
+.med-section-heading{
+  margin-bottom:24px;
 }
-
-.med-section-heading > span {
-  display: inline-block;
-  color: #e87516;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.med-section-heading>span{
+  display:inline-block;
+  padding:6px 13px;
+  color:var(--orange-dark);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  background:#fff1e5;
+  border:1px solid rgba(232,117,22,0.3);
+  border-radius:999px;
 }
-
-.med-section-heading h2 {
-  margin-top: 7px;
+.med-section-heading h2{
+  margin-top:12px;
 }
-
-.med-section-description {
-  margin-bottom: 20px;
+.med-section-description{
+  margin-bottom:24px;
 }
-
 /* =========================================
    INLINE LINKS
 ========================================= */
-
-.med-inline-link {
-  color: #e87516;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.med-inline-link{
+  color:var(--orange-dark);
+  font-weight:700;
+  text-decoration:none;
+  transition:color .25s ease;
 }
-
-.med-inline-link:hover {
-  color: #173b73;
+.med-inline-link:hover{
+  color:var(--navy);
 }
-
 /* =========================================
    HIGHLIGHT BOX
 ========================================= */
-
-.med-highlight-box {
-  padding: 18px 22px;
-  margin-bottom: 20px;
-  border: 1px solid rgba(232, 117, 22, 0.2);
-  border-left: 4px solid #e87516;
-  border-radius: 12px;
-  background: linear-gradient(120deg, #fff8f1, #ffffff);
+.med-highlight-box{
+  padding:18px 22px;
+  margin-bottom:20px;
+  background:#fff8f1;
+  border:1px solid #f2d4b8;
+  border-left:5px solid var(--orange);
+  border-radius:12px;
 }
-
-.med-highlight-box p {
-  margin: 0;
+.med-highlight-box p{
+  margin:0;
+  color:var(--body);
 }
-
 /* =========================================
-   GLASSMORPHISM CARDS
+   CARDS
 ========================================= */
-
-.med-card-grid {
-  display: grid;
-  gap: 20px;
+.med-card-grid{
+  display:grid;
+  gap:20px;
 }
-
-.med-grid-two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.med-grid-two{
+  grid-template-columns:repeat(2,minmax(0,1fr));
 }
-
-.med-grid-three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.med-grid-three{
+  grid-template-columns:repeat(3,minmax(0,1fr));
 }
-
-.med-glass-card {
-  position: relative;
-  padding: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(23, 59, 115, 0.12);
-  border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.98),
-    rgba(245, 248, 253, 0.88)
-  );
-  box-shadow: 0 8px 25px rgba(23, 59, 115, 0.07);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+.med-glass-card{
+  position:relative;
+  min-width:0;
+  padding:24px;
+  overflow:hidden;
+  background:#ffffff;
+  border:1px solid var(--card-border);
+  border-radius:16px;
+  box-shadow:0 2px 10px rgba(11,31,64,.08);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
 }
-
-.med-glass-card::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 4px;
-  content: "";
-  background: #e87516;
-  transition: width 0.35s ease;
+.med-glass-card::before{
+  display:none;
 }
-
-.med-glass-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(232, 117, 22, 0.35);
-  box-shadow: 0 16px 35px rgba(23, 59, 115, 0.13);
+.med-glass-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--orange);
+  box-shadow:0 10px 24px rgba(11,31,64,.14);
 }
-
-.med-glass-card:hover::before {
-  width: 100%;
+.med-card-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  margin-bottom:16px;
+  color:var(--navy-deep);
+  background:var(--orange);
+  border-radius:12px;
+  font-size:14px;
+  font-weight:800;
 }
-
-.med-card-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  margin-bottom: 16px;
-  border-radius: 12px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #e87516, #f59b42);
-  font-size: 14px;
-  font-weight: 800;
-  box-shadow: 0 5px 14px rgba(232, 117, 22, 0.2);
+.med-glass-card h3{
+  margin-bottom:9px;
+  color:var(--head);
+  font-size:19px;
+  font-weight:800;
+  line-height:1.4;
 }
-
-.med-glass-card h3 {
-  margin-bottom: 9px;
-  color: #173b73;
-  font-size: 19px;
-  font-weight: 800;
-  line-height: 1.4;
+.med-glass-card p{
+  margin:0;
+  color:var(--body);
+  font-size:14.5px;
+  line-height:1.8;
 }
-
-.med-glass-card p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
+.med-eligibility-card{
+  background:#ffffff;
+  border-top:4px solid var(--orange);
 }
-
-.med-eligibility-card {
-  background: linear-gradient(145deg, #ffffff, #fff8f1);
-}
-
 /* =========================================
    LIGHT BACKGROUND SECTION
 ========================================= */
-
-.med-soft-section {
-  padding: 30px;
-  margin: 15px 0;
-  border: 1px solid rgba(23, 59, 115, 0.07);
-  border-radius: 20px;
-  background: linear-gradient(135deg, #f5f8fd, #fffaf5);
+.med-soft-section{
+  padding:30px;
+  margin:15px 0;
+  background:#ffffff;
+  border:1px solid var(--card-border);
+  border-radius:16px;
 }
-
 /* =========================================
    ADMISSION PROCESS
 ========================================= */
-
-.med-process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+.med-process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
 }
-
-.med-process-card {
-  position: relative;
-  padding: 22px 18px;
-  border: 1px solid rgba(23, 59, 115, 0.12);
-  border-radius: 15px;
-  background: #ffffff;
-  box-shadow: 0 7px 22px rgba(23, 59, 115, 0.07);
-  transition: all 0.3s ease;
+.med-process-card{
+  position:relative;
+  min-width:0;
+  padding:22px 18px;
+  background:#ffffff;
+  border:1px solid var(--card-border);
+  border-radius:15px;
+  box-shadow:0 2px 10px rgba(11,31,64,.08);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
 }
-
-.med-process-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(232, 117, 22, 0.4);
-  box-shadow: 0 12px 28px rgba(23, 59, 115, 0.12);
+.med-process-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--orange);
+  box-shadow:0 10px 24px rgba(11,31,64,.14);
 }
-
-.med-process-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 43px;
-  height: 43px;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  color: #ffffff;
-  background: #173b73;
-  font-size: 14px;
-  font-weight: 800;
+.med-process-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:43px;
+  height:43px;
+  margin-bottom:15px;
+  color:#ffffff;
+  background:var(--navy);
+  border-radius:50%;
+  font-size:14px;
+  font-weight:800;
 }
-
-.med-process-card h3 {
-  margin-bottom: 8px;
-  color: #e87516;
-  font-size: 17px;
-  font-weight: 800;
+.med-process-card h3{
+  margin-bottom:8px;
+  color:var(--head);
+  font-size:17px;
+  font-weight:800;
 }
-
-.med-process-card p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.75;
+.med-process-card p{
+  margin:0;
+  color:var(--body);
+  font-size:14px;
+  line-height:1.75;
 }
-
 /* =========================================
    SEAT INTAKE
 ========================================= */
-
-.med-seat-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 30px;
-  border: 1px solid rgba(232, 117, 22, 0.2);
-  border-radius: 20px;
-  background: linear-gradient(120deg, #fff7ef, #f4f7fc);
-  box-shadow: 0 10px 30px rgba(23, 59, 115, 0.07);
+.med-seat-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:30px;
+  background:#ffffff;
+  border:1px solid var(--card-border);
+  border-left:6px solid var(--orange);
+  border-radius:16px;
+  box-shadow:0 2px 10px rgba(11,31,64,.08);
 }
-
-.med-seat-label {
-  display: inline-block;
-  color: #e87516;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.med-seat-label{
+  display:inline-block;
+  color:var(--orange-dark);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
 }
-
-.med-seat-box h2 {
-  margin: 8px 0;
+.med-seat-box h2{
+  margin:8px 0;
+  color:var(--head);
 }
-
-.med-seat-box p {
-  margin-bottom: 8px;
+.med-seat-box p{
+  margin-bottom:8px;
 }
-
-.med-seat-count {
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 150px;
-  border: 7px solid rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  color: #ffffff;
-  background: linear-gradient(135deg, #e87516, #f59b42);
-  box-shadow: 0 8px 25px rgba(232, 117, 22, 0.25);
+.med-seat-count{
+  display:flex;
+  flex-shrink:0;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:150px;
+  height:150px;
+  color:#ffffff;
+  background:var(--navy-deep);
+  border:6px solid #e8edf5;
+  border-radius:50%;
 }
-
-.med-seat-count strong {
-  font-size: 48px;
-  font-weight: 900;
-  line-height: 1;
+.med-seat-count strong{
+  color:#ffffff;
+  font-size:48px;
+  font-weight:900;
+  line-height:1;
 }
-
-.med-seat-count span {
-  margin-top: 7px;
-  font-size: 13px;
-  font-weight: 700;
+.med-seat-count span{
+  margin-top:7px;
+  color:var(--orange-soft);
+  font-size:13px;
+  font-weight:700;
 }
-
 /* =========================================
    CAREER PROSPECTS
 ========================================= */
-
-.med-career-card {
-  padding: 28px;
-  margin-top: 22px;
-  border: 1px solid rgba(23, 59, 115, 0.12);
-  border-radius: 18px;
-  background: linear-gradient(135deg, #ffffff, #f7f9fd);
-  box-shadow: 0 10px 28px rgba(23, 59, 115, 0.08);
+.med-career-card{
+  padding:28px;
+  margin-top:22px;
+  background:#ffffff;
+  border:1px solid var(--card-border);
+  border-radius:16px;
+  box-shadow:0 2px 10px rgba(11,31,64,.08);
 }
-
-.med-career-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding-bottom: 18px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(23, 59, 115, 0.12);
+.med-career-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding-bottom:18px;
+  margin-bottom:20px;
+  border-bottom:1px solid var(--line);
 }
-
-.med-career-icon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 55px;
-  border-radius: 15px;
-  color: #ffffff;
-  background: #e87516;
-  font-size: 17px;
-  font-weight: 800;
+.med-career-icon{
+  display:flex;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  width:55px;
+  height:55px;
+  color:var(--navy-deep);
+  background:var(--orange);
+  border-radius:12px;
+  font-size:17px;
+  font-weight:800;
 }
-
-.med-career-header h3 {
-  color: #173b73;
-  font-size: 21px;
-  font-weight: 800;
+.med-career-header h3{
+  color:var(--head);
+  font-size:21px;
+  font-weight:800;
 }
-
-.med-career-subtitle {
-  display: inline-block;
-  margin-top: 5px;
-  color: #64748b;
-  font-size: 13px;
+.med-career-subtitle{
+  display:inline-block;
+  margin-top:5px;
+  color:#64748b;
+  font-size:13px;
 }
-
-.med-career-card h4 {
-  margin: 18px 0 8px;
-  color: #e87516;
-  font-size: 17px;
-  font-weight: 800;
+.med-career-card h4{
+  margin:18px 0 8px;
+  color:var(--head);
+  font-size:17px;
+  font-weight:800;
 }
-
-.med-career-card p {
-  margin: 0;
+.med-career-card p{
+  margin:0;
 }
-
-.med-check-list {
-  display: grid;
-  gap: 10px;
-  padding: 0;
-  margin: 12px 0;
-  list-style: none;
+.med-check-list{
+  display:grid;
+  gap:10px;
+  padding:0;
+  margin:12px 0;
+  list-style:none;
 }
-
-.med-check-list li {
-  position: relative;
-  padding-left: 28px;
-  color: #38465a;
-  font-size: 14px;
-  line-height: 1.7;
+.med-check-list li{
+  position:relative;
+  padding-left:28px;
+  color:var(--body);
+  font-size:14.5px;
+  line-height:1.7;
 }
-
-.med-check-list li::before {
-  position: absolute;
-  top: 1px;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 19px;
-  height: 19px;
-  border-radius: 50%;
-  color: #ffffff;
-  background: #e87516;
-  content: "✓";
-  font-size: 12px;
-  font-weight: 800;
+.med-check-list li::before{
+  position:absolute;
+  top:1px;
+  left:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:19px;
+  height:19px;
+  color:var(--navy-deep);
+  background:var(--orange);
+  border-radius:50%;
+  content:"✓";
+  font-size:12px;
+  font-weight:800;
 }
-
 /* =========================================
    FAQ SECTION
 ========================================= */
-
-.med-faq-list {
-  display: grid;
-  gap: 12px;
+.med-faq-list{
+  display:grid;
+  gap:12px;
 }
-
-.med-faq-item {
-  overflow: hidden;
-  border: 1px solid rgba(23, 59, 115, 0.12);
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 5px 16px rgba(23, 59, 115, 0.05);
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+.med-faq-item{
+  overflow:hidden;
+  background:#ffffff;
+  border:1px solid var(--card-border);
+  border-left:5px solid var(--orange);
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(11,31,64,.06);
+  transition:border-color .25s ease,box-shadow .25s ease;
 }
-
-.med-faq-item[open] {
-  border-color: rgba(232, 117, 22, 0.45);
-  box-shadow: 0 8px 22px rgba(23, 59, 115, 0.09);
+.med-faq-item[open]{
+  border-color:var(--orange);
+  box-shadow:0 8px 22px rgba(11,31,64,.09);
 }
-
-.med-faq-item summary {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 17px 20px;
-  cursor: pointer;
-  list-style: none;
+.med-faq-item summary{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:17px 20px;
+  color:var(--head);
+  cursor:pointer;
+  list-style:none;
 }
-
-.med-faq-item summary::-webkit-details-marker {
-  display: none;
+.med-faq-item summary::-webkit-details-marker{
+  display:none;
 }
-
-.med-faq-number {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-  color: #e87516;
-  background: #fff1e5;
-  font-size: 12px;
-  font-weight: 800;
+.med-faq-number{
+  display:flex;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  color:var(--navy-deep);
+  background:var(--orange);
+  border-radius:9px;
+  font-size:12px;
+  font-weight:800;
 }
-
-.med-faq-question {
-  flex: 1;
-  color: #173b73;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.5;
+.med-faq-question{
+  flex:1;
+  color:var(--head);
+  font-size:15px;
+  font-weight:700;
+  line-height:1.5;
 }
-
-.med-faq-toggle {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  color: #ffffff;
-  background: #173b73;
-  font-size: 21px;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+.med-faq-toggle{
+  display:flex;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  color:#ffffff;
+  background:var(--navy);
+  border-radius:50%;
+  font-size:21px;
+  transition:transform .25s ease,background .25s ease;
 }
-
-.med-faq-item[open] .med-faq-toggle {
-  transform: rotate(45deg);
-  background: #e87516;
+.med-faq-item[open] .med-faq-toggle{
+  transform:rotate(45deg);
+  background:var(--orange-dark);
 }
-
-.med-faq-answer {
-  padding: 0 20px 18px 69px;
+.med-faq-answer{
+  padding:0 20px 18px 69px;
 }
-
-.med-faq-answer p {
-  margin: 0;
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.8;
+.med-faq-answer p{
+  margin:0;
+  color:var(--body);
+  font-size:14.5px;
+  line-height:1.8;
 }
-
 /* =========================================
    ADMISSION CTA
 ========================================= */
-
-.med-admission-cta {
-  position: relative;
-  padding: 40px 30px;
-  margin: 30px 0 40px;
-  overflow: hidden;
-  border-radius: 20px;
-  color: #ffffff;
-  text-align: center;
-  background: linear-gradient(120deg, #102b55, #173b73);
-  box-shadow: 0 15px 35px rgba(23, 59, 115, 0.2);
+.med-admission-cta{
+  position:relative;
+  padding:40px 30px;
+  margin:30px 0 40px;
+  overflow:hidden;
+  color:#ffffff;
+  text-align:center;
+  background:var(--navy-deep);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  box-shadow:0 15px 35px rgba(11,31,64,.2);
 }
-
-.med-admission-cta::before,
-.med-admission-cta::after {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  content: "";
+.med-admission-cta::before,.med-admission-cta::after{
+  display:none;
 }
-
-.med-admission-cta::before {
-  top: -90px;
-  left: -50px;
+.med-cta-eyebrow{
+  position:relative;
+  z-index:1;
+  color:var(--orange-soft);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
 }
-
-.med-admission-cta::after {
-  right: -50px;
-  bottom: -100px;
+.med-admission-cta h2{
+  position:relative;
+  z-index:1;
+  margin:10px 0;
+  color:#ffffff;
+  font-size:clamp(23px,3vw,32px);
+  font-weight:800;
 }
-
-.med-cta-eyebrow {
-  position: relative;
-  z-index: 1;
-  color: #ffb36e;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.med-admission-cta p{
+  position:relative;
+  z-index:1;
+  max-width:800px;
+  margin:12px auto 22px;
+  color:#dbe6f7;
+  font-size:15px;
+  line-height:1.8;
 }
-
-.med-admission-cta h2 {
-  position: relative;
-  z-index: 1;
-  margin: 10px 0;
-  color: #ffffff;
-  font-size: clamp(23px, 3vw, 32px);
-  font-weight: 800;
+.med-cta-button{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:14px 26px;
+  color:var(--navy-deep);
+  background:var(--orange);
+  border:2px solid var(--orange);
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .25s ease,transform .25s ease,border-color .25s ease;
 }
-
-.med-admission-cta p {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 12px auto 22px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 15px;
-  line-height: 1.8;
+.med-cta-button span{
+  font-size:20px;
+  line-height:1;
+  transition:transform .25s ease;
 }
-
-.med-cta-button {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 13px 25px;
-  border: 2px solid #e87516;
-  border-radius: 8px;
-  color: #ffffff;
-  background: #e87516;
-  font-size: 14px;
-  font-weight: 800;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.med-cta-button:hover {
-  transform: translateY(-3px);
-  border-color: #ffffff;
-  color: #173b73;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.med-cta-button span {
-  font-size: 20px;
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-
-.med-cta-button:hover span {
-  transform: translateX(5px);
-}
-
 /* =========================================
    TABLET RESPONSIVE
 ========================================= */
-
-@media (max-width: 992px) {
-  .med-grid-three {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media(max-width:992px){
+  .med-grid-three{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
-
-  .med-process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .med-process-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
-
-  .med-soft-section {
-    padding: 24px;
+  .med-soft-section{
+    padding:24px;
   }
 }
-
+/* =========================================
+   HOVER EFFECTS
+========================================= */
+@media(hover:hover){
+  .med-inline-link:hover{
+    color:var(--navy);
+  }
+  .med-cta-button:hover{
+    transform:translateY(-2px);
+    color:var(--navy-deep);
+    background:#ff9a3c;
+    border-color:#ff9a3c;
+  }
+  .med-cta-button:hover span{
+    transform:translateX(5px);
+  }
+}
 /* =========================================
    MOBILE RESPONSIVE
 ========================================= */
-
-@media (max-width: 600px) {
-  .med-container {
-    width: calc(100% - 30px);
+@media(max-width:768px){
+  .med-container{
+    padding:0 18px;
   }
-
-  .med-banner-image {
-    height: 230px;
+  .med-centered-heading{
+    margin-bottom:28px;
   }
-
-  .med-heading {
-    padding-top: 25px;
+  .med-admission-cta{
+    padding:30px 20px;
   }
-
-  .med-heading h1 {
-    font-size: 25px;
+  .med-faq-item summary{
+    padding:16px;
   }
-
-  .med-heading-highlight {
-    font-size: 18px;
+  .med-faq-answer{
+    padding:0 16px 18px;
   }
-
-  .med-section {
-    padding: 20px 0;
+}
+/* =========================================
+   SMALL MOBILE
+========================================= */
+@media(max-width:600px){
+  .med-container{
+    width:calc(100% - 30px);
+    padding:0;
   }
-
-  .med-section p {
-    font-size: 14px;
-    line-height: 1.75;
+  .med-banner-image{
+    height:230px;
   }
-
-  .med-grid-two,
-  .med-grid-three,
-  .med-process-grid {
-    grid-template-columns: 1fr;
+  .med-heading{
+    padding:25px 15px;
   }
-
-  .med-glass-card {
-    padding: 20px;
+  .med-heading h1{
+    font-size:25px;
   }
-
-  .med-soft-section {
-    padding: 18px 14px;
-    border-radius: 14px;
+  .med-heading-highlight{
+    font-size:18px;
   }
-
-  .med-seat-box {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 22px;
+  .med-section{
+    padding:28px 0;
   }
-
-  .med-seat-count {
-    align-self: center;
-    width: 125px;
-    height: 125px;
+  .med-section p{
+    font-size:14px;
+    line-height:1.75;
   }
-
-  .med-seat-count strong {
-    font-size: 40px;
+  .med-grid-two,.med-grid-three,.med-process-grid{
+    grid-template-columns:1fr;
   }
-
-  .med-career-card {
-    padding: 20px;
+  .med-glass-card{
+    padding:20px;
   }
-
-  .med-career-header h3 {
-    font-size: 18px;
+  .med-soft-section{
+    padding:18px 14px;
+    border-radius:14px;
   }
-
-  .med-faq-item summary {
-    gap: 10px;
-    padding: 14px 12px;
+  .med-seat-box{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:22px;
   }
-
-  .med-faq-question {
-    font-size: 13px;
+  .med-seat-count{
+    align-self:center;
+    width:125px;
+    height:125px;
   }
-
-  .med-faq-answer {
-    padding: 0 14px 16px 56px;
+  .med-seat-count strong{
+    font-size:40px;
   }
-
-  .med-admission-cta {
-    padding: 30px 18px;
-    margin: 25px 0 30px;
+  .med-career-card{
+    padding:20px;
   }
-
-  .med-admission-cta p {
-    font-size: 14px;
+  .med-career-header h3{
+    font-size:18px;
+  }
+  .med-faq-item summary{
+    gap:10px;
+    padding:14px 12px;
+  }
+  .med-faq-question{
+    font-size:13px;
+  }
+  .med-faq-answer{
+    padding:0 14px 16px 56px;
+  }
+  .med-admission-cta{
+    padding:30px 18px;
+    margin:25px 0 30px;
+  }
+  .med-admission-cta p{
+    font-size:14px;
+  }
+  .med-cta-button{
+    width:100%;
+  }
+}
+/* =========================================
+   REDUCED MOTION
+========================================= */
+@media(prefers-reduced-motion:reduce){
+  .med-page *,.med-page *::before,.med-page *::after{
+    transition:none!important;
+    animation:none!important;
+    scroll-behavior:auto!important;
   }
 }

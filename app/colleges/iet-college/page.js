@@ -23,7 +23,7 @@ const programs = [
         year: "Started in 2003",
         description:
             "Prepare for a rewarding teaching career through modern teaching methodologies, classroom management, practical training and student-centered learning.",
-        href: "/Bed",
+        href: "/courses/ug-courses/bed",
         tag: "Education",
     },
     {
@@ -32,7 +32,7 @@ const programs = [
         year: "Introduced in 2011",
         description:
             "Develop a strong foundation in management, entrepreneurship, marketing, business strategy and organizational skills.",
-        href: "/Bba",
+        href: "/courses/ug-courses/bba",
         tag: "Management",
     },
     {
@@ -41,7 +41,7 @@ const programs = [
         year: "Introduced in 2011",
         description:
             "Build knowledge of accounting, finance, commerce, taxation and business practices for a professional career.",
-        href: "/Bcom",
+        href: "/courses/ug-courses/bcom",
         tag: "Commerce",
     },
     {
@@ -50,7 +50,7 @@ const programs = [
         year: "Introduced in 2016",
         description:
             "Learn programming, software development, databases, networking, web technologies, cloud computing and practical project development.",
-        href: "/Bca",
+        href: "/courses/ug-courses/bca",
         tag: "Computer Science",
     },
     {
@@ -59,7 +59,7 @@ const programs = [
         year: "Launched in 2019",
         description:
             "Explore educational research, leadership, curriculum development and advanced teaching practices.",
-        href: "/Med",
+        href: "/courses/pg-courses/med",
         tag: "Education",
     },
     {
@@ -68,7 +68,7 @@ const programs = [
         year: "Professional Diploma",
         description:
             "Develop essential skills in pedagogy, child psychology, classroom teaching and elementary education.",
-        href: "/Deld",
+        href: "/courses/pg-diploma/deled",
         tag: "Education",
     },
     {
@@ -77,7 +77,7 @@ const programs = [
         year: "Started in 2025",
         description:
             "Explore sports science, fitness, coaching, sports management, exercise physiology and practical training.",
-        href: "/Bpes",
+        href: "/courses/ug-courses/bpes",
         tag: "Sports & Fitness",
     },
 ];
@@ -299,7 +299,7 @@ export default function IETCollegePage() {
                             Explore Programs <span>→</span>
                         </a>
 
-                        <a href="#admissions" className="iet-btn iet-btn-outline">
+                        <a href="/register/enquiry" className="iet-btn iet-btn-outline">
                             Enquire Now
                         </a>
                     </div>
@@ -345,7 +345,7 @@ export default function IETCollegePage() {
                             rel="noopener noreferrer"
                             className="iet-text-link"
                         >
-                            Visit Official IET College Website <span>→</span>
+                            Visit IET College Website <span>→</span>
                         </a>
                     </div>
 
@@ -572,7 +572,7 @@ export default function IETCollegePage() {
                             scholarships and student support.
                         </p>
 
-                        <a href="#admissions" className="iet-text-link">
+                        <a href="/register/enquiry" className="iet-text-link">
                             Talk to Our Admission Team <span>→</span>
                         </a>
                     </div>
@@ -615,7 +615,7 @@ export default function IETCollegePage() {
                             academic journey and professional ambitions.
                         </p>
 
-                        <a href="#admissions" className="iet-btn iet-btn-orange">
+                        <a href="/register/enquiry" className="iet-btn iet-btn-orange">
                             Begin Your Journey <span>→</span>
                         </a>
 

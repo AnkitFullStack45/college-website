@@ -83,7 +83,7 @@
 ========================================= */
 
 .placement-intro {
-    padding: 75px 0;
+    padding: 50px 0;
     background: #ffffff;
 }
 
@@ -92,7 +92,7 @@
     color: #173B73;
     font-size: 22px;
     font-weight: 700;
-    margin: -15px 0 30px;
+    margin: -15px 0 25px;
 }
 
 .placement-intro p,
@@ -115,7 +115,7 @@
 ========================================= */
 
 .placement-grooming {
-    padding: 80px 0;
+    padding: 35px 0;
     background: #f6f8fb;
 }
 
@@ -201,7 +201,7 @@
 ========================================= */
 
 .placement-industry {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #ffffff;
 }
 
@@ -211,7 +211,7 @@
     gap: 28px;
     max-width: 1050px;
     margin: 0 auto;
-    padding: 35px;
+    padding: 25px;
     background: #f7f9fc;
     border: 1px solid #e9edf3;
     border-left: 5px solid #E87516;
@@ -242,7 +242,7 @@
 ========================================= */
 
 .placement-features {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #f6f8fb;
 }
 
@@ -264,7 +264,7 @@
 ========================================= */
 
 .placement-future {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #ffffff;
 }
 
@@ -299,7 +299,7 @@
 ========================================= */
 
 .placement-why {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #ffffff;
 }
 
@@ -352,7 +352,7 @@
 ========================================= */
 
 .placement-closing {
-    padding: 80px 0;
+    padding: 40px 0;
     background: #173B73;
     text-align: center;
 }

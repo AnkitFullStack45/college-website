@@ -1,0 +1,159 @@
+.vt-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.vt-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0b1b3a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 27, 58, 0.25);
+  user-select: none;
+}
+
+.vt-wrap:fullscreen {
+  border-radius: 0;
+  aspect-ratio: auto;
+}
+
+.vt-video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vt-canvas {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: none; /* lets touch dragging rotate the view instead of scrolling */
+}
+
+.vt-canvas:active {
+  cursor: grabbing;
+}
+
+.vt-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Big centre play button */
+.vt-bigplay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.vt-bigplay:hover:not(:disabled) {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.vt-bigplay:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* Hint pill */
+.vt-hint {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 14px;
+  pointer-events: none;
+  animation: vt-fade 4s ease forwards;
+}
+
+@keyframes vt-fade {
+  0%, 70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Control bar */
+.vt-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+  color: #fff;
+}
+
+.vt-title {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vt-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.vt-buttons button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.vt-buttons button:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+@media (max-width: 600px) {
+  .vt-wrap {
+    border-radius: 12px;
+  }
+  .vt-bigplay {
+    width: 68px;
+    height: 68px;
+    font-size: 22px;
+  }
+  .vt-title {
+    font-size: 13px;
+  }
+}

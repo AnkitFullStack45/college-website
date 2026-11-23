@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import "./BeginJourney.css";
+import CallbackModal from "@/components/CallBack";
 
 const quickLinks = [
   { label: "View Programs", href: "/courses" },
@@ -12,7 +16,6 @@ const quickLinks = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-// Replace these with verified figures (alumni count, placement data, etc.) if you have them.
 const statCards = [
   {
     variant: "orange",
@@ -74,126 +77,143 @@ function Arrow({ size = 14 }) {
 }
 
 export default function BeginJourney() {
+  const [showCallback, setShowCallback] = useState(false);
+
   return (
-    <section className="bj-section" aria-labelledby="bj-heading">
-      <div className="bj-container">
-        {/* Heading */}
-        <header className="bj-header">
-          <span className="bj-top-pill">
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M5 21V4M5 4h11l-2 4 2 4H5" />
-            </svg>
-            TAKE THE NEXT STEP
-          </span>
-
-          <h2 id="bj-heading">
-            Begin Your <span>TEMPL Journey</span>
-          </h2>
-
-          <p>
-            Everything you need to apply, plan your stay and explore career
-            outcomes — all in one place.
-          </p>
-        </header>
-
-        <div className="bj-grid">
-          {/* Main dark card */}
-          <article className="bj-main">
-            <span className="bj-status">ADMISSIONS OPEN</span>
-
-            <h3>
-              Admission <span>2027–28</span>
-            </h3>
-
-            <p className="bj-main-text">
-              Browse programmes, scholarships, financial aid and the
-              application process — or talk to our admissions team.
-            </p>
-
-            <ul className="bj-links">
-              {quickLinks.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href}>
-                    <Check />
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="bj-actions">
-              <Link href="/register" className="bj-btn bj-btn-primary">
-                Apply Online
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17 17 7M8 7h9v9" />
-                </svg>
-              </Link>
-
-              <Link href="/contact" className="bj-btn bj-btn-outline">
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
-                </svg>
-                Request a Call Back
-              </Link>
-            </div>
-          </article>
-
-          {/* Side stat cards */}
-          <div className="bj-side">
-            {statCards.map((card) => (
-              <article
-                key={card.eyebrow}
-                className={`bj-stat bj-stat-${card.variant}`}
+    <>
+      <section className="bj-section" aria-labelledby="bj-heading">
+        <div className="bj-container">
+          {/* Heading */}
+          <header className="bj-header">
+            <span className="bj-top-pill">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
               >
-                <span className="bj-stat-eyebrow">{card.eyebrow}</span>
+                <path d="M5 21V4M5 4h11l-2 4 2 4H5" />
+              </svg>
+              TAKE THE NEXT STEP
+            </span>
 
-                <div className="bj-stat-value">
-                  {card.value}
-                  {card.suffix && <small>{card.suffix}</small>}
-                </div>
+            <h2 id="bj-heading">
+              Begin Your <span>TEMPL Journey</span>
+            </h2>
 
-                <h4>{card.title}</h4>
-                <p>{card.text}</p>
+            <p>
+              Everything you need to apply, plan your stay and explore career
+              outcomes — all in one place.
+            </p>
+          </header>
 
-                <Link href={card.href} className="bj-stat-link">
-                  {card.linkLabel}
-                  <Arrow />
+          <div className="bj-grid">
+            {/* Main dark card */}
+            <article className="bj-main">
+              <span className="bj-status">ADMISSIONS OPEN</span>
+
+              <h3>
+                Admission <span>2027–28</span>
+              </h3>
+
+              <p className="bj-main-text">
+                Browse programmes, scholarships, financial aid and the
+                application process — or talk to our admissions team.
+              </p>
+
+              <ul className="bj-links">
+                {quickLinks.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href}>
+                      <Check />
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bj-actions">
+                {/* Apply Online */}
+                <Link href="/register" className="bj-btn bj-btn-primary">
+                  Apply Online
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
                 </Link>
-              </article>
-            ))}
+
+                {/* Request a Call Back */}
+                <button
+                  type="button"
+                  className="bj-btn bj-btn-outline"
+                  onClick={() => setShowCallback(true)}
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
+                  </svg>
+                  Request a Call Back
+                </button>
+              </div>
+            </article>
+
+            {/* Side stat cards */}
+            <div className="bj-side">
+              {statCards.map((card) => (
+                <article
+                  key={card.eyebrow}
+                  className={`bj-stat bj-stat-${card.variant}`}
+                >
+                  <span className="bj-stat-eyebrow">{card.eyebrow}</span>
+
+                  <div className="bj-stat-value">
+                    {card.value}
+                    {card.suffix && <small>{card.suffix}</small>}
+                  </div>
+
+                  <h4>{card.title}</h4>
+
+                  <p>{card.text}</p>
+
+                  <Link href={card.href} className="bj-stat-link">
+                    {card.linkLabel}
+                    <Arrow />
+                  </Link>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Request a Call Back popup */}
+      <CallbackModal
+        open={showCallback}
+        onClose={() => setShowCallback(false)}
+      />
+    </>
   );
 }
