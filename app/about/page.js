@@ -151,7 +151,7 @@ export default function AboutTempl() {
             </p>
 
             <Link
-              href="/about-templ/vision-mission"
+              href="/about/vision-mission"
               className="about-primary-btn"
             >
               Explore Our Vision

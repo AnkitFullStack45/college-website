@@ -141,7 +141,7 @@
 }
 
 .course-card-full {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -347,7 +347,6 @@
     padding: 22px 20px 28px;
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .course-card,

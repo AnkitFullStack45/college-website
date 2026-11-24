@@ -243,7 +243,7 @@ export default function LSRLawAcademyPage() {
                     </p>
 
                     <div className="lsr-hero-buttons">
-                        <a href="#programs" className="lsr-btn lsr-btn-orange">
+                        <a href="/departments/dep-law" className="lsr-btn lsr-btn-orange">
                             Explore Law Programs <span>→</span>
                         </a>
 

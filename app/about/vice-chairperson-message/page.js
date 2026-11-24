@@ -195,7 +195,7 @@ export default function ViceChairpersonMessage() {
             responsible leader of tomorrow.
           </p>
 
-          <Link href="/about-templ" className="vice-button">
+          <Link href="/about" className="vice-button">
             Explore TEMPL
             <span>→</span>
           </Link>

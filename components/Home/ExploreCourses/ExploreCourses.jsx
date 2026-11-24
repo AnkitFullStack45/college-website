@@ -82,7 +82,7 @@ const courses = [
     accent2: "#b9bbff",
     description:
       "The Master of Education program is designed to empower educators with advanced knowledge, leadership skills, and a deep understanding of educational practices. In this section, we delve into the core components of the M.Ed curriculum, covering advanced pedagogy, educational research, leadership development, and specialized areas of study. Discover how the program combines theoretical depth with practical application to prepare educators for education.",
-    link: "/courses/pr-courses/med",
+    link: "/courses/pg-courses/med",
   },
   {
     id: "bpes",
@@ -98,11 +98,11 @@ const courses = [
     id: "cyber",
     short: "CYBER SECURITY",
     full: "Securing Data, Defending Trust",
-    accent: "#0ea5e9",
+    accent: "#FEF08A",
     accent2: "#98d8f7",
     description:
       "Cyber Security and Law is a field that deals with keeping systems and data safe on the internet. It also makes sure people follow the law when they are online. As new cyber threats come up people who work in this field need to know about the side of security and the legal side of protecting data and privacy. They need to understand cybercrime and intellectual property rights. Cyber Security and Law teaches students about the basics of cybersecurity the laws related to it and how to hack into systems in a way to test them.",
-    link: "/courses/cyber-security",
+    link: "/",
   },
 ];
 

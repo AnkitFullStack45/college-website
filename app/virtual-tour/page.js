@@ -97,7 +97,7 @@ export default function VirtualTourPage() {
       <section id="tour" className="vtp-player-section">
         <div className="vtp-player-frame">
           <VirtualTour360
-            src="/videos/campus-360.mp4"
+            src="/videos/main_video.webm"
             poster="/images/campus-poster.jpg"
             title="IET College Campus Tour"
           />
