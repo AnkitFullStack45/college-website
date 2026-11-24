@@ -12,7 +12,7 @@ const courses = [
     accent2: "#a5c8ff",
     description:
       "The Bachelor of Computer Application program is designed to equip students with a solid foundation in computer science and programming. In this section, we explore the core subjects such as computer programming, data structures, software development, web technologies, and database management. Discover how the program combines theoretical knowledge with hands-on practical skills to prepare students for the dynamic IT industry.",
-    link: "/courses/bca",
+    link: "/courses/ug-courses/bca",
   },
   {
     id: "bba",
@@ -22,7 +22,7 @@ const courses = [
     accent2: "#ffb3c0",
     description:
       "The Bachelor of Business Administration program is a gateway of business concepts, strategies, and management principles. In this section, we explore the core components of the BBA curriculum, covering subjects such as accounting, marketing, finance, human resources, and organizational behaviour. Discover how the program combines theoretical knowledge with practical skills to prepare students for diverse roles in the business world.",
-    link: "/courses/bba",
+    link: "/courses/ug-courses/bba",
   },
   {
     id: "bcom",
@@ -32,7 +32,7 @@ const courses = [
     accent2: "#cdb8ff",
     description:
       "The Bachelor of Commerce program is a gateway of financial management, business principles, and economic concepts. In this section, we delve into the core components of the B.Com curriculum, covering subjects such as accounting, finance, business law, economics, and marketing. Discover how the program combines theoretical foundations with practical applications to prepare students for success in the business.",
-    link: "/courses/bcom",
+    link: "/courses/ug-courses/bcom",
   },
   {
     id: "llb",
@@ -42,7 +42,7 @@ const courses = [
     accent2: "#9be8c3",
     description:
       "The Bachelor of Legislative Law program is your gateway to the legal realm, providing a comprehensive understanding of legal principles, statutes, and the intricacies of the judicial system. In this section, we explore the core components of the L.L.B curriculum, covering subjects such as constitutional law, criminal law, civil law, and legal research methodologies. Discover knowledge with practical application to prepare students for the dynamic and challenging field of law.",
-    link: "/courses/llb",
+    link: "/courses/ug-courses/llb",
   },
   {
     id: "ballb",
@@ -52,7 +52,7 @@ const courses = [
     accent2: "#fde0a0",
     description:
       "The Bachelor of Arts and Bachelor of Laws program is a distinctive approach to legal education that integrates the study of law with the enriching insights of liberal arts. In this section, we delve into the core components of the B.A L.L.B curriculum, covering legal theory, constitutional law and criminal law. Discover how the program harmonizes the foundational principles of law with the diverse perspectives offered by arts and humanities.",
-    link: "/courses/ba-llb",
+    link: "/courses/ug-courses/ba-llb",
   },
   {
     id: "bed",
@@ -62,7 +62,7 @@ const courses = [
     accent2: "#8ee6db",
     description:
       "The Bachelor of Education program is a gateway to becoming a proficient and compassionate educator. In this section, we delve into the core components of the B.Ed. curriculum, covering pedagogy, educational psychology, classroom management, and subject-specific methodologies. Discover how the program combines theoretical knowledge with practical teaching skills of education.",
-    link: "/courses/bed",
+    link: "/courses/ug-courses/bed",
   },
   {
     id: "deled",
@@ -72,7 +72,7 @@ const courses = [
     accent2: "#99e6f3",
     description:
       "The Diploma of Elementary Education program is a foundational step for individuals aspiring to become primary school teachers. In this section, we explore the core components of the D.El.Ed curriculum, covering essential teaching methodologies, child psychology, educational philosophy, and practical classroom training. Discover how the program equips aspiring educators with the knowledge and skills necessary for effective teaching at the primary level.",
-    link: "/courses/deled",
+    link: "/courses/pg-diploma/deled",
   },
   {
     id: "med",
@@ -82,7 +82,7 @@ const courses = [
     accent2: "#b9bbff",
     description:
       "The Master of Education program is designed to empower educators with advanced knowledge, leadership skills, and a deep understanding of educational practices. In this section, we delve into the core components of the M.Ed curriculum, covering advanced pedagogy, educational research, leadership development, and specialized areas of study. Discover how the program combines theoretical depth with practical application to prepare educators for education.",
-    link: "/courses/med",
+    link: "/courses/pr-courses/med",
   },
   {
     id: "bpes",
@@ -92,7 +92,7 @@ const courses = [
     accent2: "#ffc296",
     description:
       "The Bachelor of Physical Education and Sports program is really cool for students who love sports and fitness. This program teaches students a lot about health and physical education. Students learn about sports coaching and how to manage fitness programs. They also learn about exercise science and sports psychology. The Bachelor of Physical Education and Sports program helps students learn by doing things not just reading books. They play sports. Get guidance from professionals.",
-    link: "/courses/bpes",
+    link: "/courses/ug-courses/bpes",
   },
   {
     id: "cyber",
